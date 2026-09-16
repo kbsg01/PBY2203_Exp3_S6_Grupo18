@@ -1,11 +1,13 @@
 name: Evidencia de ejecución BFF (Banco XYZ)
 
 # Compila los 6 módulos (config-server, eureka-server, core-service, bff-web, bff-mobile,
-# bff-atm), levanta los 6 servicios reales en orden (config-server -> eureka-server ->
-# core-service -> los 3 BFF en HTTPS con certificado autofirmado de demostración académica)
-# y ejecuta scripts/probar_apis.sh contra ellos, incluyendo la prueba de tolerancia a fallos.
-# Publica los logs como evidencia de ejecución real, tal como exige la pauta de evaluación
-# formativa de la Semana 6 (Config Server, Service Discovery, Circuit Breaker + autenticación).
+# bff-atm) y delega en scripts/generar_evidencia.sh el resto: levantar los 6 servicios reales
+# en orden, ejecutar las pruebas end-to-end y la prueba de tolerancia a fallos, y guardar todo
+# en evidencias/. Es el MISMO script que se puede correr en local (Windows con Git Bash, Linux
+# o macOS) para regenerar la evidencia sin depender de este workflow — ver la sección 11.6 del
+# README. Publica los logs como evidencia de ejecución real, tal como exige la pauta de
+# evaluación formativa de la Semana 6 (Config Server, Service Discovery, Circuit Breaker +
+# autenticación).
 
 on:
   push:
@@ -29,75 +31,8 @@ jobs:
       - name: Instalar jq
         run: sudo apt-get update -y && sudo apt-get install -y jq
 
-      - name: Compilar los 6 módulos (Maven)
-        run: mvn -B -DskipTests package | tee evidencias/evidencia01-build.log
-
-      - name: Levantar config-server (:8888)
-        run: |
-          nohup java -jar config-server/target/config-server.jar \
-            > evidencias/evidencia01b-config-server.log 2>&1 &
-          for i in $(seq 1 30); do
-            curl -s -o /dev/null http://localhost:8888/core-service/default && break
-            sleep 1
-          done
-
-      - name: Levantar eureka-server (:8761)
-        run: |
-          nohup java -jar eureka-server/target/eureka-server.jar \
-            > evidencias/evidencia01c-eureka-server.log 2>&1 &
-          for i in $(seq 1 30); do
-            curl -s -o /dev/null http://localhost:8761/ && break
-            sleep 1
-          done
-
-      - name: Levantar core-service (:8080, HTTP interno)
-        run: |
-          nohup java -jar core-service/target/core-service.jar \
-            > evidencias/evidencia02-core-service.log 2>&1 &
-          for i in $(seq 1 30); do
-            curl -s -o /dev/null -H "X-Internal-Api-Key: clave-interna-banco-xyz-2026" \
-              http://localhost:8080/internal/cuentas && break
-            sleep 1
-          done
-
-      - name: Levantar bff-web (:8081, HTTPS)
-        run: |
-          nohup java -jar bff-web/target/bff-web.jar \
-            > evidencias/evidencia03-bff-web.log 2>&1 &
-          for i in $(seq 1 30); do
-            curl -sk -o /dev/null https://localhost:8081/api/web/auth/login && break
-            sleep 1
-          done
-
-      - name: Levantar bff-mobile (:8082, HTTPS)
-        run: |
-          nohup java -jar bff-mobile/target/bff-mobile.jar \
-            > evidencias/evidencia04-bff-mobile.log 2>&1 &
-          for i in $(seq 1 30); do
-            curl -sk -o /dev/null https://localhost:8082/api/mobile/auth/login && break
-            sleep 1
-          done
-
-      - name: Levantar bff-atm (:8083, HTTPS)
-        run: |
-          nohup java -jar bff-atm/target/bff-atm.jar \
-            > evidencias/evidencia05-bff-atm.log 2>&1 &
-          for i in $(seq 1 30); do
-            curl -sk -o /dev/null https://localhost:8083/api/atm/sesion && break
-            sleep 1
-          done
-
-      - name: Ejecutar pruebas end-to-end (scripts/probar_apis.sh)
-        run: bash scripts/probar_apis.sh | tee evidencias/evidencia06-pruebas-apis.log
-
-      - name: Capturar evidencia de registro en Eureka
-        run: |
-          sleep 5
-          curl -s -H "Accept: application/json" http://localhost:8761/eureka/apps \
-            | tee evidencias/evidencia07-eureka-apps.log
-
-      - name: Capturar evidencia del circuit breaker (fallback ante caída de core-service)
-        run: bash scripts/probar_tolerancia_fallos.sh | tee evidencias/evidencia08-circuit-breaker.log
+      - name: Generar evidencia (build + levantar servicios + pruebas)
+        run: bash scripts/generar_evidencia.sh
 
       - name: Publicar evidencia como artefacto descargable
         if: always()

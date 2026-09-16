@@ -377,3 +377,15 @@ Para reproducirlo manualmente: con los 6 servicios arriba y tras un login exitos
 | Habilita un Service Discovery y registra correctamente tres microservicios | Sección 11.1 y 11.3: `eureka-server` standalone en `:8761`, con los 4 servicios registrados (supera el mínimo de 3 exigido). |
 | Implementa 3 microservicios con tolerancia a fallos y sistema de autenticación | Sección 11.4: `bff-web`, `bff-mobile` y `bff-atm` agregan Circuit Breaker (Resilience4j) sobre su llamada a `core-service`, y cada uno ya cuenta con su propio sistema de autenticación (sección 5: JWT web/móvil, sesión opaca ATM). |
 | Implementa un sistema de autenticación y autorización funcional | Sección 5 (ya implementado desde la Semana 5): JWT por canal + verificación de autorización por titularidad, sin cambios funcionales en esta entrega. |
+
+### 11.6 Generar la evidencia de ejecución en local (Windows o Linux/macOS)
+
+El workflow de CI (`.github/workflows/evidencia-ejecucion.yml`) y la ejecución local usan exactamente el mismo script, `scripts/generar_evidencia.sh`: compila los 6 módulos, levanta config-server, eureka-server, core-service y los 3 BFF en orden (esperando activamente a que cada uno responda), corre `scripts/probar_apis.sh`, captura el registro en Eureka, corre `scripts/probar_tolerancia_fallos.sh` (que detiene `core-service` a propósito para demostrar el circuit breaker) y al final detiene todos los procesos que él mismo levantó — incluso si algo falla a mitad de camino. Todos los logs quedan en `evidencias/` con el mismo esquema de nombres (`evidencia01-build.log` ... `evidencia08-circuit-breaker.log`).
+
+**Requisitos:** JDK 21 (con `jps`, incluido en cualquier JDK completo), Maven, `curl`, `jq`, y los puertos 8080-8083, 8761 y 8888 libres. En Windows se ejecuta con **Git Bash** (el mismo que ya usan `probar_apis.sh` y `probar_tolerancia_fallos.sh`); en Linux/macOS corre en cualquier bash nativo. El script detecta el sistema operativo automáticamente para detener los procesos de forma confiable en ambos casos (en Windows usa `taskkill`, porque el `kill` de Git Bash no siempre termina un proceso Java nativo aunque no reporte error).
+
+```bash
+bash scripts/generar_evidencia.sh                          # compila y corre todo el flujo
+bash scripts/generar_evidencia.sh --skip-build              # reusa los jars ya compilados
+bash scripts/generar_evidencia.sh --skip-tolerancia-fallos  # no mata core-service al final
+```
