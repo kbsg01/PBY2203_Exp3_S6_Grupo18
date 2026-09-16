@@ -1,0 +1,44 @@
+server:
+  port: 8083
+  ssl:
+    enabled: true
+    key-store: classpath:bff-atm-keystore.p12
+    key-store-type: PKCS12
+    # Solo un valor de demostracion academica; en produccion viviria en un gestor de secretos.
+    key-store-password: "keystore-canal-atm-banco-xyz-no-usar-en-produccion-2026"
+    key-alias: bffatm
+
+spring:
+  application:
+    name: bff-atm
+  config:
+    # core-service.* ahora vive en config-server (config-repo/bff-atm.yml).
+    import: "optional:configserver:http://localhost:8888"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      coreService:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+        register-health-indicator: true
+        ignore-exceptions:
+          - com.bancoxyz.bff.atm.exception.CuentaNoEncontradaException
+          - com.bancoxyz.bff.atm.exception.SaldoInsuficienteException
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{45} - %msg%n"
+  level:
+    root: INFO
+    com.bancoxyz.bff.atm: INFO

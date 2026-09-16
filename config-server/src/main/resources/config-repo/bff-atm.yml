@@ -1,0 +1,3 @@
+core-service:
+  base-url: http://core-service
+  api-key: "clave-interna-banco-xyz-2026"

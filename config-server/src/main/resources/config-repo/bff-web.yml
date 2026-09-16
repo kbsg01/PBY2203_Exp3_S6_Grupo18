@@ -1,0 +1,8 @@
+core-service:
+  base-url: http://core-service
+  api-key: "clave-interna-banco-xyz-2026"
+
+seguridad:
+  jwt:
+    # Solo un valor de demostracion academica; en produccion viviria en un gestor de secretos.
+    secreto: "clave-secreta-canal-web-banco-xyz-no-usar-en-produccion-2026"
