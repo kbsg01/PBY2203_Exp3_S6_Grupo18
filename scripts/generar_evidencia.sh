@@ -120,11 +120,22 @@ verificar_arriba "bff-mobile" "bff-mobile/target/bff-mobile.jar" "https://localh
 levantar "bff-atm" bff-atm/target/bff-atm.jar evidencia05-bff-atm.log
 verificar_arriba "bff-atm" "bff-atm/target/bff-atm.jar" "https://localhost:8083/api/atm/sesion" evidencia05-bff-atm.log
 
-echo "=== Esperando el primer heartbeat de registro en Eureka ==="
-sleep 8
+echo "=== Esperando a que los 4 servicios de negocio completen su registro en Eureka ==="
+# Antes esto era un "sleep 8" fijo. Eso alcanzaba a veces, pero no siempre: el registro en
+# Eureka (y la propagacion a la cache local de cada BFF, que es lo que usa @LoadBalanced
+# RestTemplate para resolver "http://core-service") es asincrono y puede tardar mas que eso.
+# Se observo en una corrida real de este mismo proyecto que 8s no alcanzaron: el login de
+# bff-web fallo con "No servers available for service: core-service" y la foto de Eureka de
+# evidencia07 solo llego a mostrar 2 de los 4 servicios. Ver el javadoc de
+# esperar_registro_eureka en scripts/_common.sh para el detalle completo.
+esperar_registro_eureka 60 "CORE-SERVICE" "BFF-WEB" "BFF-MOBILE" "BFF-ATM"
 
 echo "=== Ejecutando pruebas end-to-end (scripts/probar_apis.sh) ==="
-bash scripts/probar_apis.sh | tee evidencias/evidencia06-pruebas-apis.log
+bash scripts/probar_apis.sh 2>&1 | tee evidencias/evidencia06-pruebas-apis.log
+if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+  echo "Las pruebas end-to-end fallaron, revisa evidencias/evidencia06-pruebas-apis.log" >&2
+  exit 1
+fi
 
 echo "=== Capturando evidencia de registro en Eureka ==="
 curl -s -H "Accept: application/json" http://localhost:8761/eureka/apps | tee evidencias/evidencia07-eureka-apps.log
@@ -132,7 +143,16 @@ echo
 
 if [ "$SKIP_TOLERANCIA" = false ]; then
   echo "=== Ejecutando prueba de tolerancia a fallos (detiene core-service) ==="
-  bash scripts/probar_tolerancia_fallos.sh | tee evidencias/evidencia08-circuit-breaker.log
+  # "2>&1" antes del pipe: sin esto, un "exit 1" temprano del script (ej. no encontro el PID de
+  # core-service) imprime su motivo por stderr, que se ve en la terminal pero NO queda guardado
+  # en evidencia08-circuit-breaker.log (tee solo captura stdout) - exactamente lo que paso en una
+  # corrida real de este proyecto, donde el log quedo con una sola linea sin ninguna pista del
+  # porque.
+  bash scripts/probar_tolerancia_fallos.sh 2>&1 | tee evidencias/evidencia08-circuit-breaker.log
+  if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+    echo "La prueba de tolerancia a fallos fallo, revisa evidencias/evidencia08-circuit-breaker.log" >&2
+    echo "(no se aborta el script por esto: la evidencia de las secciones anteriores ya quedo guardada)" >&2
+  fi
 fi
 
 echo

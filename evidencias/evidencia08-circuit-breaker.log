@@ -1,1 +1,21 @@
 === Obteniendo un token valido (core-service aun arriba) ===
+=== Deteniendo core-service para forzar la apertura del circuit breaker ===
+=== Llamadas repetidas a bff-web con core-service caido ===
+(la config de bff-web abre el circuito tras 5 llamadas con 50% de fallos; las primeras devuelven
+ la excepcion cruda del RestTemplate, las siguientes ya devuelven el 503 controlado del fallback)
+--- intento 1 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+--- intento 2 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+--- intento 3 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+--- intento 4 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+--- intento 5 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+--- intento 6 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+--- intento 7 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+--- intento 8 ---
+{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503

@@ -258,7 +258,7 @@ El workflow se ejecutó exitosamente en GitHub Actions, con los 4 módulos compi
 
 Los 6 archivos de log generados por este run (`evidencia01-build.log` a `evidencia06-pruebas-apis.log`) quedan como artefacto descargable del run correspondiente en la pestaña Actions del repositorio.
 
-> **Importante — pendiente antes de la entrega final:** esta corrida del 03-09-2026 corresponde a la versión del proyecto **previa a la incorporación de HTTPS** (los tres BFF respondían aún en `http://`). Con los keystores y la configuración TLS ya agregados al código, **falta ejecutar nuevamente el pipeline** (mediante un push al repositorio remoto, o una ejecución local equivalente de los mismos pasos) para regenerar los 6 logs de `evidencias/evidencia01` a `evidencia06` con los tres BFF respondiendo efectivamente sobre `https://`. Hasta que esa nueva corrida no exista, este README **no afirma** que el comportamiento HTTPS ya fue verificado end-to-end en CI — solo que la configuración fue implementada y puede probarse manualmente como se describe en la sección 5.1 y en la sección 7.2. Regenerar esta evidencia es un paso pendiente que debe completarse antes de la entrega final de la Semana 5.
+> **Nota:** esta corrida del 03-09-2026 corresponde a la versión del proyecto **previa a la incorporación de HTTPS** (los tres BFF respondían aún en `http://`) y se conserva aquí solo como referencia histórica del comportamiento funcional de los 4 flujos. El pipeline **ya fue re-ejecutado** después de agregar los keystores y la configuración TLS: la corrida vigente, con los tres BFF respondiendo efectivamente sobre `https://`, es la que se documenta en la sección 11.7 (evidencia actual, generada junto con la actividad de Semana 6), donde `evidencia03-bff-web.log`, `evidencia04-bff-mobile.log` y `evidencia05-bff-atm.log` confirman TLS activo con el keystore y alias correctos de cada servicio.
 
 ## 9. Decisiones de diseño y simplificaciones (transparencia académica)
 
@@ -384,3 +384,14 @@ bash scripts/generar_evidencia.sh                          # compila y corre tod
 bash scripts/generar_evidencia.sh --skip-build              # reusa los jars ya compilados
 bash scripts/generar_evidencia.sh --skip-tolerancia-fallos  # no mata core-service al final
 ```
+
+### 11.7 Evidencia vigente y ajuste de temporización (registro en Eureka)
+
+Los 8 logs de `evidencias/` (`evidencia01-build.log` a `evidencia08-circuit-breaker.log`) ya reflejan el proyecto completo con Config Server, Eureka y Circuit Breaker: los 6 módulos compilan (`BUILD SUCCESS`), los 3 BFF arrancan con TLS activo (mismo keystore/alias por servicio que en la Semana 5) y `evidencia06-pruebas-apis.log` confirma los 4 flujos end-to-end.
+
+En una corrida real de este proyecto se detectó que el `sleep 8` fijo que usaba `generar_evidencia.sh` antes de correr las pruebas no siempre alcanzaba: el registro de un servicio en Eureka (y la propagación de ese registro a la cache local de `@LoadBalanced RestTemplate` de cada BFF) es asíncrono, y puede tardar más que un HTTP health-check exitoso. Esto se manifestó de dos formas en la evidencia ya committeada:
+
+- `evidencia07-eureka-apps.log` (la foto de `/eureka/apps`) mostraba solo 2 de los 4 servicios de negocio, aunque los 4 comparten exactamente la misma configuración de cliente Eureka y terminan registrándose poco después.
+- El login de `bff-web` en `evidencia06-pruebas-apis.log` devolvió un token nulo, porque su `@LoadBalanced RestTemplate` todavía no tenía a `core-service` en su cache local (`No servers available for service: core-service`, visible en `evidencia03-bff-web.log`); ese `null` se arrastró silenciosamente a las llamadas siguientes del canal Web.
+
+El fix (rama `fix/evidencia-timing-eureka`) reemplaza el `sleep` fijo por una espera activa (`esperar_registro_eureka` en `scripts/_common.sh`) que consulta `/eureka/apps` hasta confirmar el registro de los 4 servicios antes de correr las pruebas, agrega una verificación explícita (`verificar_token` en `probar_apis.sh`) que corta la ejecución con un mensaje claro si algún login no devuelve un token válido, y corrige la captura de log de `probar_tolerancia_fallos.sh` (`2>&1` antes del `tee`) para que un fallo temprano de ese script quede documentado en `evidencia08-circuit-breaker.log` en vez de perderse. Ninguno de estos cambios modifica la lógica de negocio ni la configuración de Spring Cloud/Resilience4j ya descrita en 11.1–11.4: son ajustes de orquestación y diagnóstico del script de evidencia.

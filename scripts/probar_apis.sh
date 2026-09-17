@@ -25,6 +25,24 @@ CLAVE_INTERNA="clave-interna-banco-xyz-2026"
 
 separador() { echo; echo "=== $1 ==="; }
 
+# Corta la ejecucion con un mensaje claro si un login/apertura de sesion no devolvio un token
+# valido, en vez de seguir silenciosamente con "Bearer null" o un X-Atm-Session vacio. Sin esto,
+# un fallo aguas arriba (ej. bff-web todavia sin terminar de registrarse en Eureka, con lo que su
+# @LoadBalanced RestTemplate no encuentra "core-service" y el login responde sin token) se
+# manifestaba varios pasos despues como codigos HTTP inesperados (401 en vez de 403) dificiles de
+# relacionar con la causa real - se observo exactamente este caso en una corrida real de este
+# proyecto, con el log mostrando "Token web obtenido: null...".
+verificar_token() {
+  local nombre="$1" valor="$2"
+  if [ -z "$valor" ] || [ "$valor" = "null" ]; then
+    echo "ERROR: no se obtuvo un $nombre valido. Verifique que el servicio y sus dependencias" >&2
+    echo "(config-server, eureka-server, core-service) ya esten completamente arriba - en" >&2
+    echo "particular, que el registro en Eureka ya se haya propagado (ver esperar_registro_eureka" >&2
+    echo "en scripts/_common.sh)." >&2
+    exit 1
+  fi
+}
+
 separador "0. core-service NO debe responder sin la clave interna (principio central del BFF)"
 curl -s -o /dev/null -w "GET /internal/cuentas SIN clave -> HTTP %{http_code} (se espera 403)\n" "$CORE/internal/cuentas"
 
@@ -35,6 +53,7 @@ separador "1. BFF WEB: login (cuenta 101, titular 'John Doe') y consulta complet
 TOKEN_WEB=$(curl -s -k -X POST "$WEB/api/web/auth/login" \
   -H "Content-Type: application/json" \
   -d '{"cuentaId":101,"nombre":"John Doe"}' | jq -r .token)
+verificar_token "token web" "$TOKEN_WEB"
 echo "Token web obtenido: ${TOKEN_WEB:0:24}..."
 
 curl -s -k -H "Authorization: Bearer $TOKEN_WEB" "$WEB/api/web/cuentas/101" | jq .
@@ -50,6 +69,7 @@ separador "2. BFF MOVIL: login (cuenta 101, PIN determinista) y resumen liviano"
 TOKEN_MOBILE=$(curl -s -k -X POST "$MOBILE/api/mobile/auth/login" \
   -H "Content-Type: application/json" \
   -d '{"cuentaId":101,"pin":"7373"}' | jq -r .token)
+verificar_token "token movil" "$TOKEN_MOBILE"
 echo "Token movil obtenido: ${TOKEN_MOBILE:0:24}..."
 
 curl -s -k -H "Authorization: Bearer $TOKEN_MOBILE" "$MOBILE/api/mobile/cuentas/101/resumen" | jq .
@@ -61,6 +81,7 @@ SESION_JSON=$(curl -s -k -X POST "$ATM/api/atm/sesion" \
   -d '{"numeroTarjeta":"4915000000000105","pin":"7665"}')
 echo "$SESION_JSON" | jq .
 TOKEN_ATM=$(echo "$SESION_JSON" | jq -r .sessionToken)
+verificar_token "token de sesion ATM" "$TOKEN_ATM"
 
 separador "3.1 BFF CAJERO: consulta de saldo (respuesta minima, sin nombre ni historial)"
 curl -s -k -H "X-Atm-Session: $TOKEN_ATM" "$ATM/api/atm/cuentas/105/saldo" | jq .
@@ -80,6 +101,7 @@ SESION_JSON_2=$(curl -s -k -X POST "$ATM/api/atm/sesion" \
   -H "Content-Type: application/json" \
   -d '{"numeroTarjeta":"4915000000000105","pin":"7665"}')
 TOKEN_ATM_2=$(echo "$SESION_JSON_2" | jq -r .sessionToken)
+verificar_token "token de sesion ATM (segundo intento)" "$TOKEN_ATM_2"
 curl -s -k -X POST "$ATM/api/atm/cuentas/105/retiro" \
   -H "Content-Type: application/json" \
   -H "X-Atm-Session: $TOKEN_ATM_2" \
