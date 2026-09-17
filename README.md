@@ -1,11 +1,6 @@
 # Banco XYZ — Backend for Frontend (BFF) + Spring Cloud
 
 **Curso:** Desarrollo Backend III (PBY2203) — Duoc UC
-**Autor:** Karla Santibáñez Gutiérrez
-
-- **Base del proyecto (Exp2, Semana 4 — actividad formativa, grupal):** Grupo 18: Karla Santibañez Gutierrez - Fernando Fuentes Allende.
-- **Exp2, Semana 5 (actividad sumativa, individual):** implementación del patrón BFF con HTTPS (secciones 1 a 10 de este documento).
-- **Exp3, Semana 6 (esta entrega, actividad formativa):** "Implementando microservicios y seguridad en la nube con Spring Cloud" — Config Server, Service Discovery (Eureka) y tolerancia a fallos (Circuit Breaker) agregados sobre la misma base de código (ver sección 11).
 
 ## 1. Objetivo del proyecto
 
