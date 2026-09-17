@@ -1,0 +1,32 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-09-17T01:08:00.863Z  INFO 2738 --- [config-server] [           main] c.b.config.ConfigServerApplication       : Starting ConfigServerApplication v1.0.0 using Java 21.0.12.1 with PID 2738 (/home/runner/work/PBY2203_Exp3_S6_Grupo18/PBY2203_Exp3_S6_Grupo18/config-server/target/config-server.jar started by runner in /home/runner/work/PBY2203_Exp3_S6_Grupo18/PBY2203_Exp3_S6_Grupo18)
+2026-09-17T01:08:00.872Z  INFO 2738 --- [config-server] [           main] c.b.config.ConfigServerApplication       : The following 1 profile is active: "native"
+2026-09-17T01:08:01.785Z  INFO 2738 --- [config-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c54c597d-0e6b-3b0d-a2e2-12425feaaae4
+2026-09-17T01:08:02.104Z  INFO 2738 --- [config-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8888 (http)
+2026-09-17T01:08:02.121Z  INFO 2738 --- [config-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-17T01:08:02.122Z  INFO 2738 --- [config-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-09-17T01:08:02.154Z  INFO 2738 --- [config-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-17T01:08:02.156Z  INFO 2738 --- [config-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1211 ms
+2026-09-17T01:08:02.833Z  INFO 2738 --- [config-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8888 (http) with context path '/'
+2026-09-17T01:08:02.865Z  INFO 2738 --- [config-server] [           main] c.b.config.ConfigServerApplication       : Started ConfigServerApplication in 2.603 seconds (process running for 3.254)
+2026-09-17T01:08:03.086Z  INFO 2738 --- [config-server] [nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-17T01:08:03.086Z  INFO 2738 --- [config-server] [nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-17T01:08:03.089Z  INFO 2738 --- [config-server] [nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-09-17T01:08:03.163Z  INFO 2738 --- [config-server] [nio-8888-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:04.258Z  INFO 2738 --- [config-server] [nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:05.283Z  INFO 2738 --- [config-server] [nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:06.306Z  INFO 2738 --- [config-server] [nio-8888-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:07.329Z  INFO 2738 --- [config-server] [nio-8888-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:16.672Z  INFO 2738 --- [config-server] [nio-8888-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:24.287Z  INFO 2738 --- [config-server] [nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/bff-web.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:31.935Z  INFO 2738 --- [config-server] [nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/bff-mobile.yml]' via location 'classpath:/config-repo/'
+2026-09-17T01:08:39.851Z  INFO 2738 --- [config-server] [nio-8888-exec-8] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/bff-atm.yml]' via location 'classpath:/config-repo/'
