@@ -271,6 +271,8 @@ Los 6 archivos de log generados por este run (`evidencia01-build.log` a `evidenc
 
 ## 10. Trazabilidad con la pauta de evaluación sumativa (Semana 5)
 
+> Esta sección documenta la entrega de la Semana 5 (Exp2 S5) tal como fue evaluada entonces, sin modificaciones. Para la trazabilidad con la pauta formativa de la Semana 6 (Config Server, Service Discovery, tolerancia a fallos), ver la sección 11.5.
+
 | Criterio de la pauta | Puntaje | Dónde se evidencia |
 | --- | --- | --- |
 | Implementa un BFF para cada canal | 20 pts | Secciones 2.1 y 3: cuatro aplicaciones Spring Boot independientes (`core-service`, `bff-web`, `bff-mobile`, `bff-atm`), cada una con su propio ciclo de vida, funcionando end-to-end (sección 8). |
