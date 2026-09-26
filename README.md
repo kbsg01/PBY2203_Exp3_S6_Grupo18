@@ -397,3 +397,104 @@ En una corrida real de este proyecto se detectó que el `sleep 8` fijo que usaba
 - El login de `bff-web` en `evidencia06-pruebas-apis.log` devolvió un token nulo, porque su `@LoadBalanced RestTemplate` todavía no tenía a `core-service` en su cache local (`No servers available for service: core-service`, visible en `evidencia03-bff-web.log`); ese `null` se arrastró silenciosamente a las llamadas siguientes del canal Web.
 
 El fix (rama `fix/evidencia-timing-eureka`) reemplaza el `sleep` fijo por una espera activa (`esperar_registro_eureka` en `scripts/_common.sh`) que consulta `/eureka/apps` hasta confirmar el registro de los 4 servicios antes de correr las pruebas, agrega una verificación explícita (`verificar_token` en `probar_apis.sh`) que corta la ejecución con un mensaje claro si algún login no devuelve un token válido, y corrige la captura de log de `probar_tolerancia_fallos.sh` (`2>&1` antes del `tee`) para que un fallo temprano de ese script quede documentado en `evidencia08-circuit-breaker.log` en vez de perderse. Ninguno de estos cambios modifica la lógica de negocio ni la configuración de Spring Cloud/Resilience4j ya descrita en 11.1–11.4: son ajustes de orquestación y diagnóstico del script de evidencia.
+
+## 12. Arquitectura de eventos: Saga con Kafka y tolerancia a fallos ampliada (Exp3, Semana 7)
+
+Esta sección documenta lo agregado sobre la base de las secciones 1–11 (que siguen describiendo fielmente Config Server, Eureka y Circuit Breaker de la Semana 6) para cumplir la actividad formativa "Configurando tolerancia a fallos y arquitectura de eventos con microservicios en la nube". Los cuatro criterios de esa pauta son: (1) definir una arquitectura de eventos alineada con un patrón de diseño y adecuada al caso de uso, (2) diagramarla de forma completa y visualmente organizada, (3) implementar tolerancia a fallos con Resilience4j demostrando resiliencia, y (4) integrar mensajería asíncrona (Kafka o JMS) de forma funcional con escalabilidad demostrada. Las cuatro decisiones de esta sección responden directamente a esos cuatro puntos (ver la trazabilidad en 12.7).
+
+### 12.1 Caso de uso nuevo: transferencia entre cuentas
+
+Los flujos de la Semana 4-6 (depósito, retiro, consulta) son, cada uno, una única operación local sobre **una** cuenta: no había ninguna razón real para coordinarlos por eventos. Por eso se introduce un caso de uso nuevo, **transferencia entre cuentas**, que sí necesita coordinar una operación que toca **dos** cuentas (origen y destino) y que puede fallar a mitad de camino, exactamente el escenario que los patrones de arquitectura de eventos de esta semana (Saga, Event Sourcing) existen para resolver. Se expone desde `bff-web` (el canal donde tiene más sentido una operación de este tipo): `POST /api/web/cuentas/{cuentaId}/transferencias`.
+
+### 12.2 Por qué Saga por coreografía (y no Event Sourcing, ni Saga por orquestación)
+
+- **Saga vs. Event Sourcing.** Event Sourcing resuelve un problema distinto: reconstruir el estado a partir de un log completo de eventos históricos (útil para auditoría/histórico de movimientos). El problema de una transferencia no es "cómo reconstruyo el saldo", es "cómo coordino dos actualizaciones que pueden fallar por separado sin dejar el sistema en un estado inconsistente" — el problema que Saga fue diseñado para resolver.
+- **Coreografía vs. orquestación.** En orquestación, un servicio central envía comandos y espera respuestas de cada paso. Como todo el dominio de cuentas vive hoy en un único `core-service`, un orquestador sería una capa adicional sin un segundo servicio real al cual coordinar. La coreografía, en cambio, modela cada paso como un evento independiente que el siguiente paso escucha — y dejó el diseño **listo para el día en que el dominio de cuentas se divida en microservicios** (evolución natural de este mismo ecosistema, ver Javadoc de `TransferenciaSagaService`), sin tener que rediseñar el flujo.
+- **Por qué de todas formas vale la pena, incluso con una sola fuente de verdad hoy.** Cada paso de la saga queda como un evento auditable y reproducible por separado (se puede ver en Kafka exactamente en qué paso quedó una transferencia), y el flujo ya está modelado como una secuencia de pasos **compensables**, no como una transacción ACID que dejaría de ser posible en cuanto los datos se distribuyan.
+
+La saga tiene dos pasos y tres desenlaces posibles:
+
+```
+1) onSolicitada       (core-service consume "transferencias.solicitadas")
+   -> ¿existe la cuenta origen y tiene saldo suficiente?
+      NO  -> publica resultado RECHAZADA (fin)
+      SI  -> debita cuentaOrigen -> publica "transferencias.debito-aplicado"
+
+2) onDebitoAplicado    (core-service consume "transferencias.debito-aplicado")
+   -> ¿existe la cuenta destino?
+      SI  -> acredita cuentaDestino -> publica resultado COMPLETADA (fin)
+      NO  -> COMPENSA: re-acredita cuentaOrigen -> publica resultado COMPENSADA (fin)
+```
+
+### 12.3 Diagrama de la arquitectura (tópicos, eventos y componentes)
+
+![Arquitectura de eventos: Saga de transferencias con Kafka](docs/arquitectura-eventos-s7.png)
+
+| Tópico Kafka | Evento (payload) | Productor | Consumidor(es) |
+| --- | --- | --- | --- |
+| `bancoxyz.transferencias.solicitadas` | `TransferenciaSolicitadaEvent(transferenciaId, cuentaOrigen, cuentaDestino, monto)` | `bff-web` (`TransferenciaProducer`) | `core-service` (`TransferenciaSagaService#onSolicitada`) |
+| `bancoxyz.transferencias.debito-aplicado` | `DebitoAplicadoEvent(transferenciaId, cuentaOrigen, cuentaDestino, monto)` | `core-service` (paso 1) | `core-service` (`TransferenciaSagaService#onDebitoAplicado`, paso 2 — la propia saga "hablándose a sí misma" vía Kafka) |
+| `bancoxyz.transferencias.resultado` | `TransferenciaResultadoEvent(transferenciaId, cuentaOrigen, cuentaDestino, monto, estado, detalle)` con `estado` ∈ {COMPLETADA, RECHAZADA, COMPENSADA} | `core-service` (fin de la saga, cualquiera sea el desenlace) | `notificaciones-service` (**2 instancias**, mismo consumer group — ver 12.5) |
+
+El topic de 4 particiones (`docker-compose.yml`, `KAFKA_NUM_PARTITIONS: "4"`) es el mismo para las 3 clases de eventos. La consulta de estado (`GET /api/web/transferencias/{id}` → `GET /internal/transferencias/{id}`) es deliberadamente **síncrona por REST**, no un cuarto tópico: reutiliza Eureka + LoadBalancer + Circuit Breaker ya existentes desde la Semana 6, y una arquitectura orientada a eventos no obliga a que **toda** comunicación sea asíncrona — solo la que se beneficia de serlo (la escritura, que dispara un flujo de varios pasos).
+
+Cada microservicio mantiene su propia copia local del contrato de cada evento (records Java con los mismos campos) en vez de una librería compartida — la misma decisión arquitectónica ya documentada en el `pom.xml` raíz para los DTO REST de los BFF (sección 6.1): cada módulo solo se acopla al **formato** del mensaje (JSON), nunca a una clase Java de otro módulo. Como consecuencia, todos los productores desactivan el header `__TypeId__` de Kafka (`JsonSerializer.ADD_TYPE_INFO_HEADERS=false`) y todos los consumidores fuerzan la deserialización contra su propia clase local (`JsonDeserializer.VALUE_DEFAULT_TYPE`), en vez de confiar en un header que de todos modos llevaría el nombre de una clase de **otro** módulo.
+
+### 12.4 Tolerancia a fallos con Resilience4j (ampliada)
+
+Sobre los 3 circuit breakers `coreService` ya existentes desde la Semana 6 (sección 11.4), esta entrega agrega:
+
+- **`TransferenciaCoreClient` reutiliza la MISMA instancia `coreService`** para `GET /internal/transferencias/{id}`: es la misma dependencia de infraestructura (core-service vía Eureka), así que comparte, con toda intención, el mismo dominio de falla y el mismo contador que ya usa `CoreServiceClient`.
+- **Una instancia NUEVA y separada, `kafkaProducer`**, envuelve `TransferenciaProducer.publicarSolicitud` (el envío a Kafka desde `bff-web`). Es un dominio de falla distinto a propósito: que el broker Kafka esté caído no tiene relación con que `core-service` esté arriba o no, y no deberían compartir el mismo circuito:
+
+```yaml
+resilience4j:
+  circuitbreaker:
+    instances:
+      kafkaProducer:
+        sliding-window-size: 5
+        minimum-number-of-calls: 3
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+```
+
+`KafkaTemplate.send(...)` devuelve un `CompletableFuture`, que por sí solo no lanzaría ninguna excepción visible si el envío falla silenciosamente; `TransferenciaProducer` espera ese future con un timeout corto (`.get(3, TimeUnit.SECONDS)`) precisamente para que un broker caído se traduzca en una excepción real que el circuit breaker pueda contar. Con el circuito abierto, el fallback (`publicarSolicitudFallback`) lanza `MensajeriaNoDisponibleException` → **HTTP 503**, igual que ya hace `coreService` para una caída de `core-service` (sección 11.4).
+
+**Para demostrarlo:** con Kafka detenido (`docker compose stop kafka`) y los servicios arriba, repetir `POST /api/web/cuentas/101/transferencias` varias veces — las primeras respuestas reflejan el fallo de conexión real al broker, y a partir de la tercera el circuito `kafkaProducer` abre y todas las respuestas siguientes son un 503 inmediato y controlado.
+
+### 12.5 Mensajería Kafka funcional y escalabilidad demostrada
+
+`notificaciones-service` es un microservicio nuevo, deliberadamente desacoplado del camino transaccional crítico: solo escucha `bancoxyz.transferencias.resultado` y simula el envío de una notificación al cliente. Si estuviera caído, la saga igual se completa correctamente en `core-service` — solo se pierde la notificación, nunca la consistencia del saldo. Esa es la ventaja concreta de modelarlo como un consumidor de eventos independiente en vez de una llamada síncrona más dentro de la saga.
+
+La escalabilidad se demuestra levantando **2 instancias** de `notificaciones-service` (puertos 8084 y 8085) con el **mismo `group-id`** (`spring.kafka.consumer.group-id: notificaciones-service`) contra un tópico de 4 particiones: Kafka reparte las particiones entre las 2 instancias del mismo consumer group, en vez de que cada una reciba todos los mensajes — el mecanismo estándar de escalado horizontal de Kafka. Cada mensaje procesado se loguea con su partición y offset (`TransferenciaResultadoListener`), lo que permite comparar el log de la instancia A con el de la instancia B y comprobar el reparto:
+
+```
+[instancia :8084] Notificacion procesada (particion=1, offset=3) - transferenciaId=... estado=COMPLETADA -> "..."
+[instancia :8085] Notificacion procesada (particion=0, offset=2) - transferenciaId=... estado=RECHAZADA -> "..."
+```
+
+`scripts/probar_transferencias.sh` genera 6 transferencias (una exitosa, una rechazada por fondos insuficientes, una compensada por cuenta destino inexistente, una intentada sin autorización, y 3 adicionales) para que ambas instancias reciban mensajes; `evidencias/evidencia11-notificaciones-escalabilidad.log` (ver 12.6) documenta cuántos procesó cada una.
+
+### 12.6 Cómo levantar y generar la evidencia (incluye Kafka)
+
+Requisito nuevo sobre la sección 11.2: **Docker Desktop** (Windows/macOS) o **Docker Engine** (Linux), corriendo, para el broker Kafka de esta semana (`docker-compose.yml`, imagen oficial `apache/kafka:3.7.0`, modo KRaft de un solo nodo — sin Zookeeper, la opción más simple para un entorno académico sin sacrificar que sea Kafka real).
+
+`scripts/generar_evidencia.sh` sigue siendo el mismo script único para CI y para ejecución local (Windows con Git Bash, Linux o macOS), ahora ampliado: compila los **7 módulos**, levanta Kafka (`docker compose up -d kafka`, esperando activamente a que acepte conexiones en `:9092`), levanta los **8 procesos Java** en orden (config-server, eureka-server, core-service, los 3 BFF y **2 instancias** de `notificaciones-service`, en `:8084` y `:8085`), corre `scripts/probar_apis.sh`, captura el registro en Eureka, corre `scripts/probar_transferencias.sh` (los 3 desenlaces de la saga), verifica el reparto de particiones entre las 2 instancias de `notificaciones-service`, corre `scripts/probar_tolerancia_fallos.sh` y al final detiene todo lo que él mismo levantó — **incluyendo el contenedor de Kafka** (`docker compose down`) — incluso si algo falla a mitad de camino.
+
+```bash
+docker compose up -d kafka                                 # o dejar que generar_evidencia.sh lo haga por ti
+bash scripts/generar_evidencia.sh                           # compila y corre todo el flujo (Semana 6 + Semana 7)
+bash scripts/generar_evidencia.sh --skip-build               # reusa los jars ya compilados
+bash scripts/generar_evidencia.sh --skip-tolerancia-fallos   # no mata core-service al final
+```
+
+Los logs quedan en `evidencias/` con el mismo esquema de nombres ya usado en la Semana 6, extendido con 3 archivos nuevos: `evidencia09a-notificaciones-A.log` / `evidencia09b-notificaciones-B.log` (arranque y consumo de cada instancia), `evidencia10-pruebas-transferencias.log` (los 3 desenlaces de la saga) y `evidencia11-notificaciones-escalabilidad.log` (el reparto de particiones entre ambas instancias, ver 12.5). El mismo workflow de GitHub Actions (`.github/workflows/evidencia-ejecucion.yml`) genera esta evidencia en CI sin cambios adicionales: los runners de `ubuntu-latest` ya traen Docker Engine y el plugin `docker compose` instalados, así que `scripts/generar_evidencia.sh` levanta Kafka ahí exactamente igual que en local, con el mismo `docker-compose.yml`.
+
+### 12.7 Trazabilidad con la pauta de evaluación formativa (Semana 7)
+
+| Criterio de la pauta | Dónde se evidencia |
+| --- | --- |
+| Define la arquitectura de eventos a utilizar, alineada con los patrones de diseño seleccionados, y es adecuada para el caso de uso | Sección 12.1–12.2: caso de uso nuevo (transferencia entre cuentas) que sí necesita coordinación multi-paso, patrón Saga por coreografía elegido y justificado frente a Event Sourcing y a Saga por orquestación. |
+| Elabora un diagrama representativo de la arquitectura elegida de forma completa con los tópicos/mensajes/eventos de la solución, con una estructura visual organizada | Sección 12.3: diagrama completo (`docs/arquitectura-eventos-s7.png`) más la tabla de los 3 tópicos con su evento, productor y consumidor(es). |
+| Implementa tolerancia a fallos con Resilience4j demostrando resiliencia ante fallos | Sección 12.4: circuit breaker `kafkaProducer` nuevo (dominio de falla independiente de `coreService`) sobre el envío a Kafka, con pasos explícitos para reproducir la apertura del circuito y su respuesta 503 controlada. |
+| Integra componentes de mensajería asíncrona (Kafka o JMS) de manera funcional, con mensajes/eventos correctamente procesados y escalabilidad demostrada | Sección 12.5: Kafka real (Docker, KRaft) con 3 tópicos funcionando end-to-end (`scripts/probar_transferencias.sh`, `evidencia10-pruebas-transferencias.log`) y escalabilidad demostrada con 2 instancias de `notificaciones-service` en el mismo consumer group repartiéndose las particiones (`evidencia11-notificaciones-escalabilidad.log`). |
