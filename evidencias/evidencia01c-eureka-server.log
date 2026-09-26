@@ -8,55 +8,58 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2026-09-17T19:32:20.046-03:00  INFO 12856 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : Starting EurekaServerApplication v1.0.0 using Java 24 with PID 12856 (C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18\eureka-server\target\eureka-server.jar started by ffuen in C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18)
-2026-09-17T19:32:20.051-03:00  INFO 12856 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : No active profile set, falling back to 1 default profile: "default"
-2026-09-17T19:32:21.156-03:00  INFO 12856 --- [eureka-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3cbe52d5-3858-3fbf-a130-83fe55951f6c
+2026-09-26T14:02:08.778-03:00  INFO 20992 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : Starting EurekaServerApplication v1.0.0 using Java 24 with PID 20992 (C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18\eureka-server\target\eureka-server.jar started by ffuen in C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18)
+2026-09-26T14:02:08.782-03:00  INFO 20992 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-09-26T14:02:09.987-03:00  INFO 20992 --- [eureka-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3cbe52d5-3858-3fbf-a130-83fe55951f6c
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/C:/Users/ffuen/Desktop/PBY2203_Exp3_S6_Grupo18/eureka-server/target/eureka-server.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.30.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-09-17T19:32:21.536-03:00  INFO 12856 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
-2026-09-17T19:32:21.549-03:00  INFO 12856 --- [eureka-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-09-17T19:32:21.549-03:00  INFO 12856 --- [eureka-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2026-09-17T19:32:21.600-03:00  INFO 12856 --- [eureka-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-09-17T19:32:21.601-03:00  INFO 12856 --- [eureka-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1489 ms
-2026-09-17T19:32:22.682-03:00  INFO 12856 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2026-09-17T19:32:22.683-03:00  INFO 12856 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2026-09-26T14:02:10.402-03:00  INFO 20992 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
+2026-09-26T14:02:10.418-03:00  INFO 20992 --- [eureka-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-26T14:02:10.418-03:00  INFO 20992 --- [eureka-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-09-26T14:02:10.453-03:00  INFO 20992 --- [eureka-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-26T14:02:10.454-03:00  INFO 20992 --- [eureka-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1594 ms
+2026-09-26T14:02:11.677-03:00  INFO 20992 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2026-09-26T14:02:11.678-03:00  INFO 20992 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider (jar:nested:/C:/Users/ffuen/Desktop/PBY2203_Exp3_S6_Grupo18/eureka-server/target/eureka-server.jar/!BOOT-INF/lib/xstream-1.4.21.jar!/)
 WARNING: Please consider reporting this to the maintainers of class com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider
 WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
-2026-09-17T19:32:22.894-03:00  INFO 12856 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2026-09-17T19:32:22.895-03:00  INFO 12856 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2026-09-17T19:32:24.337-03:00  INFO 12856 --- [eureka-server] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-09-17T19:32:25.610-03:00  INFO 12856 --- [eureka-server] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-09-17T19:32:25.668-03:00  WARN 12856 --- [eureka-server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-09-17T19:32:25.689-03:00  INFO 12856 --- [eureka-server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-09-17T19:32:25.711-03:00  INFO 12856 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-09-17T19:32:25.712-03:00  INFO 12856 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2026-09-17T19:32:25.713-03:00  INFO 12856 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1789684345713 with initial instances count: 0
-2026-09-17T19:32:25.751-03:00  INFO 12856 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2026-09-17T19:32:25.755-03:00  WARN 12856 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : The replica size seems to be empty. Check the route 53 DNS Registry
-2026-09-17T19:32:25.764-03:00  INFO 12856 --- [eureka-server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2026-09-17T19:32:25.764-03:00  INFO 12856 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2026-09-17T19:32:25.782-03:00  INFO 12856 --- [eureka-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-09-17T19:32:25.832-03:00  INFO 12856 --- [eureka-server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
-2026-09-17T19:32:25.843-03:00  INFO 12856 --- [eureka-server] [      Thread-10] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2026-09-17T19:32:25.844-03:00  INFO 12856 --- [eureka-server] [      Thread-10] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2026-09-17T19:32:25.844-03:00  INFO 12856 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2026-09-17T19:32:25.844-03:00  INFO 12856 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2026-09-17T19:32:25.844-03:00  INFO 12856 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2026-09-17T19:32:25.847-03:00  INFO 12856 --- [eureka-server] [      Thread-10] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2026-09-17T19:32:25.862-03:00  INFO 12856 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
-2026-09-17T19:32:25.863-03:00  INFO 12856 --- [eureka-server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2026-09-17T19:32:26.157-03:00  INFO 12856 --- [eureka-server] [nio-8761-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-17T19:32:26.157-03:00  INFO 12856 --- [eureka-server] [nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-09-17T19:32:26.158-03:00  INFO 12856 --- [eureka-server] [nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-09-17T19:32:26.870-03:00  INFO 12856 --- [eureka-server] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-09-17T19:32:26.889-03:00  INFO 12856 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : Started EurekaServerApplication in 8.331 seconds (process running for 8.853)
-2026-09-17T19:32:39.205-03:00  INFO 12856 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/localhost:core-service:8080 with status UP (replication=false)
-2026-09-17T19:32:53.785-03:00  INFO 12856 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-WEB/localhost:bff-web:8081 with status UP (replication=false)
-2026-09-17T19:33:08.806-03:00  INFO 12856 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-MOBILE/localhost:bff-mobile:8082 with status UP (replication=false)
-2026-09-17T19:33:24.096-03:00  INFO 12856 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-ATM/localhost:bff-atm:8083 with status UP (replication=false)
-2026-09-17T19:33:25.845-03:00  INFO 12856 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-09-26T14:02:12.000-03:00  INFO 20992 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2026-09-26T14:02:12.000-03:00  INFO 20992 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2026-09-26T14:02:13.707-03:00  INFO 20992 --- [eureka-server] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-09-26T14:02:15.019-03:00  INFO 20992 --- [eureka-server] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-09-26T14:02:15.075-03:00  WARN 20992 --- [eureka-server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-26T14:02:15.096-03:00  INFO 20992 --- [eureka-server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-09-26T14:02:15.115-03:00  INFO 20992 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-09-26T14:02:15.115-03:00  INFO 20992 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2026-09-26T14:02:15.118-03:00  INFO 20992 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1790442135117 with initial instances count: 0
+2026-09-26T14:02:15.159-03:00  INFO 20992 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2026-09-26T14:02:15.161-03:00  WARN 20992 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : The replica size seems to be empty. Check the route 53 DNS Registry
+2026-09-26T14:02:15.172-03:00  INFO 20992 --- [eureka-server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2026-09-26T14:02:15.172-03:00  INFO 20992 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2026-09-26T14:02:15.182-03:00  INFO 20992 --- [eureka-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-26T14:02:15.235-03:00  INFO 20992 --- [eureka-server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+2026-09-26T14:02:15.256-03:00  INFO 20992 --- [eureka-server] [      Thread-10] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2026-09-26T14:02:15.256-03:00  INFO 20992 --- [eureka-server] [      Thread-10] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2026-09-26T14:02:15.256-03:00  INFO 20992 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2026-09-26T14:02:15.257-03:00  INFO 20992 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2026-09-26T14:02:15.257-03:00  INFO 20992 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2026-09-26T14:02:15.259-03:00  INFO 20992 --- [eureka-server] [      Thread-10] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2026-09-26T14:02:15.275-03:00  INFO 20992 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
+2026-09-26T14:02:15.276-03:00  INFO 20992 --- [eureka-server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2026-09-26T14:02:15.376-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-26T14:02:15.376-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-26T14:02:15.377-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-26T14:02:16.283-03:00  INFO 20992 --- [eureka-server] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-09-26T14:02:16.297-03:00  INFO 20992 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : Started EurekaServerApplication in 9.109 seconds (process running for 9.716)
+2026-09-26T14:02:29.577-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/localhost:core-service:8080 with status UP (replication=false)
+2026-09-26T14:02:45.505-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-WEB/localhost:bff-web:8081 with status UP (replication=false)
+2026-09-26T14:03:01.305-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-MOBILE/localhost:bff-mobile:8082 with status UP (replication=false)
+2026-09-26T14:03:15.258-03:00  INFO 20992 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-09-26T14:03:16.625-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-ATM/localhost:bff-atm:8083 with status UP (replication=false)
+2026-09-26T14:03:31.039-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICACIONES-SERVICE/notificaciones-service:8084 with status UP (replication=false)
+2026-09-26T14:03:45.105-03:00  INFO 20992 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICACIONES-SERVICE/notificaciones-service:8085 with status UP (replication=false)
+2026-09-26T14:04:15.258-03:00  INFO 20992 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms

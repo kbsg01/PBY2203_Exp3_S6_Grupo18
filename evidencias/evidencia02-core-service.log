@@ -8,68 +8,621 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2026-09-17 19:32:34.801 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Starting CoreServiceApplication v1.0.0 using Java 24 with PID 23496 (C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18\core-service\target\core-service.jar started by ffuen in C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18)
-2026-09-17 19:32:34.809 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2026-09-17 19:32:34.877 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-09-17 19:32:34.877 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=core-service, profiles=[default], label=null, version=null, state=null
-2026-09-17 19:32:35.590 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=42f09a5e-b674-397e-825f-c18160370827
+2026-09-26 14:02:24.244 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Starting CoreServiceApplication v1.0.0 using Java 24 with PID 15960 (C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18\core-service\target\core-service.jar started by ffuen in C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18)
+2026-09-26 14:02:24.248 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-26 14:02:24.327 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-09-26 14:02:24.327 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=core-service, profiles=[default], label=null, version=null, state=null
+2026-09-26 14:02:25.490 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=24c6d7b2-e2fc-37b0-9be8-ec9241645249
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/C:/Users/ffuen/Desktop/PBY2203_Exp3_S6_Grupo18/core-service/target/core-service.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.30.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-09-17 19:32:35.910 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-09-17 19:32:35.924 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-17 19:32:35.925 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
-2026-09-17 19:32:35.967 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-09-17 19:32:35.967 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1087 ms
-2026-09-17 19:32:37.577 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-17 19:32:38.602 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-17 19:32:38.635 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2026-09-17 19:32:38.684 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-09-17 19:32:38.713 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-09-17 19:32:38.751 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-09-17 19:32:38.759 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-09-17 19:32:38.777 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-09-17 19:32:38.777 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-09-17 19:32:38.777 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-09-17 19:32:38.777 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-09-17 19:32:38.777 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-09-17 19:32:38.777 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-09-17 19:32:38.777 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-09-17 19:32:39.083 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2026-09-17 19:32:39.084 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-09-17 19:32:39.085 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-09-17 19:32:39.087 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1789684359085 with initial instances count: 0
-2026-09-17 19:32:39.089 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CORE-SERVICE with eureka with status UP
-2026-09-17 19:32:39.090 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1789684359090, current=UP, previous=STARTING]
-2026-09-17 19:32:39.091 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/localhost:core-service:8080: registering service...
-2026-09-17 19:32:39.112 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-09-17 19:32:39.112 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
-2026-09-17 19:32:39.209 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/localhost:core-service:8080 - registration status: 204
-2026-09-17 19:32:39.390 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-17 19:32:39.391 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-17 19:32:39.391 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
-2026-09-17 19:32:39.395 [http-nio-8080-exec-1] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
-2026-09-17 19:32:40.118 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-17 19:32:40.132 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Started CoreServiceApplication in 7.361 seconds (process running for 7.888)
-2026-09-17 19:32:40.166 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
-2026-09-17 19:32:40.166 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - core-service: datos cargados en memoria.
-2026-09-17 19:32:40.166 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Cuentas validas cargadas: 49 (omitidas por datos invalidos: 797)
-2026-09-17 19:32:40.167 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Movimientos validos cargados: 885 (omitidos por datos invalidos: 115)
-2026-09-17 19:32:40.167 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
-2026-09-17 19:32:40.520 [http-nio-8080-exec-9] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
-2026-09-17 19:32:41.635 [http-nio-8080-exec-5] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
-2026-09-17 19:32:42.758 [http-nio-8080-exec-6] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
-2026-09-17 19:32:43.915 [http-nio-8080-exec-4] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
-2026-09-17 19:32:45.027 [http-nio-8080-exec-10] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
-2026-09-17 19:33:09.088 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-09-17 19:33:09.088 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-09-17 19:33:09.088 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-09-17 19:33:09.088 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-09-17 19:33:09.088 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-09-17 19:33:09.088 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
-2026-09-17 19:33:09.088 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-09-17 19:33:09.119 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2026-09-17 19:33:30.695 [http-nio-8080-exec-2] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
-2026-09-17 19:33:32.502 [http-nio-8080-exec-9] INFO  c.b.b.c.controller.CuentaInternalController - Cuenta 105: debito de 1000.0 aplicado. Nuevo saldo: 9000.0
+2026-09-26 14:02:25.842 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-26 14:02:25.861 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-26 14:02:25.862 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-09-26 14:02:25.901 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-26 14:02:25.902 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1571 ms
+2026-09-26 14:02:27.838 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2026-09-26 14:02:28.869 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2026-09-26 14:02:28.897 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2026-09-26 14:02:28.951 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-26 14:02:29.035 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-09-26 14:02:29.062 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-09-26 14:02:29.066 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-09-26 14:02:29.072 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-09-26 14:02:29.073 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-09-26 14:02:29.073 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-09-26 14:02:29.073 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-09-26 14:02:29.073 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-09-26 14:02:29.073 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-09-26 14:02:29.073 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-09-26 14:02:29.446 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-09-26 14:02:29.447 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-09-26 14:02:29.448 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-09-26 14:02:29.449 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790442149449 with initial instances count: 0
+2026-09-26 14:02:29.453 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CORE-SERVICE with eureka with status UP
+2026-09-26 14:02:29.453 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790442149453, current=UP, previous=STARTING]
+2026-09-26 14:02:29.455 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/localhost:core-service:8080: registering service...
+2026-09-26 14:02:29.473 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-09-26 14:02:29.475 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2026-09-26 14:02:29.582 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/localhost:core-service:8080 - registration status: 204
+2026-09-26 14:02:29.603 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-26 14:02:29.603 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-26 14:02:29.603 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-09-26 14:02:29.606 [http-nio-8080-exec-1] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
+2026-09-26 14:02:30.483 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2026-09-26 14:02:30.538 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-core-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = core-service
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+
+2026-09-26 14:02:30.601 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-09-26 14:02:30.718 [http-nio-8080-exec-2] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
+2026-09-26 14:02:30.763 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2026-09-26 14:02:30.763 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2026-09-26 14:02:30.763 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790442150762
+2026-09-26 14:02:30.768 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-1, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.solicitadas
+2026-09-26 14:02:30.774 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-core-service-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = core-service
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+
+2026-09-26 14:02:30.774 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-09-26 14:02:30.782 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2026-09-26 14:02:30.782 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2026-09-26 14:02:30.782 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790442150782
+2026-09-26 14:02:30.782 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-2, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.debito-aplicado
+2026-09-26 14:02:30.794 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Started CoreServiceApplication in 8.701 seconds (process running for 9.334)
+2026-09-26 14:02:30.862 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+2026-09-26 14:02:30.863 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - core-service: datos cargados en memoria.
+2026-09-26 14:02:30.864 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Cuentas validas cargadas: 49 (omitidas por datos invalidos: 797)
+2026-09-26 14:02:30.864 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Movimientos validos cargados: 885 (omitidos por datos invalidos: 115)
+2026-09-26 14:02:30.864 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+2026-09-26 14:02:31.376 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Error while fetching metadata with correlation id 2 : {bancoxyz.transferencias.solicitadas=UNKNOWN_TOPIC_OR_PARTITION}
+2026-09-26 14:02:31.376 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Error while fetching metadata with correlation id 2 : {bancoxyz.transferencias.debito-aplicado=UNKNOWN_TOPIC_OR_PARTITION}
+2026-09-26 14:02:31.379 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-2, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+2026-09-26 14:02:31.379 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-1, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+2026-09-26 14:02:31.496 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Error while fetching metadata with correlation id 5 : {bancoxyz.transferencias.solicitadas=UNKNOWN_TOPIC_OR_PARTITION}
+2026-09-26 14:02:31.735 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.740 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:31.752 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.753 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:31.769 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.769 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.769 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.770 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.770 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:31.770 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:31.770 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:31.770 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:31.778 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.778 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.778 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.779 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.779 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.779 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.868 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.869 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:31.870 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:31.875 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.877 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.877 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.878 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:31.878 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:31.878 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:31.879 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:31.883 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.883 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.883 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.886 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.886 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.886 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:31.886 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:31.888 [http-nio-8080-exec-8] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
+2026-09-26 14:02:31.890 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.890 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.890 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.976 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.976 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:31.977 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:31.982 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.982 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.982 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:31.982 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:31.987 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.987 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.987 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.987 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.989 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:31.990 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:31.997 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:31.997 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:31.997 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:31.997 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.000 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.000 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.000 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.079 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.080 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.081 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.085 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.086 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.086 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.086 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.086 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.086 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.088 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.091 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.091 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.091 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.094 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.094 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.094 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.094 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.098 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.098 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.098 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.195 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.195 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.196 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.196 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.197 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.197 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.206 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.211 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.211 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.211 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.211 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.211 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.211 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.304 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.305 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.306 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.313 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.313 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.313 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.313 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.318 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.319 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.319 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.321 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.323 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.324 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.331 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.331 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.331 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.331 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.335 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.335 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.335 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.425 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.427 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.430 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.435 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.436 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.436 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.436 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.440 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.440 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.440 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.455 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.456 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.457 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.461 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.462 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.462 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.462 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.465 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.465 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.465 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.550 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.551 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.552 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.558 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.558 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.558 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.559 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.562 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.562 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.562 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.569 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.570 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.571 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.575 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.575 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.575 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.576 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.578 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.578 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.578 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.656 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.660 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.662 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.665 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.665 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.665 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.665 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.668 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.669 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.669 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.699 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.700 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.700 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.708 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.708 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.708 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.708 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.712 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.712 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.712 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.771 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.773 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.774 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.779 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.780 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.780 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+2026-09-26 14:02:32.780 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Client requested disconnect from node 2147483646
+2026-09-26 14:02:32.782 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.782 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2026-09-26 14:02:32.782 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.833 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.834 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.834 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.842 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-2-14b5e123-655a-4c76-9280-e145b261b6cd
+2026-09-26 14:02:32.843 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.866 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-09-26 14:02:32.867 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+2026-09-26 14:02:32.868 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.873 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-1-02731df3-8513-4809-9e25-09d8d327867c
+2026-09-26 14:02:32.874 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+2026-09-26 14:02:32.987 [http-nio-8080-exec-7] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
+2026-09-26 14:02:34.128 [http-nio-8080-exec-9] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
+2026-09-26 14:02:35.282 [http-nio-8080-exec-1] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
+2026-09-26 14:02:38.854 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-core-service-1-02731df3-8513-4809-9e25-09d8d327867c', protocol='range'}
+2026-09-26 14:02:38.854 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-core-service-2-14b5e123-655a-4c76-9280-e145b261b6cd', protocol='range'}
+2026-09-26 14:02:38.867 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Finished assignment for group at generation 1: {consumer-core-service-1-02731df3-8513-4809-9e25-09d8d327867c=Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]), consumer-core-service-2-14b5e123-655a-4c76-9280-e145b261b6cd=Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3])}
+2026-09-26 14:02:38.887 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-core-service-1-02731df3-8513-4809-9e25-09d8d327867c', protocol='range'}
+2026-09-26 14:02:38.887 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-core-service-2-14b5e123-655a-4c76-9280-e145b261b6cd', protocol='range'}
+2026-09-26 14:02:38.887 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3])
+2026-09-26 14:02:38.887 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3])
+2026-09-26 14:02:38.894 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-1, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3
+2026-09-26 14:02:38.894 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-2, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-1
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-3
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-0
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-3
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-0
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-2
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-2
+2026-09-26 14:02:38.912 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-1
+2026-09-26 14:02:38.927 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.927 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.929 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.929 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.929 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.929 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.929 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.929 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-09-26 14:02:38.930 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3]
+2026-09-26 14:02:38.930 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]
+2026-09-26 14:02:59.450 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-09-26 14:02:59.450 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-09-26 14:02:59.450 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-09-26 14:02:59.450 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-09-26 14:02:59.451 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-09-26 14:02:59.451 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-09-26 14:02:59.451 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-09-26 14:02:59.478 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-09-26 14:04:00.630 [http-nio-8080-exec-2] WARN  c.b.bff.core.config.InternalApiKeyFilter - Acceso rechazado a GET /internal/cuentas: encabezado X-Internal-Api-Key ausente o invalido (posible intento de un frontend de saltarse su BFF y llamar directo al backend generalizado)
+2026-09-26 14:04:02.462 [http-nio-8080-exec-5] INFO  c.b.b.c.controller.CuentaInternalController - Cuenta 105: debito de 1000.0 aplicado. Nuevo saldo: 9000.0
+2026-09-26 14:04:04.247 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia a5cc0df7-98c6-4b50-8a83-7fe4a967731b: solicitud recibida (origen=101, destino=105, monto=500.0)
+2026-09-26 14:04:04.248 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia a5cc0df7-98c6-4b50-8a83-7fe4a967731b: debito aplicado en cuenta 101 (nuevo saldo=9500.0)
+2026-09-26 14:04:04.257 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = core-service-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-09-26 14:04:04.259 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-09-26 14:04:04.273 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=core-service-producer-1] Instantiated an idempotent producer.
+2026-09-26 14:04:04.306 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2026-09-26 14:04:04.306 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2026-09-26 14:04:04.306 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790442244306
+2026-09-26 14:04:04.318 [kafka-producer-network-thread | core-service-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=core-service-producer-1] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+2026-09-26 14:04:04.318 [kafka-producer-network-thread | core-service-producer-1] INFO  o.a.k.c.producer.internals.TransactionManager - [Producer clientId=core-service-producer-1] ProducerId set to 1 with epoch 0
+2026-09-26 14:04:04.341 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia a5cc0df7-98c6-4b50-8a83-7fe4a967731b: credito aplicado en cuenta 105 (nuevo saldo=9500.0) - TRANSFERENCIA COMPLETADA
+2026-09-26 14:04:05.120 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia a493dcf5-7dfc-4043-87bb-5413e18270bb: solicitud recibida (origen=101, destino=105, monto=9.99999999E8)
+2026-09-26 14:04:05.123 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia a493dcf5-7dfc-4043-87bb-5413e18270bb: RECHAZADA - Saldo insuficiente en la cuenta origen (saldo=9500.0, solicitado=9.99999999E8).
+2026-09-26 14:04:05.736 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 116d239b-5021-496a-822a-d1272301c297: solicitud recibida (origen=101, destino=999999, monto=250.0)
+2026-09-26 14:04:05.736 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 116d239b-5021-496a-822a-d1272301c297: debito aplicado en cuenta 101 (nuevo saldo=9250.0)
+2026-09-26 14:04:05.743 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 116d239b-5021-496a-822a-d1272301c297: COMPENSANDO - La cuenta destino 999999 no existe; se revirtio el debito aplicado en la cuenta origen.
+2026-09-26 14:04:05.743 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 116d239b-5021-496a-822a-d1272301c297: debito compensado en cuenta 101 (saldo restaurado a 9500.0)
+2026-09-26 14:04:06.314 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 3e82ae8c-b975-4fba-8902-0465b4588fc5: solicitud recibida (origen=101, destino=105, monto=50.0)
+2026-09-26 14:04:06.315 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 3e82ae8c-b975-4fba-8902-0465b4588fc5: debito aplicado en cuenta 101 (nuevo saldo=9450.0)
+2026-09-26 14:04:06.320 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 3e82ae8c-b975-4fba-8902-0465b4588fc5: credito aplicado en cuenta 105 (nuevo saldo=9550.0) - TRANSFERENCIA COMPLETADA
+2026-09-26 14:04:06.423 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 97ae046e-a81e-4d84-8c4d-9ce641d3d571: solicitud recibida (origen=101, destino=105, monto=75.0)
+2026-09-26 14:04:06.423 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 97ae046e-a81e-4d84-8c4d-9ce641d3d571: debito aplicado en cuenta 101 (nuevo saldo=9375.0)
+2026-09-26 14:04:06.429 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 97ae046e-a81e-4d84-8c4d-9ce641d3d571: credito aplicado en cuenta 105 (nuevo saldo=9625.0) - TRANSFERENCIA COMPLETADA
+2026-09-26 14:04:06.537 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 6ca32c0f-213b-44ff-800c-2248d7fc5e5a: solicitud recibida (origen=101, destino=105, monto=120.0)
+2026-09-26 14:04:06.537 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 6ca32c0f-213b-44ff-800c-2248d7fc5e5a: debito aplicado en cuenta 101 (nuevo saldo=9255.0)
+2026-09-26 14:04:06.544 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 6ca32c0f-213b-44ff-800c-2248d7fc5e5a: credito aplicado en cuenta 105 (nuevo saldo=9745.0) - TRANSFERENCIA COMPLETADA

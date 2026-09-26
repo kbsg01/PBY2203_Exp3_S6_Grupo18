@@ -8,66 +8,162 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2026-09-17 19:32:47.852 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - Starting BffWebApplication v1.0.0 using Java 24 with PID 22104 (C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18\bff-web\target\bff-web.jar started by ffuen in C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18)
-2026-09-17 19:32:47.855 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - No active profile set, falling back to 1 default profile: "default"
-2026-09-17 19:32:47.936 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-09-17 19:32:47.936 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=bff-web, profiles=[default], label=null, version=null, state=null
-2026-09-17 19:32:48.851 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=1c813d4f-4377-3eb9-9bb6-afbf67c019f4
+2026-09-26 14:02:38.467 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - Starting BffWebApplication v1.0.0 using Java 24 with PID 3692 (C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18\bff-web\target\bff-web.jar started by ffuen in C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18)
+2026-09-26 14:02:38.474 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-26 14:02:38.549 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-09-26 14:02:38.549 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=bff-web, profiles=[default], label=null, version=null, state=null
+2026-09-26 14:02:39.818 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=16944ec3-ad3d-3ab8-bf37-7731ba581756
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/C:/Users/ffuen/Desktop/PBY2203_Exp3_S6_Grupo18/bff-web/target/bff-web.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.30.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-09-17 19:32:49.688 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (https)
-2026-09-17 19:32:49.704 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-17 19:32:49.704 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
-2026-09-17 19:32:49.748 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-09-17 19:32:49.749 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1807 ms
-2026-09-17 19:32:52.285 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-17 19:32:53.336 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-17 19:32:53.384 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2026-09-17 19:32:53.497 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-09-17 19:32:53.530 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-09-17 19:32:53.561 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-09-17 19:32:53.571 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-09-17 19:32:53.581 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-09-17 19:32:53.581 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-09-17 19:32:53.581 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-09-17 19:32:53.581 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-09-17 19:32:53.581 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-09-17 19:32:53.581 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-09-17 19:32:53.581 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-09-17 19:32:53.722 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2026-09-17 19:32:53.723 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-09-17 19:32:53.725 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-09-17 19:32:53.727 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1789684373725 with initial instances count: 0
-2026-09-17 19:32:53.734 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BFF-WEB with eureka with status UP
-2026-09-17 19:32:53.735 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1789684373735, current=UP, previous=STARTING]
-2026-09-17 19:32:53.737 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-WEB/localhost:bff-web:8081: registering service...
-2026-09-17 19:32:53.789 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-WEB/localhost:bff-web:8081 - registration status: 204
-2026-09-17 19:32:53.877 [main] INFO  o.a.tomcat.util.net.NioEndpoint.certificate - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\ffuen\.keystore] using alias [bffweb] with trust store [null]
-2026-09-17 19:32:53.900 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8081 (https) with context path '/'
-2026-09-17 19:32:53.901 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2026-09-26 14:02:40.901 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (https)
+2026-09-26 14:02:40.927 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-26 14:02:40.928 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-09-26 14:02:40.989 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-26 14:02:40.991 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2438 ms
+2026-09-26 14:02:44.029 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2026-09-26 14:02:45.086 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2026-09-26 14:02:45.127 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2026-09-26 14:02:45.210 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-26 14:02:45.246 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-09-26 14:02:45.288 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-09-26 14:02:45.295 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-09-26 14:02:45.305 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-09-26 14:02:45.305 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-09-26 14:02:45.305 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-09-26 14:02:45.305 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-09-26 14:02:45.305 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-09-26 14:02:45.305 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-09-26 14:02:45.305 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-09-26 14:02:45.454 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-09-26 14:02:45.456 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-09-26 14:02:45.457 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-09-26 14:02:45.458 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790442165458 with initial instances count: 1
+2026-09-26 14:02:45.465 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BFF-WEB with eureka with status UP
+2026-09-26 14:02:45.466 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790442165466, current=UP, previous=STARTING]
+2026-09-26 14:02:45.468 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-WEB/localhost:bff-web:8081: registering service...
+2026-09-26 14:02:45.507 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-WEB/localhost:bff-web:8081 - registration status: 204
+2026-09-26 14:02:45.607 [main] INFO  o.a.tomcat.util.net.NioEndpoint.certificate - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\ffuen\.keystore] using alias [bffweb] with trust store [null]
+2026-09-26 14:02:45.623 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8081 (https) with context path '/'
+2026-09-26 14:02:45.624 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::invokeCleaner has been called by org.apache.tomcat.util.buf.ByteBufferUtils (jar:nested:/C:/Users/ffuen/Desktop/PBY2203_Exp3_S6_Grupo18/bff-web/target/bff-web.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.30.jar!/)
 WARNING: Please consider reporting this to the maintainers of class org.apache.tomcat.util.buf.ByteBufferUtils
 WARNING: sun.misc.Unsafe::invokeCleaner will be removed in a future release
-2026-09-17 19:32:54.079 [https-jsse-nio-8081-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-17 19:32:54.079 [https-jsse-nio-8081-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-17 19:32:54.080 [https-jsse-nio-8081-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2026-09-17 19:32:54.095 [https-jsse-nio-8081-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2026-09-17 19:32:54.909 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-17 19:32:54.928 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - Started BffWebApplication in 9.032 seconds (process running for 9.579)
-2026-09-17 19:32:55.310 [https-jsse-nio-8081-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2026-09-17 19:32:56.459 [https-jsse-nio-8081-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2026-09-17 19:32:57.591 [https-jsse-nio-8081-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2026-09-17 19:32:58.710 [https-jsse-nio-8081-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2026-09-17 19:32:59.837 [https-jsse-nio-8081-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2026-09-17 19:33:23.725 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-09-17 19:33:23.725 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-09-17 19:33:23.725 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-09-17 19:33:23.725 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-09-17 19:33:23.725 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-09-17 19:33:23.725 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
-2026-09-17 19:33:23.725 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-09-17 19:33:23.763 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-09-26 14:02:45.778 [https-jsse-nio-8081-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-26 14:02:45.778 [https-jsse-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-26 14:02:45.779 [https-jsse-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-09-26 14:02:45.790 [https-jsse-nio-8081-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-26 14:02:46.632 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2026-09-26 14:02:46.658 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - Started BffWebApplication in 10.331 seconds (process running for 10.952)
+2026-09-26 14:02:46.946 [https-jsse-nio-8081-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-26 14:02:48.070 [https-jsse-nio-8081-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-26 14:02:49.214 [https-jsse-nio-8081-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-26 14:02:50.349 [https-jsse-nio-8081-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-26 14:02:51.476 [https-jsse-nio-8081-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-26 14:04:03.543 [https-jsse-nio-8081-exec-1] INFO  o.a.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = bff-web-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-09-26 14:04:03.582 [https-jsse-nio-8081-exec-1] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-09-26 14:04:03.660 [https-jsse-nio-8081-exec-1] INFO  o.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=bff-web-producer-1] Instantiated an idempotent producer.
+2026-09-26 14:04:03.719 [https-jsse-nio-8081-exec-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2026-09-26 14:04:03.720 [https-jsse-nio-8081-exec-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2026-09-26 14:04:03.720 [https-jsse-nio-8081-exec-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790442243716
+2026-09-26 14:04:04.077 [kafka-producer-network-thread | bff-web-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=bff-web-producer-1] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+2026-09-26 14:04:04.188 [kafka-producer-network-thread | bff-web-producer-1] INFO  o.a.k.c.producer.internals.TransactionManager - [Producer clientId=bff-web-producer-1] ProducerId set to 0 with epoch 0
+2026-09-26 14:04:15.866 [https-jsse-nio-8081-exec-10] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@4b1f3b53 instance = InstanceInfo [instanceId = localhost:core-service:8080, appName = CORE-SERVICE, hostName = localhost, status = UP, ipAddr = 169.254.48.54, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@55bbb0ad]). Returning all found instances.
+2026-09-26 14:04:15.990 [https-jsse-nio-8081-exec-6] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@4b1f3b53 instance = InstanceInfo [instanceId = localhost:core-service:8080, appName = CORE-SERVICE, hostName = localhost, status = UP, ipAddr = 169.254.48.54, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@55bbb0ad]). Returning all found instances.
+2026-09-26 14:04:16.126 [https-jsse-nio-8081-exec-4] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@4b1f3b53 instance = InstanceInfo [instanceId = localhost:core-service:8080, appName = CORE-SERVICE, hostName = localhost, status = UP, ipAddr = 169.254.48.54, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@55bbb0ad]). Returning all found instances.
+2026-09-26 14:04:16.235 [https-jsse-nio-8081-exec-8] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@4b1f3b53 instance = InstanceInfo [instanceId = localhost:core-service:8080, appName = CORE-SERVICE, hostName = localhost, status = UP, ipAddr = 169.254.48.54, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@55bbb0ad]). Returning all found instances.
+2026-09-26 14:04:16.358 [https-jsse-nio-8081-exec-3] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@4b1f3b53 instance = InstanceInfo [instanceId = localhost:core-service:8080, appName = CORE-SERVICE, hostName = localhost, status = UP, ipAddr = 169.254.48.54, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@55bbb0ad]). Returning all found instances.
