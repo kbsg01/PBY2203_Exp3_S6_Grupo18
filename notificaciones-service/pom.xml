@@ -12,13 +12,15 @@
     </parent>
 
     <groupId>com.bancoxyz</groupId>
-    <artifactId>core-service</artifactId>
+    <artifactId>notificaciones-service</artifactId>
     <version>1.0.0</version>
-    <name>core-service</name>
+    <name>notificaciones-service</name>
     <description>
-        Backend generalizado (no expuesto a ningun frontend) que centraliza el acceso a los datos
-        legacy del Banco XYZ. Unicamente los tres BFF (web, movil, cajeros) lo consumen, mediante
-        una clave interna compartida (X-Internal-Api-Key).
+        Microservicio nuevo de la Semana 7: consumidor Kafka desacoplado del camino
+        transaccional critico. Reacciona al evento final de la saga de transferencias
+        (bancoxyz.transferencias.resultado) para simular el envio de una notificacion al
+        cliente. Se ejecuta en 2 instancias con el mismo consumer group para demostrar
+        escalabilidad horizontal (reparto de particiones de Kafka entre instancias).
     </description>
 
     <properties>
@@ -31,12 +33,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- Este servicio no expone ningun endpoint de negocio (es un consumidor Kafka puro), asi
+             que sin actuator no habria ninguna forma honesta de verificar "¿esta realmente arriba?"
+             desde afuera: sin esta dependencia, http://localhost:8084/actuator/health ni siquiera
+             existiria (Tomcat respondería un 404 generico que solo probaria que la JVM arranco, no
+             que la app termino de inicializar). Con ella, scripts/generar_evidencia.sh puede
+             verificar el arranque de las 2 instancias con el mismo chequeo estandar que se usaria
+             en cualquier microservicio Spring Boot real. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
 
-        <!-- Spring Cloud: config centralizado (config-server) y registro en Eureka -->
+        <!-- Spring Cloud: config centralizado (nombre del topico) y registro en Eureka -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -44,12 +57,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <!-- Kafka: productor/consumidor de los eventos de la saga de transferencias (Semana 7) -->
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
         </dependency>
     </dependencies>
 
@@ -66,7 +73,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>core-service</finalName>
+        <finalName>notificaciones-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

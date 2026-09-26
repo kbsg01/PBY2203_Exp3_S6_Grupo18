@@ -1,0 +1,36 @@
+# server.port se sobreescribe con la variable de entorno SERVER_PORT para poder levantar 2
+# instancias en la misma maquina (:8084 y :8085) que comparten el mismo consumer group de Kafka
+# y demuestran asi el reparto de particiones (ver README, seccion de escalabilidad).
+server:
+  port: ${SERVER_PORT:8084}
+
+spring:
+  application:
+    name: notificaciones-service
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      # Mismo group-id en ambas instancias: es justamente eso lo que hace que Kafka reparta las
+      # particiones del topico entre ellas en vez de que cada una reciba todos los mensajes.
+      group-id: notificaciones-service
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: "com.bancoxyz.bff.notificaciones.dto"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    # Sin esto, las 2 instancias (mismo nombre, mismo host, distinto puerto) podrian pisarse el
+    # instance-id en Eureka. Se fuerza a incluir el puerto explicitamente.
+    instance-id: ${spring.application.name}:${server.port}
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{45} - %msg%n"
+  level:
+    root: INFO
+    com.bancoxyz.bff.notificaciones: INFO

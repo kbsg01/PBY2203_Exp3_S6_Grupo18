@@ -7,6 +7,17 @@ spring:
   config:
     # La clave interna (core.internal-api-key) ahora vive en config-server (config-repo/core-service.yml).
     import: "optional:configserver:http://localhost:8888"
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: core-service
+      auto-offset-reset: earliest
+    producer:
+      # Espera confirmacion de TODAS las replicas antes de dar el envio por exitoso. Con un
+      # broker de un solo nodo (ver docker-compose.yml) esto no cambia el comportamiento
+      # practico, pero documenta la configuracion correcta para un cluster real de mas de un
+      # broker (donde si marcaria la diferencia entre "aceptado" y "durable").
+      acks: all
 
 eureka:
   client:
