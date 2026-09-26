@@ -689,7 +689,7 @@ Token movil obtenido: eyJhbGciOiJIUzI1NiJ9.eyJ...
 
 === 3. BFF CAJERO: apertura de sesion con tarjeta+PIN (cuenta 105, 'Steve Rogers') ===
 {
-  "sessionToken": "071a8eaa-929b-4535-8e8e-a2b6c0c616f9",
+  "sessionToken": "3feac334-9e06-418f-a620-3f46eeea234e",
   "expiraEnSegundos": 120,
   "cuentaId": 105
 }

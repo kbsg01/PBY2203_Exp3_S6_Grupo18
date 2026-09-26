@@ -14,6 +14,8 @@ spring:
   config:
     # core-service.* y seguridad.jwt.secreto ahora viven en config-server (config-repo/bff-web.yml).
     import: "optional:configserver:http://localhost:8888"
+  kafka:
+    bootstrap-servers: localhost:9092
 
 eureka:
   client:
@@ -34,6 +36,18 @@ resilience4j:
         register-health-indicator: true
         ignore-exceptions:
           - com.bancoxyz.bff.web.exception.CuentaNoEncontradaException
+      # Instancia SEPARADA de la anterior a proposito: una falla publicando en Kafka (broker
+      # caido) no tiene relacion con que core-service este arriba o no, y no deberian compartir
+      # el mismo contador de fallas ni el mismo circuito.
+      kafkaProducer:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 5
+        minimum-number-of-calls: 3
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 2
+        automatic-transition-from-open-to-half-open-enabled: true
+        register-health-indicator: true
 
 logging:
   pattern:

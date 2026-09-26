@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.4</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.bancoxyz</groupId>
+    <artifactId>notificaciones-service</artifactId>
+    <version>1.0.0</version>
+    <name>notificaciones-service</name>
+    <description>
+        Microservicio nuevo de la Semana 7: consumidor Kafka desacoplado del camino
+        transaccional critico. Reacciona al evento final de la saga de transferencias
+        (bancoxyz.transferencias.resultado) para simular el envio de una notificacion al
+        cliente. Se ejecuta en 2 instancias con el mismo consumer group para demostrar
+        escalabilidad horizontal (reparto de particiones de Kafka entre instancias).
+    </description>
+
+    <properties>
+        <java.version>21</java.version>
+        <spring-cloud.version>2023.0.6</spring-cloud.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Este servicio no expone ningun endpoint de negocio (es un consumidor Kafka puro), asi
+             que sin actuator no habria ninguna forma honesta de verificar "¿esta realmente arriba?"
+             desde afuera: sin esta dependencia, http://localhost:8084/actuator/health ni siquiera
+             existiria (Tomcat respondería un 404 generico que solo probaria que la JVM arranco, no
+             que la app termino de inicializar). Con ella, scripts/generar_evidencia.sh puede
+             verificar el arranque de las 2 instancias con el mismo chequeo estandar que se usaria
+             en cualquier microservicio Spring Boot real. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+
+        <!-- Spring Cloud: config centralizado (nombre del topico) y registro en Eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>notificaciones-service</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

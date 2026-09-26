@@ -1,2 +1,8 @@
 core:
   internal-api-key: "clave-interna-banco-xyz-2026"
+
+kafka:
+  topics:
+    transferencias-solicitadas: bancoxyz.transferencias.solicitadas
+    transferencias-debito-aplicado: bancoxyz.transferencias.debito-aplicado
+    transferencias-resultado: bancoxyz.transferencias.resultado
