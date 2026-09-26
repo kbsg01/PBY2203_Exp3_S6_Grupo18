@@ -1,13 +1,17 @@
 name: Evidencia de ejecución BFF (Banco XYZ)
 
-# Compila los 6 módulos (config-server, eureka-server, core-service, bff-web, bff-mobile,
-# bff-atm) y delega en scripts/generar_evidencia.sh el resto: levantar los 6 servicios reales
-# en orden, ejecutar las pruebas end-to-end y la prueba de tolerancia a fallos, y guardar todo
-# en evidencias/. Es el MISMO script que se puede correr en local (Windows con Git Bash, Linux
-# o macOS) para regenerar la evidencia sin depender de este workflow — ver la sección 11.6 del
-# README. Publica los logs como evidencia de ejecución real, tal como exige la pauta de
-# evaluación formativa de la Semana 6 (Config Server, Service Discovery, Circuit Breaker +
-# autenticación).
+# Compila los 7 módulos (config-server, eureka-server, core-service, bff-web, bff-mobile,
+# bff-atm, notificaciones-service) y delega en scripts/generar_evidencia.sh el resto: levantar
+# el broker Kafka (via "docker compose up -d kafka", usando el mismo docker-compose.yml del
+# repo — los runners de GitHub Actions ya traen Docker Engine + el plugin "docker compose"
+# instalados, asi que no hace falta un "services:" aparte), levantar los 8 procesos Java en
+# orden, ejecutar las pruebas end-to-end, las de transferencias (Saga + Kafka) y la prueba de
+# tolerancia a fallos, y guardar todo en evidencias/. Es el MISMO script que se puede correr en
+# local (Windows con Git Bash, Linux o macOS) para regenerar la evidencia sin depender de este
+# workflow — ver la sección 12 del README. Publica los logs como evidencia de ejecución real,
+# tal como exige la pauta de evaluación formativa de la Semana 7 (arquitectura de eventos con
+# patron Saga, tolerancia a fallos y mensajeria Kafka con escalabilidad demostrada), ademas de
+# la de la Semana 6 (Config Server, Service Discovery, Circuit Breaker + autenticación).
 
 on:
   push:
