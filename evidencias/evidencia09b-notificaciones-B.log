@@ -8,51 +8,40 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2026-09-26 14:03:39.731 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Starting NotificacionesServiceApplication v1.0.0 using Java 24 with PID 2772 (C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18\notificaciones-service\target\notificaciones-service.jar started by ffuen in C:\Users\ffuen\Desktop\PBY2203_Exp3_S6_Grupo18)
-2026-09-26 14:03:39.735 [main] INFO  c.b.b.n.NotificacionesServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2026-09-26 14:03:39.794 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-09-26 14:03:39.794 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=notificaciones-service, profiles=[default], label=null, version=null, state=null
-2026-09-26 14:03:40.785 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a6416b35-5664-3058-ba05-df1432ac092c
-WARNING: A restricted method in java.lang.System has been called
-WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/C:/Users/ffuen/Desktop/PBY2203_Exp3_S6_Grupo18/notificaciones-service/target/notificaciones-service.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.30.jar!/)
-WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-
-2026-09-26 14:03:41.191 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8085 (http)
-2026-09-26 14:03:41.205 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-26 14:03:41.206 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
-2026-09-26 14:03:41.239 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-09-26 14:03:41.240 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1440 ms
-2026-09-26 14:03:43.026 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-26 14:03:44.406 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-26 14:03:44.429 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2026-09-26 14:03:44.487 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-09-26 14:03:44.496 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-09-26 14:03:44.604 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-09-26 14:03:44.631 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-09-26 14:03:44.635 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-09-26 14:03:44.645 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-09-26 14:03:44.645 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-09-26 14:03:44.645 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-09-26 14:03:44.645 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-09-26 14:03:44.645 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-09-26 14:03:44.645 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-09-26 14:03:44.645 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-09-26 14:03:45.019 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2026-09-26 14:03:45.023 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-09-26 14:03:45.024 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-09-26 14:03:45.025 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790442225025 with initial instances count: 4
-2026-09-26 14:03:45.028 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application NOTIFICACIONES-SERVICE with eureka with status UP
-2026-09-26 14:03:45.029 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790442225029, current=UP, previous=STARTING]
-2026-09-26 14:03:45.031 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/notificaciones-service:8085: registering service...
-2026-09-26 14:03:45.066 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8085 (http) with context path '/'
-2026-09-26 14:03:45.067 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8085
-2026-09-26 14:03:45.106 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/notificaciones-service:8085 - registration status: 204
-2026-09-26 14:03:45.141 [http-nio-8085-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-26 14:03:45.141 [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-26 14:03:45.142 [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2026-09-26 14:03:46.083 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2026-09-26 14:03:46.117 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+2026-10-03 01:32:21.433 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Starting NotificacionesServiceApplication v1.0.0 using Java 21.0.11 with PID 14869 (/home/user/PBY2203_Exp3_S6_Grupo18/notificaciones-service/target/notificaciones-service.jar started by root in /home/user/PBY2203_Exp3_S6_Grupo18)
+2026-10-03 01:32:21.436 [main] INFO  c.b.b.n.NotificacionesServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-03 01:32:21.476 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-10-03 01:32:21.477 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=notificaciones-service, profiles=[default], label=null, version=null, state=null
+2026-10-03 01:32:22.693 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a6416b35-5664-3058-ba05-df1432ac092c
+2026-10-03 01:32:23.007 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8085 (http)
+2026-10-03 01:32:23.019 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-03 01:32:23.020 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-10-03 01:32:23.050 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-03 01:32:23.051 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1571 ms
+2026-10-03 01:32:24.120 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2026-10-03 01:32:24.180 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-10-03 01:32:24.192 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-10-03 01:32:24.313 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-10-03 01:32:24.351 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-10-03 01:32:24.358 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-03 01:32:24.370 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-03 01:32:24.370 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-03 01:32:24.370 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-03 01:32:24.370 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-03 01:32:24.370 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-03 01:32:24.370 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-10-03 01:32:24.370 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-03 01:32:24.742 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-03 01:32:24.745 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-10-03 01:32:24.747 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-10-03 01:32:24.749 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790991144748 with initial instances count: 3
+2026-10-03 01:32:24.753 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application NOTIFICACIONES-SERVICE with eureka with status UP
+2026-10-03 01:32:24.753 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790991144753, current=UP, previous=STARTING]
+2026-10-03 01:32:24.755 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085: registering service...
+2026-10-03 01:32:24.775 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8085 (http) with context path '/'
+2026-10-03 01:32:24.776 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8085
+2026-10-03 01:32:24.812 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085 - registration status: 204
+2026-10-03 01:32:24.840 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.include.jmx.reporter = true
@@ -150,26 +139,331 @@ WARNING: Restricted methods will be blocked in a future release unless native ac
 	ssl.truststore.type = JKS
 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
 
-2026-09-26 14:03:46.147 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
-2026-09-26 14:03:46.274 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
-2026-09-26 14:03:46.274 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
-2026-09-26 14:03:46.274 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790442226273
-2026-09-26 14:03:46.277 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Subscribed to topic(s): bancoxyz.transferencias.resultado
-2026-09-26 14:03:46.298 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Started NotificacionesServiceApplication in 8.617 seconds (process running for 9.127)
-2026-09-26 14:03:46.673 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
-2026-09-26 14:03:46.673 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-26 14:03:46.675 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
-2026-09-26 14:03:46.690 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: need to re-join with the given member-id: consumer-notificaciones-service-1-15178473-1284-47a0-bdf6-f7e06845f5d6
-2026-09-26 14:03:46.691 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
-2026-09-26 14:03:47.674 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully joined group with generation Generation{generationId=2, memberId='consumer-notificaciones-service-1-15178473-1284-47a0-bdf6-f7e06845f5d6', protocol='range'}
-2026-09-26 14:03:47.685 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully synced group in generation Generation{generationId=2, memberId='consumer-notificaciones-service-1-15178473-1284-47a0-bdf6-f7e06845f5d6', protocol='range'}
-2026-09-26 14:03:47.688 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-3])
-2026-09-26 14:03:47.690 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Adding newly assigned partitions: bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-3
-2026-09-26 14:03:47.696 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-2
-2026-09-26 14:03:47.697 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-3
-2026-09-26 14:03:47.708 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
-2026-09-26 14:03:47.708 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
-2026-09-26 14:03:47.708 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - notificaciones-service: partitions assigned: [bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-3]
-2026-09-26 14:04:05.151 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=2, offset=0) - transferenciaId=a493dcf5-7dfc-4043-87bb-5413e18270bb cuentaOrigen=101 estado=RECHAZADA -> "Su transferencia de $9.99999999E8 no pudo procesarse: Saldo insuficiente en la cuenta origen (saldo=9500.0, solicitado=9.99999999E8)."
-2026-09-26 14:04:05.750 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=3, offset=0) - transferenciaId=116d239b-5021-496a-822a-d1272301c297 cuentaOrigen=101 estado=COMPENSADA -> "Su transferencia de $250.0 fue revertida: La cuenta destino 999999 no existe; se revirtio el debito aplicado en la cuenta origen."
-2026-09-26 14:04:06.438 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=3, offset=1) - transferenciaId=97ae046e-a81e-4d84-8c4d-9ce641d3d571 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $75.0 a la cuenta 105 se realizo con exito."
+2026-10-03 01:32:24.886 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-10-03 01:32:25.089 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2026-10-03 01:32:25.089 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2026-10-03 01:32:25.090 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790991145088
+2026-10-03 01:32:25.110 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Subscribed to topic(s): bancoxyz.transferencias.resultado
+2026-10-03 01:32:25.147 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Started NotificacionesServiceApplication in 5.412 seconds (process running for 6.463)
+2026-10-03 01:32:25.250 [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-03 01:32:25.251 [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-03 01:32:25.253 [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-03 01:32:25.568 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+2026-10-03 01:32:25.569 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-10-03 01:32:25.573 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+2026-10-03 01:32:25.603 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: need to re-join with the given member-id: consumer-notificaciones-service-1-0fdfdddd-35e7-41cf-b187-ee4c57df7434
+2026-10-03 01:32:25.603 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+2026-10-03 01:32:26.792 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully joined group with generation Generation{generationId=2, memberId='consumer-notificaciones-service-1-0fdfdddd-35e7-41cf-b187-ee4c57df7434', protocol='range'}
+2026-10-03 01:32:26.798 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully synced group in generation Generation{generationId=2, memberId='consumer-notificaciones-service-1-0fdfdddd-35e7-41cf-b187-ee4c57df7434', protocol='range'}
+2026-10-03 01:32:26.800 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1])
+2026-10-03 01:32:26.803 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Adding newly assigned partitions: bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1
+2026-10-03 01:32:26.810 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-1
+2026-10-03 01:32:26.811 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-0
+2026-10-03 01:32:26.835 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-10-03 01:32:26.836 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-10-03 01:32:26.837 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - notificaciones-service: partitions assigned: [bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1]
+2026-10-03 01:32:35.712 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=1, offset=0) - transferenciaId=dbb57afc-0ba1-462b-9989-667ce0cda5e2 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $500.0 a la cuenta 105 se realizo con exito."
+2026-10-03 01:32:37.428 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=1, offset=1) - transferenciaId=a2500a03-977a-4e81-84d7-f0159b4a8319 cuentaOrigen=101 estado=COMPENSADA -> "Su transferencia de $250.0 fue revertida: La cuenta destino 999999 no existe; se revirtio el debito aplicado en la cuenta origen."
+2026-10-03 01:32:37.696 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=1, offset=2) - transferenciaId=04357813-3273-4072-a9a5-d0247d2b8b52 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $50.0 a la cuenta 105 se realizo con exito."
+2026-10-03 01:32:37.746 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=0, offset=0) - transferenciaId=ef7fc386-7826-4bcc-bb52-ee5de5da3d80 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $75.0 a la cuenta 105 se realizo con exito."
+2026-10-03 01:32:37.775 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8085] Notificacion procesada (particion=0, offset=1) - transferenciaId=012492a9-3a3a-4cce-ba94-b7ea42b17c51 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $120.0 a la cuenta 105 se realizo con exito."
+2026-10-03 01:32:51.150 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application NOTIFICACIONES-SERVICE with eureka with status DOWN
+2026-10-03 01:32:51.157 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790991171156, current=DOWN, previous=UP]
+2026-10-03 01:32:51.168 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085: registering service...
+2026-10-03 01:32:51.231 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Revoke previously assigned partitions bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1
+2026-10-03 01:32:51.231 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - notificaciones-service: partitions revoked: [bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1]
+2026-10-03 01:32:51.232 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Member consumer-notificaciones-service-1-0fdfdddd-35e7-41cf-b187-ee4c57df7434 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-10-03 01:32:51.233 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03 01:32:51.233 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03 01:32:51.233 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Unsubscribed all topics or patterns and assigned partitions
+2026-10-03 01:32:51.247 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03 01:32:51.247 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03 01:32:51.258 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:83)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 21 more
+
+2026-10-03 01:32:51.258 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2026-10-03 01:32:51.390 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-10-03 01:32:51.390 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03 01:32:51.391 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-03 01:32:51.394 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-10-03 01:32:51.398 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:83)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 22 more
+
+2026-10-03 01:32:51.434 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2026-10-03 01:32:51.432 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-notificaciones-service-1 unregistered
+2026-10-03 01:32:51.436 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - notificaciones-service: Consumer stopped
+2026-10-03 01:32:51.435 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-10-03 01:32:51.464 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  com.netflix.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-10-03 01:32:51.556 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-10-03 01:32:54.563 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-10-03 01:32:54.574 [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:96)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 38 more
+
+2026-10-03 01:32:54.574 [SpringApplicationShutdownHook] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2026-10-03 01:32:54.574 [SpringApplicationShutdownHook] ERROR com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/192.0.2.2:notificaciones-service:8085 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-10-03 01:32:54.575 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

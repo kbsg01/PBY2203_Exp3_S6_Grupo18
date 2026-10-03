@@ -1,21 +1,33 @@
 === Obteniendo un token valido (core-service aun arriba) ===
+Consulta de control con core-service arriba:
+HTTP 200 en 0.040554s -> {"cuentaId":101,"saldoActual":9255.0}
+Circuito antes de la falla: {"state":"CLOSED","failureRate":"0.0%","bufferedCalls":10,"failedCalls":0,"notPermittedCalls":0}
+
 === Deteniendo core-service para forzar la apertura del circuit breaker ===
+
 === Llamadas repetidas a bff-web con core-service caido ===
-(la config de bff-web abre el circuito tras 5 llamadas con 50% de fallos; las primeras devuelven
- la excepcion cruda del RestTemplate, las siguientes ya devuelven el 503 controlado del fallback)
---- intento 1 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
---- intento 2 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
---- intento 3 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
---- intento 4 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
---- intento 5 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
---- intento 6 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
---- intento 7 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
---- intento 8 ---
-{"error":"core-service no disponible en este momento, intente mas tarde."}HTTP 503
+(mientras el circuito esta CERRADO, cada peticion hace 3 intentos (Retry con backoff 300/600 ms)
+ y cada intento espera a que la conexion falle: ~1s si el puerto rechaza la conexion (java -jar),
+ o el connect-timeout de 5s si la IP ya no responde (contenedor detenido). El circuito ABRE cuando
+ >=50% de las ultimas 10 llamadas fallaron; desde ahi el 503 es inmediato, sin tocar la red)
+--- intento 1: HTTP 503 en 0.944628s -> "core-service no disponible en este momento, intente mas tarde."
+--- intento 2: HTTP 503 en 0.938108s -> "core-service no disponible en este momento, intente mas tarde."
+--- intento 3: HTTP 503 en 0.979361s -> "core-service no disponible en este momento, intente mas tarde."
+--- intento 4: HTTP 503 en 0.938323s -> "core-service no disponible en este momento, intente mas tarde."
+--- intento 5: HTTP 503 en 0.945169s -> "core-service no disponible en este momento, intente mas tarde."
+--- intento 6: HTTP 503 en 0.022426s -> "core-service no disponible en este momento, intente mas tarde."
+--- intento 7: HTTP 503 en 0.016723s -> "core-service no disponible en este momento, intente mas tarde."
+--- intento 8: HTTP 503 en 0.017468s -> "core-service no disponible en este momento, intente mas tarde."
+Circuito despues de las fallas: {"state":"OPEN","failureRate":"50.0%","bufferedCalls":10,"failedCalls":5,"notPermittedCalls":3}
+
+=== Reintentos y transiciones registrados por Resilience4j en el log de bff-web ===
+2026-10-03 01:32:49.040 [https-jsse-nio-8081-exec-5] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': agotados 3 intentos; se entrega el fallo al circuit breaker
+2026-10-03 01:32:49.082 [https-jsse-nio-8081-exec-9] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 1 fallido (ResourceAccessException), reintentando en 300 ms
+2026-10-03 01:32:49.389 [https-jsse-nio-8081-exec-9] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 2 fallido (ResourceAccessException), reintentando en 600 ms
+2026-10-03 01:32:49.994 [https-jsse-nio-8081-exec-9] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': agotados 3 intentos; se entrega el fallo al circuit breaker
+2026-10-03 01:32:50.029 [https-jsse-nio-8081-exec-5] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 1 fallido (ResourceAccessException), reintentando en 300 ms
+2026-10-03 01:32:50.334 [https-jsse-nio-8081-exec-5] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 2 fallido (ResourceAccessException), reintentando en 600 ms
+2026-10-03 01:32:50.942 [https-jsse-nio-8081-exec-5] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': agotados 3 intentos; se entrega el fallo al circuit breaker
+2026-10-03 01:32:50.951 [https-jsse-nio-8081-exec-5] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - CircuitBreaker 'coreService': State transition from CLOSED to OPEN
+
+=== Fin (modo java -jar: core-service queda detenido) ===

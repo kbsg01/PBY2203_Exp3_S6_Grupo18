@@ -1,0 +1,98 @@
+
+=== 1. Metadatos del servidor de autorizacion (RFC 8414): http://localhost:9000/.well-known/oauth-authorization-server ===
+{
+  "issuer": "http://localhost:9000",
+  "token_endpoint": "http://localhost:9000/oauth2/token",
+  "jwks_uri": "http://localhost:9000/oauth2/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "client_credentials",
+    "refresh_token",
+    "urn:ietf:params:oauth:grant-type:device_code",
+    "urn:ietf:params:oauth:grant-type:token-exchange"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_basic",
+    "client_secret_post",
+    "client_secret_jwt",
+    "private_key_jwt",
+    "tls_client_auth",
+    "self_signed_tls_client_auth"
+  ]
+}
+
+=== 1.1 Llave publica para verificar firmas (JWKS) - es lo unico que core-service necesita de auth-server ===
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "kid": "4b87d094-8572-44db-bbcb-68b91a08b710",
+      "alg": "RS256",
+      "n": "qtBR81p0wtQyD4GcmIhUUgjU..."
+    }
+  ]
+}
+
+=== 2. Emision de access token: cliente evidencia-cli, grant client_credentials, scope core.read ===
+{
+  "token_type": "Bearer",
+  "scope": "core.read",
+  "expires_in": 299,
+  "access_token": "eyJraWQiOiI0Yjg3ZDA5NC04NTcyLTQ0..."
+}
+Claims del token (payload decodificado, sin la firma):
+{
+  "sub": "evidencia-cli",
+  "aud": "evidencia-cli",
+  "nbf": 1790991151,
+  "scope": [
+    "core.read"
+  ],
+  "iss": "http://localhost:9000",
+  "exp": 1790991451,
+  "iat": 1790991151,
+  "jti": "ec9bc549-d534-4edb-a96a-1d3f8d9db2b0"
+}
+
+=== 3. core-service SIN token -> 401 (ya no existe ninguna clave compartida que adivinar) ===
+OK   GET /internal/cuentas/101 sin Authorization -> HTTP 401 (se espera 401)
+
+=== 3.1 core-service con un token ADULTERADO (firma invalida) -> 401 ===
+WWW-Authenticate: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Signed JWT rejected: Invalid signature", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+OK   GET /internal/cuentas/101 con firma alterada -> HTTP 401 (se espera 401)
+
+=== 4. core-service con token valido y scope core.read -> 200 ===
+{
+  "cuentaId": 101,
+  "titular": "John Doe",
+  "saldo": 10000.0,
+  "movimientos": 43
+}
+OK   GET /internal/cuentas/101 con scope core.read -> HTTP 200 (se espera 200)
+
+=== 5. Menor privilegio: token VALIDO de bff-mobile (solo core.read) intentando un debito (core.write) -> 403 ===
+WWW-Authenticate: Bearer error="insufficient_scope", error_description="The request requires higher privileges than provided by the access token.", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+OK   POST /internal/cuentas/101/debito con token de bff-mobile -> HTTP 403 (se espera 403)
+
+=== 5.1 bff-atm SI tiene core.write (es el unico canal que debita: retiro de efectivo) ===
+{
+  "sub": "bff-atm",
+  "scope": [
+    "core.read",
+    "core.write"
+  ]
+}
+
+=== 6. auth-server se niega a emitir core.write a bff-web (scope no registrado para ese cliente) ===
+{
+  "error": "invalid_scope"
+}
+OK   POST /oauth2/token bff-web scope=core.write -> HTTP 400 (se espera 400)
+
+=== 6.1 auth-server rechaza un secreto de cliente incorrecto ===
+{
+  "error": "invalid_client"
+}
+OK   POST /oauth2/token con secreto incorrecto -> HTTP 401 (se espera 401)
+
+=== Fin de las pruebas OAuth 2.0: todas las verificaciones OK ===

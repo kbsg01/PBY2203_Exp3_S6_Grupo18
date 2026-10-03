@@ -1,8 +1,8 @@
 
-=== 0. core-service NO debe responder sin la clave interna (principio central del BFF) ===
-GET /internal/cuentas SIN clave -> HTTP 403 (se espera 403)
+=== 0. core-service NO debe responder sin un access token OAuth 2.0 (principio central del BFF) ===
+GET /internal/cuentas SIN token -> HTTP 401 (se espera 401)
 
-=== 0.1 core-service SI responde con la clave interna (uso exclusivo de los BFF) ===
+=== 0.1 core-service SI responde con un access token valido emitido por auth-server (scope core.read) ===
 {
   "cuentaId": 101,
   "titular": "John Doe",
@@ -689,7 +689,7 @@ Token movil obtenido: eyJhbGciOiJIUzI1NiJ9.eyJ...
 
 === 3. BFF CAJERO: apertura de sesion con tarjeta+PIN (cuenta 105, 'Steve Rogers') ===
 {
-  "sessionToken": "3feac334-9e06-418f-a620-3f46eeea234e",
+  "sessionToken": "663f83c2-1152-460d-8437-4ba20319ffc4",
   "expiraEnSegundos": 120,
   "cuentaId": 105
 }
