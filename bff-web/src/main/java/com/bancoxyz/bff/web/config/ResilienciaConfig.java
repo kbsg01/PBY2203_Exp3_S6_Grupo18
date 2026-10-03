@@ -1,5 +1,6 @@
 package com.bancoxyz.bff.web.config;
 
+import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.core.registry.EntryAddedEvent;
 import io.github.resilience4j.core.registry.EntryRemovedEvent;
 import io.github.resilience4j.core.registry.EntryReplacedEvent;
@@ -11,9 +12,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Deja en el log cada reintento de Resilience4j (instancia {@code coreServiceLectura}), para
- * que la politica de Retry sea observable en la evidencia de ejecucion y no solo una
- * configuracion en application.yml.
+ * Deja en el log cada reintento (Retry {@code coreServiceLectura}) y cada cambio de estado de los
+ * circuit breakers (CLOSED -> OPEN -> HALF_OPEN -> CLOSED), para que la tolerancia a fallos sea
+ * observable en la evidencia de ejecucion y no solo una configuracion en application.yml.
  */
 @Configuration
 public class ResilienciaConfig {
@@ -40,6 +41,26 @@ public class ResilienciaConfig {
 
             @Override
             public void onEntryReplacedEvent(EntryReplacedEvent<Retry> evento) {
+            }
+        };
+    }
+
+    @Bean
+    public RegistryEventConsumer<CircuitBreaker> registroEventosCircuitBreaker() {
+        return new RegistryEventConsumer<>() {
+            @Override
+            public void onEntryAddedEvent(EntryAddedEvent<CircuitBreaker> evento) {
+                evento.getAddedEntry().getEventPublisher()
+                        .onStateTransition(e -> log.warn("CircuitBreaker '{}': {}",
+                                e.getCircuitBreakerName(), e.getStateTransition()));
+            }
+
+            @Override
+            public void onEntryRemovedEvent(EntryRemovedEvent<CircuitBreaker> evento) {
+            }
+
+            @Override
+            public void onEntryReplacedEvent(EntryReplacedEvent<CircuitBreaker> evento) {
             }
         };
     }

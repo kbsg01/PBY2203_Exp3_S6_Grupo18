@@ -149,3 +149,41 @@ esperar_estado_transferencia() {
   echo "La transferencia $transferencia_id sigue EN_PROCESO tras $intentos intentos (~${intentos}s)." >&2
   return 1
 }
+
+# ============================================================================================
+# OAuth 2.0 (Semana 8)
+# ============================================================================================
+# URL de auth-server vista desde el HOST: igual en modo "java -jar" y en docker-compose (que lo
+# publica en 127.0.0.1:9000). El claim "iss" de los tokens NO depende de esta URL (es fijo en
+# auth-server/application.yml), por eso un token pedido aqui es valido tambien para un
+# core-service que corre dentro de Docker.
+AUTH_URL="${AUTH_URL:-http://localhost:9000}"
+
+# Pide un access token con el flujo client_credentials (RFC 6749 seccion 4.4) y lo imprime
+# (o "null" si auth-server lo rechaza). El secreto viaja por HTTP Basic, como exige
+# client_secret_basic.
+obtener_token_cliente() {
+  local cliente="$1" secreto="$2" scope="$3"
+  curl -s -u "$cliente:$secreto" \
+    -d grant_type=client_credentials \
+    --data-urlencode "scope=$scope" \
+    "$AUTH_URL/oauth2/token" | jq -r .access_token
+}
+
+# Token de solo lectura para los scripts de pruebas/evidencia (cliente "evidencia-cli",
+# registrado en auth-server con scope core.read y nada mas).
+token_evidencia() {
+  obtener_token_cliente evidencia-cli "${EVIDENCIA_CLI_SECRET:-secreto-evidencia-cli-banco-xyz-2026}" core.read
+}
+
+# Decodifica (SIN verificar firma, solo para mostrarlo en la evidencia) el payload de un JWT.
+# Base64url -> base64 estandar + relleno "=" faltante.
+decodificar_jwt() {
+  local payload
+  payload=$(cut -d. -f2 <<< "$1" | tr '_-' '/+')
+  case $(( ${#payload} % 4 )) in
+    2) payload="${payload}==" ;;
+    3) payload="${payload}=" ;;
+  esac
+  base64 -d <<< "$payload" 2>/dev/null | jq .
+}

@@ -13,15 +13,18 @@
 # (ver server.ssl en cada application.yml); por eso las llamadas a esos tres usan -k (curl
 # ignora la validacion de la cadena de confianza, como se haria con un cliente que aun no
 # confia en la CA interna del banco). core-service NO se expone a ningun frontend (solo lo
-# consumen los BFF via X-Internal-Api-Key), por lo que se mantiene en HTTP dentro de la red
-# interna, una decision documentada en el README (seccion "Seguridad de transporte").
+# consumen los BFF con un access token OAuth 2.0 desde la Semana 8), por lo que se mantiene en
+# HTTP dentro de la red interna, una decision documentada en el README (seccion "Seguridad de
+# transporte"). El detalle del flujo OAuth 2.0 se prueba aparte en scripts/probar_oauth2.sh.
 set -euo pipefail
+
+cd "$(dirname "$0")/.."
+source scripts/_common.sh
 
 CORE=http://localhost:8080
 WEB=https://localhost:8081
 MOBILE=https://localhost:8082
 ATM=https://localhost:8083
-CLAVE_INTERNA="clave-interna-banco-xyz-2026"
 
 separador() { echo; echo "=== $1 ==="; }
 
@@ -43,11 +46,13 @@ verificar_token() {
   fi
 }
 
-separador "0. core-service NO debe responder sin la clave interna (principio central del BFF)"
-curl -s -o /dev/null -w "GET /internal/cuentas SIN clave -> HTTP %{http_code} (se espera 403)\n" "$CORE/internal/cuentas"
+separador "0. core-service NO debe responder sin un access token OAuth 2.0 (principio central del BFF)"
+curl -s -o /dev/null -w "GET /internal/cuentas SIN token -> HTTP %{http_code} (se espera 401)\n" "$CORE/internal/cuentas"
 
-separador "0.1 core-service SI responde con la clave interna (uso exclusivo de los BFF)"
-curl -s -H "X-Internal-Api-Key: $CLAVE_INTERNA" "$CORE/internal/cuentas/101" | jq .
+separador "0.1 core-service SI responde con un access token valido emitido por auth-server (scope core.read)"
+TOKEN_CORE=$(token_evidencia)
+verificar_token "access token de auth-server" "$TOKEN_CORE"
+curl -s -H "Authorization: Bearer $TOKEN_CORE" "$CORE/internal/cuentas/101" | jq .
 
 separador "1. BFF WEB: login (cuenta 101, titular 'John Doe') y consulta completa de la cuenta"
 TOKEN_WEB=$(curl -s -k -X POST "$WEB/api/web/auth/login" \

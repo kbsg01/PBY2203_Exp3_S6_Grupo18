@@ -3,6 +3,7 @@ target/
 *.log
 !evidencias/.gitkeep
 !evidencias/*.log
+!evidencias/docker/*.log
 .idea/
 *.iml
 .vscode/

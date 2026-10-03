@@ -13,12 +13,14 @@ source scripts/_common.sh
 
 CORE=http://localhost:8080
 WEB=https://localhost:8081
-CLAVE_INTERNA="clave-interna-banco-xyz-2026"
 
 separador() { echo; echo "=== $1 ==="; }
 
+# Lectura directa del saldo en core-service (fuente de verdad) para verificar cada desenlace de
+# la saga. Desde la Semana 8 exige un access token OAuth 2.0: se usa el cliente de solo lectura
+# "evidencia-cli" (un token nuevo por consulta: dura 5 minutos y este script es corto).
 saldo_de() {
-  curl -s -H "X-Internal-Api-Key: $CLAVE_INTERNA" "$CORE/internal/cuentas/$1" | jq -r .saldo
+  curl -s -H "Authorization: Bearer $(token_evidencia)" "$CORE/internal/cuentas/$1" | jq -r .saldo
 }
 
 separador "0. Login canal WEB (cuenta 101, 'John Doe') - se reutiliza para las 3 transferencias"
