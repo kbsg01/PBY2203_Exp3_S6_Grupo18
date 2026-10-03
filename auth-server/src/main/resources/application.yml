@@ -1,0 +1,72 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: auth-server
+  security:
+    oauth2:
+      authorizationserver:
+        # Issuer FIJO (claim "iss" de todos los tokens). Debe ser una URL estable, independiente
+        # de por donde llegue la peticion: en docker-compose los BFF piden tokens a
+        # http://auth-server:9000 y los scripts de prueba a http://localhost:9000, pero ambos
+        # tokens deben llevar el mismo "iss" para que core-service los acepte (ver
+        # spring.security.oauth2.resourceserver.jwt.issuer-uri en core-service/application.yml).
+        issuer: ${AUTH_ISSUER:http://localhost:9000}
+        # Clientes confidenciales registrados. Los secretos se guardan HASHEADOS con BCrypt (este
+        # servidor nunca necesita conocer el secreto en texto plano, solo verificarlo); el texto
+        # plano lo conoce unicamente el cliente correspondiente (config-repo/bff-*.yml). Cada BFF
+        # recibe solo los scopes que realmente necesita (principio de menor privilegio):
+        #   - bff-web / bff-mobile: solo lectura (consultan cuentas y estado de transferencias).
+        #   - bff-atm: lectura + escritura (el retiro de efectivo debita saldo en core-service).
+        #   - evidencia-cli: solo lectura, para los scripts de pruebas/evidencia (scripts/*.sh).
+        client:
+          bff-web:
+            registration:
+              client-id: bff-web
+              client-secret: "{bcrypt}$2a$10$jurqjLA.7FmT9DQR/9VPSuYES1kpdzNwMOvadBQ.cMhXnAlxJwyca"
+              client-authentication-methods: client_secret_basic
+              authorization-grant-types: client_credentials
+              scopes: core.read
+            token:
+              access-token-time-to-live: 5m
+          bff-mobile:
+            registration:
+              client-id: bff-mobile
+              client-secret: "{bcrypt}$2a$10$ZAlxiTbAK4OhZKaESBx5ZOn/0GdQUGwDlyqMOFPfnPTknSs712CJy"
+              client-authentication-methods: client_secret_basic
+              authorization-grant-types: client_credentials
+              scopes: core.read
+            token:
+              access-token-time-to-live: 5m
+          bff-atm:
+            registration:
+              client-id: bff-atm
+              client-secret: "{bcrypt}$2a$10$sYoQZWL7GJ11LYItz080VuHMvh2SeU2dELOOUnpjpz7Mks9YDaaRC"
+              client-authentication-methods: client_secret_basic
+              authorization-grant-types: client_credentials
+              scopes: core.read,core.write
+            token:
+              access-token-time-to-live: 5m
+          evidencia-cli:
+            registration:
+              client-id: evidencia-cli
+              client-secret: "{bcrypt}$2a$10$sxzk26hEuDn0GaUqwFypHeLYFvS8YncInL6RSZipjgkRSjGy8jWem"
+              client-authentication-methods: client_secret_basic
+              authorization-grant-types: client_credentials
+              scopes: core.read
+            token:
+              access-token-time-to-live: 5m
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{45} - %msg%n"
+  level:
+    root: INFO
+    com.bancoxyz.auth: INFO

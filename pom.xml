@@ -30,6 +30,7 @@
     <modules>
         <module>config-server</module>
         <module>eureka-server</module>
+        <module>auth-server</module>
         <module>core-service</module>
         <module>bff-web</module>
         <module>bff-mobile</module>
