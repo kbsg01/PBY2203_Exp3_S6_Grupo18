@@ -23,8 +23,9 @@ import java.util.List;
  * sin ninguna personalizacion. Cada BFF decide, a partir de esta misma respuesta, que
  * subconjunto de datos reenviar a su canal.
  *
- * <p>Protegida por {@link com.bancoxyz.bff.core.config.InternalApiKeyFilter}: toda peticion debe
- * incluir el encabezado {@code X-Internal-Api-Key}.</p>
+ * <p>Protegida como OAuth 2.0 Resource Server (ver {@link com.bancoxyz.bff.core.config.SecurityConfig}):
+ * toda peticion debe incluir un access token JWT emitido por auth-server, con scope
+ * {@code core.read} para las consultas y {@code core.write} para el debito.</p>
  */
 @RestController
 @RequestMapping("/internal/cuentas")

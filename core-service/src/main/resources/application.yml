@@ -5,24 +5,46 @@ spring:
   application:
     name: core-service
   config:
-    # La clave interna (core.internal-api-key) ahora vive en config-server (config-repo/core-service.yml).
-    import: "optional:configserver:http://localhost:8888"
+    # Las URLs de infraestructura se parametrizan por variable de entorno (Semana 8): con
+    # "java -jar" se usan los valores por defecto (localhost), y en docker-compose.yaml se
+    # sobreescriben con los nombres de servicio de la red interna (config-server, eureka-server...).
+    import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     consumer:
       group-id: core-service
       auto-offset-reset: earliest
     producer:
       # Espera confirmacion de TODAS las replicas antes de dar el envio por exitoso. Con un
-      # broker de un solo nodo (ver docker-compose.yml) esto no cambia el comportamiento
+      # broker de un solo nodo (ver docker-compose.yaml) esto no cambia el comportamiento
       # practico, pero documenta la configuracion correcta para un cluster real de mas de un
       # broker (donde si marcaria la diferencia entre "aceptado" y "durable").
       acks: all
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # Llaves publicas para verificar la firma RS256 (se descargan bajo demanda y se
+          # cachean; si auth-server rota su llave, un "kid" desconocido fuerza la recarga).
+          jwk-set-uri: ${AUTH_SERVER_URL:http://localhost:9000}/oauth2/jwks
+          # Con jwk-set-uri presente, Spring Boot NO hace discovery contra esta URL: solo la usa
+          # para exigir que el claim "iss" del token sea exactamente este valor.
+          issuer-uri: ${AUTH_ISSUER:http://localhost:9000}
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+  instance:
+    # En Docker el hostname del contenedor no siempre es resoluble por los demas; registrar la IP
+    # evita ese problema (docker-compose.yaml define EUREKA_PREFER_IP=true).
+    prefer-ip-address: ${EUREKA_PREFER_IP:false}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
 
 logging:
   pattern:
