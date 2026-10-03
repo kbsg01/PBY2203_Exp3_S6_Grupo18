@@ -1,0 +1,182 @@
+bancoxyz-bff-web  | 
+bancoxyz-bff-web  |   .   ____          _            __ _ _
+bancoxyz-bff-web  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-bff-web  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-bff-web  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-bff-web  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-bff-web  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-bff-web  | 
+bancoxyz-bff-web  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-bff-web  | 
+bancoxyz-bff-web  | 2026-10-02 22:27:37.897 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - Starting BffWebApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-bff-web  | 2026-10-02 22:27:37.914 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - No active profile set, falling back to 1 default profile: "default"
+bancoxyz-bff-web  | 2026-10-02 22:27:38.058 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+bancoxyz-bff-web  | 2026-10-02 22:27:38.059 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=bff-web, profiles=[default], label=null, version=null, state=null
+bancoxyz-bff-web  | 2026-10-02 22:27:43.930 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=b4627c16-f73f-301a-935a-7f6bb611fb7e
+bancoxyz-bff-web  | 2026-10-02 22:27:48.056 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (https)
+bancoxyz-bff-web  | 2026-10-02 22:27:48.092 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-bff-web  | 2026-10-02 22:27:48.095 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-bff-web  | 2026-10-02 22:27:48.367 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-bff-web  | 2026-10-02 22:27:48.370 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 10308 ms
+bancoxyz-bff-web  | 2026-10-02 22:27:58.781 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+bancoxyz-bff-web  | 2026-10-02 22:27:59.451 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+bancoxyz-bff-web  | 2026-10-02 22:27:59.699 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+bancoxyz-bff-web  | 2026-10-02 22:27:59.728 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+bancoxyz-bff-web  | 2026-10-02 22:27:59.732 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+bancoxyz-bff-web  | 2026-10-02 22:27:59.748 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+bancoxyz-bff-web  | 2026-10-02 22:27:59.749 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+bancoxyz-bff-web  | 2026-10-02 22:27:59.756 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+bancoxyz-bff-web  | 2026-10-02 22:27:59.757 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+bancoxyz-bff-web  | 2026-10-02 22:27:59.757 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+bancoxyz-bff-web  | 2026-10-02 22:27:59.757 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+bancoxyz-bff-web  | 2026-10-02 22:27:59.757 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+bancoxyz-bff-web  | 2026-10-02 22:28:00.084 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+bancoxyz-bff-web  | 2026-10-02 22:28:00.098 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+bancoxyz-bff-web  | 2026-10-02 22:28:00.104 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+bancoxyz-bff-web  | 2026-10-02 22:28:00.107 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790990880107 with initial instances count: 3
+bancoxyz-bff-web  | 2026-10-02 22:28:00.123 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BFF-WEB with eureka with status UP
+bancoxyz-bff-web  | 2026-10-02 22:28:00.124 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790990880124, current=UP, previous=STARTING]
+bancoxyz-bff-web  | 2026-10-02 22:28:00.126 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-WEB/239b3b815cf1:bff-web:8081: registering service...
+bancoxyz-bff-web  | 2026-10-02 22:28:00.295 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-WEB/239b3b815cf1:bff-web:8081 - registration status: 204
+bancoxyz-bff-web  | 2026-10-02 22:28:00.454 [main] INFO  o.a.tomcat.util.net.NioEndpoint.certificate - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [/home/spring/.keystore] using alias [bffweb] with trust store [null]
+bancoxyz-bff-web  | 2026-10-02 22:28:00.480 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8081 (https) with context path '/'
+bancoxyz-bff-web  | 2026-10-02 22:28:00.482 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+bancoxyz-bff-web  | 2026-10-02 22:28:00.815 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 18081 (http)
+bancoxyz-bff-web  | 2026-10-02 22:28:00.819 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-bff-web  | 2026-10-02 22:28:00.819 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-bff-web  | 2026-10-02 22:28:00.821 [main] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-bff-web  | 2026-10-02 22:28:00.822 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 334 ms
+bancoxyz-bff-web  | 2026-10-02 22:28:00.872 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+bancoxyz-bff-web  | 2026-10-02 22:28:00.964 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 18081 (http) with context path '/'
+bancoxyz-bff-web  | 2026-10-02 22:28:01.060 [main] INFO  com.bancoxyz.bff.web.BffWebApplication - Started BffWebApplication in 26.107 seconds (process running for 26.934)
+bancoxyz-bff-web  | 2026-10-02 22:28:05.616 [http-nio-18081-exec-1] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
+bancoxyz-bff-web  | 2026-10-02 22:28:05.616 [http-nio-18081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServletRegistration'
+bancoxyz-bff-web  | 2026-10-02 22:28:05.616 [http-nio-18081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+bancoxyz-bff-web  | 2026-10-02 22:28:51.580 [https-jsse-nio-8081-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-bff-web  | 2026-10-02 22:28:51.580 [https-jsse-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+bancoxyz-bff-web  | 2026-10-02 22:28:51.582 [https-jsse-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+bancoxyz-bff-web  | 2026-10-02 22:28:53.687 [https-jsse-nio-8081-exec-3] INFO  o.a.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+bancoxyz-bff-web  | 	acks = -1
+bancoxyz-bff-web  | 	auto.include.jmx.reporter = true
+bancoxyz-bff-web  | 	batch.size = 16384
+bancoxyz-bff-web  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-bff-web  | 	buffer.memory = 33554432
+bancoxyz-bff-web  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-bff-web  | 	client.id = bff-web-producer-1
+bancoxyz-bff-web  | 	compression.type = none
+bancoxyz-bff-web  | 	connections.max.idle.ms = 540000
+bancoxyz-bff-web  | 	delivery.timeout.ms = 120000
+bancoxyz-bff-web  | 	enable.idempotence = true
+bancoxyz-bff-web  | 	enable.metrics.push = true
+bancoxyz-bff-web  | 	interceptor.classes = []
+bancoxyz-bff-web  | 	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+bancoxyz-bff-web  | 	linger.ms = 0
+bancoxyz-bff-web  | 	max.block.ms = 60000
+bancoxyz-bff-web  | 	max.in.flight.requests.per.connection = 5
+bancoxyz-bff-web  | 	max.request.size = 1048576
+bancoxyz-bff-web  | 	metadata.max.age.ms = 300000
+bancoxyz-bff-web  | 	metadata.max.idle.ms = 300000
+bancoxyz-bff-web  | 	metric.reporters = []
+bancoxyz-bff-web  | 	metrics.num.samples = 2
+bancoxyz-bff-web  | 	metrics.recording.level = INFO
+bancoxyz-bff-web  | 	metrics.sample.window.ms = 30000
+bancoxyz-bff-web  | 	partitioner.adaptive.partitioning.enable = true
+bancoxyz-bff-web  | 	partitioner.availability.timeout.ms = 0
+bancoxyz-bff-web  | 	partitioner.class = null
+bancoxyz-bff-web  | 	partitioner.ignore.keys = false
+bancoxyz-bff-web  | 	receive.buffer.bytes = 32768
+bancoxyz-bff-web  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-bff-web  | 	reconnect.backoff.ms = 50
+bancoxyz-bff-web  | 	request.timeout.ms = 30000
+bancoxyz-bff-web  | 	retries = 2147483647
+bancoxyz-bff-web  | 	retry.backoff.max.ms = 1000
+bancoxyz-bff-web  | 	retry.backoff.ms = 100
+bancoxyz-bff-web  | 	sasl.client.callback.handler.class = null
+bancoxyz-bff-web  | 	sasl.jaas.config = null
+bancoxyz-bff-web  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-bff-web  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-bff-web  | 	sasl.kerberos.service.name = null
+bancoxyz-bff-web  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-bff-web  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-bff-web  | 	sasl.login.callback.handler.class = null
+bancoxyz-bff-web  | 	sasl.login.class = null
+bancoxyz-bff-web  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-bff-web  | 	sasl.login.read.timeout.ms = null
+bancoxyz-bff-web  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-bff-web  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-bff-web  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-bff-web  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-bff-web  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-bff-web  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-bff-web  | 	sasl.mechanism = GSSAPI
+bancoxyz-bff-web  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-bff-web  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-bff-web  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-bff-web  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-bff-web  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-bff-web  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-bff-web  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-bff-web  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-bff-web  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-bff-web  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-bff-web  | 	security.protocol = PLAINTEXT
+bancoxyz-bff-web  | 	security.providers = null
+bancoxyz-bff-web  | 	send.buffer.bytes = 131072
+bancoxyz-bff-web  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-bff-web  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-bff-web  | 	ssl.cipher.suites = null
+bancoxyz-bff-web  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-bff-web  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-bff-web  | 	ssl.engine.factory.class = null
+bancoxyz-bff-web  | 	ssl.key.password = null
+bancoxyz-bff-web  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-bff-web  | 	ssl.keystore.certificate.chain = null
+bancoxyz-bff-web  | 	ssl.keystore.key = null
+bancoxyz-bff-web  | 	ssl.keystore.location = null
+bancoxyz-bff-web  | 	ssl.keystore.password = null
+bancoxyz-bff-web  | 	ssl.keystore.type = JKS
+bancoxyz-bff-web  | 	ssl.protocol = TLSv1.3
+bancoxyz-bff-web  | 	ssl.provider = null
+bancoxyz-bff-web  | 	ssl.secure.random.implementation = null
+bancoxyz-bff-web  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-bff-web  | 	ssl.truststore.certificates = null
+bancoxyz-bff-web  | 	ssl.truststore.location = null
+bancoxyz-bff-web  | 	ssl.truststore.password = null
+bancoxyz-bff-web  | 	ssl.truststore.type = JKS
+bancoxyz-bff-web  | 	transaction.timeout.ms = 60000
+bancoxyz-bff-web  | 	transactional.id = null
+bancoxyz-bff-web  | 	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+bancoxyz-bff-web  | 
+bancoxyz-bff-web  | 2026-10-02 22:28:53.737 [https-jsse-nio-8081-exec-3] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-bff-web  | 2026-10-02 22:28:53.751 [https-jsse-nio-8081-exec-3] INFO  o.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=bff-web-producer-1] Instantiated an idempotent producer.
+bancoxyz-bff-web  | 2026-10-02 22:28:53.798 [https-jsse-nio-8081-exec-3] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-bff-web  | 2026-10-02 22:28:53.799 [https-jsse-nio-8081-exec-3] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-bff-web  | 2026-10-02 22:28:53.799 [https-jsse-nio-8081-exec-3] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790990933797
+bancoxyz-bff-web  | 2026-10-02 22:28:54.126 [kafka-producer-network-thread | bff-web-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=bff-web-producer-1] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-bff-web  | 2026-10-02 22:28:54.238 [kafka-producer-network-thread | bff-web-producer-1] INFO  o.a.k.c.producer.internals.TransactionManager - [Producer clientId=bff-web-producer-1] ProducerId set to 0 with epoch 0
+bancoxyz-bff-web  | 2026-10-02 22:29:13.891 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@3530bd3c instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@7af98891]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:29:18.899 [https-jsse-nio-8081-exec-7] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 1 fallido (ResourceAccessException), reintentando en 300 ms
+bancoxyz-bff-web  | 2026-10-02 22:29:24.208 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@3530bd3c instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@7af98891]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:29:29.216 [https-jsse-nio-8081-exec-7] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 2 fallido (ResourceAccessException), reintentando en 600 ms
+bancoxyz-bff-web  | 2026-10-02 22:29:34.824 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@29841a44 instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@3c58ddbe]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:29:39.835 [https-jsse-nio-8081-exec-7] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': agotados 3 intentos; se entrega el fallo al circuit breaker
+bancoxyz-bff-web  | 2026-10-02 22:29:44.877 [https-jsse-nio-8081-exec-3] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@29841a44 instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@3c58ddbe]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:29:45.000 [https-jsse-nio-8081-exec-3] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 1 fallido (ResourceAccessException), reintentando en 300 ms
+bancoxyz-bff-web  | 2026-10-02 22:29:48.363 [https-jsse-nio-8081-exec-3] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@29841a44 instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@3c58ddbe]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:29:51.432 [https-jsse-nio-8081-exec-3] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 2 fallido (ResourceAccessException), reintentando en 600 ms
+bancoxyz-bff-web  | 2026-10-02 22:29:55.114 [https-jsse-nio-8081-exec-3] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@29841a44 instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@3c58ddbe]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:29:58.184 [https-jsse-nio-8081-exec-3] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': agotados 3 intentos; se entrega el fallo al circuit breaker
+bancoxyz-bff-web  | 2026-10-02 22:30:01.288 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@29841a44 instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@3c58ddbe]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:30:04.360 [https-jsse-nio-8081-exec-7] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - Retry 'coreServiceLectura': intento 1 fallido (ResourceAccessException), reintentando en 300 ms
+bancoxyz-bff-web  | 2026-10-02 22:30:07.721 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.c.RetryAwareServiceInstanceListSupplier - No instances found after removing previously used service instance from the search ([EurekaServiceInstance@29841a44 instance = InstanceInfo [instanceId = 0060554dd7a7:core-service:8080, appName = CORE-SERVICE, hostName = 172.19.0.6, status = UP, ipAddr = 172.19.0.6, port = 8080, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@3c58ddbe]). Returning all found instances.
+bancoxyz-bff-web  | 2026-10-02 22:30:07.721 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: core-service
+bancoxyz-bff-web  | 2026-10-02 22:30:07.759 [https-jsse-nio-8081-exec-3] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: core-service
+bancoxyz-bff-web  | 2026-10-02 22:30:07.796 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: core-service
+bancoxyz-bff-web  | 2026-10-02 22:30:07.803 [https-jsse-nio-8081-exec-7] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - CircuitBreaker 'coreService': State transition from CLOSED to OPEN
+bancoxyz-bff-web  | 2026-10-02 22:30:17.805 [CircuitBreakerAutoTransitionThread] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - CircuitBreaker 'coreService': State transition from OPEN to HALF_OPEN
+bancoxyz-bff-web  | 2026-10-02 22:30:19.579 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: core-service
+bancoxyz-bff-web  | 2026-10-02 22:30:21.607 [https-jsse-nio-8081-exec-4] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: core-service
+bancoxyz-bff-web  | 2026-10-02 22:30:23.636 [https-jsse-nio-8081-exec-7] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: core-service
+bancoxyz-bff-web  | 2026-10-02 22:30:23.637 [https-jsse-nio-8081-exec-7] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - CircuitBreaker 'coreService': State transition from HALF_OPEN to OPEN
+bancoxyz-bff-web  | 2026-10-02 22:30:33.637 [CircuitBreakerAutoTransitionThread] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - CircuitBreaker 'coreService': State transition from OPEN to HALF_OPEN
+bancoxyz-bff-web  | 2026-10-02 22:30:34.009 [https-jsse-nio-8081-exec-5] WARN  c.bancoxyz.bff.web.config.ResilienciaConfig - CircuitBreaker 'coreService': State transition from HALF_OPEN to CLOSED

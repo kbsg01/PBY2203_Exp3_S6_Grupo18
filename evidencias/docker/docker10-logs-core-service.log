@@ -1,0 +1,1087 @@
+bancoxyz-core-service  | 
+bancoxyz-core-service  |   .   ____          _            __ _ _
+bancoxyz-core-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-core-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-core-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-core-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-core-service  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-core-service  | 
+bancoxyz-core-service  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:27:19.952 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Starting CoreServiceApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-core-service  | 2026-10-02 22:27:19.956 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - No active profile set, falling back to 1 default profile: "default"
+bancoxyz-core-service  | 2026-10-02 22:27:20.090 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+bancoxyz-core-service  | 2026-10-02 22:27:20.090 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=core-service, profiles=[default], label=null, version=null, state=null
+bancoxyz-core-service  | 2026-10-02 22:27:24.110 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=5ebc5712-7e60-3789-8385-ec35a5eb47b5
+bancoxyz-core-service  | 2026-10-02 22:27:24.699 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+bancoxyz-core-service  | 2026-10-02 22:27:24.713 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-core-service  | 2026-10-02 22:27:24.714 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-core-service  | 2026-10-02 22:27:24.752 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-core-service  | 2026-10-02 22:27:24.755 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4657 ms
+bancoxyz-core-service  | 2026-10-02 22:27:25.992 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+bancoxyz-core-service  | 2026-10-02 22:27:26.753 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+bancoxyz-core-service  | 2026-10-02 22:27:26.823 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+bancoxyz-core-service  | 2026-10-02 22:27:27.011 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+bancoxyz-core-service  | 2026-10-02 22:27:27.038 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+bancoxyz-core-service  | 2026-10-02 22:27:27.043 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+bancoxyz-core-service  | 2026-10-02 22:27:27.051 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+bancoxyz-core-service  | 2026-10-02 22:27:27.052 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+bancoxyz-core-service  | 2026-10-02 22:27:27.053 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+bancoxyz-core-service  | 2026-10-02 22:27:27.054 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+bancoxyz-core-service  | 2026-10-02 22:27:27.054 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+bancoxyz-core-service  | 2026-10-02 22:27:27.054 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+bancoxyz-core-service  | 2026-10-02 22:27:27.054 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+bancoxyz-core-service  | 2026-10-02 22:27:28.062 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+bancoxyz-core-service  | 2026-10-02 22:27:28.071 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+bancoxyz-core-service  | 2026-10-02 22:27:28.078 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+bancoxyz-core-service  | 2026-10-02 22:27:28.081 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790990848081 with initial instances count: 0
+bancoxyz-core-service  | 2026-10-02 22:27:28.086 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CORE-SERVICE with eureka with status UP
+bancoxyz-core-service  | 2026-10-02 22:27:28.091 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790990848091, current=UP, previous=STARTING]
+bancoxyz-core-service  | 2026-10-02 22:27:28.096 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080: registering service...
+bancoxyz-core-service  | 2026-10-02 22:27:28.169 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+bancoxyz-core-service  | 2026-10-02 22:27:28.173 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+bancoxyz-core-service  | 2026-10-02 22:27:28.272 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080 - registration status: 204
+bancoxyz-core-service  | 2026-10-02 22:27:28.345 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+bancoxyz-core-service  | 	allow.auto.create.topics = true
+bancoxyz-core-service  | 	auto.commit.interval.ms = 5000
+bancoxyz-core-service  | 	auto.include.jmx.reporter = true
+bancoxyz-core-service  | 	auto.offset.reset = earliest
+bancoxyz-core-service  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-core-service  | 	check.crcs = true
+bancoxyz-core-service  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-core-service  | 	client.id = consumer-core-service-1
+bancoxyz-core-service  | 	client.rack = 
+bancoxyz-core-service  | 	connections.max.idle.ms = 540000
+bancoxyz-core-service  | 	default.api.timeout.ms = 60000
+bancoxyz-core-service  | 	enable.auto.commit = false
+bancoxyz-core-service  | 	enable.metrics.push = true
+bancoxyz-core-service  | 	exclude.internal.topics = true
+bancoxyz-core-service  | 	fetch.max.bytes = 52428800
+bancoxyz-core-service  | 	fetch.max.wait.ms = 500
+bancoxyz-core-service  | 	fetch.min.bytes = 1
+bancoxyz-core-service  | 	group.id = core-service
+bancoxyz-core-service  | 	group.instance.id = null
+bancoxyz-core-service  | 	group.protocol = classic
+bancoxyz-core-service  | 	group.remote.assignor = null
+bancoxyz-core-service  | 	heartbeat.interval.ms = 3000
+bancoxyz-core-service  | 	interceptor.classes = []
+bancoxyz-core-service  | 	internal.leave.group.on.close = true
+bancoxyz-core-service  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+bancoxyz-core-service  | 	isolation.level = read_uncommitted
+bancoxyz-core-service  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 	max.partition.fetch.bytes = 1048576
+bancoxyz-core-service  | 	max.poll.interval.ms = 300000
+bancoxyz-core-service  | 	max.poll.records = 500
+bancoxyz-core-service  | 	metadata.max.age.ms = 300000
+bancoxyz-core-service  | 	metric.reporters = []
+bancoxyz-core-service  | 	metrics.num.samples = 2
+bancoxyz-core-service  | 	metrics.recording.level = INFO
+bancoxyz-core-service  | 	metrics.sample.window.ms = 30000
+bancoxyz-core-service  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+bancoxyz-core-service  | 	receive.buffer.bytes = 65536
+bancoxyz-core-service  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-core-service  | 	reconnect.backoff.ms = 50
+bancoxyz-core-service  | 	request.timeout.ms = 30000
+bancoxyz-core-service  | 	retry.backoff.max.ms = 1000
+bancoxyz-core-service  | 	retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.client.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.jaas.config = null
+bancoxyz-core-service  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-core-service  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-core-service  | 	sasl.kerberos.service.name = null
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.login.class = null
+bancoxyz-core-service  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.read.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-core-service  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-core-service  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-core-service  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.mechanism = GSSAPI
+bancoxyz-core-service  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-core-service  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-core-service  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-core-service  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-core-service  | 	security.protocol = PLAINTEXT
+bancoxyz-core-service  | 	security.providers = null
+bancoxyz-core-service  | 	send.buffer.bytes = 131072
+bancoxyz-core-service  | 	session.timeout.ms = 45000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-core-service  | 	ssl.cipher.suites = null
+bancoxyz-core-service  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-core-service  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-core-service  | 	ssl.engine.factory.class = null
+bancoxyz-core-service  | 	ssl.key.password = null
+bancoxyz-core-service  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-core-service  | 	ssl.keystore.certificate.chain = null
+bancoxyz-core-service  | 	ssl.keystore.key = null
+bancoxyz-core-service  | 	ssl.keystore.location = null
+bancoxyz-core-service  | 	ssl.keystore.password = null
+bancoxyz-core-service  | 	ssl.keystore.type = JKS
+bancoxyz-core-service  | 	ssl.protocol = TLSv1.3
+bancoxyz-core-service  | 	ssl.provider = null
+bancoxyz-core-service  | 	ssl.secure.random.implementation = null
+bancoxyz-core-service  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-core-service  | 	ssl.truststore.certificates = null
+bancoxyz-core-service  | 	ssl.truststore.location = null
+bancoxyz-core-service  | 	ssl.truststore.password = null
+bancoxyz-core-service  | 	ssl.truststore.type = JKS
+bancoxyz-core-service  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:27:28.565 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-core-service  | 2026-10-02 22:27:28.917 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-core-service  | 2026-10-02 22:27:28.920 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-core-service  | 2026-10-02 22:27:28.921 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790990848915
+bancoxyz-core-service  | 2026-10-02 22:27:28.926 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-1, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.solicitadas
+bancoxyz-core-service  | 2026-10-02 22:27:28.988 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+bancoxyz-core-service  | 	allow.auto.create.topics = true
+bancoxyz-core-service  | 	auto.commit.interval.ms = 5000
+bancoxyz-core-service  | 	auto.include.jmx.reporter = true
+bancoxyz-core-service  | 	auto.offset.reset = earliest
+bancoxyz-core-service  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-core-service  | 	check.crcs = true
+bancoxyz-core-service  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-core-service  | 	client.id = consumer-core-service-2
+bancoxyz-core-service  | 	client.rack = 
+bancoxyz-core-service  | 	connections.max.idle.ms = 540000
+bancoxyz-core-service  | 	default.api.timeout.ms = 60000
+bancoxyz-core-service  | 	enable.auto.commit = false
+bancoxyz-core-service  | 	enable.metrics.push = true
+bancoxyz-core-service  | 	exclude.internal.topics = true
+bancoxyz-core-service  | 	fetch.max.bytes = 52428800
+bancoxyz-core-service  | 	fetch.max.wait.ms = 500
+bancoxyz-core-service  | 	fetch.min.bytes = 1
+bancoxyz-core-service  | 	group.id = core-service
+bancoxyz-core-service  | 	group.instance.id = null
+bancoxyz-core-service  | 	group.protocol = classic
+bancoxyz-core-service  | 	group.remote.assignor = null
+bancoxyz-core-service  | 	heartbeat.interval.ms = 3000
+bancoxyz-core-service  | 	interceptor.classes = []
+bancoxyz-core-service  | 	internal.leave.group.on.close = true
+bancoxyz-core-service  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+bancoxyz-core-service  | 	isolation.level = read_uncommitted
+bancoxyz-core-service  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 	max.partition.fetch.bytes = 1048576
+bancoxyz-core-service  | 	max.poll.interval.ms = 300000
+bancoxyz-core-service  | 	max.poll.records = 500
+bancoxyz-core-service  | 	metadata.max.age.ms = 300000
+bancoxyz-core-service  | 	metric.reporters = []
+bancoxyz-core-service  | 	metrics.num.samples = 2
+bancoxyz-core-service  | 	metrics.recording.level = INFO
+bancoxyz-core-service  | 	metrics.sample.window.ms = 30000
+bancoxyz-core-service  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+bancoxyz-core-service  | 	receive.buffer.bytes = 65536
+bancoxyz-core-service  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-core-service  | 	reconnect.backoff.ms = 50
+bancoxyz-core-service  | 	request.timeout.ms = 30000
+bancoxyz-core-service  | 	retry.backoff.max.ms = 1000
+bancoxyz-core-service  | 	retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.client.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.jaas.config = null
+bancoxyz-core-service  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-core-service  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-core-service  | 	sasl.kerberos.service.name = null
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.login.class = null
+bancoxyz-core-service  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.read.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-core-service  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-core-service  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-core-service  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.mechanism = GSSAPI
+bancoxyz-core-service  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-core-service  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-core-service  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-core-service  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-core-service  | 	security.protocol = PLAINTEXT
+bancoxyz-core-service  | 	security.providers = null
+bancoxyz-core-service  | 	send.buffer.bytes = 131072
+bancoxyz-core-service  | 	session.timeout.ms = 45000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-core-service  | 	ssl.cipher.suites = null
+bancoxyz-core-service  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-core-service  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-core-service  | 	ssl.engine.factory.class = null
+bancoxyz-core-service  | 	ssl.key.password = null
+bancoxyz-core-service  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-core-service  | 	ssl.keystore.certificate.chain = null
+bancoxyz-core-service  | 	ssl.keystore.key = null
+bancoxyz-core-service  | 	ssl.keystore.location = null
+bancoxyz-core-service  | 	ssl.keystore.password = null
+bancoxyz-core-service  | 	ssl.keystore.type = JKS
+bancoxyz-core-service  | 	ssl.protocol = TLSv1.3
+bancoxyz-core-service  | 	ssl.provider = null
+bancoxyz-core-service  | 	ssl.secure.random.implementation = null
+bancoxyz-core-service  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-core-service  | 	ssl.truststore.certificates = null
+bancoxyz-core-service  | 	ssl.truststore.location = null
+bancoxyz-core-service  | 	ssl.truststore.password = null
+bancoxyz-core-service  | 	ssl.truststore.type = JKS
+bancoxyz-core-service  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:27:28.992 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-core-service  | 2026-10-02 22:27:29.076 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-core-service  | 2026-10-02 22:27:29.076 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-core-service  | 2026-10-02 22:27:29.076 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790990849076
+bancoxyz-core-service  | 2026-10-02 22:27:29.077 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-2, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.debito-aplicado
+bancoxyz-core-service  | 2026-10-02 22:27:29.109 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Started CoreServiceApplication in 10.778 seconds (process running for 11.413)
+bancoxyz-core-service  | 2026-10-02 22:27:29.203 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+bancoxyz-core-service  | 2026-10-02 22:27:29.203 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - core-service: datos cargados en memoria.
+bancoxyz-core-service  | 2026-10-02 22:27:29.203 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Cuentas validas cargadas: 49 (omitidas por datos invalidos: 797)
+bancoxyz-core-service  | 2026-10-02 22:27:29.204 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Movimientos validos cargados: 885 (omitidos por datos invalidos: 115)
+bancoxyz-core-service  | 2026-10-02 22:27:29.204 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+bancoxyz-core-service  | 2026-10-02 22:27:29.644 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-2, groupId=core-service] Error while fetching metadata with correlation id 2 : {bancoxyz.transferencias.debito-aplicado=UNKNOWN_TOPIC_OR_PARTITION}
+bancoxyz-core-service  | 2026-10-02 22:27:29.649 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-2, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-core-service  | 2026-10-02 22:27:29.649 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-core-service-1, groupId=core-service] Error while fetching metadata with correlation id 2 : {bancoxyz.transferencias.solicitadas=UNKNOWN_TOPIC_OR_PARTITION}
+bancoxyz-core-service  | 2026-10-02 22:27:29.650 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-1, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-core-service  | 2026-10-02 22:27:29.651 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+bancoxyz-core-service  | 2026-10-02 22:27:29.651 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+bancoxyz-core-service  | 2026-10-02 22:27:29.655 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:27:29.655 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:27:29.683 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d
+bancoxyz-core-service  | 2026-10-02 22:27:29.684 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:27:29.690 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-1-8fba84b0-1c08-4c0b-851f-64d93874983e
+bancoxyz-core-service  | 2026-10-02 22:27:29.691 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:27:33.236 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-core-service  | 2026-10-02 22:27:33.236 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+bancoxyz-core-service  | 2026-10-02 22:27:33.240 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+bancoxyz-core-service  | 2026-10-02 22:27:35.699 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-core-service-1-8fba84b0-1c08-4c0b-851f-64d93874983e', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:27:35.704 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:27:35.718 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Finished assignment for group at generation 1: {consumer-core-service-1-8fba84b0-1c08-4c0b-851f-64d93874983e=Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]), consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d=Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3])}
+bancoxyz-core-service  | 2026-10-02 22:27:35.728 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-core-service-1-8fba84b0-1c08-4c0b-851f-64d93874983e', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:27:35.728 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3])
+bancoxyz-core-service  | 2026-10-02 22:27:35.730 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-1, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3
+bancoxyz-core-service  | 2026-10-02 22:27:35.747 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-1
+bancoxyz-core-service  | 2026-10-02 22:27:35.747 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-0
+bancoxyz-core-service  | 2026-10-02 22:27:35.748 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-3
+bancoxyz-core-service  | 2026-10-02 22:27:35.748 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-2
+bancoxyz-core-service  | 2026-10-02 22:27:35.752 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:27:35.753 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3])
+bancoxyz-core-service  | 2026-10-02 22:27:35.754 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-2, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:27:35.757 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:27:35.758 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-0
+bancoxyz-core-service  | 2026-10-02 22:27:35.758 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-2
+bancoxyz-core-service  | 2026-10-02 22:27:35.758 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-1
+bancoxyz-core-service  | 2026-10-02 22:27:35.770 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.774 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.775 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.775 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.776 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]
+bancoxyz-core-service  | 2026-10-02 22:27:35.771 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.777 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.778 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.778 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:27:35.779 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3]
+bancoxyz-core-service  | 2026-10-02 22:27:58.071 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+bancoxyz-core-service  | 2026-10-02 22:27:58.071 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+bancoxyz-core-service  | 2026-10-02 22:27:58.071 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+bancoxyz-core-service  | 2026-10-02 22:27:58.071 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+bancoxyz-core-service  | 2026-10-02 22:27:58.071 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+bancoxyz-core-service  | 2026-10-02 22:27:58.071 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+bancoxyz-core-service  | 2026-10-02 22:27:58.071 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+bancoxyz-core-service  | 2026-10-02 22:27:58.141 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+bancoxyz-core-service  | 2026-10-02 22:28:50.582 [http-nio-8080-exec-2] WARN  com.bancoxyz.bff.core.config.SecurityConfig - Acceso rechazado (401) a GET /internal/cuentas/101: Full authentication is required to access this resource
+bancoxyz-core-service  | 2026-10-02 22:28:50.655 [http-nio-8080-exec-3] WARN  com.bancoxyz.bff.core.config.SecurityConfig - Acceso rechazado (401) a GET /internal/cuentas/101: An error occurred while attempting to decode the Jwt: Signed JWT rejected: Invalid signature
+bancoxyz-core-service  | 2026-10-02 22:28:50.673 [http-nio-8080-exec-4] WARN  com.bancoxyz.bff.core.config.SecurityConfig - Acceso rechazado (401) a GET /internal/cuentas/101: An error occurred while attempting to decode the Jwt: Signed JWT rejected: Invalid signature
+bancoxyz-core-service  | 2026-10-02 22:28:50.830 [http-nio-8080-exec-10] WARN  com.bancoxyz.bff.core.config.SecurityConfig - Acceso rechazado (403) a POST /internal/cuentas/101/debito: scope insuficiente para el cliente bff-mobile
+bancoxyz-core-service  | 2026-10-02 22:28:50.848 [http-nio-8080-exec-2] WARN  com.bancoxyz.bff.core.config.SecurityConfig - Acceso rechazado (403) a POST /internal/cuentas/101/debito: scope insuficiente para el cliente bff-mobile
+bancoxyz-core-service  | 2026-10-02 22:28:51.361 [http-nio-8080-exec-4] WARN  com.bancoxyz.bff.core.config.SecurityConfig - Acceso rechazado (401) a GET /internal/cuentas: Full authentication is required to access this resource
+bancoxyz-core-service  | 2026-10-02 22:28:53.133 [http-nio-8080-exec-5] INFO  c.b.b.c.controller.CuentaInternalController - Cuenta 105: debito de 1000.0 aplicado. Nuevo saldo: 9000.0
+bancoxyz-core-service  | 2026-10-02 22:28:54.300 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 5ab8d1e0-2591-4157-9321-059f0ea58482: solicitud recibida (origen=101, destino=105, monto=500.0)
+bancoxyz-core-service  | 2026-10-02 22:28:54.301 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 5ab8d1e0-2591-4157-9321-059f0ea58482: debito aplicado en cuenta 101 (nuevo saldo=9500.0)
+bancoxyz-core-service  | 2026-10-02 22:28:54.311 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+bancoxyz-core-service  | 	acks = -1
+bancoxyz-core-service  | 	auto.include.jmx.reporter = true
+bancoxyz-core-service  | 	batch.size = 16384
+bancoxyz-core-service  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-core-service  | 	buffer.memory = 33554432
+bancoxyz-core-service  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-core-service  | 	client.id = core-service-producer-1
+bancoxyz-core-service  | 	compression.type = none
+bancoxyz-core-service  | 	connections.max.idle.ms = 540000
+bancoxyz-core-service  | 	delivery.timeout.ms = 120000
+bancoxyz-core-service  | 	enable.idempotence = true
+bancoxyz-core-service  | 	enable.metrics.push = true
+bancoxyz-core-service  | 	interceptor.classes = []
+bancoxyz-core-service  | 	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+bancoxyz-core-service  | 	linger.ms = 0
+bancoxyz-core-service  | 	max.block.ms = 60000
+bancoxyz-core-service  | 	max.in.flight.requests.per.connection = 5
+bancoxyz-core-service  | 	max.request.size = 1048576
+bancoxyz-core-service  | 	metadata.max.age.ms = 300000
+bancoxyz-core-service  | 	metadata.max.idle.ms = 300000
+bancoxyz-core-service  | 	metric.reporters = []
+bancoxyz-core-service  | 	metrics.num.samples = 2
+bancoxyz-core-service  | 	metrics.recording.level = INFO
+bancoxyz-core-service  | 	metrics.sample.window.ms = 30000
+bancoxyz-core-service  | 	partitioner.adaptive.partitioning.enable = true
+bancoxyz-core-service  | 	partitioner.availability.timeout.ms = 0
+bancoxyz-core-service  | 	partitioner.class = null
+bancoxyz-core-service  | 	partitioner.ignore.keys = false
+bancoxyz-core-service  | 	receive.buffer.bytes = 32768
+bancoxyz-core-service  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-core-service  | 	reconnect.backoff.ms = 50
+bancoxyz-core-service  | 	request.timeout.ms = 30000
+bancoxyz-core-service  | 	retries = 2147483647
+bancoxyz-core-service  | 	retry.backoff.max.ms = 1000
+bancoxyz-core-service  | 	retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.client.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.jaas.config = null
+bancoxyz-core-service  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-core-service  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-core-service  | 	sasl.kerberos.service.name = null
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.login.class = null
+bancoxyz-core-service  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.read.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-core-service  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-core-service  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-core-service  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.mechanism = GSSAPI
+bancoxyz-core-service  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-core-service  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-core-service  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-core-service  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-core-service  | 	security.protocol = PLAINTEXT
+bancoxyz-core-service  | 	security.providers = null
+bancoxyz-core-service  | 	send.buffer.bytes = 131072
+bancoxyz-core-service  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-core-service  | 	ssl.cipher.suites = null
+bancoxyz-core-service  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-core-service  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-core-service  | 	ssl.engine.factory.class = null
+bancoxyz-core-service  | 	ssl.key.password = null
+bancoxyz-core-service  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-core-service  | 	ssl.keystore.certificate.chain = null
+bancoxyz-core-service  | 	ssl.keystore.key = null
+bancoxyz-core-service  | 	ssl.keystore.location = null
+bancoxyz-core-service  | 	ssl.keystore.password = null
+bancoxyz-core-service  | 	ssl.keystore.type = JKS
+bancoxyz-core-service  | 	ssl.protocol = TLSv1.3
+bancoxyz-core-service  | 	ssl.provider = null
+bancoxyz-core-service  | 	ssl.secure.random.implementation = null
+bancoxyz-core-service  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-core-service  | 	ssl.truststore.certificates = null
+bancoxyz-core-service  | 	ssl.truststore.location = null
+bancoxyz-core-service  | 	ssl.truststore.password = null
+bancoxyz-core-service  | 	ssl.truststore.type = JKS
+bancoxyz-core-service  | 	transaction.timeout.ms = 60000
+bancoxyz-core-service  | 	transactional.id = null
+bancoxyz-core-service  | 	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:28:54.313 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-core-service  | 2026-10-02 22:28:54.334 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=core-service-producer-1] Instantiated an idempotent producer.
+bancoxyz-core-service  | 2026-10-02 22:28:54.356 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-core-service  | 2026-10-02 22:28:54.357 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-core-service  | 2026-10-02 22:28:54.357 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790990934355
+bancoxyz-core-service  | 2026-10-02 22:28:54.367 [kafka-producer-network-thread | core-service-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=core-service-producer-1] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-core-service  | 2026-10-02 22:28:54.371 [kafka-producer-network-thread | core-service-producer-1] INFO  o.a.k.c.producer.internals.TransactionManager - [Producer clientId=core-service-producer-1] ProducerId set to 1 with epoch 0
+bancoxyz-core-service  | 2026-10-02 22:28:54.417 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 5ab8d1e0-2591-4157-9321-059f0ea58482: credito aplicado en cuenta 105 (nuevo saldo=9500.0) - TRANSFERENCIA COMPLETADA
+bancoxyz-core-service  | 2026-10-02 22:28:55.832 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 9d83efbc-9214-4804-9358-ff031f8c8500: solicitud recibida (origen=101, destino=105, monto=9.99999999E8)
+bancoxyz-core-service  | 2026-10-02 22:28:55.835 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 9d83efbc-9214-4804-9358-ff031f8c8500: RECHAZADA - Saldo insuficiente en la cuenta origen (saldo=9500.0, solicitado=9.99999999E8).
+bancoxyz-core-service  | 2026-10-02 22:28:56.182 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 6f7e10f7-549e-490e-b3dc-d69d8e5e097f: solicitud recibida (origen=101, destino=999999, monto=250.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.183 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 6f7e10f7-549e-490e-b3dc-d69d8e5e097f: debito aplicado en cuenta 101 (nuevo saldo=9250.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.192 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 6f7e10f7-549e-490e-b3dc-d69d8e5e097f: COMPENSANDO - La cuenta destino 999999 no existe; se revirtio el debito aplicado en la cuenta origen.
+bancoxyz-core-service  | 2026-10-02 22:28:56.193 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 6f7e10f7-549e-490e-b3dc-d69d8e5e097f: debito compensado en cuenta 101 (saldo restaurado a 9500.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.427 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 788aa2b8-6bc4-484a-af1a-d130df0f7e6a: solicitud recibida (origen=101, destino=105, monto=50.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.427 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 788aa2b8-6bc4-484a-af1a-d130df0f7e6a: debito aplicado en cuenta 101 (nuevo saldo=9450.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.434 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 788aa2b8-6bc4-484a-af1a-d130df0f7e6a: credito aplicado en cuenta 105 (nuevo saldo=9550.0) - TRANSFERENCIA COMPLETADA
+bancoxyz-core-service  | 2026-10-02 22:28:56.463 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia bb5e43e8-a618-4acf-8656-e047c96cad09: solicitud recibida (origen=101, destino=105, monto=75.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.464 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia bb5e43e8-a618-4acf-8656-e047c96cad09: debito aplicado en cuenta 101 (nuevo saldo=9375.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.473 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia bb5e43e8-a618-4acf-8656-e047c96cad09: credito aplicado en cuenta 105 (nuevo saldo=9625.0) - TRANSFERENCIA COMPLETADA
+bancoxyz-core-service  | 2026-10-02 22:28:56.507 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 018f3348-0d49-478f-acf9-166a31879423: solicitud recibida (origen=101, destino=105, monto=120.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.508 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 018f3348-0d49-478f-acf9-166a31879423: debito aplicado en cuenta 101 (nuevo saldo=9255.0)
+bancoxyz-core-service  | 2026-10-02 22:28:56.515 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  c.b.b.c.t.service.TransferenciaSagaService - Saga transferencia 018f3348-0d49-478f-acf9-166a31879423: credito aplicado en cuenta 105 (nuevo saldo=9745.0) - TRANSFERENCIA COMPLETADA
+bancoxyz-core-service  | 2026-10-02 22:29:02.387 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application CORE-SERVICE with eureka with status DOWN
+bancoxyz-core-service  | 2026-10-02 22:29:02.388 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790990942388, current=DOWN, previous=UP]
+bancoxyz-core-service  | 2026-10-02 22:29:02.390 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080: registering service...
+bancoxyz-core-service  | 2026-10-02 22:29:02.393 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-1, groupId=core-service] Revoke previously assigned partitions bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3
+bancoxyz-core-service  | 2026-10-02 22:29:02.393 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-2, groupId=core-service] Revoke previously assigned partitions bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:29:02.394 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions revoked: [bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]
+bancoxyz-core-service  | 2026-10-02 22:29:02.394 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions revoked: [bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3]
+bancoxyz-core-service  | 2026-10-02 22:29:02.394 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Member consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d sending LeaveGroup request to coordinator kafka:29092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+bancoxyz-core-service  | 2026-10-02 22:29:02.394 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Member consumer-core-service-1-8fba84b0-1c08-4c0b-851f-64d93874983e sending LeaveGroup request to coordinator kafka:29092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+bancoxyz-core-service  | 2026-10-02 22:29:02.395 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.396 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.396 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.396 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-2, groupId=core-service] Unsubscribed all topics or patterns and assigned partitions
+bancoxyz-core-service  | 2026-10-02 22:29:02.397 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.398 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-1, groupId=core-service] Unsubscribed all topics or patterns and assigned partitions
+bancoxyz-core-service  | 2026-10-02 22:29:02.398 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.398 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.401 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.402 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:29:02.404 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080 - registration status: 204
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+bancoxyz-core-service  | 2026-10-02 22:29:02.554 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+bancoxyz-core-service  | 2026-10-02 22:29:02.562 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-core-service-1 unregistered
+bancoxyz-core-service  | 2026-10-02 22:29:02.562 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-core-service-2 unregistered
+bancoxyz-core-service  | 2026-10-02 22:29:02.562 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: Consumer stopped
+bancoxyz-core-service  | 2026-10-02 22:29:02.563 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: Consumer stopped
+bancoxyz-core-service  | 2026-10-02 22:29:02.574 [SpringApplicationShutdownHook] INFO  o.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=core-service-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+bancoxyz-core-service  | 2026-10-02 22:29:02.579 [SpringApplicationShutdownHook] INFO  org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+bancoxyz-core-service  | 2026-10-02 22:29:02.579 [SpringApplicationShutdownHook] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+bancoxyz-core-service  | 2026-10-02 22:29:02.579 [SpringApplicationShutdownHook] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+bancoxyz-core-service  | 2026-10-02 22:29:02.579 [SpringApplicationShutdownHook] INFO  org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+bancoxyz-core-service  | 2026-10-02 22:29:02.580 [SpringApplicationShutdownHook] INFO  org.apache.kafka.common.utils.AppInfoParser - App info kafka.producer for core-service-producer-1 unregistered
+bancoxyz-core-service  | 2026-10-02 22:29:02.589 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+bancoxyz-core-service  | 2026-10-02 22:29:05.589 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+bancoxyz-core-service  | 2026-10-02 22:29:05.602 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080 - deregister  status: 200
+bancoxyz-core-service  | 2026-10-02 22:29:05.603 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+bancoxyz-core-service  | 
+bancoxyz-core-service  |   .   ____          _            __ _ _
+bancoxyz-core-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-core-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-core-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-core-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-core-service  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-core-service  | 
+bancoxyz-core-service  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:30:10.504 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Starting CoreServiceApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-core-service  | 2026-10-02 22:30:10.507 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - No active profile set, falling back to 1 default profile: "default"
+bancoxyz-core-service  | 2026-10-02 22:30:10.556 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+bancoxyz-core-service  | 2026-10-02 22:30:10.556 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=core-service, profiles=[default], label=null, version=null, state=null
+bancoxyz-core-service  | 2026-10-02 22:30:11.647 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=5ebc5712-7e60-3789-8385-ec35a5eb47b5
+bancoxyz-core-service  | 2026-10-02 22:30:11.972 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+bancoxyz-core-service  | 2026-10-02 22:30:11.986 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-core-service  | 2026-10-02 22:30:11.986 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-core-service  | 2026-10-02 22:30:12.026 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-core-service  | 2026-10-02 22:30:12.027 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1468 ms
+bancoxyz-core-service  | 2026-10-02 22:30:12.772 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+bancoxyz-core-service  | 2026-10-02 22:30:13.210 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+bancoxyz-core-service  | 2026-10-02 22:30:13.250 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+bancoxyz-core-service  | 2026-10-02 22:30:13.345 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+bancoxyz-core-service  | 2026-10-02 22:30:13.364 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+bancoxyz-core-service  | 2026-10-02 22:30:13.367 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+bancoxyz-core-service  | 2026-10-02 22:30:13.373 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+bancoxyz-core-service  | 2026-10-02 22:30:13.373 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+bancoxyz-core-service  | 2026-10-02 22:30:13.373 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+bancoxyz-core-service  | 2026-10-02 22:30:13.373 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+bancoxyz-core-service  | 2026-10-02 22:30:13.373 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+bancoxyz-core-service  | 2026-10-02 22:30:13.373 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+bancoxyz-core-service  | 2026-10-02 22:30:13.374 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+bancoxyz-core-service  | 2026-10-02 22:30:13.648 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+bancoxyz-core-service  | 2026-10-02 22:30:13.650 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+bancoxyz-core-service  | 2026-10-02 22:30:13.651 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+bancoxyz-core-service  | 2026-10-02 22:30:13.652 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790991013652 with initial instances count: 5
+bancoxyz-core-service  | 2026-10-02 22:30:13.655 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CORE-SERVICE with eureka with status UP
+bancoxyz-core-service  | 2026-10-02 22:30:13.656 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790991013656, current=UP, previous=STARTING]
+bancoxyz-core-service  | 2026-10-02 22:30:13.657 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080: registering service...
+bancoxyz-core-service  | 2026-10-02 22:30:13.696 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+bancoxyz-core-service  | 2026-10-02 22:30:13.699 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+bancoxyz-core-service  | 2026-10-02 22:30:13.723 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080 - registration status: 204
+bancoxyz-core-service  | 2026-10-02 22:30:13.742 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+bancoxyz-core-service  | 	allow.auto.create.topics = true
+bancoxyz-core-service  | 	auto.commit.interval.ms = 5000
+bancoxyz-core-service  | 	auto.include.jmx.reporter = true
+bancoxyz-core-service  | 	auto.offset.reset = earliest
+bancoxyz-core-service  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-core-service  | 	check.crcs = true
+bancoxyz-core-service  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-core-service  | 	client.id = consumer-core-service-1
+bancoxyz-core-service  | 	client.rack = 
+bancoxyz-core-service  | 	connections.max.idle.ms = 540000
+bancoxyz-core-service  | 	default.api.timeout.ms = 60000
+bancoxyz-core-service  | 	enable.auto.commit = false
+bancoxyz-core-service  | 	enable.metrics.push = true
+bancoxyz-core-service  | 	exclude.internal.topics = true
+bancoxyz-core-service  | 	fetch.max.bytes = 52428800
+bancoxyz-core-service  | 	fetch.max.wait.ms = 500
+bancoxyz-core-service  | 	fetch.min.bytes = 1
+bancoxyz-core-service  | 	group.id = core-service
+bancoxyz-core-service  | 	group.instance.id = null
+bancoxyz-core-service  | 	group.protocol = classic
+bancoxyz-core-service  | 	group.remote.assignor = null
+bancoxyz-core-service  | 	heartbeat.interval.ms = 3000
+bancoxyz-core-service  | 	interceptor.classes = []
+bancoxyz-core-service  | 	internal.leave.group.on.close = true
+bancoxyz-core-service  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+bancoxyz-core-service  | 	isolation.level = read_uncommitted
+bancoxyz-core-service  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 	max.partition.fetch.bytes = 1048576
+bancoxyz-core-service  | 	max.poll.interval.ms = 300000
+bancoxyz-core-service  | 	max.poll.records = 500
+bancoxyz-core-service  | 	metadata.max.age.ms = 300000
+bancoxyz-core-service  | 	metric.reporters = []
+bancoxyz-core-service  | 	metrics.num.samples = 2
+bancoxyz-core-service  | 	metrics.recording.level = INFO
+bancoxyz-core-service  | 	metrics.sample.window.ms = 30000
+bancoxyz-core-service  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+bancoxyz-core-service  | 	receive.buffer.bytes = 65536
+bancoxyz-core-service  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-core-service  | 	reconnect.backoff.ms = 50
+bancoxyz-core-service  | 	request.timeout.ms = 30000
+bancoxyz-core-service  | 	retry.backoff.max.ms = 1000
+bancoxyz-core-service  | 	retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.client.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.jaas.config = null
+bancoxyz-core-service  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-core-service  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-core-service  | 	sasl.kerberos.service.name = null
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.login.class = null
+bancoxyz-core-service  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.read.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-core-service  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-core-service  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-core-service  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.mechanism = GSSAPI
+bancoxyz-core-service  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-core-service  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-core-service  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-core-service  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-core-service  | 	security.protocol = PLAINTEXT
+bancoxyz-core-service  | 	security.providers = null
+bancoxyz-core-service  | 	send.buffer.bytes = 131072
+bancoxyz-core-service  | 	session.timeout.ms = 45000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-core-service  | 	ssl.cipher.suites = null
+bancoxyz-core-service  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-core-service  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-core-service  | 	ssl.engine.factory.class = null
+bancoxyz-core-service  | 	ssl.key.password = null
+bancoxyz-core-service  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-core-service  | 	ssl.keystore.certificate.chain = null
+bancoxyz-core-service  | 	ssl.keystore.key = null
+bancoxyz-core-service  | 	ssl.keystore.location = null
+bancoxyz-core-service  | 	ssl.keystore.password = null
+bancoxyz-core-service  | 	ssl.keystore.type = JKS
+bancoxyz-core-service  | 	ssl.protocol = TLSv1.3
+bancoxyz-core-service  | 	ssl.provider = null
+bancoxyz-core-service  | 	ssl.secure.random.implementation = null
+bancoxyz-core-service  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-core-service  | 	ssl.truststore.certificates = null
+bancoxyz-core-service  | 	ssl.truststore.location = null
+bancoxyz-core-service  | 	ssl.truststore.password = null
+bancoxyz-core-service  | 	ssl.truststore.type = JKS
+bancoxyz-core-service  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:30:13.781 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-core-service  | 2026-10-02 22:30:13.942 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-core-service  | 2026-10-02 22:30:13.942 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-core-service  | 2026-10-02 22:30:13.942 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790991013941
+bancoxyz-core-service  | 2026-10-02 22:30:13.946 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-1, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.solicitadas
+bancoxyz-core-service  | 2026-10-02 22:30:13.954 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+bancoxyz-core-service  | 	allow.auto.create.topics = true
+bancoxyz-core-service  | 	auto.commit.interval.ms = 5000
+bancoxyz-core-service  | 	auto.include.jmx.reporter = true
+bancoxyz-core-service  | 	auto.offset.reset = earliest
+bancoxyz-core-service  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-core-service  | 	check.crcs = true
+bancoxyz-core-service  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-core-service  | 	client.id = consumer-core-service-2
+bancoxyz-core-service  | 	client.rack = 
+bancoxyz-core-service  | 	connections.max.idle.ms = 540000
+bancoxyz-core-service  | 	default.api.timeout.ms = 60000
+bancoxyz-core-service  | 	enable.auto.commit = false
+bancoxyz-core-service  | 	enable.metrics.push = true
+bancoxyz-core-service  | 	exclude.internal.topics = true
+bancoxyz-core-service  | 	fetch.max.bytes = 52428800
+bancoxyz-core-service  | 	fetch.max.wait.ms = 500
+bancoxyz-core-service  | 	fetch.min.bytes = 1
+bancoxyz-core-service  | 	group.id = core-service
+bancoxyz-core-service  | 	group.instance.id = null
+bancoxyz-core-service  | 	group.protocol = classic
+bancoxyz-core-service  | 	group.remote.assignor = null
+bancoxyz-core-service  | 	heartbeat.interval.ms = 3000
+bancoxyz-core-service  | 	interceptor.classes = []
+bancoxyz-core-service  | 	internal.leave.group.on.close = true
+bancoxyz-core-service  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+bancoxyz-core-service  | 	isolation.level = read_uncommitted
+bancoxyz-core-service  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 	max.partition.fetch.bytes = 1048576
+bancoxyz-core-service  | 	max.poll.interval.ms = 300000
+bancoxyz-core-service  | 	max.poll.records = 500
+bancoxyz-core-service  | 	metadata.max.age.ms = 300000
+bancoxyz-core-service  | 	metric.reporters = []
+bancoxyz-core-service  | 	metrics.num.samples = 2
+bancoxyz-core-service  | 	metrics.recording.level = INFO
+bancoxyz-core-service  | 	metrics.sample.window.ms = 30000
+bancoxyz-core-service  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+bancoxyz-core-service  | 	receive.buffer.bytes = 65536
+bancoxyz-core-service  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-core-service  | 	reconnect.backoff.ms = 50
+bancoxyz-core-service  | 	request.timeout.ms = 30000
+bancoxyz-core-service  | 	retry.backoff.max.ms = 1000
+bancoxyz-core-service  | 	retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.client.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.jaas.config = null
+bancoxyz-core-service  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-core-service  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-core-service  | 	sasl.kerberos.service.name = null
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.login.class = null
+bancoxyz-core-service  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.read.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-core-service  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-core-service  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-core-service  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.mechanism = GSSAPI
+bancoxyz-core-service  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-core-service  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-core-service  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-core-service  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-core-service  | 	security.protocol = PLAINTEXT
+bancoxyz-core-service  | 	security.providers = null
+bancoxyz-core-service  | 	send.buffer.bytes = 131072
+bancoxyz-core-service  | 	session.timeout.ms = 45000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-core-service  | 	ssl.cipher.suites = null
+bancoxyz-core-service  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-core-service  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-core-service  | 	ssl.engine.factory.class = null
+bancoxyz-core-service  | 	ssl.key.password = null
+bancoxyz-core-service  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-core-service  | 	ssl.keystore.certificate.chain = null
+bancoxyz-core-service  | 	ssl.keystore.key = null
+bancoxyz-core-service  | 	ssl.keystore.location = null
+bancoxyz-core-service  | 	ssl.keystore.password = null
+bancoxyz-core-service  | 	ssl.keystore.type = JKS
+bancoxyz-core-service  | 	ssl.protocol = TLSv1.3
+bancoxyz-core-service  | 	ssl.provider = null
+bancoxyz-core-service  | 	ssl.secure.random.implementation = null
+bancoxyz-core-service  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-core-service  | 	ssl.truststore.certificates = null
+bancoxyz-core-service  | 	ssl.truststore.location = null
+bancoxyz-core-service  | 	ssl.truststore.password = null
+bancoxyz-core-service  | 	ssl.truststore.type = JKS
+bancoxyz-core-service  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:30:13.955 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-core-service  | 2026-10-02 22:30:13.964 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-core-service  | 2026-10-02 22:30:13.965 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-core-service  | 2026-10-02 22:30:13.965 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790991013964
+bancoxyz-core-service  | 2026-10-02 22:30:13.965 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-2, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.debito-aplicado
+bancoxyz-core-service  | 2026-10-02 22:30:13.989 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Started CoreServiceApplication in 4.472 seconds (process running for 4.868)
+bancoxyz-core-service  | 2026-10-02 22:30:14.092 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+bancoxyz-core-service  | 2026-10-02 22:30:14.093 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - core-service: datos cargados en memoria.
+bancoxyz-core-service  | 2026-10-02 22:30:14.093 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Cuentas validas cargadas: 49 (omitidas por datos invalidos: 797)
+bancoxyz-core-service  | 2026-10-02 22:30:14.095 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Movimientos validos cargados: 885 (omitidos por datos invalidos: 115)
+bancoxyz-core-service  | 2026-10-02 22:30:14.095 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+bancoxyz-core-service  | 2026-10-02 22:30:14.279 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-core-service  | 2026-10-02 22:30:14.280 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+bancoxyz-core-service  | 2026-10-02 22:30:14.285 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+bancoxyz-core-service  | 2026-10-02 22:30:14.431 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-1, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-core-service  | 2026-10-02 22:30:14.432 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+bancoxyz-core-service  | 2026-10-02 22:30:14.433 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-2, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-core-service  | 2026-10-02 22:30:14.434 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+bancoxyz-core-service  | 2026-10-02 22:30:14.435 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:14.437 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:14.459 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf
+bancoxyz-core-service  | 2026-10-02 22:30:14.460 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:14.461 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb
+bancoxyz-core-service  | 2026-10-02 22:30:14.461 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:17.465 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully joined group with generation Generation{generationId=3, memberId='consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:17.465 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully joined group with generation Generation{generationId=3, memberId='consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:17.481 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Finished assignment for group at generation 3: {consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb=Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]), consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf=Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3])}
+bancoxyz-core-service  | 2026-10-02 22:30:17.487 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully synced group in generation Generation{generationId=3, memberId='consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:17.487 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully synced group in generation Generation{generationId=3, memberId='consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:17.487 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3])
+bancoxyz-core-service  | 2026-10-02 22:30:17.488 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3])
+bancoxyz-core-service  | 2026-10-02 22:30:17.490 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-2, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:30:17.490 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-1, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3
+bancoxyz-core-service  | 2026-10-02 22:30:17.499 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:30:17.500 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-2
+bancoxyz-core-service  | 2026-10-02 22:30:17.500 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-2
+bancoxyz-core-service  | 2026-10-02 22:30:17.502 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.solicitadas-1 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:17.504 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.solicitadas-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:17.504 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.solicitadas-3 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:17.507 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.debito-aplicado-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:17.507 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.debito-aplicado-1 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:17.512 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:30:17.512 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:30:17.513 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3]
+bancoxyz-core-service  | 2026-10-02 22:30:17.527 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:30:17.528 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]
+bancoxyz-core-service  | 2026-10-02 22:30:34.632 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application CORE-SERVICE with eureka with status DOWN
+bancoxyz-core-service  | 2026-10-02 22:30:34.632 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790991034632, current=DOWN, previous=UP]
+bancoxyz-core-service  | 2026-10-02 22:30:34.633 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080: registering service...
+bancoxyz-core-service  | 2026-10-02 22:30:34.641 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-1, groupId=core-service] Revoke previously assigned partitions bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3
+bancoxyz-core-service  | 2026-10-02 22:30:34.642 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-2, groupId=core-service] Revoke previously assigned partitions bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:30:34.642 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions revoked: [bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]
+bancoxyz-core-service  | 2026-10-02 22:30:34.643 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions revoked: [bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3]
+bancoxyz-core-service  | 2026-10-02 22:30:34.643 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Member consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf sending LeaveGroup request to coordinator kafka:29092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+bancoxyz-core-service  | 2026-10-02 22:30:34.644 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Member consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb sending LeaveGroup request to coordinator kafka:29092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+bancoxyz-core-service  | 2026-10-02 22:30:34.647 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.648 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.649 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.650 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-1, groupId=core-service] Unsubscribed all topics or patterns and assigned partitions
+bancoxyz-core-service  | 2026-10-02 22:30:34.648 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.651 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-2, groupId=core-service] Unsubscribed all topics or patterns and assigned partitions
+bancoxyz-core-service  | 2026-10-02 22:30:34.652 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080 - registration status: 204
+bancoxyz-core-service  | 2026-10-02 22:30:34.654 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.654 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.654 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.654 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: consumer pro-actively leaving the group
+bancoxyz-core-service  | 2026-10-02 22:30:34.673 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+bancoxyz-core-service  | 2026-10-02 22:30:34.673 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+bancoxyz-core-service  | 2026-10-02 22:30:34.673 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+bancoxyz-core-service  | 2026-10-02 22:30:34.673 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+bancoxyz-core-service  | 2026-10-02 22:30:34.674 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+bancoxyz-core-service  | 2026-10-02 22:30:34.674 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+bancoxyz-core-service  | 2026-10-02 22:30:34.674 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+bancoxyz-core-service  | 2026-10-02 22:30:34.674 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+bancoxyz-core-service  | 2026-10-02 22:30:34.683 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-core-service-2 unregistered
+bancoxyz-core-service  | 2026-10-02 22:30:34.684 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: Consumer stopped
+bancoxyz-core-service  | 2026-10-02 22:30:34.685 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-core-service-1 unregistered
+bancoxyz-core-service  | 2026-10-02 22:30:34.686 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: Consumer stopped
+bancoxyz-core-service  | 2026-10-02 22:30:34.699 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+bancoxyz-core-service  | 2026-10-02 22:30:37.700 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+bancoxyz-core-service  | 2026-10-02 22:30:37.710 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080 - deregister  status: 200
+bancoxyz-core-service  | 2026-10-02 22:30:37.710 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+bancoxyz-core-service  | 
+bancoxyz-core-service  |   .   ____          _            __ _ _
+bancoxyz-core-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-core-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-core-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-core-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-core-service  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-core-service  | 
+bancoxyz-core-service  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:30:39.437 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Starting CoreServiceApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-core-service  | 2026-10-02 22:30:39.440 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - No active profile set, falling back to 1 default profile: "default"
+bancoxyz-core-service  | 2026-10-02 22:30:39.489 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+bancoxyz-core-service  | 2026-10-02 22:30:39.489 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=core-service, profiles=[default], label=null, version=null, state=null
+bancoxyz-core-service  | 2026-10-02 22:30:40.776 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=5ebc5712-7e60-3789-8385-ec35a5eb47b5
+bancoxyz-core-service  | 2026-10-02 22:30:41.115 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+bancoxyz-core-service  | 2026-10-02 22:30:41.134 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-core-service  | 2026-10-02 22:30:41.134 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-core-service  | 2026-10-02 22:30:41.169 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-core-service  | 2026-10-02 22:30:41.170 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1678 ms
+bancoxyz-core-service  | 2026-10-02 22:30:41.992 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+bancoxyz-core-service  | 2026-10-02 22:30:42.634 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+bancoxyz-core-service  | 2026-10-02 22:30:42.694 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+bancoxyz-core-service  | 2026-10-02 22:30:42.881 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+bancoxyz-core-service  | 2026-10-02 22:30:42.926 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+bancoxyz-core-service  | 2026-10-02 22:30:42.930 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+bancoxyz-core-service  | 2026-10-02 22:30:42.937 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+bancoxyz-core-service  | 2026-10-02 22:30:42.938 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+bancoxyz-core-service  | 2026-10-02 22:30:42.938 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+bancoxyz-core-service  | 2026-10-02 22:30:42.938 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+bancoxyz-core-service  | 2026-10-02 22:30:42.938 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+bancoxyz-core-service  | 2026-10-02 22:30:42.938 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+bancoxyz-core-service  | 2026-10-02 22:30:42.938 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+bancoxyz-core-service  | 2026-10-02 22:30:43.386 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+bancoxyz-core-service  | 2026-10-02 22:30:43.390 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+bancoxyz-core-service  | 2026-10-02 22:30:43.393 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+bancoxyz-core-service  | 2026-10-02 22:30:43.399 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790991043399 with initial instances count: 6
+bancoxyz-core-service  | 2026-10-02 22:30:43.403 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CORE-SERVICE with eureka with status UP
+bancoxyz-core-service  | 2026-10-02 22:30:43.404 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790991043403, current=UP, previous=STARTING]
+bancoxyz-core-service  | 2026-10-02 22:30:43.407 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080: registering service...
+bancoxyz-core-service  | 2026-10-02 22:30:43.440 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+bancoxyz-core-service  | 2026-10-02 22:30:43.442 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+bancoxyz-core-service  | 2026-10-02 22:30:43.474 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_CORE-SERVICE/0060554dd7a7:core-service:8080 - registration status: 204
+bancoxyz-core-service  | 2026-10-02 22:30:43.501 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+bancoxyz-core-service  | 	allow.auto.create.topics = true
+bancoxyz-core-service  | 	auto.commit.interval.ms = 5000
+bancoxyz-core-service  | 	auto.include.jmx.reporter = true
+bancoxyz-core-service  | 	auto.offset.reset = earliest
+bancoxyz-core-service  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-core-service  | 	check.crcs = true
+bancoxyz-core-service  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-core-service  | 	client.id = consumer-core-service-1
+bancoxyz-core-service  | 	client.rack = 
+bancoxyz-core-service  | 	connections.max.idle.ms = 540000
+bancoxyz-core-service  | 	default.api.timeout.ms = 60000
+bancoxyz-core-service  | 	enable.auto.commit = false
+bancoxyz-core-service  | 	enable.metrics.push = true
+bancoxyz-core-service  | 	exclude.internal.topics = true
+bancoxyz-core-service  | 	fetch.max.bytes = 52428800
+bancoxyz-core-service  | 	fetch.max.wait.ms = 500
+bancoxyz-core-service  | 	fetch.min.bytes = 1
+bancoxyz-core-service  | 	group.id = core-service
+bancoxyz-core-service  | 	group.instance.id = null
+bancoxyz-core-service  | 	group.protocol = classic
+bancoxyz-core-service  | 	group.remote.assignor = null
+bancoxyz-core-service  | 	heartbeat.interval.ms = 3000
+bancoxyz-core-service  | 	interceptor.classes = []
+bancoxyz-core-service  | 	internal.leave.group.on.close = true
+bancoxyz-core-service  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+bancoxyz-core-service  | 	isolation.level = read_uncommitted
+bancoxyz-core-service  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 	max.partition.fetch.bytes = 1048576
+bancoxyz-core-service  | 	max.poll.interval.ms = 300000
+bancoxyz-core-service  | 	max.poll.records = 500
+bancoxyz-core-service  | 	metadata.max.age.ms = 300000
+bancoxyz-core-service  | 	metric.reporters = []
+bancoxyz-core-service  | 	metrics.num.samples = 2
+bancoxyz-core-service  | 	metrics.recording.level = INFO
+bancoxyz-core-service  | 	metrics.sample.window.ms = 30000
+bancoxyz-core-service  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+bancoxyz-core-service  | 	receive.buffer.bytes = 65536
+bancoxyz-core-service  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-core-service  | 	reconnect.backoff.ms = 50
+bancoxyz-core-service  | 	request.timeout.ms = 30000
+bancoxyz-core-service  | 	retry.backoff.max.ms = 1000
+bancoxyz-core-service  | 	retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.client.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.jaas.config = null
+bancoxyz-core-service  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-core-service  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-core-service  | 	sasl.kerberos.service.name = null
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.login.class = null
+bancoxyz-core-service  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.read.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-core-service  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-core-service  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-core-service  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.mechanism = GSSAPI
+bancoxyz-core-service  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-core-service  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-core-service  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-core-service  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-core-service  | 	security.protocol = PLAINTEXT
+bancoxyz-core-service  | 	security.providers = null
+bancoxyz-core-service  | 	send.buffer.bytes = 131072
+bancoxyz-core-service  | 	session.timeout.ms = 45000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-core-service  | 	ssl.cipher.suites = null
+bancoxyz-core-service  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-core-service  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-core-service  | 	ssl.engine.factory.class = null
+bancoxyz-core-service  | 	ssl.key.password = null
+bancoxyz-core-service  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-core-service  | 	ssl.keystore.certificate.chain = null
+bancoxyz-core-service  | 	ssl.keystore.key = null
+bancoxyz-core-service  | 	ssl.keystore.location = null
+bancoxyz-core-service  | 	ssl.keystore.password = null
+bancoxyz-core-service  | 	ssl.keystore.type = JKS
+bancoxyz-core-service  | 	ssl.protocol = TLSv1.3
+bancoxyz-core-service  | 	ssl.provider = null
+bancoxyz-core-service  | 	ssl.secure.random.implementation = null
+bancoxyz-core-service  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-core-service  | 	ssl.truststore.certificates = null
+bancoxyz-core-service  | 	ssl.truststore.location = null
+bancoxyz-core-service  | 	ssl.truststore.password = null
+bancoxyz-core-service  | 	ssl.truststore.type = JKS
+bancoxyz-core-service  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:30:43.552 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-core-service  | 2026-10-02 22:30:43.732 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-core-service  | 2026-10-02 22:30:43.732 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-core-service  | 2026-10-02 22:30:43.733 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790991043731
+bancoxyz-core-service  | 2026-10-02 22:30:43.736 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-1, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.solicitadas
+bancoxyz-core-service  | 2026-10-02 22:30:43.745 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+bancoxyz-core-service  | 	allow.auto.create.topics = true
+bancoxyz-core-service  | 	auto.commit.interval.ms = 5000
+bancoxyz-core-service  | 	auto.include.jmx.reporter = true
+bancoxyz-core-service  | 	auto.offset.reset = earliest
+bancoxyz-core-service  | 	bootstrap.servers = [kafka:29092]
+bancoxyz-core-service  | 	check.crcs = true
+bancoxyz-core-service  | 	client.dns.lookup = use_all_dns_ips
+bancoxyz-core-service  | 	client.id = consumer-core-service-2
+bancoxyz-core-service  | 	client.rack = 
+bancoxyz-core-service  | 	connections.max.idle.ms = 540000
+bancoxyz-core-service  | 	default.api.timeout.ms = 60000
+bancoxyz-core-service  | 	enable.auto.commit = false
+bancoxyz-core-service  | 	enable.metrics.push = true
+bancoxyz-core-service  | 	exclude.internal.topics = true
+bancoxyz-core-service  | 	fetch.max.bytes = 52428800
+bancoxyz-core-service  | 	fetch.max.wait.ms = 500
+bancoxyz-core-service  | 	fetch.min.bytes = 1
+bancoxyz-core-service  | 	group.id = core-service
+bancoxyz-core-service  | 	group.instance.id = null
+bancoxyz-core-service  | 	group.protocol = classic
+bancoxyz-core-service  | 	group.remote.assignor = null
+bancoxyz-core-service  | 	heartbeat.interval.ms = 3000
+bancoxyz-core-service  | 	interceptor.classes = []
+bancoxyz-core-service  | 	internal.leave.group.on.close = true
+bancoxyz-core-service  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+bancoxyz-core-service  | 	isolation.level = read_uncommitted
+bancoxyz-core-service  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 	max.partition.fetch.bytes = 1048576
+bancoxyz-core-service  | 	max.poll.interval.ms = 300000
+bancoxyz-core-service  | 	max.poll.records = 500
+bancoxyz-core-service  | 	metadata.max.age.ms = 300000
+bancoxyz-core-service  | 	metric.reporters = []
+bancoxyz-core-service  | 	metrics.num.samples = 2
+bancoxyz-core-service  | 	metrics.recording.level = INFO
+bancoxyz-core-service  | 	metrics.sample.window.ms = 30000
+bancoxyz-core-service  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+bancoxyz-core-service  | 	receive.buffer.bytes = 65536
+bancoxyz-core-service  | 	reconnect.backoff.max.ms = 1000
+bancoxyz-core-service  | 	reconnect.backoff.ms = 50
+bancoxyz-core-service  | 	request.timeout.ms = 30000
+bancoxyz-core-service  | 	retry.backoff.max.ms = 1000
+bancoxyz-core-service  | 	retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.client.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.jaas.config = null
+bancoxyz-core-service  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-core-service  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-core-service  | 	sasl.kerberos.service.name = null
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-core-service  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.callback.handler.class = null
+bancoxyz-core-service  | 	sasl.login.class = null
+bancoxyz-core-service  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.read.timeout.ms = null
+bancoxyz-core-service  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-core-service  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-core-service  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-core-service  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-core-service  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.mechanism = GSSAPI
+bancoxyz-core-service  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-core-service  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-core-service  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-core-service  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-core-service  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-core-service  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-core-service  | 	security.protocol = PLAINTEXT
+bancoxyz-core-service  | 	security.providers = null
+bancoxyz-core-service  | 	send.buffer.bytes = 131072
+bancoxyz-core-service  | 	session.timeout.ms = 45000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-core-service  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-core-service  | 	ssl.cipher.suites = null
+bancoxyz-core-service  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-core-service  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-core-service  | 	ssl.engine.factory.class = null
+bancoxyz-core-service  | 	ssl.key.password = null
+bancoxyz-core-service  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-core-service  | 	ssl.keystore.certificate.chain = null
+bancoxyz-core-service  | 	ssl.keystore.key = null
+bancoxyz-core-service  | 	ssl.keystore.location = null
+bancoxyz-core-service  | 	ssl.keystore.password = null
+bancoxyz-core-service  | 	ssl.keystore.type = JKS
+bancoxyz-core-service  | 	ssl.protocol = TLSv1.3
+bancoxyz-core-service  | 	ssl.provider = null
+bancoxyz-core-service  | 	ssl.secure.random.implementation = null
+bancoxyz-core-service  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-core-service  | 	ssl.truststore.certificates = null
+bancoxyz-core-service  | 	ssl.truststore.location = null
+bancoxyz-core-service  | 	ssl.truststore.password = null
+bancoxyz-core-service  | 	ssl.truststore.type = JKS
+bancoxyz-core-service  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+bancoxyz-core-service  | 
+bancoxyz-core-service  | 2026-10-02 22:30:43.746 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+bancoxyz-core-service  | 2026-10-02 22:30:43.780 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+bancoxyz-core-service  | 2026-10-02 22:30:43.781 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+bancoxyz-core-service  | 2026-10-02 22:30:43.782 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790991043780
+bancoxyz-core-service  | 2026-10-02 22:30:43.787 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-core-service-2, groupId=core-service] Subscribed to topic(s): bancoxyz.transferencias.debito-aplicado
+bancoxyz-core-service  | 2026-10-02 22:30:43.823 [main] INFO  com.bancoxyz.bff.core.CoreServiceApplication - Started CoreServiceApplication in 5.364 seconds (process running for 5.708)
+bancoxyz-core-service  | 2026-10-02 22:30:43.922 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+bancoxyz-core-service  | 2026-10-02 22:30:43.922 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - core-service: datos cargados en memoria.
+bancoxyz-core-service  | 2026-10-02 22:30:43.927 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Cuentas validas cargadas: 49 (omitidas por datos invalidos: 797)
+bancoxyz-core-service  | 2026-10-02 22:30:43.928 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - Movimientos validos cargados: 885 (omitidos por datos invalidos: 115)
+bancoxyz-core-service  | 2026-10-02 22:30:43.928 [main] INFO  c.bancoxyz.bff.core.service.CargaDatosService - ############################################################
+bancoxyz-core-service  | 2026-10-02 22:30:44.295 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-1, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-core-service  | 2026-10-02 22:30:44.296 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+bancoxyz-core-service  | 2026-10-02 22:30:44.299 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-core-service-2, groupId=core-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+bancoxyz-core-service  | 2026-10-02 22:30:44.300 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+bancoxyz-core-service  | 2026-10-02 22:30:44.304 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:44.304 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:44.327 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4
+bancoxyz-core-service  | 2026-10-02 22:30:44.328 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Request joining group due to: need to re-join with the given member-id: consumer-core-service-1-848d8e77-2f22-49d7-93c2-66206c399e6a
+bancoxyz-core-service  | 2026-10-02 22:30:44.328 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:44.328 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] (Re-)joining group
+bancoxyz-core-service  | 2026-10-02 22:30:47.332 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully joined group with generation Generation{generationId=5, memberId='consumer-core-service-1-848d8e77-2f22-49d7-93c2-66206c399e6a', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:47.333 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully joined group with generation Generation{generationId=5, memberId='consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:47.345 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Finished assignment for group at generation 5: {consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4=Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3]), consumer-core-service-1-848d8e77-2f22-49d7-93c2-66206c399e6a=Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3])}
+bancoxyz-core-service  | 2026-10-02 22:30:47.351 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Successfully synced group in generation Generation{generationId=5, memberId='consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:47.351 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Successfully synced group in generation Generation{generationId=5, memberId='consumer-core-service-1-848d8e77-2f22-49d7-93c2-66206c399e6a', protocol='range'}
+bancoxyz-core-service  | 2026-10-02 22:30:47.351 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3])
+bancoxyz-core-service  | 2026-10-02 22:30:47.351 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3])
+bancoxyz-core-service  | 2026-10-02 22:30:47.353 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-2, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:30:47.353 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-core-service-1, groupId=core-service] Adding newly assigned partitions: bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3
+bancoxyz-core-service  | 2026-10-02 22:30:47.359 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-3
+bancoxyz-core-service  | 2026-10-02 22:30:47.359 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-2, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.debito-aplicado-2
+bancoxyz-core-service  | 2026-10-02 22:30:47.359 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-core-service-1, groupId=core-service] Found no committed offset for partition bancoxyz.transferencias.solicitadas-2
+bancoxyz-core-service  | 2026-10-02 22:30:47.361 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.debito-aplicado-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:47.361 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.solicitadas-1 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:47.362 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.debito-aplicado-1 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:47.362 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.solicitadas-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:47.362 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerUtils - Setting offset for partition bancoxyz.transferencias.solicitadas-3 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}
+bancoxyz-core-service  | 2026-10-02 22:30:47.368 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:30:47.369 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-2, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.debito-aplicado-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:30:47.369 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-core-service-1, groupId=core-service] Resetting offset for partition bancoxyz.transferencias.solicitadas-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+bancoxyz-core-service  | 2026-10-02 22:30:47.370 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-2, bancoxyz.transferencias.solicitadas-3]
+bancoxyz-core-service  | 2026-10-02 22:30:47.370 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - core-service: partitions assigned: [bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-1, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-3]
+bancoxyz-core-service  | 2026-10-02 22:30:48.329 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-core-service  | 2026-10-02 22:30:48.329 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+bancoxyz-core-service  | 2026-10-02 22:30:48.333 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms

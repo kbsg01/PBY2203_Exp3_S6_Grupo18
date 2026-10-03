@@ -17,9 +17,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * informacion por su cuenta.</p>
  *
  * <p><b>Importante:</b> este servicio NUNCA es consumido directamente por un frontend. Solo los
- * tres BFF (bff-web, bff-mobile, bff-atm) lo consumen, autenticandose con una clave compartida
- * (ver {@link com.bancoxyz.bff.core.config.InternalApiKeyFilter}). En una topologia de red real,
- * ademas de esa clave, este servicio viviria en una subred privada sin exposicion publica.</p>
+ * tres BFF (bff-web, bff-mobile, bff-atm) lo consumen, autenticandose desde la Semana 8 con un
+ * access token OAuth 2.0 emitido por auth-server (ver
+ * {@link com.bancoxyz.bff.core.config.SecurityConfig}). En una topologia de red real, ademas de
+ * esa validacion, este servicio viviria en una subred privada sin exposicion publica (en
+ * docker-compose.yaml solo se publica en 127.0.0.1).</p>
  */
 @SpringBootApplication
 public class CoreServiceApplication {

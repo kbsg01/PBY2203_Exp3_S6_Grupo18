@@ -1,0 +1,58 @@
+bancoxyz-bff-atm  | 
+bancoxyz-bff-atm  |   .   ____          _            __ _ _
+bancoxyz-bff-atm  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-bff-atm  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-bff-atm  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-bff-atm  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-bff-atm  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-bff-atm  | 
+bancoxyz-bff-atm  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-bff-atm  | 
+bancoxyz-bff-atm  | 2026-10-02 22:27:37.819 [main] INFO  com.bancoxyz.bff.atm.BffAtmApplication - Starting BffAtmApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-bff-atm  | 2026-10-02 22:27:37.821 [main] INFO  com.bancoxyz.bff.atm.BffAtmApplication - No active profile set, falling back to 1 default profile: "default"
+bancoxyz-bff-atm  | 2026-10-02 22:27:38.070 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+bancoxyz-bff-atm  | 2026-10-02 22:27:38.070 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=bff-atm, profiles=[default], label=null, version=null, state=null
+bancoxyz-bff-atm  | 2026-10-02 22:27:43.560 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=46981672-7a16-30df-99ac-aa295b1833df
+bancoxyz-bff-atm  | 2026-10-02 22:27:46.811 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (https)
+bancoxyz-bff-atm  | 2026-10-02 22:27:46.844 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-bff-atm  | 2026-10-02 22:27:46.844 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-bff-atm  | 2026-10-02 22:27:46.965 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-bff-atm  | 2026-10-02 22:27:46.968 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8893 ms
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.173 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.407 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.534 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.558 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.562 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.569 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.569 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.569 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.569 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.569 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.569 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.569 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.749 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.755 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.784 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790990874793 with initial instances count: 3
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.829 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BFF-ATM with eureka with status UP
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.830 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790990874830, current=UP, previous=STARTING]
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.832 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-ATM/cdbc0c671193:bff-atm:8083: registering service...
+bancoxyz-bff-atm  | 2026-10-02 22:27:54.965 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BFF-ATM/cdbc0c671193:bff-atm:8083 - registration status: 204
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.526 [main] INFO  o.a.tomcat.util.net.NioEndpoint.certificate - Connector [https-jsse-nio-8083], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [/home/spring/.keystore] using alias [bffatm] with trust store [null]
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.568 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8083 (https) with context path '/'
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.570 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8083
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.914 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 18083 (http)
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.915 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.916 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.924 [main] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.924 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 340 ms
+bancoxyz-bff-atm  | 2026-10-02 22:27:55.958 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+bancoxyz-bff-atm  | 2026-10-02 22:27:56.059 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 18083 (http) with context path '/'
+bancoxyz-bff-atm  | 2026-10-02 22:27:56.187 [main] INFO  com.bancoxyz.bff.atm.BffAtmApplication - Started BffAtmApplication in 20.971 seconds (process running for 21.917)
+bancoxyz-bff-atm  | 2026-10-02 22:28:00.533 [http-nio-18083-exec-2] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
+bancoxyz-bff-atm  | 2026-10-02 22:28:00.539 [http-nio-18083-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServletRegistration'
+bancoxyz-bff-atm  | 2026-10-02 22:28:00.539 [http-nio-18083-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+bancoxyz-bff-atm  | 2026-10-02 22:28:52.652 [https-jsse-nio-8083-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-bff-atm  | 2026-10-02 22:28:52.652 [https-jsse-nio-8083-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+bancoxyz-bff-atm  | 2026-10-02 22:28:52.655 [https-jsse-nio-8083-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+bancoxyz-bff-atm  | 2026-10-02 22:28:53.141 [https-jsse-nio-8083-exec-6] INFO  c.b.bff.atm.controller.CuentaAtmController - Retiro confirmado: cuenta=105 monto=1000.0 nuevoSaldo=9000.0

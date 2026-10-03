@@ -1,0 +1,382 @@
+notificaciones-service-2  | 
+notificaciones-service-2  |   .   ____          _            __ _ _
+notificaciones-service-2  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+notificaciones-service-2  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+notificaciones-service-2  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+notificaciones-service-2  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+notificaciones-service-2  |  =========|_|==============|___/=/_/_/_/
+notificaciones-service-2  | 
+notificaciones-service-2  |  :: Spring Boot ::                (v3.3.4)
+notificaciones-service-2  | 
+notificaciones-service-2  | 2026-10-02 22:27:19.400 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Starting NotificacionesServiceApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+notificaciones-service-2  | 2026-10-02 22:27:19.403 [main] INFO  c.b.b.n.NotificacionesServiceApplication - No active profile set, falling back to 1 default profile: "default"
+notificaciones-service-2  | 2026-10-02 22:27:19.465 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+notificaciones-service-2  | 2026-10-02 22:27:19.465 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=notificaciones-service, profiles=[default], label=null, version=null, state=null
+notificaciones-service-2  | 2026-10-02 22:27:21.442 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a6416b35-5664-3058-ba05-df1432ac092c
+notificaciones-service-2  | 2026-10-02 22:27:21.986 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+notificaciones-service-2  | 2026-10-02 22:27:22.001 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+notificaciones-service-2  | 2026-10-02 22:27:22.002 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+notificaciones-service-2  | 2026-10-02 22:27:22.044 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+notificaciones-service-2  | 2026-10-02 22:27:22.046 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2577 ms
+notificaciones-service-2  | 2026-10-02 22:27:23.768 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+notificaciones-service-2  | 2026-10-02 22:27:23.834 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+notificaciones-service-2  | 2026-10-02 22:27:23.847 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+notificaciones-service-2  | 2026-10-02 22:27:24.063 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+notificaciones-service-2  | 2026-10-02 22:27:24.125 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+notificaciones-service-2  | 2026-10-02 22:27:24.139 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+notificaciones-service-2  | 2026-10-02 22:27:24.159 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+notificaciones-service-2  | 2026-10-02 22:27:24.159 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+notificaciones-service-2  | 2026-10-02 22:27:24.159 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+notificaciones-service-2  | 2026-10-02 22:27:24.160 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+notificaciones-service-2  | 2026-10-02 22:27:24.160 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+notificaciones-service-2  | 2026-10-02 22:27:24.160 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+notificaciones-service-2  | 2026-10-02 22:27:24.160 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+notificaciones-service-2  | 2026-10-02 22:27:24.990 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+notificaciones-service-2  | 2026-10-02 22:27:24.995 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+notificaciones-service-2  | 2026-10-02 22:27:25.004 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+notificaciones-service-2  | 2026-10-02 22:27:25.007 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790990845007 with initial instances count: 0
+notificaciones-service-2  | 2026-10-02 22:27:25.015 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application NOTIFICACIONES-SERVICE with eureka with status UP
+notificaciones-service-2  | 2026-10-02 22:27:25.016 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790990845016, current=UP, previous=STARTING]
+notificaciones-service-2  | 2026-10-02 22:27:25.022 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/cf4732aa2f27:notificaciones-service:8084: registering service...
+notificaciones-service-2  | 2026-10-02 22:27:25.085 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+notificaciones-service-2  | 2026-10-02 22:27:25.157 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+notificaciones-service-2  | 2026-10-02 22:27:25.300 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+notificaciones-service-2  | 	allow.auto.create.topics = true
+notificaciones-service-2  | 	auto.commit.interval.ms = 5000
+notificaciones-service-2  | 	auto.include.jmx.reporter = true
+notificaciones-service-2  | 	auto.offset.reset = earliest
+notificaciones-service-2  | 	bootstrap.servers = [kafka:29092]
+notificaciones-service-2  | 	check.crcs = true
+notificaciones-service-2  | 	client.dns.lookup = use_all_dns_ips
+notificaciones-service-2  | 	client.id = consumer-notificaciones-service-1
+notificaciones-service-2  | 	client.rack = 
+notificaciones-service-2  | 	connections.max.idle.ms = 540000
+notificaciones-service-2  | 	default.api.timeout.ms = 60000
+notificaciones-service-2  | 	enable.auto.commit = false
+notificaciones-service-2  | 	enable.metrics.push = true
+notificaciones-service-2  | 	exclude.internal.topics = true
+notificaciones-service-2  | 	fetch.max.bytes = 52428800
+notificaciones-service-2  | 	fetch.max.wait.ms = 500
+notificaciones-service-2  | 	fetch.min.bytes = 1
+notificaciones-service-2  | 	group.id = notificaciones-service
+notificaciones-service-2  | 	group.instance.id = null
+notificaciones-service-2  | 	group.protocol = classic
+notificaciones-service-2  | 	group.remote.assignor = null
+notificaciones-service-2  | 	heartbeat.interval.ms = 3000
+notificaciones-service-2  | 	interceptor.classes = []
+notificaciones-service-2  | 	internal.leave.group.on.close = true
+notificaciones-service-2  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+notificaciones-service-2  | 	isolation.level = read_uncommitted
+notificaciones-service-2  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+notificaciones-service-2  | 	max.partition.fetch.bytes = 1048576
+notificaciones-service-2  | 	max.poll.interval.ms = 300000
+notificaciones-service-2  | 	max.poll.records = 500
+notificaciones-service-2  | 	metadata.max.age.ms = 300000
+notificaciones-service-2  | 	metric.reporters = []
+notificaciones-service-2  | 	metrics.num.samples = 2
+notificaciones-service-2  | 	metrics.recording.level = INFO
+notificaciones-service-2  | 	metrics.sample.window.ms = 30000
+notificaciones-service-2  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+notificaciones-service-2  | 	receive.buffer.bytes = 65536
+notificaciones-service-2  | 	reconnect.backoff.max.ms = 1000
+notificaciones-service-2  | 	reconnect.backoff.ms = 50
+notificaciones-service-2  | 	request.timeout.ms = 30000
+notificaciones-service-2  | 	retry.backoff.max.ms = 1000
+notificaciones-service-2  | 	retry.backoff.ms = 100
+notificaciones-service-2  | 	sasl.client.callback.handler.class = null
+notificaciones-service-2  | 	sasl.jaas.config = null
+notificaciones-service-2  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+notificaciones-service-2  | 	sasl.kerberos.min.time.before.relogin = 60000
+notificaciones-service-2  | 	sasl.kerberos.service.name = null
+notificaciones-service-2  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+notificaciones-service-2  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+notificaciones-service-2  | 	sasl.login.callback.handler.class = null
+notificaciones-service-2  | 	sasl.login.class = null
+notificaciones-service-2  | 	sasl.login.connect.timeout.ms = null
+notificaciones-service-2  | 	sasl.login.read.timeout.ms = null
+notificaciones-service-2  | 	sasl.login.refresh.buffer.seconds = 300
+notificaciones-service-2  | 	sasl.login.refresh.min.period.seconds = 60
+notificaciones-service-2  | 	sasl.login.refresh.window.factor = 0.8
+notificaciones-service-2  | 	sasl.login.refresh.window.jitter = 0.05
+notificaciones-service-2  | 	sasl.login.retry.backoff.max.ms = 10000
+notificaciones-service-2  | 	sasl.login.retry.backoff.ms = 100
+notificaciones-service-2  | 	sasl.mechanism = GSSAPI
+notificaciones-service-2  | 	sasl.oauthbearer.clock.skew.seconds = 30
+notificaciones-service-2  | 	sasl.oauthbearer.expected.audience = null
+notificaciones-service-2  | 	sasl.oauthbearer.expected.issuer = null
+notificaciones-service-2  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+notificaciones-service-2  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+notificaciones-service-2  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+notificaciones-service-2  | 	sasl.oauthbearer.jwks.endpoint.url = null
+notificaciones-service-2  | 	sasl.oauthbearer.scope.claim.name = scope
+notificaciones-service-2  | 	sasl.oauthbearer.sub.claim.name = sub
+notificaciones-service-2  | 	sasl.oauthbearer.token.endpoint.url = null
+notificaciones-service-2  | 	security.protocol = PLAINTEXT
+notificaciones-service-2  | 	security.providers = null
+notificaciones-service-2  | 	send.buffer.bytes = 131072
+notificaciones-service-2  | 	session.timeout.ms = 45000
+notificaciones-service-2  | 	socket.connection.setup.timeout.max.ms = 30000
+notificaciones-service-1  | 
+notificaciones-service-1  |   .   ____          _            __ _ _
+notificaciones-service-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+notificaciones-service-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+notificaciones-service-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+notificaciones-service-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+notificaciones-service-1  |  =========|_|==============|___/=/_/_/_/
+notificaciones-service-1  | 
+notificaciones-service-1  |  :: Spring Boot ::                (v3.3.4)
+notificaciones-service-1  | 
+notificaciones-service-2  | 	socket.connection.setup.timeout.ms = 10000
+notificaciones-service-2  | 	ssl.cipher.suites = null
+notificaciones-service-2  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+notificaciones-service-2  | 	ssl.endpoint.identification.algorithm = https
+notificaciones-service-2  | 	ssl.engine.factory.class = null
+notificaciones-service-2  | 	ssl.key.password = null
+notificaciones-service-2  | 	ssl.keymanager.algorithm = SunX509
+notificaciones-service-2  | 	ssl.keystore.certificate.chain = null
+notificaciones-service-2  | 	ssl.keystore.key = null
+notificaciones-service-2  | 	ssl.keystore.location = null
+notificaciones-service-2  | 	ssl.keystore.password = null
+notificaciones-service-2  | 	ssl.keystore.type = JKS
+notificaciones-service-2  | 	ssl.protocol = TLSv1.3
+notificaciones-service-2  | 	ssl.provider = null
+notificaciones-service-2  | 	ssl.secure.random.implementation = null
+notificaciones-service-2  | 	ssl.trustmanager.algorithm = PKIX
+notificaciones-service-2  | 	ssl.truststore.certificates = null
+notificaciones-service-2  | 	ssl.truststore.location = null
+notificaciones-service-2  | 	ssl.truststore.password = null
+notificaciones-service-2  | 	ssl.truststore.type = JKS
+notificaciones-service-2  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+notificaciones-service-2  | 
+notificaciones-service-2  | 2026-10-02 22:27:25.429 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+notificaciones-service-2  | 2026-10-02 22:27:25.471 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/cf4732aa2f27:notificaciones-service:8084 - registration status: 204
+notificaciones-service-2  | 2026-10-02 22:27:25.946 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+notificaciones-service-2  | 2026-10-02 22:27:25.948 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+notificaciones-service-2  | 2026-10-02 22:27:25.949 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790990845944
+notificaciones-service-2  | 2026-10-02 22:27:25.954 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Subscribed to topic(s): bancoxyz.transferencias.resultado
+notificaciones-service-2  | 2026-10-02 22:27:26.055 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Started NotificacionesServiceApplication in 7.802 seconds (process running for 8.341)
+notificaciones-service-2  | 2026-10-02 22:27:26.959 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Error while fetching metadata with correlation id 2 : {bancoxyz.transferencias.resultado=UNKNOWN_TOPIC_OR_PARTITION}
+notificaciones-service-2  | 2026-10-02 22:27:26.960 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+notificaciones-service-2  | 2026-10-02 22:27:27.383 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.387 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+notificaciones-service-2  | 2026-10-02 22:27:27.446 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Group coordinator kafka:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+notificaciones-service-1  | 2026-10-02 22:27:20.143 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Starting NotificacionesServiceApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+notificaciones-service-1  | 2026-10-02 22:27:20.155 [main] INFO  c.b.b.n.NotificacionesServiceApplication - No active profile set, falling back to 1 default profile: "default"
+notificaciones-service-1  | 2026-10-02 22:27:20.203 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+notificaciones-service-1  | 2026-10-02 22:27:20.204 [main] INFO  o.s.c.c.client.ConfigServerConfigDataLoader - Located environment: name=notificaciones-service, profiles=[default], label=null, version=null, state=null
+notificaciones-service-1  | 2026-10-02 22:27:23.395 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a6416b35-5664-3058-ba05-df1432ac092c
+notificaciones-service-1  | 2026-10-02 22:27:23.849 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+notificaciones-service-1  | 2026-10-02 22:27:23.863 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+notificaciones-service-1  | 2026-10-02 22:27:23.864 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+notificaciones-service-1  | 2026-10-02 22:27:23.900 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+notificaciones-service-1  | 2026-10-02 22:27:23.902 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3694 ms
+notificaciones-service-1  | 2026-10-02 22:27:25.463 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+notificaciones-service-1  | 2026-10-02 22:27:25.532 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+notificaciones-service-1  | 2026-10-02 22:27:25.548 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+notificaciones-service-1  | 2026-10-02 22:27:25.695 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+notificaciones-service-1  | 2026-10-02 22:27:25.754 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+notificaciones-service-1  | 2026-10-02 22:27:25.758 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+notificaciones-service-1  | 2026-10-02 22:27:25.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+notificaciones-service-1  | 2026-10-02 22:27:25.766 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+notificaciones-service-1  | 2026-10-02 22:27:25.766 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+notificaciones-service-1  | 2026-10-02 22:27:25.766 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+notificaciones-service-1  | 2026-10-02 22:27:25.767 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+notificaciones-service-1  | 2026-10-02 22:27:25.767 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+notificaciones-service-1  | 2026-10-02 22:27:25.767 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+notificaciones-service-1  | 2026-10-02 22:27:26.457 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+notificaciones-service-1  | 2026-10-02 22:27:26.464 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+notificaciones-service-1  | 2026-10-02 22:27:26.468 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+notificaciones-service-1  | 2026-10-02 22:27:26.473 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1790990846472 with initial instances count: 0
+notificaciones-service-1  | 2026-10-02 22:27:26.518 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application NOTIFICACIONES-SERVICE with eureka with status UP
+notificaciones-service-1  | 2026-10-02 22:27:26.519 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1790990846519, current=UP, previous=STARTING]
+notificaciones-service-1  | 2026-10-02 22:27:26.522 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/051f915ec351:notificaciones-service:8084: registering service...
+notificaciones-service-1  | 2026-10-02 22:27:26.582 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+notificaciones-service-1  | 2026-10-02 22:27:26.583 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+notificaciones-service-1  | 2026-10-02 22:27:26.619 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_NOTIFICACIONES-SERVICE/051f915ec351:notificaciones-service:8084 - registration status: 204
+notificaciones-service-1  | 2026-10-02 22:27:26.689 [main] INFO  o.a.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+notificaciones-service-1  | 	allow.auto.create.topics = true
+notificaciones-service-1  | 	auto.commit.interval.ms = 5000
+notificaciones-service-1  | 	auto.include.jmx.reporter = true
+notificaciones-service-1  | 	auto.offset.reset = earliest
+notificaciones-service-1  | 	bootstrap.servers = [kafka:29092]
+notificaciones-service-1  | 	check.crcs = true
+notificaciones-service-1  | 	client.dns.lookup = use_all_dns_ips
+notificaciones-service-1  | 	client.id = consumer-notificaciones-service-1
+notificaciones-service-1  | 	client.rack = 
+notificaciones-service-1  | 	connections.max.idle.ms = 540000
+notificaciones-service-1  | 	default.api.timeout.ms = 60000
+notificaciones-service-1  | 	enable.auto.commit = false
+notificaciones-service-1  | 	enable.metrics.push = true
+notificaciones-service-1  | 	exclude.internal.topics = true
+notificaciones-service-1  | 	fetch.max.bytes = 52428800
+notificaciones-service-1  | 	fetch.max.wait.ms = 500
+notificaciones-service-1  | 	fetch.min.bytes = 1
+notificaciones-service-1  | 	group.id = notificaciones-service
+notificaciones-service-1  | 	group.instance.id = null
+notificaciones-service-1  | 	group.protocol = classic
+notificaciones-service-1  | 	group.remote.assignor = null
+notificaciones-service-1  | 	heartbeat.interval.ms = 3000
+notificaciones-service-1  | 	interceptor.classes = []
+notificaciones-service-1  | 	internal.leave.group.on.close = true
+notificaciones-service-1  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+notificaciones-service-1  | 	isolation.level = read_uncommitted
+notificaciones-service-1  | 	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+notificaciones-service-1  | 	max.partition.fetch.bytes = 1048576
+notificaciones-service-1  | 	max.poll.interval.ms = 300000
+notificaciones-service-1  | 	max.poll.records = 500
+notificaciones-service-1  | 	metadata.max.age.ms = 300000
+notificaciones-service-1  | 	metric.reporters = []
+notificaciones-service-1  | 	metrics.num.samples = 2
+notificaciones-service-1  | 	metrics.recording.level = INFO
+notificaciones-service-1  | 	metrics.sample.window.ms = 30000
+notificaciones-service-1  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+notificaciones-service-1  | 	receive.buffer.bytes = 65536
+notificaciones-service-1  | 	reconnect.backoff.max.ms = 1000
+notificaciones-service-1  | 	reconnect.backoff.ms = 50
+notificaciones-service-1  | 	request.timeout.ms = 30000
+notificaciones-service-1  | 	retry.backoff.max.ms = 1000
+notificaciones-service-1  | 	retry.backoff.ms = 100
+notificaciones-service-1  | 	sasl.client.callback.handler.class = null
+notificaciones-service-1  | 	sasl.jaas.config = null
+notificaciones-service-1  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+notificaciones-service-1  | 	sasl.kerberos.min.time.before.relogin = 60000
+notificaciones-service-1  | 	sasl.kerberos.service.name = null
+notificaciones-service-1  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+notificaciones-service-1  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+notificaciones-service-1  | 	sasl.login.callback.handler.class = null
+notificaciones-service-1  | 	sasl.login.class = null
+notificaciones-service-1  | 	sasl.login.connect.timeout.ms = null
+notificaciones-service-1  | 	sasl.login.read.timeout.ms = null
+notificaciones-service-1  | 	sasl.login.refresh.buffer.seconds = 300
+notificaciones-service-1  | 	sasl.login.refresh.min.period.seconds = 60
+notificaciones-service-1  | 	sasl.login.refresh.window.factor = 0.8
+notificaciones-service-1  | 	sasl.login.refresh.window.jitter = 0.05
+notificaciones-service-1  | 	sasl.login.retry.backoff.max.ms = 10000
+notificaciones-service-1  | 	sasl.login.retry.backoff.ms = 100
+notificaciones-service-1  | 	sasl.mechanism = GSSAPI
+notificaciones-service-1  | 	sasl.oauthbearer.clock.skew.seconds = 30
+notificaciones-service-1  | 	sasl.oauthbearer.expected.audience = null
+notificaciones-service-1  | 	sasl.oauthbearer.expected.issuer = null
+notificaciones-service-1  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+notificaciones-service-1  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+notificaciones-service-1  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+notificaciones-service-1  | 	sasl.oauthbearer.jwks.endpoint.url = null
+notificaciones-service-1  | 	sasl.oauthbearer.scope.claim.name = scope
+notificaciones-service-1  | 	sasl.oauthbearer.sub.claim.name = sub
+notificaciones-service-1  | 	sasl.oauthbearer.token.endpoint.url = null
+notificaciones-service-1  | 	security.protocol = PLAINTEXT
+notificaciones-service-1  | 	security.providers = null
+notificaciones-service-1  | 	send.buffer.bytes = 131072
+notificaciones-service-1  | 	session.timeout.ms = 45000
+notificaciones-service-1  | 	socket.connection.setup.timeout.max.ms = 30000
+notificaciones-service-1  | 	socket.connection.setup.timeout.ms = 10000
+notificaciones-service-1  | 	ssl.cipher.suites = null
+notificaciones-service-1  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+notificaciones-service-1  | 	ssl.endpoint.identification.algorithm = https
+notificaciones-service-1  | 	ssl.engine.factory.class = null
+notificaciones-service-1  | 	ssl.key.password = null
+notificaciones-service-1  | 	ssl.keymanager.algorithm = SunX509
+notificaciones-service-1  | 	ssl.keystore.certificate.chain = null
+notificaciones-service-1  | 	ssl.keystore.key = null
+notificaciones-service-1  | 	ssl.keystore.location = null
+notificaciones-service-1  | 	ssl.keystore.password = null
+notificaciones-service-1  | 	ssl.keystore.type = JKS
+notificaciones-service-1  | 	ssl.protocol = TLSv1.3
+notificaciones-service-1  | 	ssl.provider = null
+notificaciones-service-1  | 	ssl.secure.random.implementation = null
+notificaciones-service-1  | 	ssl.trustmanager.algorithm = PKIX
+notificaciones-service-1  | 	ssl.truststore.certificates = null
+notificaciones-service-1  | 	ssl.truststore.location = null
+notificaciones-service-2  | 2026-10-02 22:27:27.446 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Requesting disconnect from last known coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.446 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+notificaciones-service-2  | 2026-10-02 22:27:27.446 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Client requested disconnect from node 2147483646
+notificaciones-service-2  | 2026-10-02 22:27:27.466 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.467 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Group coordinator kafka:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+notificaciones-service-2  | 2026-10-02 22:27:27.467 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Requesting disconnect from last known coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.581 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.582 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+notificaciones-service-2  | 2026-10-02 22:27:27.585 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+notificaciones-service-2  | 2026-10-02 22:27:27.596 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Group coordinator kafka:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+notificaciones-service-2  | 2026-10-02 22:27:27.597 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Requesting disconnect from last known coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.597 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+notificaciones-service-2  | 2026-10-02 22:27:27.597 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Client requested disconnect from node 2147483646
+notificaciones-service-2  | 2026-10-02 22:27:27.605 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.605 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Group coordinator kafka:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+notificaciones-service-2  | 2026-10-02 22:27:27.605 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Requesting disconnect from last known coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.707 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.708 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+notificaciones-service-2  | 2026-10-02 22:27:27.709 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+notificaciones-service-2  | 2026-10-02 22:27:27.714 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Group coordinator kafka:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted.
+notificaciones-service-2  | 2026-10-02 22:27:27.714 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Requesting disconnect from last known coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.714 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'}
+notificaciones-service-2  | 2026-10-02 22:27:27.714 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Client requested disconnect from node 2147483646
+notificaciones-service-2  | 2026-10-02 22:27:27.724 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.724 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Group coordinator kafka:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+notificaciones-service-2  | 2026-10-02 22:27:27.724 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Requesting disconnect from last known coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.842 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-2  | 2026-10-02 22:27:27.844 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException)
+notificaciones-service-2  | 2026-10-02 22:27:27.845 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+notificaciones-service-2  | 2026-10-02 22:27:27.872 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: need to re-join with the given member-id: consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742
+notificaciones-service-2  | 2026-10-02 22:27:27.878 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+notificaciones-service-2  | 2026-10-02 22:27:28.076 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+notificaciones-service-2  | 2026-10-02 22:27:28.078 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+notificaciones-service-2  | 2026-10-02 22:27:28.081 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+notificaciones-service-2  | 2026-10-02 22:27:33.928 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742', protocol='range'}
+notificaciones-service-2  | 2026-10-02 22:27:33.959 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Finished assignment for group at generation 1: {consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742=Assignment(partitions=[bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-3]), consumer-notificaciones-service-1-02160dfb-636d-4b25-bb28-ab509f409838=Assignment(partitions=[bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1])}
+notificaciones-service-2  | 2026-10-02 22:27:34.036 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742', protocol='range'}
+notificaciones-service-2  | 2026-10-02 22:27:34.039 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-3])
+notificaciones-service-2  | 2026-10-02 22:27:34.057 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Adding newly assigned partitions: bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-3
+notificaciones-service-2  | 2026-10-02 22:27:34.080 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-2
+notificaciones-service-2  | 2026-10-02 22:27:34.091 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-3
+notificaciones-service-2  | 2026-10-02 22:27:34.133 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+notificaciones-service-2  | 2026-10-02 22:27:34.135 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+notificaciones-service-2  | 2026-10-02 22:27:34.137 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - notificaciones-service: partitions assigned: [bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-3]
+notificaciones-service-2  | 2026-10-02 22:27:54.995 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+notificaciones-service-2  | 2026-10-02 22:27:54.995 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+notificaciones-service-2  | 2026-10-02 22:27:54.995 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+notificaciones-service-2  | 2026-10-02 22:27:54.995 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+notificaciones-service-2  | 2026-10-02 22:27:54.995 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+notificaciones-service-2  | 2026-10-02 22:27:54.995 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+notificaciones-service-2  | 2026-10-02 22:27:54.995 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+notificaciones-service-2  | 2026-10-02 22:27:55.100 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+notificaciones-service-2  | 2026-10-02 22:28:55.978 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8084] Notificacion procesada (particion=3, offset=0) - transferenciaId=9d83efbc-9214-4804-9358-ff031f8c8500 cuentaOrigen=101 estado=RECHAZADA -> "Su transferencia de $9.99999999E8 no pudo procesarse: Saldo insuficiente en la cuenta origen (saldo=9500.0, solicitado=9.99999999E8)."
+notificaciones-service-1  | 	ssl.truststore.password = null
+notificaciones-service-1  | 	ssl.truststore.type = JKS
+notificaciones-service-1  | 	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+notificaciones-service-1  | 
+notificaciones-service-1  | 2026-10-02 22:27:26.786 [main] INFO  o.a.k.c.t.internals.KafkaMetricsCollector - initializing Kafka metrics collector
+notificaciones-service-1  | 2026-10-02 22:27:27.349 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+notificaciones-service-1  | 2026-10-02 22:27:27.349 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+notificaciones-service-1  | 2026-10-02 22:27:27.350 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1790990847347
+notificaciones-service-1  | 2026-10-02 22:27:27.360 [main] INFO  o.a.k.c.c.internals.LegacyKafkaConsumer - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Subscribed to topic(s): bancoxyz.transferencias.resultado
+notificaciones-service-1  | 2026-10-02 22:27:27.430 [main] INFO  c.b.b.n.NotificacionesServiceApplication - Started NotificacionesServiceApplication in 8.923 seconds (process running for 9.524)
+notificaciones-service-1  | 2026-10-02 22:27:28.414 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Cluster ID: Some(5L6g3nShT-eMCtK--X86sw)
+notificaciones-service-1  | 2026-10-02 22:27:28.418 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Discovered group coordinator kafka:29092 (id: 2147483646 rack: null)
+notificaciones-service-1  | 2026-10-02 22:27:28.430 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+notificaciones-service-1  | 2026-10-02 22:27:28.430 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+notificaciones-service-1  | 2026-10-02 22:27:28.431 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+notificaciones-service-1  | 2026-10-02 22:27:28.434 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+notificaciones-service-1  | 2026-10-02 22:27:28.513 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Request joining group due to: need to re-join with the given member-id: consumer-notificaciones-service-1-02160dfb-636d-4b25-bb28-ab509f409838
+notificaciones-service-1  | 2026-10-02 22:27:28.514 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] (Re-)joining group
+notificaciones-service-1  | 2026-10-02 22:27:33.920 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-notificaciones-service-1-02160dfb-636d-4b25-bb28-ab509f409838', protocol='range'}
+notificaciones-service-1  | 2026-10-02 22:27:34.018 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-notificaciones-service-1-02160dfb-636d-4b25-bb28-ab509f409838', protocol='range'}
+notificaciones-service-1  | 2026-10-02 22:27:34.022 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Notifying assignor about the new Assignment(partitions=[bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1])
+notificaciones-service-1  | 2026-10-02 22:27:34.024 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Adding newly assigned partitions: bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1
+notificaciones-service-1  | 2026-10-02 22:27:34.051 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-1
+notificaciones-service-1  | 2026-10-02 22:27:34.052 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerCoordinator - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Found no committed offset for partition bancoxyz.transferencias.resultado-0
+notificaciones-service-1  | 2026-10-02 22:27:34.091 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+notificaciones-service-1  | 2026-10-02 22:27:34.092 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.SubscriptionState - [Consumer clientId=consumer-notificaciones-service-1, groupId=notificaciones-service] Resetting offset for partition bancoxyz.transferencias.resultado-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 1 rack: null)], epoch=0}}.
+notificaciones-service-1  | 2026-10-02 22:27:34.093 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.listener.KafkaMessageListenerContainer - notificaciones-service: partitions assigned: [bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-1]
+notificaciones-service-1  | 2026-10-02 22:27:56.468 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+notificaciones-service-1  | 2026-10-02 22:27:56.468 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+notificaciones-service-1  | 2026-10-02 22:27:56.468 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+notificaciones-service-1  | 2026-10-02 22:27:56.468 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+notificaciones-service-1  | 2026-10-02 22:27:56.468 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+notificaciones-service-1  | 2026-10-02 22:27:56.468 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+notificaciones-service-1  | 2026-10-02 22:27:56.468 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+notificaciones-service-1  | 2026-10-02 22:27:56.744 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+notificaciones-service-1  | 2026-10-02 22:28:54.576 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8084] Notificacion procesada (particion=1, offset=0) - transferenciaId=5ab8d1e0-2591-4157-9321-059f0ea58482 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $500.0 a la cuenta 105 se realizo con exito."
+notificaciones-service-1  | 2026-10-02 22:28:56.206 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8084] Notificacion procesada (particion=0, offset=0) - transferenciaId=6f7e10f7-549e-490e-b3dc-d69d8e5e097f cuentaOrigen=101 estado=COMPENSADA -> "Su transferencia de $250.0 fue revertida: La cuenta destino 999999 no existe; se revirtio el debito aplicado en la cuenta origen."
+notificaciones-service-1  | 2026-10-02 22:28:56.444 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8084] Notificacion procesada (particion=1, offset=1) - transferenciaId=788aa2b8-6bc4-484a-af1a-d130df0f7e6a cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $50.0 a la cuenta 105 se realizo con exito."
+notificaciones-service-1  | 2026-10-02 22:28:56.479 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8084] Notificacion procesada (particion=0, offset=1) - transferenciaId=bb5e43e8-a618-4acf-8656-e047c96cad09 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $75.0 a la cuenta 105 se realizo con exito."
+notificaciones-service-1  | 2026-10-02 22:28:56.521 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.b.b.n.l.TransferenciaResultadoListener - [instancia :8084] Notificacion procesada (particion=1, offset=2) - transferenciaId=018f3348-0d49-478f-acf9-166a31879423 cuentaOrigen=101 estado=COMPLETADA -> "Su transferencia de $120.0 a la cuenta 105 se realizo con exito."

@@ -1,5 +1,6 @@
-core:
-  internal-api-key: "clave-interna-banco-xyz-2026"
+# Desde la Semana 8 core-service ya no usa una clave interna compartida (core.internal-api-key):
+# es un OAuth 2.0 Resource Server que valida access tokens emitidos por auth-server (ver
+# core-service/.../config/SecurityConfig.java).
 
 kafka:
   topics:

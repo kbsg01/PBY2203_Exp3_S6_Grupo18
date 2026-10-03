@@ -1,0 +1,38 @@
+bancoxyz-auth-server  | 
+bancoxyz-auth-server  |   .   ____          _            __ _ _
+bancoxyz-auth-server  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-auth-server  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-auth-server  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-auth-server  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-auth-server  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-auth-server  | 
+bancoxyz-auth-server  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-auth-server  | 
+bancoxyz-auth-server  | 2026-10-02 22:27:08.003 [main] INFO  com.bancoxyz.auth.AuthServerApplication - Starting AuthServerApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-auth-server  | 2026-10-02 22:27:08.009 [main] INFO  com.bancoxyz.auth.AuthServerApplication - No active profile set, falling back to 1 default profile: "default"
+bancoxyz-auth-server  | 2026-10-02 22:27:11.031 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9000 (http)
+bancoxyz-auth-server  | 2026-10-02 22:27:11.046 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+bancoxyz-auth-server  | 2026-10-02 22:27:11.046 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-auth-server  | 2026-10-02 22:27:11.091 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+bancoxyz-auth-server  | 2026-10-02 22:27:11.092 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2950 ms
+bancoxyz-auth-server  | 2026-10-02 22:27:13.614 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+bancoxyz-auth-server  | 2026-10-02 22:27:15.861 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9000 (http) with context path '/'
+bancoxyz-auth-server  | 2026-10-02 22:27:15.897 [main] INFO  com.bancoxyz.auth.AuthServerApplication - Started AuthServerApplication in 8.862 seconds (process running for 9.434)
+bancoxyz-auth-server  | 2026-10-02 22:27:17.010 [http-nio-9000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-auth-server  | 2026-10-02 22:27:17.011 [http-nio-9000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+bancoxyz-auth-server  | 2026-10-02 22:27:17.013 [http-nio-9000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+bancoxyz-auth-server  | 2026-10-02 22:28:50.527 [http-nio-9000-exec-7] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:50.807 [http-nio-9000-exec-9] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=bff-mobile grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:50.943 [http-nio-9000-exec-1] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=bff-atm grant=client_credentials scopes=[core.read, core.write]
+bancoxyz-auth-server  | 2026-10-02 22:28:51.454 [http-nio-9000-exec-9] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:51.735 [http-nio-9000-exec-1] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=bff-web grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:52.316 [http-nio-9000-exec-2] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=bff-mobile grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:52.827 [http-nio-9000-exec-3] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=bff-atm grant=client_credentials scopes=[core.read, core.write]
+bancoxyz-auth-server  | 2026-10-02 22:28:53.458 [http-nio-9000-exec-4] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:53.576 [http-nio-9000-exec-7] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:55.549 [http-nio-9000-exec-8] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:55.661 [http-nio-9000-exec-9] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:55.773 [http-nio-9000-exec-1] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:55.992 [http-nio-9000-exec-3] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:56.111 [http-nio-9000-exec-5] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]
+bancoxyz-auth-server  | 2026-10-02 22:28:56.338 [http-nio-9000-exec-7] INFO  com.bancoxyz.auth.config.TokenConfig - Access token emitido: cliente=evidencia-cli grant=client_credentials scopes=[core.read]

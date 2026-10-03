@@ -4,14 +4,14 @@
 === 1. Transferencia EXITOSA: cuenta 101 -> cuenta 105, $500 ===
 Saldo antes: cuenta 101 = 10000.0 | cuenta 105 = 9000.0
 {
-  "transferenciaId": "a5cc0df7-98c6-4b50-8a83-7fe4a967731b",
+  "transferenciaId": "dbb57afc-0ba1-462b-9989-667ce0cda5e2",
   "estado": "EN_PROCESO",
-  "mensaje": "Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/a5cc0df7-98c6-4b50-8a83-7fe4a967731b"
+  "mensaje": "Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/dbb57afc-0ba1-462b-9989-667ce0cda5e2"
 }
 POST /transferencias -> HTTP 202 (se espera 202)
 Esperando el resultado final de la saga...
 {
-  "transferenciaId": "a5cc0df7-98c6-4b50-8a83-7fe4a967731b",
+  "transferenciaId": "dbb57afc-0ba1-462b-9989-667ce0cda5e2",
   "cuentaOrigen": 101,
   "cuentaDestino": 105,
   "monto": 500.0,
@@ -23,7 +23,7 @@ Saldo despues: cuenta 101 = 9500.0 (baja $500) | cuenta 105 = 9500.0 (sube $500)
 
 === 2. Transferencia RECHAZADA: fondos insuficientes en la cuenta origen ===
 {
-  "transferenciaId": "a493dcf5-7dfc-4043-87bb-5413e18270bb",
+  "transferenciaId": "36376acf-fa33-40c4-8460-591f8c8117d9",
   "cuentaOrigen": 101,
   "cuentaDestino": 105,
   "monto": 999999999,
@@ -35,7 +35,7 @@ Saldo cuenta 101: antes=9500.0 despues=9500.0 (deben ser iguales: nunca se llego
 
 === 3. Transferencia COMPENSADA: la cuenta destino no existe (se revierte el debito) ===
 {
-  "transferenciaId": "116d239b-5021-496a-822a-d1272301c297",
+  "transferenciaId": "a2500a03-977a-4e81-84d7-f0159b4a8319",
   "cuentaOrigen": 101,
   "cuentaDestino": 999999,
   "monto": 250.0,
@@ -49,9 +49,9 @@ Saldo cuenta 101: antes=9500.0 despues=9500.0 (deben ser iguales: se debito $250
 POST /api/web/cuentas/105/transferencias con token de la cuenta 101 -> HTTP 403 (se espera 403)
 
 === 5. Transferencias adicionales (para la evidencia de escalabilidad de notificaciones-service) ===
-{"transferenciaId":"3e82ae8c-b975-4fba-8902-0465b4588fc5","estado":"EN_PROCESO","mensaje":"Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/3e82ae8c-b975-4fba-8902-0465b4588fc5"}
-{"transferenciaId":"97ae046e-a81e-4d84-8c4d-9ce641d3d571","estado":"EN_PROCESO","mensaje":"Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/97ae046e-a81e-4d84-8c4d-9ce641d3d571"}
-{"transferenciaId":"6ca32c0f-213b-44ff-800c-2248d7fc5e5a","estado":"EN_PROCESO","mensaje":"Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/6ca32c0f-213b-44ff-800c-2248d7fc5e5a"}
+{"transferenciaId":"04357813-3273-4072-a9a5-d0247d2b8b52","estado":"EN_PROCESO","mensaje":"Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/04357813-3273-4072-a9a5-d0247d2b8b52"}
+{"transferenciaId":"ef7fc386-7826-4bcc-bb52-ee5de5da3d80","estado":"EN_PROCESO","mensaje":"Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/ef7fc386-7826-4bcc-bb52-ee5de5da3d80"}
+{"transferenciaId":"012492a9-3a3a-4cce-ba94-b7ea42b17c51","estado":"EN_PROCESO","mensaje":"Transferencia recibida y en procesamiento. Consulte su estado con GET /api/web/transferencias/012492a9-3a3a-4cce-ba94-b7ea42b17c51"}
 Esperando unos segundos a que notificaciones-service procese los eventos generados...
 
 === Fin de las pruebas de transferencias ===

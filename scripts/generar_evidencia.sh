@@ -6,15 +6,18 @@
 # las capturas de pantalla que pide el enunciado.
 #
 # Funciona igual en Linux/macOS y en Windows (via Git Bash, que ya es un requisito de
-# scripts/probar_apis.sh): levanta Kafka (docker compose) y los 8 procesos Java en orden
-# (config-server, eureka-server, core-service, los 3 BFF y 2 instancias de
-# notificaciones-service), corre las pruebas end-to-end, las de transferencias (Saga+Kafka) y la
-# de tolerancia a fallos, y al terminar detiene todo lo que este script levanto (incluso si algo
-# falla a mitad de camino).
+# scripts/probar_apis.sh): levanta Kafka (docker compose) y los 9 procesos Java en orden
+# (config-server, eureka-server, auth-server, core-service, los 3 BFF y 2 instancias de
+# notificaciones-service), corre las pruebas OAuth 2.0, las end-to-end, las de transferencias
+# (Saga+Kafka) y la de tolerancia a fallos, y al terminar detiene todo lo que este script levanto
+# (incluso si algo falla a mitad de camino).
+#
+# Para la variante 100% contenerizada (Semana 8: todo en docker-compose.yaml) ver
+# scripts/generar_evidencia_docker.sh.
 #
 # Requiere: JDK 21 (con jps), Maven, curl, jq, Docker (Desktop en Windows/macOS, o Docker Engine
 # en Linux) corriendo, para el broker Kafka de la Semana 7. Puertos libres 8080-8085, 8761, 8888,
-# 9092.
+# 9000, 9092 y 18081-18083 (actuator de los BFF).
 #
 # Uso:
 #   bash scripts/generar_evidencia.sh                       # compila y corre todo
@@ -145,7 +148,7 @@ verificar_arriba() {
 }
 
 if [ "$SKIP_BUILD" = false ]; then
-  echo "=== Compilando los 7 modulos (Maven) ==="
+  echo "=== Compilando los 8 modulos (Maven) ==="
   mvn -B -DskipTests package | tee evidencias/evidencia01-build.log
   if [ "${PIPESTATUS[0]}" -ne 0 ]; then
     echo "La compilacion fallo, revisa evidencias/evidencia01-build.log" >&2
@@ -169,8 +172,11 @@ verificar_arriba "config-server" "config-server/target/config-server.jar" "http:
 levantar "eureka-server" eureka-server/target/eureka-server.jar evidencia01c-eureka-server.log
 verificar_arriba "eureka-server" "eureka-server/target/eureka-server.jar" "http://localhost:8761/" evidencia01c-eureka-server.log
 
+levantar "auth-server" auth-server/target/auth-server.jar evidencia01d-auth-server.log
+verificar_arriba "auth-server" "auth-server/target/auth-server.jar" "http://localhost:9000/actuator/health" evidencia01d-auth-server.log
+
 levantar "core-service" core-service/target/core-service.jar evidencia02-core-service.log
-verificar_arriba "core-service" "core-service/target/core-service.jar" "http://localhost:8080/internal/cuentas" evidencia02-core-service.log
+verificar_arriba "core-service" "core-service/target/core-service.jar" "http://localhost:8080/actuator/health" evidencia02-core-service.log
 
 levantar "bff-web" bff-web/target/bff-web.jar evidencia03-bff-web.log
 verificar_arriba "bff-web" "bff-web/target/bff-web.jar" "https://localhost:8081/api/web/auth/login" evidencia03-bff-web.log
@@ -199,6 +205,13 @@ echo "=== Esperando a que los 4 servicios de negocio completen su registro en Eu
 # evidencia07 solo llego a mostrar 2 de los 4 servicios. Ver el javadoc de
 # esperar_registro_eureka en scripts/_common.sh para el detalle completo.
 esperar_registro_eureka 60 "CORE-SERVICE" "BFF-WEB" "BFF-MOBILE" "BFF-ATM" "NOTIFICACIONES-SERVICE"
+
+echo "=== Ejecutando pruebas OAuth 2.0 (scripts/probar_oauth2.sh, Semana 8) ==="
+bash scripts/probar_oauth2.sh 2>&1 | tee evidencias/evidencia12-oauth2.log
+if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+  echo "Las pruebas OAuth 2.0 fallaron, revisa evidencias/evidencia12-oauth2.log" >&2
+  exit 1
+fi
 
 echo "=== Ejecutando pruebas end-to-end (scripts/probar_apis.sh) ==="
 bash scripts/probar_apis.sh 2>&1 | tee evidencias/evidencia06-pruebas-apis.log

@@ -6,7 +6,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class CoreServiceProperties {
 
     private String baseUrl = "http://core-service";
-    private String apiKey;
 
     public String getBaseUrl() {
         return baseUrl;
@@ -14,13 +13,5 @@ public class CoreServiceProperties {
 
     public void setBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
-    }
-
-    public String getApiKey() {
-        return apiKey;
-    }
-
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
     }
 }
