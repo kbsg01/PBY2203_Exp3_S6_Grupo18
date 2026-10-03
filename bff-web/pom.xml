@@ -57,6 +57,19 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- OAuth 2.0 Client (Semana 8): obtiene access tokens de auth-server (client_credentials)
+             para llamar a core-service. Reemplaza la clave compartida X-Internal-Api-Key. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+        </dependency>
+        <!-- Actuator en un puerto de gestion interno (HTTP): health para Docker, y estado de los
+             circuit breakers / retries para la evidencia de tolerancia a fallos. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <!-- Spring Cloud: config centralizado, registro en Eureka y balanceo por nombre logico -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

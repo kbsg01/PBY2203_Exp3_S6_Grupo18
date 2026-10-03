@@ -1,6 +1,26 @@
 core-service:
   base-url: http://core-service
-  api-key: "clave-interna-banco-xyz-2026"
+
+# Semana 8: en vez de la antigua clave compartida (core-service.api-key), este BFF se autentica
+# ante core-service con un access token OAuth 2.0 que obtiene de auth-server (client_credentials).
+# El secreto llega por variable de entorno (BFF_WEB_CLIENT_SECRET); el valor por defecto es solo de
+# demostracion academica (en produccion viviria en un gestor de secretos, ej. AWS Secrets Manager,
+# y nunca en un archivo versionado). auth-server solo guarda su hash BCrypt.
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          core-service:
+            provider: banco-auth
+            client-id: bff-web
+            client-secret: ${BFF_WEB_CLIENT_SECRET:secreto-bff-web-banco-xyz-2026}
+            client-authentication-method: client_secret_basic
+            authorization-grant-type: client_credentials
+            scope: core.read
+        provider:
+          banco-auth:
+            token-uri: ${AUTH_SERVER_URL:http://localhost:9000}/oauth2/token
 
 seguridad:
   jwt:

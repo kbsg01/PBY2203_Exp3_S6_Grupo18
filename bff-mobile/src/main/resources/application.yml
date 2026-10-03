@@ -13,15 +13,51 @@ spring:
     name: bff-mobile
   config:
     # core-service.* y seguridad.jwt.secreto ahora viven en config-server (config-repo/bff-mobile.yml).
-    import: "optional:configserver:http://localhost:8888"
+    import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+  instance:
+    # En Docker el hostname del contenedor no siempre es resoluble por los demas; registrar la IP
+    # evita ese problema (docker-compose.yaml define EUREKA_PREFER_IP=true).
+    prefer-ip-address: ${EUREKA_PREFER_IP:false}
+
+# Actuator en un puerto de GESTION separado, solo HTTP y no publicado fuera de la red de Docker
+# (ver docker-compose.yaml): /actuator/health para el HEALTHCHECK, y /actuator/circuitbreakers y
+# /actuator/retries para observar el estado de Resilience4j en la evidencia de tolerancia a
+# fallos, sin exponer nada de esto por el puerto HTTPS publico del canal.
+management:
+  server:
+    port: 18082
+    ssl:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers,retries
 
 resilience4j:
+  # Orden de los aspectos: CircuitBreaker( Retry( llamada ) ). Por defecto Resilience4j aplica
+  # Retry por FUERA del circuit breaker; aqui se invierte (menor valor = aspecto mas externo) para
+  # que el circuito cuente UNA falla por cada peticion de negocio, despues de agotar los
+  # reintentos, y no una por cada reintento.
+  retry:
+    retry-aspect-order: 2
+    instances:
+      # Solo para lecturas (GET, idempotentes). El debito de bff-atm NO se reintenta nunca.
+      coreServiceLectura:
+        max-attempts: 3
+        wait-duration: 300ms
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+        # Solo fallas transitorias de red/servidor; un 404 de negocio no se reintenta.
+        retry-exceptions:
+          - org.springframework.web.client.ResourceAccessException
+          - org.springframework.web.client.HttpServerErrorException
   circuitbreaker:
+    circuit-breaker-aspect-order: 1
     instances:
       coreService:
         sliding-window-type: COUNT_BASED

@@ -5,9 +5,10 @@ import com.bancoxyz.bff.atm.exception.CoreServiceNoDisponibleException;
 import com.bancoxyz.bff.atm.exception.CuentaNoEncontradaException;
 import com.bancoxyz.bff.atm.exception.SaldoInsuficienteException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.oauth2.client.ClientAuthorizationException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -26,12 +27,13 @@ public class CoreServiceClient {
     }
 
     @CircuitBreaker(name = "coreService", fallbackMethod = "obtenerCuentaFallback")
+    @Retry(name = "coreServiceLectura")
     public CuentaCoreDTO obtenerCuenta(long cuentaId) {
         try {
             var respuesta = restTemplate.exchange(
                     propiedades.getBaseUrl() + "/internal/cuentas/{cuentaId}",
                     HttpMethod.GET,
-                    new HttpEntity<>(cabecerasInternas()),
+                    HttpEntity.EMPTY,
                     CuentaCoreDTO.class,
                     cuentaId);
             return respuesta.getBody();
@@ -44,8 +46,7 @@ public class CoreServiceClient {
         if (t instanceof CuentaNoEncontradaException) {
             throw (CuentaNoEncontradaException) t;
         }
-        throw new CoreServiceNoDisponibleException(
-                "core-service no disponible en este momento, intente mas tarde.", t);
+        throw new CoreServiceNoDisponibleException(mensajeNoDisponible(t), t);
     }
 
     /**
@@ -53,6 +54,10 @@ public class CoreServiceClient {
      * del dinero disponible). La validacion real de "saldo suficiente" ocurre en core-service,
      * no aqui: este BFF solo aplica sus propias reglas de canal (limite maximo por operacion,
      * ver {@code LimiteRetiroExcedidoException}) antes de reenviar la solicitud.
+     *
+     * <p>Sin {@code @Retry} a proposito (a diferencia de {@link #obtenerCuenta}): un debito NO es
+     * idempotente. Si la peticion llego a core-service pero la respuesta se perdio por un timeout,
+     * reintentarla podria debitar el retiro dos veces.</p>
      */
     @CircuitBreaker(name = "coreService", fallbackMethod = "debitarSaldoFallback")
     public CuentaCoreDTO debitarSaldo(long cuentaId, double monto) {
@@ -60,7 +65,7 @@ public class CoreServiceClient {
             var respuesta = restTemplate.exchange(
                     propiedades.getBaseUrl() + "/internal/cuentas/{cuentaId}/debito",
                     HttpMethod.POST,
-                    new HttpEntity<>(Map.of("monto", monto), cabecerasInternas()),
+                    new HttpEntity<>(Map.of("monto", monto)),
                     CuentaCoreDTO.class,
                     cuentaId);
             return respuesta.getBody();
@@ -75,13 +80,18 @@ public class CoreServiceClient {
         if (t instanceof CuentaNoEncontradaException || t instanceof SaldoInsuficienteException) {
             throw (RuntimeException) t;
         }
-        throw new CoreServiceNoDisponibleException(
-                "core-service no disponible en este momento, intente mas tarde.", t);
+        throw new CoreServiceNoDisponibleException(mensajeNoDisponible(t), t);
     }
 
-    private HttpHeaders cabecerasInternas() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("X-Internal-Api-Key", propiedades.getApiKey());
-        return headers;
+    /**
+     * Desde la Semana 8 una llamada a core-service tambien puede fallar ANTES de salir, si
+     * auth-server no entrega un access token. Para el cliente final el efecto es el mismo (503),
+     * pero el mensaje distingue cual de las dos dependencias fallo.
+     */
+    private static String mensajeNoDisponible(Throwable t) {
+        if (t instanceof ClientAuthorizationException) {
+            return "Servicio de autorizacion (auth-server) no disponible en este momento, intente mas tarde.";
+        }
+        return "core-service no disponible en este momento, intente mas tarde.";
     }
 }
