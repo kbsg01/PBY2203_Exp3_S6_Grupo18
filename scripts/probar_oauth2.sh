@@ -7,7 +7,7 @@
 # Demuestra, con llamadas HTTP reales:
 #   1. Metadatos publicos del servidor de autorizacion (RFC 8414) y su JWKS.
 #   2. Emision de un access token (client_credentials) y su contenido (claims).
-#   3. core-service rechaza (401) una peticion sin token y una con firma adulterada.
+#   3. core-service rechaza (401) una peticion sin token y una con el payload falsificado.
 #   4. core-service acepta (200) un token valido con el scope correcto.
 #   5. Menor privilegio: un token valido SIN el scope requerido recibe 403 (insufficient_scope).
 #   6. auth-server se niega a emitir un scope no autorizado para el cliente (invalid_scope) y
@@ -62,12 +62,23 @@ separador "3. core-service SIN token -> 401 (ya no existe ninguna clave comparti
 CODIGO=$(curl -s -o /dev/null -w "%{http_code}" "$CORE/internal/cuentas/101")
 esperado "GET /internal/cuentas/101 sin Authorization" "$CODIGO" 401
 
-separador "3.1 core-service con un token ADULTERADO (firma invalida) -> 401"
-TOKEN_ADULTERADO="${TOKEN_LECTURA%?}x"
-curl -s -D - -o /dev/null -H "Authorization: Bearer $TOKEN_ADULTERADO" "$CORE/internal/cuentas/101" \
-  | grep -i '^www-authenticate' || true
-CODIGO=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $TOKEN_ADULTERADO" "$CORE/internal/cuentas/101")
-esperado "GET /internal/cuentas/101 con firma alterada" "$CODIGO" 401
+separador "3.1 core-service con un token FALSIFICADO (payload alterado para escalar a core.write) -> 401"
+# Ataque tipico: tomar un token legitimo de solo lectura, editar su payload para agregarse el
+# scope core.write y reenviarlo con la firma ORIGINAL. Como la firma RS256 cubre header+payload,
+# core-service debe rechazarlo por firma invalida, sin llegar a evaluar el scope.
+# (No se altera solo el ultimo caracter de la firma: en base64url sus 2 bits bajos son relleno y
+# cambiarlos puede no modificar los bytes de la firma en absoluto.)
+CABECERA=$(cut -d. -f1 <<< "$TOKEN_LECTURA")
+FIRMA=$(cut -d. -f3 <<< "$TOKEN_LECTURA")
+PAYLOAD_FALSO=$(decodificar_jwt "$TOKEN_LECTURA" | jq -c '.scope = ["core.read","core.write"]' \
+  | base64 | tr -d '\n=' | tr '/+' '_-')
+TOKEN_FALSIFICADO="$CABECERA.$PAYLOAD_FALSO.$FIRMA"
+echo "Payload falsificado: $(decodificar_jwt "$TOKEN_FALSIFICADO" | jq -c '{sub, scope}')"
+curl -s -D - -o /dev/null -X POST -H "Authorization: Bearer $TOKEN_FALSIFICADO" -H "Content-Type: application/json" \
+  -d '{"monto":1}' "$CORE/internal/cuentas/101/debito" | grep -i '^www-authenticate' || true
+CODIGO=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Authorization: Bearer $TOKEN_FALSIFICADO" \
+  -H "Content-Type: application/json" -d '{"monto":1}' "$CORE/internal/cuentas/101/debito")
+esperado "POST /internal/cuentas/101/debito con payload falsificado (scope core.write agregado)" "$CODIGO" 401
 
 separador "4. core-service con token valido y scope core.read -> 200"
 curl -s -H "Authorization: Bearer $TOKEN_LECTURA" "$CORE/internal/cuentas/101" \

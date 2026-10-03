@@ -26,9 +26,9 @@
   "keys": [
     {
       "kty": "RSA",
-      "kid": "5e40777e-3bd3-46f4-b6ad-51fa54868f9d",
+      "kid": "5c0bc1ba-3de7-4c63-8941-06b357594619",
       "alg": "RS256",
-      "n": "sGUtiqaUEw4ss0DRYyq52beV..."
+      "n": "4k1I6R8XD6tZgW5A_hincsL3..."
     }
   ]
 }
@@ -38,28 +38,29 @@
   "token_type": "Bearer",
   "scope": "core.read",
   "expires_in": 299,
-  "access_token": "eyJraWQiOiI1ZTQwNzc3ZS0zYmQzLTQ2..."
+  "access_token": "eyJraWQiOiI1YzBiYzFiYS0zZGU3LTRj..."
 }
 Claims del token (payload decodificado, sin la firma):
 {
   "sub": "evidencia-cli",
   "aud": "evidencia-cli",
-  "nbf": 1790990930,
+  "nbf": 1790991458,
   "scope": [
     "core.read"
   ],
   "iss": "http://auth-server:9000",
-  "exp": 1790991230,
-  "iat": 1790990930,
-  "jti": "375c5ba8-fe87-4429-b458-7866878dd9d6"
+  "exp": 1790991758,
+  "iat": 1790991458,
+  "jti": "7e87293c-b848-4a60-80aa-e83c5623b0d3"
 }
 
 === 3. core-service SIN token -> 401 (ya no existe ninguna clave compartida que adivinar) ===
 OK   GET /internal/cuentas/101 sin Authorization -> HTTP 401 (se espera 401)
 
-=== 3.1 core-service con un token ADULTERADO (firma invalida) -> 401 ===
+=== 3.1 core-service con un token FALSIFICADO (payload alterado para escalar a core.write) -> 401 ===
+Payload falsificado: {"sub":"evidencia-cli","scope":["core.read","core.write"]}
 WWW-Authenticate: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Signed JWT rejected: Invalid signature", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
-OK   GET /internal/cuentas/101 con firma alterada -> HTTP 401 (se espera 401)
+OK   POST /internal/cuentas/101/debito con payload falsificado (scope core.write agregado) -> HTTP 401 (se espera 401)
 
 === 4. core-service con token valido y scope core.read -> 200 ===
 {
