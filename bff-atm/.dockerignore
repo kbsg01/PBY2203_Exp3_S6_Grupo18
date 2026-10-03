@@ -1,0 +1,3 @@
+# El contexto de build solo necesita el jar ya compilado por Maven.
+*
+!target/bff-atm.jar

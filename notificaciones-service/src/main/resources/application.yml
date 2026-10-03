@@ -8,9 +8,9 @@ spring:
   application:
     name: notificaciones-service
   config:
-    import: "optional:configserver:http://localhost:8888"
+    import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     consumer:
       # Mismo group-id en ambas instancias: es justamente eso lo que hace que Kafka reparta las
       # particiones del topico entre ellas en vez de que cada una reciba todos los mensajes.
@@ -22,11 +22,13 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
   instance:
-    # Sin esto, las 2 instancias (mismo nombre, mismo host, distinto puerto) podrian pisarse el
-    # instance-id en Eureka. Se fuerza a incluir el puerto explicitamente.
-    instance-id: ${spring.application.name}:${server.port}
+    # Sin esto, 2 instancias podrian pisarse el instance-id en Eureka. Se incluye el host (distinto
+    # en cada replica de docker-compose, que comparten el mismo puerto interno) y el puerto
+    # (distinto cuando ambas corren en la misma maquina con "java -jar": :8084 y :8085).
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${server.port}
+    prefer-ip-address: ${EUREKA_PREFER_IP:false}
 
 logging:
   pattern:

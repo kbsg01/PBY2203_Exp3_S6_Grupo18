@@ -12,6 +12,12 @@ spring:
         native:
           search-locations: classpath:/config-repo
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
 logging:
   level:
     root: INFO
