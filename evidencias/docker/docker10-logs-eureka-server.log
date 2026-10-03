@@ -1,0 +1,83 @@
+bancoxyz-eureka-server  | 
+bancoxyz-eureka-server  |   .   ____          _            __ _ _
+bancoxyz-eureka-server  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-eureka-server  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-eureka-server  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-eureka-server  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-eureka-server  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-eureka-server  | 
+bancoxyz-eureka-server  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-eureka-server  | 
+bancoxyz-eureka-server  | 2026-10-02T22:27:07.853-03:00  INFO 1 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : Starting EurekaServerApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-eureka-server  | 2026-10-02T22:27:07.863-03:00  INFO 1 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : No active profile set, falling back to 1 default profile: "default"
+bancoxyz-eureka-server  | 2026-10-02T22:27:11.178-03:00  INFO 1 --- [eureka-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3cbe52d5-3858-3fbf-a130-83fe55951f6c
+bancoxyz-eureka-server  | 2026-10-02T22:27:12.286-03:00  INFO 1 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
+bancoxyz-eureka-server  | 2026-10-02T22:27:12.353-03:00  INFO 1 --- [eureka-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+bancoxyz-eureka-server  | 2026-10-02T22:27:12.363-03:00  INFO 1 --- [eureka-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-eureka-server  | 2026-10-02T22:27:12.471-03:00  INFO 1 --- [eureka-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+bancoxyz-eureka-server  | 2026-10-02T22:27:12.475-03:00  INFO 1 --- [eureka-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4382 ms
+bancoxyz-eureka-server  | 2026-10-02T22:27:14.457-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+bancoxyz-eureka-server  | 2026-10-02T22:27:14.459-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+bancoxyz-eureka-server  | 2026-10-02T22:27:14.830-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+bancoxyz-eureka-server  | 2026-10-02T22:27:14.834-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.129-03:00  WARN 1 --- [eureka-server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.151-03:00  INFO 1 --- [eureka-server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.177-03:00  INFO 1 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.177-03:00  INFO 1 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.179-03:00  INFO 1 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1790990836178 with initial instances count: 0
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.212-03:00  INFO 1 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.213-03:00  INFO 1 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.317-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.318-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.318-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.318-03:00  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.377-03:00  INFO 1 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.385-03:00  INFO 1 --- [eureka-server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.385-03:00  INFO 1 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.398-03:00  INFO 1 --- [eureka-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.448-03:00  INFO 1 --- [eureka-server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.458-03:00  INFO 1 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.458-03:00  INFO 1 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.458-03:00  INFO 1 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.458-03:00  INFO 1 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.458-03:00  INFO 1 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.460-03:00  INFO 1 --- [eureka-server] [       Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.472-03:00  INFO 1 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.473-03:00  INFO 1 --- [eureka-server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.493-03:00  INFO 1 --- [eureka-server] [           main] c.b.discovery.EurekaServerApplication    : Started EurekaServerApplication in 9.523 seconds (process running for 10.15)
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.636-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.636-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+bancoxyz-eureka-server  | 2026-10-02T22:27:16.638-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+bancoxyz-eureka-server  | 2026-10-02T22:27:25.454-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICACIONES-SERVICE/cf4732aa2f27:notificaciones-service:8084 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:27:26.487-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICACIONES-SERVICE/cf4732aa2f27:notificaciones-service:8084 with status UP (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:27:26.598-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICACIONES-SERVICE/051f915ec351:notificaciones-service:8084 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:27:27.199-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICACIONES-SERVICE/051f915ec351:notificaciones-service:8084 with status UP (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:27:28.264-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:27:28.788-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status UP (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:27:54.958-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-ATM/cdbc0c671193:bff-atm:8083 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:27:55.470-03:00  INFO 1 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-ATM/cdbc0c671193:bff-atm:8083 with status UP (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:27:59.736-03:00  INFO 1 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-MOBILE/6b7bd5ffaee3:bff-mobile:8082 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:28:00.256-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-MOBILE/6b7bd5ffaee3:bff-mobile:8082 with status UP (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:28:00.292-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-WEB/239b3b815cf1:bff-web:8081 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:28:00.811-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BFF-WEB/239b3b815cf1:bff-web:8081 with status UP (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:28:16.459-03:00  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+bancoxyz-eureka-server  | 2026-10-02T22:29:02.397-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status DOWN (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:29:02.911-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status DOWN (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:29:05.597-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CORE-SERVICE/0060554dd7a7:core-service:8080 (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:29:06.115-03:00  WARN 1 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CORE-SERVICE/0060554dd7a7:core-service:8080
+bancoxyz-eureka-server  | 2026-10-02T22:29:06.115-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CORE-SERVICE - 0060554dd7a7:core-service:8080
+bancoxyz-eureka-server  | 2026-10-02T22:29:06.117-03:00  WARN 1 --- [eureka-server] [get_localhost-0] c.n.eureka.cluster.ReplicationTask       : The replication of task CORE-SERVICE/0060554dd7a7:core-service:8080:Cancel@localhost failed with response code 404
+bancoxyz-eureka-server  | 2026-10-02T22:29:06.118-03:00  WARN 1 --- [eureka-server] [get_localhost-0] c.netflix.eureka.cluster.PeerEurekaNode  : CORE-SERVICE/0060554dd7a7:core-service:8080:Cancel@localhost: missing entry.
+bancoxyz-eureka-server  | 2026-10-02T22:29:16.459-03:00  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+bancoxyz-eureka-server  | 2026-10-02T22:30:13.716-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:30:14.231-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status UP (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:30:16.460-03:00  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+bancoxyz-eureka-server  | 2026-10-02T22:30:34.647-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status DOWN (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:30:35.160-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status DOWN (replication=true)
+bancoxyz-eureka-server  | 2026-10-02T22:30:37.707-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CORE-SERVICE/0060554dd7a7:core-service:8080 (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:30:38.222-03:00  WARN 1 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CORE-SERVICE/0060554dd7a7:core-service:8080
+bancoxyz-eureka-server  | 2026-10-02T22:30:38.222-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CORE-SERVICE - 0060554dd7a7:core-service:8080
+bancoxyz-eureka-server  | 2026-10-02T22:30:38.225-03:00  WARN 1 --- [eureka-server] [et_localhost-19] c.n.eureka.cluster.ReplicationTask       : The replication of task CORE-SERVICE/0060554dd7a7:core-service:8080:Cancel@localhost failed with response code 404
+bancoxyz-eureka-server  | 2026-10-02T22:30:38.225-03:00  WARN 1 --- [eureka-server] [et_localhost-19] c.netflix.eureka.cluster.PeerEurekaNode  : CORE-SERVICE/0060554dd7a7:core-service:8080:Cancel@localhost: missing entry.
+bancoxyz-eureka-server  | 2026-10-02T22:30:43.472-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status UP (replication=false)
+bancoxyz-eureka-server  | 2026-10-02T22:30:43.985-03:00  INFO 1 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CORE-SERVICE/0060554dd7a7:core-service:8080 with status UP (replication=true)

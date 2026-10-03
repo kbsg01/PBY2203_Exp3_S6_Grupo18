@@ -1,0 +1,718 @@
+=== 1. Compilando los 8 modulos (mvn -DskipTests package) ===
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=45359 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] config-server                                                      [jar]
+[INFO] eureka-server                                                      [jar]
+[INFO] auth-server                                                        [jar]
+[INFO] core-service                                                       [jar]
+[INFO] bff-web                                                            [jar]
+[INFO] bff-mobile                                                         [jar]
+[INFO] bff-atm                                                            [jar]
+[INFO] notificaciones-service                                             [jar]
+[INFO] banco-xyz-bff                                                      [pom]
+[INFO] 
+[INFO] ---------------------< com.bancoxyz:config-server >---------------------
+[INFO] Building config-server 1.0.0                                       [1/9]
+[INFO]   from config-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ config-server ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ config-server ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ config-server ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/config-server/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ config-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ config-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ config-server ---
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ config-server ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/config-server/target/config-server.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/config-server/target/config-server.jar.original
+[INFO] 
+[INFO] ---------------------< com.bancoxyz:eureka-server >---------------------
+[INFO] Building eureka-server 1.0.0                                       [2/9]
+[INFO]   from eureka-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ eureka-server ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ eureka-server ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ eureka-server ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/eureka-server/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ eureka-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ eureka-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ eureka-server ---
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ eureka-server ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/eureka-server/target/eureka-server.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/eureka-server/target/eureka-server.jar.original
+[INFO] 
+[INFO] ----------------------< com.bancoxyz:auth-server >----------------------
+[INFO] Building auth-server 1.0.0                                         [3/9]
+[INFO]   from auth-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ auth-server ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ auth-server ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ auth-server ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/auth-server/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ auth-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ auth-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ auth-server ---
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ auth-server ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/auth-server/target/auth-server.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/auth-server/target/auth-server.jar.original
+[INFO] 
+[INFO] ---------------------< com.bancoxyz:core-service >----------------------
+[INFO] Building core-service 1.0.0                                        [4/9]
+[INFO]   from core-service/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ core-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ core-service ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ core-service ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/core-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ core-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ core-service ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ core-service ---
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ core-service ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/core-service/target/core-service.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/core-service/target/core-service.jar.original
+[INFO] 
+[INFO] ------------------------< com.bancoxyz:bff-web >------------------------
+[INFO] Building bff-web 1.0.0                                             [5/9]
+[INFO]   from bff-web/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-web ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-web ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 31 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bff-web ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/bff-web/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bff-web ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ bff-web ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ bff-web ---
+[INFO] Building jar: /home/user/PBY2203_Exp3_S6_Grupo18/bff-web/target/bff-web.jar
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ bff-web ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/bff-web/target/bff-web.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/bff-web/target/bff-web.jar.original
+[INFO] 
+[INFO] ----------------------< com.bancoxyz:bff-mobile >-----------------------
+[INFO] Building bff-mobile 1.0.0                                          [6/9]
+[INFO]   from bff-mobile/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-mobile ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-mobile ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 22 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bff-mobile ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/bff-mobile/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bff-mobile ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ bff-mobile ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ bff-mobile ---
+[INFO] Building jar: /home/user/PBY2203_Exp3_S6_Grupo18/bff-mobile/target/bff-mobile.jar
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ bff-mobile ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/bff-mobile/target/bff-mobile.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/bff-mobile/target/bff-mobile.jar.original
+[INFO] 
+[INFO] ------------------------< com.bancoxyz:bff-atm >------------------------
+[INFO] Building bff-atm 1.0.0                                             [7/9]
+[INFO]   from bff-atm/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-atm ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-atm ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 25 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bff-atm ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/bff-atm/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bff-atm ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ bff-atm ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ bff-atm ---
+[INFO] Building jar: /home/user/PBY2203_Exp3_S6_Grupo18/bff-atm/target/bff-atm.jar
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ bff-atm ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/bff-atm/target/bff-atm.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/bff-atm/target/bff-atm.jar.original
+[INFO] 
+[INFO] ----------------< com.bancoxyz:notificaciones-service >-----------------
+[INFO] Building notificaciones-service 1.0.0                              [8/9]
+[INFO]   from notificaciones-service/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ notificaciones-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ notificaciones-service ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ notificaciones-service ---
+[INFO] skip non existing resourceDirectory /home/user/PBY2203_Exp3_S6_Grupo18/notificaciones-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ notificaciones-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ notificaciones-service ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ notificaciones-service ---
+[INFO] 
+[INFO] --- spring-boot:3.3.4:repackage (repackage) @ notificaciones-service ---
+[INFO] Replacing main artifact /home/user/PBY2203_Exp3_S6_Grupo18/notificaciones-service/target/notificaciones-service.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/user/PBY2203_Exp3_S6_Grupo18/notificaciones-service/target/notificaciones-service.jar.original
+[INFO] 
+[INFO] ---------------------< com.bancoxyz:banco-xyz-bff >---------------------
+[INFO] Building banco-xyz-bff 1.0.0                                       [9/9]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for banco-xyz-bff 1.0.0:
+[INFO] 
+[INFO] config-server ...................................... SUCCESS [  1.312 s]
+[INFO] eureka-server ...................................... SUCCESS [  0.222 s]
+[INFO] auth-server ........................................ SUCCESS [  0.074 s]
+[INFO] core-service ....................................... SUCCESS [  0.103 s]
+[INFO] bff-web ............................................ SUCCESS [  1.648 s]
+[INFO] bff-mobile ......................................... SUCCESS [  0.693 s]
+[INFO] bff-atm ............................................ SUCCESS [  0.633 s]
+[INFO] notificaciones-service ............................. SUCCESS [  0.100 s]
+[INFO] banco-xyz-bff ...................................... SUCCESS [  0.001 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.233 s
+[INFO] Finished at: 2026-10-03T01:26:57Z
+[INFO] ------------------------------------------------------------------------
+
+=== 2. Construyendo las imagenes Docker (docker compose build) ===
+ Image bancoxyz/auth-server:1.0.0 Building 
+ Image bancoxyz/bff-web:1.0.0 Building 
+ Image bancoxyz/notificaciones-service:1.0.0 Building 
+ Image bancoxyz/eureka-server:1.0.0 Building 
+ Image bancoxyz/config-server:1.0.0 Building 
+ Image bancoxyz/bff-mobile:1.0.0 Building 
+ Image bancoxyz/core-service:1.0.0 Building 
+ Image bancoxyz/bff-atm:1.0.0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 4.01kB done
+#1 DONE 0.0s
+
+#2 [config-server internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.65kB done
+#2 DONE 0.0s
+
+#3 [eureka-server internal] load build definition from Dockerfile
+#3 transferring dockerfile: 2.59kB done
+#3 DONE 0.0s
+
+#4 [auth-server internal] load build definition from Dockerfile
+#4 transferring dockerfile: 2.62kB done
+#4 DONE 0.0s
+
+#5 [bff-atm internal] load build definition from Dockerfile
+#5 transferring dockerfile: 2.62kB done
+#5 DONE 0.0s
+
+#6 [core-service internal] load build definition from Dockerfile
+#6 transferring dockerfile: 2.66kB done
+#6 DONE 0.0s
+
+#7 [bff-mobile internal] load build definition from Dockerfile
+#7 transferring dockerfile: 2.61kB done
+#7 DONE 0.0s
+
+#8 [bff-web internal] load build definition from Dockerfile
+#8 transferring dockerfile: 2.60kB done
+#8 DONE 0.0s
+
+#9 [notificaciones-service internal] load build definition from Dockerfile
+#9 transferring dockerfile: 2.68kB done
+#9 DONE 0.0s
+
+#10 [notificaciones-service] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#10 DONE 0.8s
+
+#11 [bff-mobile] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#11 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#11 CACHED
+
+#12 [bff-mobile internal] load metadata for docker.io/library/eclipse-temurin:21-jre
+#12 DONE 0.5s
+
+#13 [notificaciones-service internal] load .dockerignore
+#13 transferring context: 145B done
+#13 DONE 0.0s
+
+#14 [bff-mobile internal] load .dockerignore
+#14 transferring context: 133B done
+#14 DONE 0.0s
+
+#15 [auth-server internal] load .dockerignore
+#15 transferring context: 134B done
+#15 DONE 0.0s
+
+#16 [bff-web internal] load .dockerignore
+#16 transferring context: 130B done
+#16 DONE 0.0s
+
+#17 [bff-atm internal] load .dockerignore
+#17 transferring context: 130B done
+#17 DONE 0.0s
+
+#18 [config-server internal] load .dockerignore
+#18 transferring context: 136B done
+#18 DONE 0.0s
+
+#19 [core-service internal] load .dockerignore
+#19 transferring context: 135B done
+#19 DONE 0.0s
+
+#20 [eureka-server internal] load .dockerignore
+#20 transferring context: 136B done
+#20 DONE 0.0s
+
+#21 [bff-web capas 1/4] FROM docker.io/library/eclipse-temurin:21-jre@sha256:cff19e6215689161eb6162c11b86b0c60ddf802164f2eaf48d570f8fb79a36c5
+#21 resolve docker.io/library/eclipse-temurin:21-jre@sha256:cff19e6215689161eb6162c11b86b0c60ddf802164f2eaf48d570f8fb79a36c5 0.0s done
+#21 DONE 0.0s
+
+#22 [bff-web internal] load build context
+#22 ...
+
+#23 [eureka-server internal] load build context
+#23 transferring context: 74B done
+#23 DONE 0.1s
+
+#24 [auth-server internal] load build context
+#24 transferring context: 72B done
+#24 DONE 0.1s
+
+#25 [notificaciones-service internal] load build context
+#25 transferring context: 83B done
+#25 DONE 0.1s
+
+#26 [core-service internal] load build context
+#26 transferring context: 73B 0.0s done
+#26 DONE 0.1s
+
+#27 [config-server internal] load build context
+#27 transferring context: 74B 0.0s done
+#27 DONE 0.2s
+
+#22 [bff-web internal] load build context
+#22 ...
+
+#28 [eureka-server capas 2/4] WORKDIR /build
+#28 CACHED
+
+#29 [eureka-server capas 3/4] COPY target/eureka-server.jar app.jar
+#29 CACHED
+
+#30 [eureka-server stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#30 CACHED
+
+#31 [eureka-server stage-1 3/7] WORKDIR /app
+#31 CACHED
+
+#32 [eureka-server stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#32 CACHED
+
+#33 [eureka-server stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#33 CACHED
+
+#34 [eureka-server stage-1 2/7] RUN groupadd --system spring && useradd --system --gid spring --no-create-home spring
+#34 CACHED
+
+#35 [eureka-server capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#35 CACHED
+
+#36 [eureka-server stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#36 CACHED
+
+#22 [bff-web internal] load build context
+#22 ...
+
+#37 [auth-server stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#37 CACHED
+
+#38 [auth-server capas 3/4] COPY target/auth-server.jar app.jar
+#38 CACHED
+
+#39 [auth-server stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#39 CACHED
+
+#40 [auth-server capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#40 CACHED
+
+#41 [auth-server stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#41 CACHED
+
+#31 [auth-server stage-1 3/7] WORKDIR /app
+#31 CACHED
+
+#42 [notificaciones-service stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#42 CACHED
+
+#43 [notificaciones-service stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#43 CACHED
+
+#44 [notificaciones-service stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#44 CACHED
+
+#28 [auth-server capas 2/4] WORKDIR /build
+#28 CACHED
+
+#34 [auth-server stage-1 2/7] RUN groupadd --system spring && useradd --system --gid spring --no-create-home spring
+#34 CACHED
+
+#45 [notificaciones-service capas 3/4] COPY target/notificaciones-service.jar app.jar
+#45 CACHED
+
+#46 [notificaciones-service capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#46 CACHED
+
+#47 [auth-server stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#47 CACHED
+
+#48 [notificaciones-service stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#48 CACHED
+
+#22 [bff-web internal] load build context
+#22 ...
+
+#49 [core-service stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#49 CACHED
+
+#50 [core-service stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#50 CACHED
+
+#51 [core-service capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#51 CACHED
+
+#52 [core-service capas 3/4] COPY target/core-service.jar app.jar
+#52 CACHED
+
+#53 [core-service stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#53 CACHED
+
+#54 [config-server capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#54 CACHED
+
+#31 [core-service stage-1 3/7] WORKDIR /app
+#31 CACHED
+
+#55 [config-server stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#55 CACHED
+
+#56 [config-server stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#56 CACHED
+
+#34 [core-service stage-1 2/7] RUN groupadd --system spring && useradd --system --gid spring --no-create-home spring
+#34 CACHED
+
+#57 [config-server capas 3/4] COPY target/config-server.jar app.jar
+#57 CACHED
+
+#28 [core-service capas 2/4] WORKDIR /build
+#28 CACHED
+
+#58 [config-server stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#58 CACHED
+
+#59 [config-server stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#59 CACHED
+
+#60 [core-service stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#60 CACHED
+
+#22 [bff-web internal] load build context
+#22 ...
+
+#61 [bff-mobile internal] load build context
+#61 transferring context: 59.05MB 0.8s done
+#61 DONE 0.8s
+
+#22 [bff-web internal] load build context
+#22 ...
+
+#28 [bff-atm capas 2/4] WORKDIR /build
+#28 CACHED
+
+#62 [eureka-server] exporting to image
+#62 exporting layers 0.0s done
+#62 exporting manifest sha256:8d5ec502b100769235a3da754d43722151d668e0739cce7a6696d85d00c2ec58 done
+#62 exporting config sha256:3f340ef2e7f314298ee7df55f209aee82a904a3ec2b16fcc5f74dc83b7d7fa28 done
+#62 exporting attestation manifest sha256:071111e5e5b6ad8f7696c09a682995e1a688e49ceb908e4891c67a9c008d7ada 0.0s done
+#62 exporting manifest list sha256:388bf827ac835a403abff204456a9494bc8e763a9308a274d2b3bf93aad13424 0.0s done
+#62 naming to docker.io/bancoxyz/eureka-server:1.0.0 done
+#62 unpacking to docker.io/bancoxyz/eureka-server:1.0.0 0.1s done
+#62 DONE 0.5s
+
+#22 [bff-web internal] load build context
+#22 ...
+
+#63 [notificaciones-service] exporting to image
+#63 exporting layers 0.0s done
+#63 exporting manifest sha256:8c3c2913ee510de760a8f052089e66a785f6c5345cd512cf50cdf59ca948fe94 done
+#63 exporting config sha256:e6f2bad0429557e7e285c0e7dc6afe42d48e288e5734346a505dceb4bc9f888f done
+#63 exporting attestation manifest sha256:8639e434eb3dd0ba2be344264df02129166226eeb3156d0cc473d49e34125e29 0.0s done
+#63 exporting manifest list sha256:59e5c25730e160fa840b6a39f1a00fa2fc3fee575c67557bdd21a6a17bbfa648 0.0s done
+#63 naming to docker.io/bancoxyz/notificaciones-service:1.0.0 done
+#63 unpacking to docker.io/bancoxyz/notificaciones-service:1.0.0 0.1s done
+#63 DONE 0.4s
+
+#64 [auth-server] exporting to image
+#64 exporting layers 0.0s done
+#64 exporting manifest sha256:90f4f4aa3473d8961e1289029a0bae7789211b4259942f82d94b1d41ce22cf81 done
+#64 exporting config sha256:3a415f3d11b250158ba10ac2879a3f198b62c0b8e8ec8565ea8cc70fb4411b1f done
+#64 exporting attestation manifest sha256:2430a1cee96ef18ff203b2e32b61e983e3fd1bb5c0eb3ea84792d5302b201965 0.0s done
+#64 exporting manifest list sha256:6f25a644fee9eb06689e7abe4bdd6ddbc3ce168e3ff67e6a48575cdcc4788f8d 0.0s done
+#64 naming to docker.io/bancoxyz/auth-server:1.0.0 done
+#64 unpacking to docker.io/bancoxyz/auth-server:1.0.0 0.1s done
+#64 DONE 0.4s
+
+#65 [config-server] exporting to image
+#65 exporting layers 0.0s done
+#65 exporting manifest sha256:673c1a54fcd47f37b4b7528612bf486b54901d5257fd0bf2718e2400b9170fd3 done
+#65 exporting config sha256:16b1563ccf9adfd655129c274e9660bf110e8e739d2d22f854e15b9bf12f263d done
+#65 exporting attestation manifest sha256:0fabc7bf15415d14bd92a890b1d9ee2b219354645890c065171eb5b28b2351dd 0.1s done
+#65 exporting manifest list sha256:65830c6b237da2446184f5a56461be7bf8c560f11b841316df087f0ec243ed0a 0.0s done
+#65 naming to docker.io/bancoxyz/config-server:1.0.0 done
+#65 unpacking to docker.io/bancoxyz/config-server:1.0.0 0.1s done
+#65 DONE 0.4s
+
+#66 [core-service] exporting to image
+#66 exporting layers 0.1s done
+#66 exporting manifest sha256:e6040736f708413cd78030cd44b509cb93226ced96442349b432663ed8802bd0 done
+#66 exporting config sha256:8a64287dd9f59f9cbf009aa2b6f7b1437893bfd4b34facfb5e1f3c7f51cde809 done
+#66 exporting attestation manifest sha256:fe9780f4b7cd116342df8b578828fbd3aed7fcb8b08e9647e30bd87f1119116c 0.1s done
+#66 exporting manifest list sha256:8b5fdc9eede2236ae5aa98930f8e5454cf495f31cfc0edb93451df9fbbede8d0 done
+#66 naming to docker.io/bancoxyz/core-service:1.0.0 done
+#66 unpacking to docker.io/bancoxyz/core-service:1.0.0 0.1s done
+#66 DONE 0.4s
+
+#22 [bff-web internal] load build context
+#22 transferring context: 78.77MB 1.0s done
+#22 ...
+
+#67 [bff-atm internal] load build context
+#67 transferring context: 58.89MB 0.9s done
+#67 DONE 1.2s
+
+#22 [bff-web internal] load build context
+#22 DONE 1.2s
+
+#68 [bff-mobile capas 3/4] COPY target/bff-mobile.jar app.jar
+#68 DONE 0.4s
+
+#69 [eureka-server] resolving provenance for metadata file
+#69 DONE 0.0s
+
+#70 [bff-atm capas 3/4] COPY target/bff-atm.jar app.jar
+#70 DONE 0.3s
+
+#71 [bff-web capas 3/4] COPY target/bff-web.jar app.jar
+#71 DONE 0.2s
+
+#72 [notificaciones-service] resolving provenance for metadata file
+#72 DONE 0.1s
+
+#73 [core-service] resolving provenance for metadata file
+#73 DONE 0.0s
+
+#74 [config-server] resolving provenance for metadata file
+#74 DONE 0.1s
+
+#75 [auth-server] resolving provenance for metadata file
+#75 DONE 0.1s
+
+#76 [bff-web capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#76 ...
+
+#77 [bff-mobile capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#77 DONE 1.7s
+
+#78 [bff-atm capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#78 DONE 1.5s
+
+#76 [bff-web capas 4/4] RUN java -Djarmode=tools -jar app.jar extract --layers --destination extraido
+#76 DONE 1.7s
+
+#79 [bff-mobile stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#79 CACHED
+
+#80 [bff-mobile stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#80 CACHED
+
+#81 [bff-mobile stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#81 CACHED
+
+#31 [bff-atm stage-1 3/7] WORKDIR /app
+#31 CACHED
+
+#82 [bff-atm stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#82 CACHED
+
+#34 [bff-atm stage-1 2/7] RUN groupadd --system spring && useradd --system --gid spring --no-create-home spring
+#34 CACHED
+
+#83 [bff-atm stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#83 CACHED
+
+#84 [bff-atm stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#84 CACHED
+
+#85 [bff-mobile stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#85 DONE 0.0s
+
+#86 [bff-atm stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#86 DONE 0.0s
+
+#87 [bff-atm] exporting to image
+#87 exporting layers 0.1s done
+#87 ...
+
+#88 [bff-mobile] exporting to image
+#88 exporting layers 0.1s done
+#88 exporting manifest sha256:b7b61cd37e559ab2dcdb2f81f33829bc59137568d6e96549d80aa26dd1c8b7d4 0.0s done
+#88 exporting config sha256:34fc43cf3332668adbbdb21f6568ab63d917c80e2d8d34e6aedabfe06c5be332 done
+#88 exporting attestation manifest sha256:a04517a2d15a5111d3fdc9672fac5391d057dfa7e6cee536d7d2781c1aa4477f 0.0s done
+#88 exporting manifest list sha256:a7e0d3b38ba6223ef0e092ab71fa974dfbd179503b4d3b2e94a4fafff9d32236 done
+#88 naming to docker.io/bancoxyz/bff-mobile:1.0.0 done
+#88 unpacking to docker.io/bancoxyz/bff-mobile:1.0.0 0.0s done
+#88 DONE 0.2s
+
+#87 [bff-atm] exporting to image
+#87 exporting manifest sha256:181cd3790f303234c3815ddefedc21f3444e002a9c5084a590866ad0fad4a13a 0.0s done
+#87 exporting config sha256:1ca525da637fa10d8e6a4d28374c149428d6ce108b512699f4d295d77651bca1 done
+#87 exporting attestation manifest sha256:61e7d6530e04b91a02f21bd7fafdd3425a00f72542b0f6f66b4e00006b982336 0.0s done
+#87 exporting manifest list sha256:84a8edc37ef80f8bdb209e33e0a3fb8fbd85240b57b283aacf071df3c049865c done
+#87 naming to docker.io/bancoxyz/bff-atm:1.0.0 done
+#87 unpacking to docker.io/bancoxyz/bff-atm:1.0.0 0.0s done
+#87 DONE 0.2s
+
+#89 [bff-web stage-1 4/7] COPY --from=capas /build/extraido/dependencies/ ./
+#89 CACHED
+
+#34 [bff-web stage-1 2/7] RUN groupadd --system spring && useradd --system --gid spring --no-create-home spring
+#34 CACHED
+
+#31 [bff-web stage-1 3/7] WORKDIR /app
+#31 CACHED
+
+#90 [bff-web stage-1 5/7] COPY --from=capas /build/extraido/spring-boot-loader/ ./
+#90 CACHED
+
+#91 [bff-web stage-1 6/7] COPY --from=capas /build/extraido/snapshot-dependencies/ ./
+#91 CACHED
+
+#92 [bff-web stage-1 7/7] COPY --from=capas /build/extraido/application/ ./
+#92 DONE 0.0s
+
+#93 [bff-web] exporting to image
+#93 exporting layers 0.1s done
+#93 ...
+
+#94 [bff-mobile] resolving provenance for metadata file
+#94 DONE 0.1s
+
+#93 [bff-web] exporting to image
+#93 exporting manifest sha256:03afd0f618af92a83f949a820e7d47997ede08fd53e34a1fc75f02c24585d99b done
+#93 exporting config sha256:b494ab4d7fffd0cd3dffda83d0cedb40091bebc0fd96f95c49ab14d49c2c64e1 done
+#93 exporting attestation manifest sha256:b169d147371363368962635d95ab81fb2b6c724e6940ed2c54799577d2025a2e 0.0s done
+#93 exporting manifest list sha256:23ef3dcf44a0a09c282800b4df04ac9dbcc04747047636c99c216054201fd394 done
+#93 naming to docker.io/bancoxyz/bff-web:1.0.0 done
+#93 unpacking to docker.io/bancoxyz/bff-web:1.0.0
+#93 ...
+
+#95 [bff-atm] resolving provenance for metadata file
+#95 DONE 0.0s
+
+#93 [bff-web] exporting to image
+#93 unpacking to docker.io/bancoxyz/bff-web:1.0.0 0.9s done
+#93 DONE 1.1s
+
+#96 [bff-web] resolving provenance for metadata file
+#96 DONE 0.0s
+ Image bancoxyz/auth-server:1.0.0 Built 
+ Image bancoxyz/bff-web:1.0.0 Built 
+ Image bancoxyz/config-server:1.0.0 Built 
+ Image bancoxyz/notificaciones-service:1.0.0 Built 
+ Image bancoxyz/bff-atm:1.0.0 Built 
+ Image bancoxyz/eureka-server:1.0.0 Built 
+ Image bancoxyz/bff-mobile:1.0.0 Built 
+ Image bancoxyz/core-service:1.0.0 Built 

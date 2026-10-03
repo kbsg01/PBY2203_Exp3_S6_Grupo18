@@ -1,0 +1,109 @@
+=== 3. Levantando el ecosistema completo (docker compose up -d --wait) ===
+ Network bancoxyz-net Creating 
+ Network bancoxyz-net Created 
+ Container bancoxyz-auth-server Creating 
+ Container bancoxyz-config-server Creating 
+ Container bancoxyz-eureka-server Creating 
+ Container bancoxyz-kafka Creating 
+ Container bancoxyz-eureka-server Created 
+ Container bancoxyz-config-server Created 
+ Container bancoxyz-auth-server Created 
+ Container bancoxyz-kafka Created 
+ Container bancoxyz-notificaciones-service-2 Creating 
+ Container bancoxyz-core-service Creating 
+ Container bancoxyz-notificaciones-service-1 Creating 
+ Container bancoxyz-core-service Created 
+ Container bancoxyz-bff-mobile Creating 
+ Container bancoxyz-notificaciones-service-2 Created 
+ Container bancoxyz-bff-web Creating 
+ Container bancoxyz-bff-atm Creating 
+ Container bancoxyz-notificaciones-service-1 Created 
+ Container bancoxyz-bff-web Created 
+ Container bancoxyz-bff-mobile Created 
+ Container bancoxyz-bff-atm Created 
+ Container bancoxyz-auth-server Starting 
+ Container bancoxyz-config-server Starting 
+ Container bancoxyz-kafka Starting 
+ Container bancoxyz-eureka-server Starting 
+ Container bancoxyz-eureka-server Started 
+ Container bancoxyz-config-server Started 
+ Container bancoxyz-auth-server Started 
+ Container bancoxyz-kafka Started 
+ Container bancoxyz-kafka Waiting 
+ Container bancoxyz-config-server Waiting 
+ Container bancoxyz-eureka-server Waiting 
+ Container bancoxyz-kafka Waiting 
+ Container bancoxyz-config-server Waiting 
+ Container bancoxyz-eureka-server Waiting 
+ Container bancoxyz-auth-server Waiting 
+ Container bancoxyz-kafka Healthy 
+ Container bancoxyz-kafka Healthy 
+ Container bancoxyz-eureka-server Healthy 
+ Container bancoxyz-eureka-server Healthy 
+ Container bancoxyz-auth-server Healthy 
+ Container bancoxyz-config-server Healthy 
+ Container bancoxyz-core-service Starting 
+ Container bancoxyz-config-server Healthy 
+ Container bancoxyz-notificaciones-service-2 Starting 
+ Container bancoxyz-core-service Started 
+ Container bancoxyz-core-service Waiting 
+ Container bancoxyz-core-service Waiting 
+ Container bancoxyz-core-service Waiting 
+ Container bancoxyz-notificaciones-service-2 Started 
+ Container bancoxyz-notificaciones-service-1 Starting 
+ Container bancoxyz-notificaciones-service-1 Started 
+ Container bancoxyz-core-service Healthy 
+ Container bancoxyz-bff-mobile Starting 
+ Container bancoxyz-core-service Healthy 
+ Container bancoxyz-bff-web Starting 
+ Container bancoxyz-core-service Healthy 
+ Container bancoxyz-bff-atm Starting 
+ Container bancoxyz-bff-web Started 
+ Container bancoxyz-bff-mobile Started 
+ Container bancoxyz-bff-atm Started 
+ Container bancoxyz-config-server Waiting 
+ Container bancoxyz-kafka Waiting 
+ Container bancoxyz-bff-atm Waiting 
+ Container bancoxyz-core-service Waiting 
+ Container bancoxyz-notificaciones-service-2 Waiting 
+ Container bancoxyz-notificaciones-service-1 Waiting 
+ Container bancoxyz-bff-mobile Waiting 
+ Container bancoxyz-auth-server Waiting 
+ Container bancoxyz-bff-web Waiting 
+ Container bancoxyz-eureka-server Waiting 
+ Container bancoxyz-core-service Healthy 
+ Container bancoxyz-kafka Healthy 
+ Container bancoxyz-config-server Healthy 
+ Container bancoxyz-eureka-server Healthy 
+ Container bancoxyz-auth-server Healthy 
+ Container bancoxyz-notificaciones-service-2 Healthy 
+ Container bancoxyz-notificaciones-service-1 Healthy 
+ Container bancoxyz-bff-atm Healthy 
+ Container bancoxyz-bff-mobile Healthy 
+ Container bancoxyz-bff-web Healthy 
+docker compose up termino con codigo 0 en 60s
+
+NAME                                IMAGE                                   STATUS                    PORTS
+bancoxyz-auth-server                bancoxyz/auth-server:1.0.0              Up 59 seconds (healthy)   127.0.0.1:9000->9000/tcp
+bancoxyz-bff-atm                    bancoxyz/bff-atm:1.0.0                  Up 32 seconds (healthy)   0.0.0.0:8083->8083/tcp, 18083/tcp
+bancoxyz-bff-mobile                 bancoxyz/bff-mobile:1.0.0               Up 32 seconds (healthy)   0.0.0.0:8082->8082/tcp, 18082/tcp
+bancoxyz-bff-web                    bancoxyz/bff-web:1.0.0                  Up 32 seconds (healthy)   0.0.0.0:8081->8081/tcp, 18081/tcp
+bancoxyz-config-server              bancoxyz/config-server:1.0.0            Up 59 seconds (healthy)   127.0.0.1:8888->8888/tcp
+bancoxyz-core-service               bancoxyz/core-service:1.0.0             Up 48 seconds (healthy)   127.0.0.1:8080->8080/tcp
+bancoxyz-eureka-server              bancoxyz/eureka-server:1.0.0            Up 59 seconds (healthy)   127.0.0.1:8761->8761/tcp
+bancoxyz-kafka                      apache/kafka:3.7.0                      Up 59 seconds (healthy)   127.0.0.1:9092->9092/tcp
+bancoxyz-notificaciones-service-1   bancoxyz/notificaciones-service:1.0.0   Up 48 seconds (healthy)   8084/tcp
+bancoxyz-notificaciones-service-2   bancoxyz/notificaciones-service:1.0.0   Up 48 seconds (healthy)   8084/tcp
+
+=== Red interna ===
+
+bancoxyz-auth-server 172.19.0.4/16
+bancoxyz-bff-atm 172.19.0.11/16
+bancoxyz-bff-mobile 172.19.0.10/16
+bancoxyz-bff-web 172.19.0.9/16
+bancoxyz-config-server 172.19.0.3/16
+bancoxyz-core-service 172.19.0.6/16
+bancoxyz-eureka-server 172.19.0.2/16
+bancoxyz-kafka 172.19.0.5/16
+bancoxyz-notificaciones-service-1 172.19.0.8/16
+bancoxyz-notificaciones-service-2 172.19.0.7/16

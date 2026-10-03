@@ -695,7 +695,19 @@ Sobre los circuit breakers `coreService` (Semana 6) y `kafkaProducer` (Semana 7)
 
 Toda la evidencia de esta sección se generó con una corrida real de `scripts/generar_evidencia_docker.sh`, con los 10 contenedores en ejecución. Se guardó en `evidencias/docker/`:
 
-EVIDENCIA_DOCKER_PLACEHOLDER
+| Archivo | Qué demuestra | Resultado de la corrida |
+| --- | --- | --- |
+| `docker01-build.log` | `mvn package` de los 8 módulos y `docker compose build` de las 8 imágenes | `BUILD SUCCESS` y 8 imágenes `Built` |
+| `docker02-imagenes.log` | Imágenes `bancoxyz/*:1.0.0`, usuario y HEALTHCHECK de cada una | 8 imágenes, todas con `USER spring:spring` y healthcheck en actuator |
+| `docker03-compose-up.log` | `docker compose up -d --wait`, `docker compose ps` e IPs de la red `bancoxyz-net` | Los **10 contenedores `healthy`** en ~60 s, en el orden de `depends_on` |
+| `docker04-eureka-apps.log` | Registro en Eureka desde Docker (por IP de contenedor) | CORE-SERVICE, BFF-WEB, BFF-MOBILE, BFF-ATM y **2 instancias** de NOTIFICACIONES-SERVICE `UP` |
+| `docker05-oauth2.log` | Flujo OAuth 2.0 completo (`scripts/probar_oauth2.sh`) | **6/6 OK**: 401 sin token, 401 con firma adulterada, 200 con `core.read`, 403 `insufficient_scope` (bff-mobile intentando debitar), 400 `invalid_scope` y 401 `invalid_client` |
+| `docker06-pruebas-apis.log` | Los 3 canales end-to-end a través de los contenedores (`probar_apis.sh`) | Login + consulta web/móvil, sesión + saldo + retiro en el cajero, 403 por titularidad, 401 por sesión ATM ya usada, rechazo por límite de retiro |
+| `docker07-pruebas-transferencias.log` | Saga por Kafka (`probar_transferencias.sh`) | `COMPLETADA`, `RECHAZADA` y `COMPENSADA` (saldos verificados con un token `core.read`), 403 al transferir desde una cuenta ajena |
+| `docker08-notificaciones-escalabilidad.log` | Reparto del tópico entre las 2 réplicas de `notificaciones-service` | Réplica 1 con particiones 0–1 y réplica 2 con particiones 2–3; **3 mensajes cada una** |
+| `docker09-tolerancia-fallos.log` | Caída de `core-service`, Retry, Circuit Breaker, recuperación y restart policy | 5 peticiones con 3 intentos cada una (hasta ~18 s, por connect-timeout) → circuito `OPEN` → 503 en ~25 ms. Al volver, `OPEN→HALF_OPEN→OPEN→HALF_OPEN→CLOSED` sin intervención manual. SIGTERM a la JVM → `die exitCode=143` → `start` automático (`RestartCount=1`, `healthy`) |
+| `docker10-logs-<servicio>.log` | Log completo de cada contenedor | Incluye las líneas `Acceso rechazado (401/403)` de `core-service` y los reintentos/transiciones de `bff-web` |
+| `docker11-auth-server-tokens.log` | Auditoría de tokens emitidos por `auth-server` | Tokens de `bff-web` y `bff-mobile` con `[core.read]` y de `bff-atm` con `[core.read, core.write]` (incluye los que pide `probar_oauth2.sh` con esas mismas credenciales), más los de `evidencia-cli`. Todos con `grant=client_credentials`; cada BFF reutiliza su token cacheado en vez de pedir uno por petición |
 
 El workflow de GitHub Actions (`.github/workflows/evidencia-ejecucion.yml`) agrega el job **`evidencia-docker`**, que ejecuta exactamente el mismo script en un runner limpio y publica el artefacto `evidencias-ejecucion-docker`. Corre en cada push a `main` y en cada pull request. El job original (`evidencia`, modo `java -jar`) también se actualizó: ahora levanta `auth-server` y agrega `evidencia01d-auth-server.log` y `evidencia12-oauth2.log`.
 

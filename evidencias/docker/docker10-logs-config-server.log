@@ -1,0 +1,32 @@
+bancoxyz-config-server  | 
+bancoxyz-config-server  |   .   ____          _            __ _ _
+bancoxyz-config-server  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+bancoxyz-config-server  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+bancoxyz-config-server  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+bancoxyz-config-server  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+bancoxyz-config-server  |  =========|_|==============|___/=/_/_/_/
+bancoxyz-config-server  | 
+bancoxyz-config-server  |  :: Spring Boot ::                (v3.3.4)
+bancoxyz-config-server  | 
+bancoxyz-config-server  | 2026-10-02T22:27:08.336-03:00  INFO 1 --- [config-server] [           main] c.b.config.ConfigServerApplication       : Starting ConfigServerApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by spring in /app)
+bancoxyz-config-server  | 2026-10-02T22:27:08.350-03:00  INFO 1 --- [config-server] [           main] c.b.config.ConfigServerApplication       : The following 1 profile is active: "native"
+bancoxyz-config-server  | 2026-10-02T22:27:11.368-03:00  INFO 1 --- [config-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=db215e97-977c-3847-b676-3c40335a84d2
+bancoxyz-config-server  | 2026-10-02T22:27:12.248-03:00  INFO 1 --- [config-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8888 (http)
+bancoxyz-config-server  | 2026-10-02T22:27:12.277-03:00  INFO 1 --- [config-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+bancoxyz-config-server  | 2026-10-02T22:27:12.287-03:00  INFO 1 --- [config-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+bancoxyz-config-server  | 2026-10-02T22:27:12.385-03:00  INFO 1 --- [config-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+bancoxyz-config-server  | 2026-10-02T22:27:12.393-03:00  INFO 1 --- [config-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3936 ms
+bancoxyz-config-server  | 2026-10-02T22:27:15.582-03:00  INFO 1 --- [config-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+bancoxyz-config-server  | 2026-10-02T22:27:15.737-03:00  INFO 1 --- [config-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8888 (http) with context path '/'
+bancoxyz-config-server  | 2026-10-02T22:27:15.837-03:00  INFO 1 --- [config-server] [           main] c.b.config.ConfigServerApplication       : Started ConfigServerApplication in 8.876 seconds (process running for 9.463)
+bancoxyz-config-server  | 2026-10-02T22:27:16.896-03:00  INFO 1 --- [config-server] [nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+bancoxyz-config-server  | 2026-10-02T22:27:16.896-03:00  INFO 1 --- [config-server] [nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+bancoxyz-config-server  | 2026-10-02T22:27:16.898-03:00  INFO 1 --- [config-server] [nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+bancoxyz-config-server  | 2026-10-02T22:27:19.089-03:00  INFO 1 --- [config-server] [nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/notificaciones-service.yml]' via location 'classpath:/config-repo/'
+bancoxyz-config-server  | 2026-10-02T22:27:19.473-03:00  INFO 1 --- [config-server] [nio-8888-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+bancoxyz-config-server  | 2026-10-02T22:27:19.586-03:00  INFO 1 --- [config-server] [nio-8888-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/notificaciones-service.yml]' via location 'classpath:/config-repo/'
+bancoxyz-config-server  | 2026-10-02T22:27:36.335-03:00  INFO 1 --- [config-server] [nio-8888-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/bff-mobile.yml]' via location 'classpath:/config-repo/'
+bancoxyz-config-server  | 2026-10-02T22:27:36.406-03:00  INFO 1 --- [config-server] [nio-8888-exec-8] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/bff-web.yml]' via location 'classpath:/config-repo/'
+bancoxyz-config-server  | 2026-10-02T22:27:36.579-03:00  INFO 1 --- [config-server] [nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/bff-atm.yml]' via location 'classpath:/config-repo/'
+bancoxyz-config-server  | 2026-10-02T22:30:10.248-03:00  INFO 1 --- [config-server] [nio-8888-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'
+bancoxyz-config-server  | 2026-10-02T22:30:39.198-03:00  INFO 1 --- [config-server] [nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config-repo/core-service.yml]' via location 'classpath:/config-repo/'

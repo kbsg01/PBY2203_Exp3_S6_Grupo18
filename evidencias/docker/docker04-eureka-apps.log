@@ -1,0 +1,5 @@
+NOTIFICACIONES-SERVICE: cf4732aa2f27:notificaciones-service:8084 [172.19.0.7] UP, 051f915ec351:notificaciones-service:8084 [172.19.0.8] UP
+BFF-MOBILE: 6b7bd5ffaee3:bff-mobile:8082 [172.19.0.10] UP
+BFF-ATM: cdbc0c671193:bff-atm:8083 [172.19.0.11] UP
+BFF-WEB: 239b3b815cf1:bff-web:8081 [172.19.0.9] UP
+CORE-SERVICE: 0060554dd7a7:core-service:8080 [172.19.0.6] UP

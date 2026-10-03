@@ -1,0 +1,876 @@
+bancoxyz-kafka  | ===> User
+bancoxyz-kafka  | uid=1000(appuser) gid=1000(appuser) groups=1000(appuser)
+bancoxyz-kafka  | ===> Setting default values of environment variables if not already set.
+bancoxyz-kafka  | CLUSTER_ID not set. Setting it to default value: "5L6g3nShT-eMCtK--X86sw"
+bancoxyz-kafka  | ===> Configuring ...
+bancoxyz-kafka  | Running in KRaft mode...
+bancoxyz-kafka  | ===> Launching ... 
+bancoxyz-kafka  | ===> Using provided cluster id 5L6g3nShT-eMCtK--X86sw ...
+bancoxyz-kafka  | [2026-10-03 01:27:10,825] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
+bancoxyz-kafka  | [2026-10-03 01:27:11,188] INFO Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation (org.apache.zookeeper.common.X509Util)
+bancoxyz-kafka  | [2026-10-03 01:27:11,586] INFO Registered signal handlers for TERM, INT, HUP (org.apache.kafka.common.utils.LoggingSignalHandler)
+bancoxyz-kafka  | [2026-10-03 01:27:11,596] INFO [ControllerServer id=1] Starting controller (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:11,876] INFO Updated connection-accept-rate max connection creation rate to 2147483647 (kafka.network.ConnectionQuotas)
+bancoxyz-kafka  | [2026-10-03 01:27:11,921] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Created data-plane acceptor and processors for endpoint : ListenerName(CONTROLLER) (kafka.network.SocketServer)
+bancoxyz-kafka  | [2026-10-03 01:27:11,923] INFO CONTROLLER: resolved wildcard host to 8585ccdca5de (org.apache.kafka.metadata.ListenerInfo)
+bancoxyz-kafka  | [2026-10-03 01:27:11,928] INFO authorizerStart completed for endpoint CONTROLLER. Endpoint is now READY. (org.apache.kafka.server.network.EndpointReadyFutures)
+bancoxyz-kafka  | [2026-10-03 01:27:11,929] INFO [SharedServer id=1] Starting SharedServer (kafka.server.SharedServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,060] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:12,063] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kafka-logs] Reloading from producer snapshot and rebuilding producer state from offset 0 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:12,066] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kafka-logs] Producer state recovery took 0ms for snapshot load and 0ms for segment recovery from offset 0 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:12,090] INFO Initialized snapshots with IDs SortedSet() from /tmp/kafka-logs/__cluster_metadata-0 (kafka.raft.KafkaMetadataLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:12,115] INFO [raft-expiration-reaper]: Starting (kafka.raft.TimingWheelExpirationService$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,179] INFO [RaftManager id=1] Completed transition to Unattached(epoch=0, voters=[1], electionTimeoutMs=1317) from null (org.apache.kafka.raft.QuorumState)
+bancoxyz-kafka  | [2026-10-03 01:27:12,185] INFO [RaftManager id=1] Completed transition to CandidateState(localId=1, epoch=1, retries=1, voteStates={1=GRANTED}, highWatermark=Optional.empty, electionTimeoutMs=1076) from Unattached(epoch=0, voters=[1], electionTimeoutMs=1317) (org.apache.kafka.raft.QuorumState)
+bancoxyz-kafka  | [2026-10-03 01:27:12,204] INFO [RaftManager id=1] Completed transition to Leader(localId=1, epoch=1, epochStartOffset=0, highWatermark=Optional.empty, voterStates={1=ReplicaState(nodeId=1, endOffset=Optional.empty, lastFetchTimestamp=-1, lastCaughtUpTimestamp=-1, hasAcknowledgedLeader=true)}) from CandidateState(localId=1, epoch=1, retries=1, voteStates={1=GRANTED}, highWatermark=Optional.empty, electionTimeoutMs=1076) (org.apache.kafka.raft.QuorumState)
+bancoxyz-kafka  | [2026-10-03 01:27:12,243] INFO [kafka-1-raft-outbound-request-thread]: Starting (org.apache.kafka.raft.KafkaNetworkChannel$SendThread)
+bancoxyz-kafka  | [2026-10-03 01:27:12,243] INFO [kafka-1-raft-io-thread]: Starting (kafka.raft.KafkaRaftManager$RaftIoThread)
+bancoxyz-kafka  | [2026-10-03 01:27:12,264] INFO [RaftManager id=1] High watermark set to LogOffsetMetadata(offset=1, metadata=Optional[(segmentBaseOffset=0,relativePositionInSegment=91)]) for the first time for epoch 1 based on indexOfHw 0 and voters [ReplicaState(nodeId=1, endOffset=Optional[LogOffsetMetadata(offset=1, metadata=Optional[(segmentBaseOffset=0,relativePositionInSegment=91)])], lastFetchTimestamp=-1, lastCaughtUpTimestamp=-1, hasAcknowledgedLeader=true)] (org.apache.kafka.raft.LeaderState)
+bancoxyz-kafka  | [2026-10-03 01:27:12,270] INFO [MetadataLoader id=1] initializeNewPublishers: The loader is still catching up because we have loaded up to offset -1, but the high water mark is 1 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,281] INFO [ControllerServer id=1] Waiting for controller quorum voters future (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,281] INFO [ControllerServer id=1] Finished waiting for controller quorum voters future (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,303] INFO [RaftManager id=1] Registered the listener org.apache.kafka.image.loader.MetadataLoader@1675158498 (org.apache.kafka.raft.KafkaRaftClient)
+bancoxyz-kafka  | [2026-10-03 01:27:12,308] INFO [RaftManager id=1] Registered the listener org.apache.kafka.controller.QuorumController$QuorumMetaLogListener@396777592 (org.apache.kafka.raft.KafkaRaftClient)
+bancoxyz-kafka  | [2026-10-03 01:27:12,311] INFO [controller-1-ThrottledChannelReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,314] INFO [MetadataLoader id=1] maybePublishMetadata(LOG_DELTA): The loader is still catching up because we have not loaded a controller record as of offset 0 and high water mark is 1 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,317] INFO [controller-1-ThrottledChannelReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,319] INFO [controller-1-ThrottledChannelReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,331] INFO [controller-1-ThrottledChannelReaper-ControllerMutation]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,363] INFO [ExpirationReaper-1-AlterAcls]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,382] INFO [ControllerServer id=1] Waiting for the controller metadata publishers to be installed (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,430] INFO [MetadataLoader id=1] initializeNewPublishers: The loader is still catching up because we have loaded up to offset 0, but the high water mark is 5 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,432] INFO [MetadataLoader id=1] maybePublishMetadata(LOG_DELTA): The loader finished catching up to the current high water mark of 5 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,436] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing SnapshotGenerator with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,437] INFO [ControllerServer id=1] Finished waiting for the controller metadata publishers to be installed (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,437] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing KRaftMetadataCachePublisher with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,443] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing FeaturesPublisher with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,444] INFO [ControllerServer id=1] Loaded new metadata Features(version=3.7-IV4, finalizedFeatures={metadata.version=19}, finalizedFeaturesEpoch=4). (org.apache.kafka.metadata.publisher.FeaturesPublisher)
+bancoxyz-kafka  | [2026-10-03 01:27:12,450] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ControllerRegistrationsPublisher with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,451] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ControllerRegistrationManager with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,451] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing DynamicConfigPublisher controller id=1 with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,452] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing DynamicClientQuotaPublisher controller id=1 with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,444] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Enabling request processing. (kafka.network.SocketServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,460] INFO Awaiting socket connections on 0.0.0.0:9093. (kafka.network.DataPlaneAcceptor)
+bancoxyz-kafka  | [2026-10-03 01:27:12,462] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ScramPublisher controller id=1 with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,484] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing DelegationTokenPublisher controller id=1 with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,485] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ControllerMetadataMetricsPublisher with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,491] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing AclPublisher controller id=1 with a snapshot at offset 4 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:12,529] INFO [controller-1-to-controller-registration-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:12,530] INFO [ControllerRegistrationManager id=1 incarnation=mdX9dZbsR2OY4oz995Cu9w] initialized channel manager. (kafka.server.ControllerRegistrationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:12,532] INFO [ControllerRegistrationManager id=1 incarnation=mdX9dZbsR2OY4oz995Cu9w] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=mdX9dZbsR2OY4oz995Cu9w, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='8585ccdca5de', port=9093, securityProtocol=0)], features=[Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=19)]) (kafka.server.ControllerRegistrationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:12,536] INFO [controller-1-to-controller-registration-channel-manager]: Recorded new controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:12,535] INFO [ControllerServer id=1] Waiting for all of the authorizer futures to be completed (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,539] INFO [ControllerServer id=1] Finished waiting for all of the authorizer futures to be completed (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,540] INFO [ControllerServer id=1] Waiting for all of the SocketServer Acceptors to be started (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,551] INFO [ControllerServer id=1] Finished waiting for all of the SocketServer Acceptors to be started (kafka.server.ControllerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,552] INFO [BrokerServer id=1] Transition from SHUTDOWN to STARTING (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,559] INFO [BrokerServer id=1] Starting broker (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,627] INFO [broker-1-ThrottledChannelReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,627] INFO [broker-1-ThrottledChannelReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,627] INFO [broker-1-ThrottledChannelReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,638] INFO [broker-1-ThrottledChannelReaper-ControllerMutation]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:12,668] INFO [BrokerServer id=1] Waiting for controller quorum voters future (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,668] INFO [BrokerServer id=1] Finished waiting for controller quorum voters future (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,676] INFO [broker-1-to-controller-forwarding-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:12,676] INFO [broker-1-to-controller-forwarding-channel-manager]: Recorded new controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:12,687] INFO [ControllerRegistrationManager id=1 incarnation=mdX9dZbsR2OY4oz995Cu9w] Our registration has been persisted to the metadata log. (kafka.server.ControllerRegistrationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:12,701] INFO [ControllerRegistrationManager id=1 incarnation=mdX9dZbsR2OY4oz995Cu9w] RegistrationResponseHandler: controller acknowledged ControllerRegistrationRequest. (kafka.server.ControllerRegistrationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:12,943] INFO Updated connection-accept-rate max connection creation rate to 2147483647 (kafka.network.ConnectionQuotas)
+bancoxyz-kafka  | [2026-10-03 01:27:12,960] INFO [SocketServer listenerType=BROKER, nodeId=1] Created data-plane acceptor and processors for endpoint : ListenerName(PLAINTEXT) (kafka.network.SocketServer)
+bancoxyz-kafka  | [2026-10-03 01:27:12,967] INFO Updated connection-accept-rate max connection creation rate to 2147483647 (kafka.network.ConnectionQuotas)
+bancoxyz-kafka  | [2026-10-03 01:27:12,995] INFO [SocketServer listenerType=BROKER, nodeId=1] Created data-plane acceptor and processors for endpoint : ListenerName(DOCKER) (kafka.network.SocketServer)
+bancoxyz-kafka  | [2026-10-03 01:27:13,077] INFO [broker-1-to-controller-alter-partition-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:13,078] INFO [broker-1-to-controller-alter-partition-channel-manager]: Recorded new controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:13,096] INFO [broker-1-to-controller-directory-assignments-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:13,098] INFO [broker-1-to-controller-directory-assignments-channel-manager]: Recorded new controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:13,112] INFO [ExpirationReaper-1-Produce]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,119] INFO [ExpirationReaper-1-Fetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,120] INFO [ExpirationReaper-1-DeleteRecords]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,132] INFO [ExpirationReaper-1-ElectLeader]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,134] INFO [ExpirationReaper-1-RemoteFetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,143] INFO [ExpirationReaper-1-Heartbeat]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,145] INFO [ExpirationReaper-1-Rebalance]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,245] INFO Unable to read the broker epoch in /tmp/kafka-logs. (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,256] INFO [BrokerLifecycleManager id=1] Incarnation bgtOEm6XRVuTxmyPLuUI1A of broker 1 in cluster Some(5L6g3nShT-eMCtK--X86sw) is now STARTING. (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,256] INFO [broker-1-to-controller-heartbeat-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:13,259] INFO [broker-1-to-controller-heartbeat-channel-manager]: Recorded new controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+bancoxyz-kafka  | [2026-10-03 01:27:13,312] INFO [ExpirationReaper-1-AlterAcls]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+bancoxyz-kafka  | [2026-10-03 01:27:13,527] INFO [BrokerLifecycleManager id=1] Successfully registered broker 1 with broker epoch 8 (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,533] INFO [BrokerLifecycleManager id=1] The broker has caught up. Transitioning from STARTING to RECOVERY. (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,550] INFO [BrokerLifecycleManager id=1] The broker is in RECOVERY. (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,681] INFO [BrokerServer id=1] Waiting for the broker metadata publishers to be installed (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:13,682] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing BrokerMetadataPublisher with a snapshot at offset 8 (org.apache.kafka.image.loader.MetadataLoader)
+bancoxyz-kafka  | [2026-10-03 01:27:13,684] INFO [BrokerMetadataPublisher id=1] Publishing initial metadata at offset OffsetAndEpoch(offset=8, epoch=1) with metadata.version 3.7-IV4. (kafka.server.metadata.BrokerMetadataPublisher)
+bancoxyz-kafka  | [2026-10-03 01:27:13,682] INFO [BrokerServer id=1] Finished waiting for the broker metadata publishers to be installed (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:13,684] INFO [BrokerServer id=1] Waiting for the controller to acknowledge that we are caught up (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:13,684] INFO [BrokerServer id=1] Finished waiting for the controller to acknowledge that we are caught up (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:13,685] INFO [BrokerServer id=1] Waiting for the initial broker metadata update to be published (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:13,687] INFO Loading logs from log dirs ArraySeq(/tmp/kafka-logs) (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,693] INFO No logs found to be loaded in /tmp/kafka-logs (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,704] INFO Loaded 0 logs in 17ms (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,705] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:13,707] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:14,095] INFO [kafka-log-cleaner-thread-0]: Starting (kafka.log.LogCleaner$CleanerThread)
+bancoxyz-kafka  | [2026-10-03 01:27:14,111] INFO [LogDirFailureHandler]: Starting (kafka.server.ReplicaManager$LogDirFailureHandler)
+bancoxyz-kafka  | [2026-10-03 01:27:14,152] INFO [AddPartitionsToTxnSenderThread-1]: Starting (kafka.server.AddPartitionsToTxnManager)
+bancoxyz-kafka  | [2026-10-03 01:27:14,154] INFO [GroupCoordinator 1]: Starting up. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:14,158] INFO [GroupCoordinator 1]: Startup complete. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:14,159] INFO [TransactionCoordinator id=1] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:14,160] INFO [TxnMarkerSenderThread-1]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+bancoxyz-kafka  | [2026-10-03 01:27:14,160] INFO [TransactionCoordinator id=1] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:14,163] INFO [BrokerMetadataPublisher id=1] Updating metadata.version to 19 at offset OffsetAndEpoch(offset=8, epoch=1). (kafka.server.metadata.BrokerMetadataPublisher)
+bancoxyz-kafka  | [2026-10-03 01:27:14,164] INFO [BrokerMetadataPublisher id=1] Resending BrokerRegistration with existing incarnation-id to inform the controller about log directories in the broker following metadata update: previousMetadataVersion: 3.0-IV1 newMetadataVersion: 3.7-IV4 (kafka.server.metadata.BrokerMetadataPublisher)
+bancoxyz-kafka  | [2026-10-03 01:27:14,172] INFO [BrokerServer id=1] Finished waiting for the initial broker metadata update to be published (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,178] INFO KafkaConfig values: 
+bancoxyz-kafka  | 	advertised.listeners = PLAINTEXT://localhost:9092,DOCKER://kafka:29092
+bancoxyz-kafka  | 	alter.config.policy.class.name = null
+bancoxyz-kafka  | 	alter.log.dirs.replication.quota.window.num = 11
+bancoxyz-kafka  | 	alter.log.dirs.replication.quota.window.size.seconds = 1
+bancoxyz-kafka  | 	authorizer.class.name = 
+bancoxyz-kafka  | 	auto.create.topics.enable = true
+bancoxyz-kafka  | 	auto.include.jmx.reporter = true
+bancoxyz-kafka  | 	auto.leader.rebalance.enable = true
+bancoxyz-kafka  | 	background.threads = 10
+bancoxyz-kafka  | 	broker.heartbeat.interval.ms = 2000
+bancoxyz-kafka  | 	broker.id = 1
+bancoxyz-kafka  | 	broker.id.generation.enable = true
+bancoxyz-kafka  | 	broker.rack = null
+bancoxyz-kafka  | 	broker.session.timeout.ms = 9000
+bancoxyz-kafka  | 	client.quota.callback.class = null
+bancoxyz-kafka  | 	compression.type = producer
+bancoxyz-kafka  | 	connection.failed.authentication.delay.ms = 100
+bancoxyz-kafka  | 	connections.max.idle.ms = 600000
+bancoxyz-kafka  | 	connections.max.reauth.ms = 0
+bancoxyz-kafka  | 	control.plane.listener.name = null
+bancoxyz-kafka  | 	controlled.shutdown.enable = true
+bancoxyz-kafka  | 	controlled.shutdown.max.retries = 3
+bancoxyz-kafka  | 	controlled.shutdown.retry.backoff.ms = 5000
+bancoxyz-kafka  | 	controller.listener.names = CONTROLLER
+bancoxyz-kafka  | 	controller.quorum.append.linger.ms = 25
+bancoxyz-kafka  | 	controller.quorum.election.backoff.max.ms = 1000
+bancoxyz-kafka  | 	controller.quorum.election.timeout.ms = 1000
+bancoxyz-kafka  | 	controller.quorum.fetch.timeout.ms = 2000
+bancoxyz-kafka  | 	controller.quorum.request.timeout.ms = 2000
+bancoxyz-kafka  | 	controller.quorum.retry.backoff.ms = 20
+bancoxyz-kafka  | 	controller.quorum.voters = [1@localhost:9093]
+bancoxyz-kafka  | 	controller.quota.window.num = 11
+bancoxyz-kafka  | 	controller.quota.window.size.seconds = 1
+bancoxyz-kafka  | 	controller.socket.timeout.ms = 30000
+bancoxyz-kafka  | 	create.topic.policy.class.name = null
+bancoxyz-kafka  | 	default.replication.factor = 1
+bancoxyz-kafka  | 	delegation.token.expiry.check.interval.ms = 3600000
+bancoxyz-kafka  | 	delegation.token.expiry.time.ms = 86400000
+bancoxyz-kafka  | 	delegation.token.master.key = null
+bancoxyz-kafka  | 	delegation.token.max.lifetime.ms = 604800000
+bancoxyz-kafka  | 	delegation.token.secret.key = null
+bancoxyz-kafka  | 	delete.records.purgatory.purge.interval.requests = 1
+bancoxyz-kafka  | 	delete.topic.enable = true
+bancoxyz-kafka  | 	early.start.listeners = null
+bancoxyz-kafka  | 	eligible.leader.replicas.enable = false
+bancoxyz-kafka  | 	fetch.max.bytes = 57671680
+bancoxyz-kafka  | 	fetch.purgatory.purge.interval.requests = 1000
+bancoxyz-kafka  | 	group.consumer.assignors = [org.apache.kafka.coordinator.group.assignor.UniformAssignor, org.apache.kafka.coordinator.group.assignor.RangeAssignor]
+bancoxyz-kafka  | 	group.consumer.heartbeat.interval.ms = 5000
+bancoxyz-kafka  | 	group.consumer.max.heartbeat.interval.ms = 15000
+bancoxyz-kafka  | 	group.consumer.max.session.timeout.ms = 60000
+bancoxyz-kafka  | 	group.consumer.max.size = 2147483647
+bancoxyz-kafka  | 	group.consumer.min.heartbeat.interval.ms = 5000
+bancoxyz-kafka  | 	group.consumer.min.session.timeout.ms = 45000
+bancoxyz-kafka  | 	group.consumer.session.timeout.ms = 45000
+bancoxyz-kafka  | 	group.coordinator.new.enable = false
+bancoxyz-kafka  | 	group.coordinator.rebalance.protocols = [classic]
+bancoxyz-kafka  | 	group.coordinator.threads = 1
+bancoxyz-kafka  | 	group.initial.rebalance.delay.ms = 3000
+bancoxyz-kafka  | 	group.max.session.timeout.ms = 1800000
+bancoxyz-kafka  | 	group.max.size = 2147483647
+bancoxyz-kafka  | 	group.min.session.timeout.ms = 6000
+bancoxyz-kafka  | 	initial.broker.registration.timeout.ms = 60000
+bancoxyz-kafka  | 	inter.broker.listener.name = DOCKER
+bancoxyz-kafka  | 	inter.broker.protocol.version = 3.7-IV4
+bancoxyz-kafka  | 	kafka.metrics.polling.interval.secs = 10
+bancoxyz-kafka  | 	kafka.metrics.reporters = []
+bancoxyz-kafka  | 	leader.imbalance.check.interval.seconds = 300
+bancoxyz-kafka  | 	leader.imbalance.per.broker.percentage = 10
+bancoxyz-kafka  | 	listener.security.protocol.map = CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,DOCKER:PLAINTEXT
+bancoxyz-kafka  | 	listeners = PLAINTEXT://:9092,DOCKER://:29092,CONTROLLER://:9093
+bancoxyz-kafka  | 	log.cleaner.backoff.ms = 15000
+bancoxyz-kafka  | 	log.cleaner.dedupe.buffer.size = 134217728
+bancoxyz-kafka  | 	log.cleaner.delete.retention.ms = 86400000
+bancoxyz-kafka  | 	log.cleaner.enable = true
+bancoxyz-kafka  | 	log.cleaner.io.buffer.load.factor = 0.9
+bancoxyz-kafka  | 	log.cleaner.io.buffer.size = 524288
+bancoxyz-kafka  | 	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+bancoxyz-kafka  | 	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+bancoxyz-kafka  | 	log.cleaner.min.cleanable.ratio = 0.5
+bancoxyz-kafka  | 	log.cleaner.min.compaction.lag.ms = 0
+bancoxyz-kafka  | 	log.cleaner.threads = 1
+bancoxyz-kafka  | 	log.cleanup.policy = [delete]
+bancoxyz-kafka  | 	log.dir = /tmp/kafka-logs
+bancoxyz-kafka  | 	log.dirs = null
+bancoxyz-kafka  | 	log.flush.interval.messages = 9223372036854775807
+bancoxyz-kafka  | 	log.flush.interval.ms = null
+bancoxyz-kafka  | 	log.flush.offset.checkpoint.interval.ms = 60000
+bancoxyz-kafka  | 	log.flush.scheduler.interval.ms = 9223372036854775807
+bancoxyz-kafka  | 	log.flush.start.offset.checkpoint.interval.ms = 60000
+bancoxyz-kafka  | 	log.index.interval.bytes = 4096
+bancoxyz-kafka  | 	log.index.size.max.bytes = 10485760
+bancoxyz-kafka  | 	log.local.retention.bytes = -2
+bancoxyz-kafka  | 	log.local.retention.ms = -2
+bancoxyz-kafka  | 	log.message.downconversion.enable = true
+bancoxyz-kafka  | 	log.message.format.version = 3.0-IV1
+bancoxyz-kafka  | 	log.message.timestamp.after.max.ms = 9223372036854775807
+bancoxyz-kafka  | 	log.message.timestamp.before.max.ms = 9223372036854775807
+bancoxyz-kafka  | 	log.message.timestamp.difference.max.ms = 9223372036854775807
+bancoxyz-kafka  | 	log.message.timestamp.type = CreateTime
+bancoxyz-kafka  | 	log.preallocate = false
+bancoxyz-kafka  | 	log.retention.bytes = -1
+bancoxyz-kafka  | 	log.retention.check.interval.ms = 300000
+bancoxyz-kafka  | 	log.retention.hours = 168
+bancoxyz-kafka  | 	log.retention.minutes = null
+bancoxyz-kafka  | 	log.retention.ms = null
+bancoxyz-kafka  | 	log.roll.hours = 168
+bancoxyz-kafka  | 	log.roll.jitter.hours = 0
+bancoxyz-kafka  | 	log.roll.jitter.ms = null
+bancoxyz-kafka  | 	log.roll.ms = null
+bancoxyz-kafka  | 	log.segment.bytes = 1073741824
+bancoxyz-kafka  | 	log.segment.delete.delay.ms = 60000
+bancoxyz-kafka  | 	max.connection.creation.rate = 2147483647
+bancoxyz-kafka  | 	max.connections = 2147483647
+bancoxyz-kafka  | 	max.connections.per.ip = 2147483647
+bancoxyz-kafka  | 	max.connections.per.ip.overrides = 
+bancoxyz-kafka  | 	max.incremental.fetch.session.cache.slots = 1000
+bancoxyz-kafka  | 	message.max.bytes = 1048588
+bancoxyz-kafka  | 	metadata.log.dir = null
+bancoxyz-kafka  | 	metadata.log.max.record.bytes.between.snapshots = 20971520
+bancoxyz-kafka  | 	metadata.log.max.snapshot.interval.ms = 3600000
+bancoxyz-kafka  | 	metadata.log.segment.bytes = 1073741824
+bancoxyz-kafka  | 	metadata.log.segment.min.bytes = 8388608
+bancoxyz-kafka  | 	metadata.log.segment.ms = 604800000
+bancoxyz-kafka  | 	metadata.max.idle.interval.ms = 500
+bancoxyz-kafka  | 	metadata.max.retention.bytes = 104857600
+bancoxyz-kafka  | 	metadata.max.retention.ms = 604800000
+bancoxyz-kafka  | 	metric.reporters = []
+bancoxyz-kafka  | 	metrics.num.samples = 2
+bancoxyz-kafka  | 	metrics.recording.level = INFO
+bancoxyz-kafka  | 	metrics.sample.window.ms = 30000
+bancoxyz-kafka  | 	min.insync.replicas = 1
+bancoxyz-kafka  | 	node.id = 1
+bancoxyz-kafka  | 	num.io.threads = 8
+bancoxyz-kafka  | 	num.network.threads = 3
+bancoxyz-kafka  | 	num.partitions = 4
+bancoxyz-kafka  | 	num.recovery.threads.per.data.dir = 1
+bancoxyz-kafka  | 	num.replica.alter.log.dirs.threads = null
+bancoxyz-kafka  | 	num.replica.fetchers = 1
+bancoxyz-kafka  | 	offset.metadata.max.bytes = 4096
+bancoxyz-kafka  | 	offsets.commit.required.acks = -1
+bancoxyz-kafka  | 	offsets.commit.timeout.ms = 5000
+bancoxyz-kafka  | 	offsets.load.buffer.size = 5242880
+bancoxyz-kafka  | 	offsets.retention.check.interval.ms = 600000
+bancoxyz-kafka  | 	offsets.retention.minutes = 10080
+bancoxyz-kafka  | 	offsets.topic.compression.codec = 0
+bancoxyz-kafka  | 	offsets.topic.num.partitions = 50
+bancoxyz-kafka  | 	offsets.topic.replication.factor = 1
+bancoxyz-kafka  | 	offsets.topic.segment.bytes = 104857600
+bancoxyz-kafka  | 	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+bancoxyz-kafka  | 	password.encoder.iterations = 4096
+bancoxyz-kafka  | 	password.encoder.key.length = 128
+bancoxyz-kafka  | 	password.encoder.keyfactory.algorithm = null
+bancoxyz-kafka  | 	password.encoder.old.secret = null
+bancoxyz-kafka  | 	password.encoder.secret = null
+bancoxyz-kafka  | 	principal.builder.class = class org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder
+bancoxyz-kafka  | 	process.roles = [broker, controller]
+bancoxyz-kafka  | 	producer.id.expiration.check.interval.ms = 600000
+bancoxyz-kafka  | 	producer.id.expiration.ms = 86400000
+bancoxyz-kafka  | 	producer.purgatory.purge.interval.requests = 1000
+bancoxyz-kafka  | 	queued.max.request.bytes = -1
+bancoxyz-kafka  | 	queued.max.requests = 500
+bancoxyz-kafka  | 	quota.window.num = 11
+bancoxyz-kafka  | 	quota.window.size.seconds = 1
+bancoxyz-kafka  | 	remote.log.index.file.cache.total.size.bytes = 1073741824
+bancoxyz-kafka  | 	remote.log.manager.task.interval.ms = 30000
+bancoxyz-kafka  | 	remote.log.manager.task.retry.backoff.max.ms = 30000
+bancoxyz-kafka  | 	remote.log.manager.task.retry.backoff.ms = 500
+bancoxyz-kafka  | 	remote.log.manager.task.retry.jitter = 0.2
+bancoxyz-kafka  | 	remote.log.manager.thread.pool.size = 10
+bancoxyz-kafka  | 	remote.log.metadata.custom.metadata.max.bytes = 128
+bancoxyz-kafka  | 	remote.log.metadata.manager.class.name = org.apache.kafka.server.log.remote.metadata.storage.TopicBasedRemoteLogMetadataManager
+bancoxyz-kafka  | 	remote.log.metadata.manager.class.path = null
+bancoxyz-kafka  | 	remote.log.metadata.manager.impl.prefix = rlmm.config.
+bancoxyz-kafka  | 	remote.log.metadata.manager.listener.name = null
+bancoxyz-kafka  | 	remote.log.reader.max.pending.tasks = 100
+bancoxyz-kafka  | 	remote.log.reader.threads = 10
+bancoxyz-kafka  | 	remote.log.storage.manager.class.name = null
+bancoxyz-kafka  | 	remote.log.storage.manager.class.path = null
+bancoxyz-kafka  | 	remote.log.storage.manager.impl.prefix = rsm.config.
+bancoxyz-kafka  | 	remote.log.storage.system.enable = false
+bancoxyz-kafka  | 	replica.fetch.backoff.ms = 1000
+bancoxyz-kafka  | 	replica.fetch.max.bytes = 1048576
+bancoxyz-kafka  | 	replica.fetch.min.bytes = 1
+bancoxyz-kafka  | 	replica.fetch.response.max.bytes = 10485760
+bancoxyz-kafka  | 	replica.fetch.wait.max.ms = 500
+bancoxyz-kafka  | 	replica.high.watermark.checkpoint.interval.ms = 5000
+bancoxyz-kafka  | 	replica.lag.time.max.ms = 30000
+bancoxyz-kafka  | 	replica.selector.class = null
+bancoxyz-kafka  | 	replica.socket.receive.buffer.bytes = 65536
+bancoxyz-kafka  | 	replica.socket.timeout.ms = 30000
+bancoxyz-kafka  | 	replication.quota.window.num = 11
+bancoxyz-kafka  | 	replication.quota.window.size.seconds = 1
+bancoxyz-kafka  | 	request.timeout.ms = 30000
+bancoxyz-kafka  | 	reserved.broker.max.id = 1000
+bancoxyz-kafka  | 	sasl.client.callback.handler.class = null
+bancoxyz-kafka  | 	sasl.enabled.mechanisms = [GSSAPI]
+bancoxyz-kafka  | 	sasl.jaas.config = null
+bancoxyz-kafka  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+bancoxyz-kafka  | 	sasl.kerberos.min.time.before.relogin = 60000
+bancoxyz-kafka  | 	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+bancoxyz-kafka  | 	sasl.kerberos.service.name = null
+bancoxyz-kafka  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+bancoxyz-kafka  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+bancoxyz-kafka  | 	sasl.login.callback.handler.class = null
+bancoxyz-kafka  | 	sasl.login.class = null
+bancoxyz-kafka  | 	sasl.login.connect.timeout.ms = null
+bancoxyz-kafka  | 	sasl.login.read.timeout.ms = null
+bancoxyz-kafka  | 	sasl.login.refresh.buffer.seconds = 300
+bancoxyz-kafka  | 	sasl.login.refresh.min.period.seconds = 60
+bancoxyz-kafka  | 	sasl.login.refresh.window.factor = 0.8
+bancoxyz-kafka  | 	sasl.login.refresh.window.jitter = 0.05
+bancoxyz-kafka  | 	sasl.login.retry.backoff.max.ms = 10000
+bancoxyz-kafka  | 	sasl.login.retry.backoff.ms = 100
+bancoxyz-kafka  | 	sasl.mechanism.controller.protocol = GSSAPI
+bancoxyz-kafka  | 	sasl.mechanism.inter.broker.protocol = GSSAPI
+bancoxyz-kafka  | 	sasl.oauthbearer.clock.skew.seconds = 30
+bancoxyz-kafka  | 	sasl.oauthbearer.expected.audience = null
+bancoxyz-kafka  | 	sasl.oauthbearer.expected.issuer = null
+bancoxyz-kafka  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+bancoxyz-kafka  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+bancoxyz-kafka  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+bancoxyz-kafka  | 	sasl.oauthbearer.jwks.endpoint.url = null
+bancoxyz-kafka  | 	sasl.oauthbearer.scope.claim.name = scope
+bancoxyz-kafka  | 	sasl.oauthbearer.sub.claim.name = sub
+bancoxyz-kafka  | 	sasl.oauthbearer.token.endpoint.url = null
+bancoxyz-kafka  | 	sasl.server.callback.handler.class = null
+bancoxyz-kafka  | 	sasl.server.max.receive.size = 524288
+bancoxyz-kafka  | 	security.inter.broker.protocol = PLAINTEXT
+bancoxyz-kafka  | 	security.providers = null
+bancoxyz-kafka  | 	server.max.startup.time.ms = 9223372036854775807
+bancoxyz-kafka  | 	socket.connection.setup.timeout.max.ms = 30000
+bancoxyz-kafka  | 	socket.connection.setup.timeout.ms = 10000
+bancoxyz-kafka  | 	socket.listen.backlog.size = 50
+bancoxyz-kafka  | 	socket.receive.buffer.bytes = 102400
+bancoxyz-kafka  | 	socket.request.max.bytes = 104857600
+bancoxyz-kafka  | 	socket.send.buffer.bytes = 102400
+bancoxyz-kafka  | 	ssl.allow.dn.changes = false
+bancoxyz-kafka  | 	ssl.allow.san.changes = false
+bancoxyz-kafka  | 	ssl.cipher.suites = []
+bancoxyz-kafka  | 	ssl.client.auth = none
+bancoxyz-kafka  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+bancoxyz-kafka  | 	ssl.endpoint.identification.algorithm = https
+bancoxyz-kafka  | 	ssl.engine.factory.class = null
+bancoxyz-kafka  | 	ssl.key.password = null
+bancoxyz-kafka  | 	ssl.keymanager.algorithm = SunX509
+bancoxyz-kafka  | 	ssl.keystore.certificate.chain = null
+bancoxyz-kafka  | 	ssl.keystore.key = null
+bancoxyz-kafka  | 	ssl.keystore.location = null
+bancoxyz-kafka  | 	ssl.keystore.password = null
+bancoxyz-kafka  | 	ssl.keystore.type = JKS
+bancoxyz-kafka  | 	ssl.principal.mapping.rules = DEFAULT
+bancoxyz-kafka  | 	ssl.protocol = TLSv1.3
+bancoxyz-kafka  | 	ssl.provider = null
+bancoxyz-kafka  | 	ssl.secure.random.implementation = null
+bancoxyz-kafka  | 	ssl.trustmanager.algorithm = PKIX
+bancoxyz-kafka  | 	ssl.truststore.certificates = null
+bancoxyz-kafka  | 	ssl.truststore.location = null
+bancoxyz-kafka  | 	ssl.truststore.password = null
+bancoxyz-kafka  | 	ssl.truststore.type = JKS
+bancoxyz-kafka  | 	telemetry.max.bytes = 1048576
+bancoxyz-kafka  | 	transaction.abort.timed.out.transaction.cleanup.interval.ms = 10000
+bancoxyz-kafka  | 	transaction.max.timeout.ms = 900000
+bancoxyz-kafka  | 	transaction.partition.verification.enable = true
+bancoxyz-kafka  | 	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+bancoxyz-kafka  | 	transaction.state.log.load.buffer.size = 5242880
+bancoxyz-kafka  | 	transaction.state.log.min.isr = 1
+bancoxyz-kafka  | 	transaction.state.log.num.partitions = 50
+bancoxyz-kafka  | 	transaction.state.log.replication.factor = 1
+bancoxyz-kafka  | 	transaction.state.log.segment.bytes = 104857600
+bancoxyz-kafka  | 	transactional.id.expiration.ms = 604800000
+bancoxyz-kafka  | 	unclean.leader.election.enable = false
+bancoxyz-kafka  | 	unstable.api.versions.enable = false
+bancoxyz-kafka  | 	unstable.metadata.versions.enable = false
+bancoxyz-kafka  | 	zookeeper.clientCnxnSocket = null
+bancoxyz-kafka  | 	zookeeper.connect = null
+bancoxyz-kafka  | 	zookeeper.connection.timeout.ms = null
+bancoxyz-kafka  | 	zookeeper.max.in.flight.requests = 10
+bancoxyz-kafka  | 	zookeeper.metadata.migration.enable = false
+bancoxyz-kafka  | 	zookeeper.metadata.migration.min.batch.size = 200
+bancoxyz-kafka  | 	zookeeper.session.timeout.ms = 18000
+bancoxyz-kafka  | 	zookeeper.set.acl = false
+bancoxyz-kafka  | 	zookeeper.ssl.cipher.suites = null
+bancoxyz-kafka  | 	zookeeper.ssl.client.enable = false
+bancoxyz-kafka  | 	zookeeper.ssl.crl.enable = false
+bancoxyz-kafka  | 	zookeeper.ssl.enabled.protocols = null
+bancoxyz-kafka  | 	zookeeper.ssl.endpoint.identification.algorithm = HTTPS
+bancoxyz-kafka  | 	zookeeper.ssl.keystore.location = null
+bancoxyz-kafka  | 	zookeeper.ssl.keystore.password = null
+bancoxyz-kafka  | 	zookeeper.ssl.keystore.type = null
+bancoxyz-kafka  | 	zookeeper.ssl.ocsp.enable = false
+bancoxyz-kafka  | 	zookeeper.ssl.protocol = TLSv1.2
+bancoxyz-kafka  | 	zookeeper.ssl.truststore.location = null
+bancoxyz-kafka  | 	zookeeper.ssl.truststore.password = null
+bancoxyz-kafka  | 	zookeeper.ssl.truststore.type = null
+bancoxyz-kafka  |  (kafka.server.KafkaConfig)
+bancoxyz-kafka  | [2026-10-03 01:27:14,191] INFO [BrokerServer id=1] Waiting for the broker to be unfenced (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,195] INFO [BrokerLifecycleManager id=1] Successfully registered broker 1 with broker epoch 10 (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:14,226] INFO [BrokerLifecycleManager id=1] Successfully registered broker 1 with broker epoch 11 (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:14,241] WARN [BrokerLifecycleManager id=1] Broker 1 sent a heartbeat request but received error STALE_BROKER_EPOCH. (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:14,279] INFO [BrokerLifecycleManager id=1] The broker has been unfenced. Transitioning from RECOVERY to RUNNING. (kafka.server.BrokerLifecycleManager)
+bancoxyz-kafka  | [2026-10-03 01:27:14,279] INFO [BrokerServer id=1] Finished waiting for the broker to be unfenced (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,280] INFO authorizerStart completed for endpoint DOCKER. Endpoint is now READY. (org.apache.kafka.server.network.EndpointReadyFutures)
+bancoxyz-kafka  | [2026-10-03 01:27:14,281] INFO authorizerStart completed for endpoint PLAINTEXT. Endpoint is now READY. (org.apache.kafka.server.network.EndpointReadyFutures)
+bancoxyz-kafka  | [2026-10-03 01:27:14,281] INFO [SocketServer listenerType=BROKER, nodeId=1] Enabling request processing. (kafka.network.SocketServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,281] INFO Awaiting socket connections on 0.0.0.0:29092. (kafka.network.DataPlaneAcceptor)
+bancoxyz-kafka  | [2026-10-03 01:27:14,287] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.DataPlaneAcceptor)
+bancoxyz-kafka  | [2026-10-03 01:27:14,304] INFO [BrokerServer id=1] Waiting for all of the authorizer futures to be completed (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,304] INFO [BrokerServer id=1] Finished waiting for all of the authorizer futures to be completed (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,304] INFO [BrokerServer id=1] Waiting for all of the SocketServer Acceptors to be started (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,304] INFO [BrokerServer id=1] Finished waiting for all of the SocketServer Acceptors to be started (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,304] INFO [BrokerServer id=1] Transition from STARTING to STARTED (kafka.server.BrokerServer)
+bancoxyz-kafka  | [2026-10-03 01:27:14,304] INFO Kafka version: 3.7.0 (org.apache.kafka.common.utils.AppInfoParser)
+bancoxyz-kafka  | [2026-10-03 01:27:14,305] INFO Kafka commitId: 2ae524ed625438c5 (org.apache.kafka.common.utils.AppInfoParser)
+bancoxyz-kafka  | [2026-10-03 01:27:14,305] INFO Kafka startTimeMs: 1790990834304 (org.apache.kafka.common.utils.AppInfoParser)
+bancoxyz-kafka  | [2026-10-03 01:27:14,308] INFO [KafkaRaftServer nodeId=1] Kafka Server started (kafka.server.KafkaRaftServer)
+bancoxyz-kafka  | [2026-10-03 01:27:26,942] INFO Sent auto-creation request for Set(bancoxyz.transferencias.resultado) to the active controller. (kafka.server.DefaultAutoTopicCreationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:26,949] INFO Sent auto-creation request for Set(__consumer_offsets) to the active controller. (kafka.server.DefaultAutoTopicCreationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:26,997] INFO [ReplicaFetcherManager on broker 1] Removed fetcher for partitions Set(bancoxyz.transferencias.resultado-2, bancoxyz.transferencias.resultado-1, bancoxyz.transferencias.resultado-0, bancoxyz.transferencias.resultado-3) (kafka.server.ReplicaFetcherManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,021] INFO [LogLoader partition=bancoxyz.transferencias.resultado-2, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,032] INFO Created log for partition bancoxyz.transferencias.resultado-2 in /tmp/kafka-logs/bancoxyz.transferencias.resultado-2 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,037] INFO [Partition bancoxyz.transferencias.resultado-2 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.resultado-2 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,040] INFO [Partition bancoxyz.transferencias.resultado-2 broker=1] Log loaded for partition bancoxyz.transferencias.resultado-2 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,086] INFO [LogLoader partition=bancoxyz.transferencias.resultado-1, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,089] INFO Created log for partition bancoxyz.transferencias.resultado-1 in /tmp/kafka-logs/bancoxyz.transferencias.resultado-1 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,089] INFO [Partition bancoxyz.transferencias.resultado-1 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.resultado-1 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,090] INFO [Partition bancoxyz.transferencias.resultado-1 broker=1] Log loaded for partition bancoxyz.transferencias.resultado-1 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,098] INFO [LogLoader partition=bancoxyz.transferencias.resultado-0, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,099] INFO Created log for partition bancoxyz.transferencias.resultado-0 in /tmp/kafka-logs/bancoxyz.transferencias.resultado-0 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,100] INFO [Partition bancoxyz.transferencias.resultado-0 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.resultado-0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,101] INFO [Partition bancoxyz.transferencias.resultado-0 broker=1] Log loaded for partition bancoxyz.transferencias.resultado-0 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,109] INFO [LogLoader partition=bancoxyz.transferencias.resultado-3, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,112] INFO Sent auto-creation request for Set(__consumer_offsets) to the active controller. (kafka.server.DefaultAutoTopicCreationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,117] INFO Created log for partition bancoxyz.transferencias.resultado-3 in /tmp/kafka-logs/bancoxyz.transferencias.resultado-3 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,118] INFO [Partition bancoxyz.transferencias.resultado-3 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.resultado-3 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,119] INFO [Partition bancoxyz.transferencias.resultado-3 broker=1] Log loaded for partition bancoxyz.transferencias.resultado-3 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,134] INFO [ReplicaFetcherManager on broker 1] Removed fetcher for partitions Set(__consumer_offsets-13, __consumer_offsets-46, __consumer_offsets-9, __consumer_offsets-42, __consumer_offsets-21, __consumer_offsets-17, __consumer_offsets-30, __consumer_offsets-26, __consumer_offsets-5, __consumer_offsets-38, __consumer_offsets-1, __consumer_offsets-34, __consumer_offsets-16, __consumer_offsets-45, __consumer_offsets-12, __consumer_offsets-41, __consumer_offsets-24, __consumer_offsets-20, __consumer_offsets-49, __consumer_offsets-0, __consumer_offsets-29, __consumer_offsets-25, __consumer_offsets-8, __consumer_offsets-37, __consumer_offsets-4, __consumer_offsets-33, __consumer_offsets-15, __consumer_offsets-48, __consumer_offsets-11, __consumer_offsets-44, __consumer_offsets-23, __consumer_offsets-19, __consumer_offsets-32, __consumer_offsets-28, __consumer_offsets-7, __consumer_offsets-40, __consumer_offsets-3, __consumer_offsets-36, __consumer_offsets-47, __consumer_offsets-14, __consumer_offsets-43, __consumer_offsets-10, __consumer_offsets-22, __consumer_offsets-18, __consumer_offsets-31, __consumer_offsets-27, __consumer_offsets-39, __consumer_offsets-6, __consumer_offsets-35, __consumer_offsets-2) (kafka.server.ReplicaFetcherManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,138] INFO [LogLoader partition=__consumer_offsets-13, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,143] INFO Created log for partition __consumer_offsets-13 in /tmp/kafka-logs/__consumer_offsets-13 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,153] INFO [Partition __consumer_offsets-13 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-13 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,154] INFO [Partition __consumer_offsets-13 broker=1] Log loaded for partition __consumer_offsets-13 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,177] INFO [LogLoader partition=__consumer_offsets-46, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,187] INFO Created log for partition __consumer_offsets-46 in /tmp/kafka-logs/__consumer_offsets-46 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,187] INFO [Partition __consumer_offsets-46 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-46 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,191] INFO [Partition __consumer_offsets-46 broker=1] Log loaded for partition __consumer_offsets-46 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,197] INFO [LogLoader partition=__consumer_offsets-9, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,203] INFO Created log for partition __consumer_offsets-9 in /tmp/kafka-logs/__consumer_offsets-9 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,203] INFO [Partition __consumer_offsets-9 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-9 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,205] INFO [Partition __consumer_offsets-9 broker=1] Log loaded for partition __consumer_offsets-9 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,216] INFO [LogLoader partition=__consumer_offsets-42, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,218] INFO Created log for partition __consumer_offsets-42 in /tmp/kafka-logs/__consumer_offsets-42 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,218] INFO [Partition __consumer_offsets-42 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-42 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,218] INFO [Partition __consumer_offsets-42 broker=1] Log loaded for partition __consumer_offsets-42 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,230] INFO [LogLoader partition=__consumer_offsets-21, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,232] INFO Created log for partition __consumer_offsets-21 in /tmp/kafka-logs/__consumer_offsets-21 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,232] INFO [Partition __consumer_offsets-21 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-21 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,233] INFO [Partition __consumer_offsets-21 broker=1] Log loaded for partition __consumer_offsets-21 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,307] INFO [LogLoader partition=__consumer_offsets-17, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,308] INFO Created log for partition __consumer_offsets-17 in /tmp/kafka-logs/__consumer_offsets-17 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,308] INFO [Partition __consumer_offsets-17 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-17 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,308] INFO [Partition __consumer_offsets-17 broker=1] Log loaded for partition __consumer_offsets-17 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,329] INFO [LogLoader partition=__consumer_offsets-30, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,335] INFO Created log for partition __consumer_offsets-30 in /tmp/kafka-logs/__consumer_offsets-30 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,335] INFO [Partition __consumer_offsets-30 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-30 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,335] INFO [Partition __consumer_offsets-30 broker=1] Log loaded for partition __consumer_offsets-30 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,351] INFO [LogLoader partition=__consumer_offsets-26, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,352] INFO Created log for partition __consumer_offsets-26 in /tmp/kafka-logs/__consumer_offsets-26 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,356] INFO [Partition __consumer_offsets-26 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-26 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,356] INFO [Partition __consumer_offsets-26 broker=1] Log loaded for partition __consumer_offsets-26 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,365] INFO [LogLoader partition=__consumer_offsets-5, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,378] INFO Created log for partition __consumer_offsets-5 in /tmp/kafka-logs/__consumer_offsets-5 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,381] INFO [Partition __consumer_offsets-5 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-5 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,381] INFO [Partition __consumer_offsets-5 broker=1] Log loaded for partition __consumer_offsets-5 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,427] INFO [LogLoader partition=__consumer_offsets-38, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,427] INFO Created log for partition __consumer_offsets-38 in /tmp/kafka-logs/__consumer_offsets-38 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,430] INFO [Partition __consumer_offsets-38 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-38 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,431] INFO [Partition __consumer_offsets-38 broker=1] Log loaded for partition __consumer_offsets-38 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,454] INFO [LogLoader partition=__consumer_offsets-1, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,459] INFO Created log for partition __consumer_offsets-1 in /tmp/kafka-logs/__consumer_offsets-1 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,463] INFO [Partition __consumer_offsets-1 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-1 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,463] INFO [Partition __consumer_offsets-1 broker=1] Log loaded for partition __consumer_offsets-1 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,489] INFO [LogLoader partition=__consumer_offsets-34, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,490] INFO Created log for partition __consumer_offsets-34 in /tmp/kafka-logs/__consumer_offsets-34 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,490] INFO [Partition __consumer_offsets-34 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-34 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,490] INFO [Partition __consumer_offsets-34 broker=1] Log loaded for partition __consumer_offsets-34 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,497] INFO [LogLoader partition=__consumer_offsets-16, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,501] INFO Created log for partition __consumer_offsets-16 in /tmp/kafka-logs/__consumer_offsets-16 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,502] INFO [Partition __consumer_offsets-16 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-16 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,502] INFO [Partition __consumer_offsets-16 broker=1] Log loaded for partition __consumer_offsets-16 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,509] INFO [LogLoader partition=__consumer_offsets-45, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,510] INFO Created log for partition __consumer_offsets-45 in /tmp/kafka-logs/__consumer_offsets-45 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,511] INFO [Partition __consumer_offsets-45 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-45 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,511] INFO [Partition __consumer_offsets-45 broker=1] Log loaded for partition __consumer_offsets-45 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,520] INFO [LogLoader partition=__consumer_offsets-12, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,523] INFO Created log for partition __consumer_offsets-12 in /tmp/kafka-logs/__consumer_offsets-12 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,523] INFO [Partition __consumer_offsets-12 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-12 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,523] INFO [Partition __consumer_offsets-12 broker=1] Log loaded for partition __consumer_offsets-12 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,530] INFO [LogLoader partition=__consumer_offsets-41, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,532] INFO Created log for partition __consumer_offsets-41 in /tmp/kafka-logs/__consumer_offsets-41 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,533] INFO [Partition __consumer_offsets-41 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-41 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,534] INFO [Partition __consumer_offsets-41 broker=1] Log loaded for partition __consumer_offsets-41 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,538] INFO [LogLoader partition=__consumer_offsets-24, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,538] INFO Created log for partition __consumer_offsets-24 in /tmp/kafka-logs/__consumer_offsets-24 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,539] INFO [Partition __consumer_offsets-24 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-24 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,539] INFO [Partition __consumer_offsets-24 broker=1] Log loaded for partition __consumer_offsets-24 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,543] INFO [LogLoader partition=__consumer_offsets-20, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,544] INFO Created log for partition __consumer_offsets-20 in /tmp/kafka-logs/__consumer_offsets-20 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,544] INFO [Partition __consumer_offsets-20 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-20 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,545] INFO [Partition __consumer_offsets-20 broker=1] Log loaded for partition __consumer_offsets-20 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,548] INFO [LogLoader partition=__consumer_offsets-49, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,549] INFO Created log for partition __consumer_offsets-49 in /tmp/kafka-logs/__consumer_offsets-49 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,549] INFO [Partition __consumer_offsets-49 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-49 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,549] INFO [Partition __consumer_offsets-49 broker=1] Log loaded for partition __consumer_offsets-49 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,553] INFO [LogLoader partition=__consumer_offsets-0, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,554] INFO Created log for partition __consumer_offsets-0 in /tmp/kafka-logs/__consumer_offsets-0 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,555] INFO [Partition __consumer_offsets-0 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,555] INFO [Partition __consumer_offsets-0 broker=1] Log loaded for partition __consumer_offsets-0 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,558] INFO [LogLoader partition=__consumer_offsets-29, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,560] INFO Created log for partition __consumer_offsets-29 in /tmp/kafka-logs/__consumer_offsets-29 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,560] INFO [Partition __consumer_offsets-29 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-29 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,560] INFO [Partition __consumer_offsets-29 broker=1] Log loaded for partition __consumer_offsets-29 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,564] INFO [LogLoader partition=__consumer_offsets-25, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,565] INFO Created log for partition __consumer_offsets-25 in /tmp/kafka-logs/__consumer_offsets-25 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,565] INFO [Partition __consumer_offsets-25 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-25 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,565] INFO [Partition __consumer_offsets-25 broker=1] Log loaded for partition __consumer_offsets-25 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,569] INFO [LogLoader partition=__consumer_offsets-8, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,570] INFO Created log for partition __consumer_offsets-8 in /tmp/kafka-logs/__consumer_offsets-8 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,570] INFO [Partition __consumer_offsets-8 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-8 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,572] INFO [Partition __consumer_offsets-8 broker=1] Log loaded for partition __consumer_offsets-8 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,577] INFO [LogLoader partition=__consumer_offsets-37, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,577] INFO Created log for partition __consumer_offsets-37 in /tmp/kafka-logs/__consumer_offsets-37 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,578] INFO [Partition __consumer_offsets-37 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-37 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,578] INFO [Partition __consumer_offsets-37 broker=1] Log loaded for partition __consumer_offsets-37 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,586] INFO [LogLoader partition=__consumer_offsets-4, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,593] INFO Created log for partition __consumer_offsets-4 in /tmp/kafka-logs/__consumer_offsets-4 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,593] INFO [Partition __consumer_offsets-4 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-4 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,594] INFO [Partition __consumer_offsets-4 broker=1] Log loaded for partition __consumer_offsets-4 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,602] INFO [LogLoader partition=__consumer_offsets-33, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,603] INFO Created log for partition __consumer_offsets-33 in /tmp/kafka-logs/__consumer_offsets-33 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,603] INFO [Partition __consumer_offsets-33 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-33 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,604] INFO [Partition __consumer_offsets-33 broker=1] Log loaded for partition __consumer_offsets-33 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,616] INFO [LogLoader partition=__consumer_offsets-15, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,617] INFO Created log for partition __consumer_offsets-15 in /tmp/kafka-logs/__consumer_offsets-15 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,618] INFO [Partition __consumer_offsets-15 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-15 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,627] INFO [Partition __consumer_offsets-15 broker=1] Log loaded for partition __consumer_offsets-15 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,636] INFO [LogLoader partition=__consumer_offsets-48, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,644] INFO Created log for partition __consumer_offsets-48 in /tmp/kafka-logs/__consumer_offsets-48 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,645] INFO [Partition __consumer_offsets-48 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-48 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,645] INFO [Partition __consumer_offsets-48 broker=1] Log loaded for partition __consumer_offsets-48 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,654] INFO [LogLoader partition=__consumer_offsets-11, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,663] INFO Created log for partition __consumer_offsets-11 in /tmp/kafka-logs/__consumer_offsets-11 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,664] INFO [Partition __consumer_offsets-11 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-11 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,665] INFO [Partition __consumer_offsets-11 broker=1] Log loaded for partition __consumer_offsets-11 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,679] INFO [LogLoader partition=__consumer_offsets-44, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,680] INFO Created log for partition __consumer_offsets-44 in /tmp/kafka-logs/__consumer_offsets-44 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,680] INFO [Partition __consumer_offsets-44 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-44 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,680] INFO [Partition __consumer_offsets-44 broker=1] Log loaded for partition __consumer_offsets-44 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,685] INFO [LogLoader partition=__consumer_offsets-23, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,686] INFO Created log for partition __consumer_offsets-23 in /tmp/kafka-logs/__consumer_offsets-23 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,686] INFO [Partition __consumer_offsets-23 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-23 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,687] INFO [Partition __consumer_offsets-23 broker=1] Log loaded for partition __consumer_offsets-23 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,691] INFO [LogLoader partition=__consumer_offsets-19, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,691] INFO Created log for partition __consumer_offsets-19 in /tmp/kafka-logs/__consumer_offsets-19 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,692] INFO [Partition __consumer_offsets-19 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-19 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,692] INFO [Partition __consumer_offsets-19 broker=1] Log loaded for partition __consumer_offsets-19 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,696] INFO [LogLoader partition=__consumer_offsets-32, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,698] INFO Created log for partition __consumer_offsets-32 in /tmp/kafka-logs/__consumer_offsets-32 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,698] INFO [Partition __consumer_offsets-32 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-32 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,698] INFO [Partition __consumer_offsets-32 broker=1] Log loaded for partition __consumer_offsets-32 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,702] INFO [LogLoader partition=__consumer_offsets-28, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,703] INFO Created log for partition __consumer_offsets-28 in /tmp/kafka-logs/__consumer_offsets-28 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,703] INFO [Partition __consumer_offsets-28 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-28 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,703] INFO [Partition __consumer_offsets-28 broker=1] Log loaded for partition __consumer_offsets-28 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,719] INFO [LogLoader partition=__consumer_offsets-7, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,719] INFO Created log for partition __consumer_offsets-7 in /tmp/kafka-logs/__consumer_offsets-7 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,720] INFO [Partition __consumer_offsets-7 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-7 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,720] INFO [Partition __consumer_offsets-7 broker=1] Log loaded for partition __consumer_offsets-7 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,725] INFO [LogLoader partition=__consumer_offsets-40, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,726] INFO Created log for partition __consumer_offsets-40 in /tmp/kafka-logs/__consumer_offsets-40 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,726] INFO [Partition __consumer_offsets-40 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-40 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,726] INFO [Partition __consumer_offsets-40 broker=1] Log loaded for partition __consumer_offsets-40 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,730] INFO [LogLoader partition=__consumer_offsets-3, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,731] INFO Created log for partition __consumer_offsets-3 in /tmp/kafka-logs/__consumer_offsets-3 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,731] INFO [Partition __consumer_offsets-3 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-3 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,731] INFO [Partition __consumer_offsets-3 broker=1] Log loaded for partition __consumer_offsets-3 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,735] INFO [LogLoader partition=__consumer_offsets-36, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,736] INFO Created log for partition __consumer_offsets-36 in /tmp/kafka-logs/__consumer_offsets-36 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,736] INFO [Partition __consumer_offsets-36 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-36 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,736] INFO [Partition __consumer_offsets-36 broker=1] Log loaded for partition __consumer_offsets-36 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,740] INFO [LogLoader partition=__consumer_offsets-47, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,740] INFO Created log for partition __consumer_offsets-47 in /tmp/kafka-logs/__consumer_offsets-47 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,740] INFO [Partition __consumer_offsets-47 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-47 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,740] INFO [Partition __consumer_offsets-47 broker=1] Log loaded for partition __consumer_offsets-47 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,746] INFO [LogLoader partition=__consumer_offsets-14, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,746] INFO Created log for partition __consumer_offsets-14 in /tmp/kafka-logs/__consumer_offsets-14 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,747] INFO [Partition __consumer_offsets-14 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-14 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,747] INFO [Partition __consumer_offsets-14 broker=1] Log loaded for partition __consumer_offsets-14 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,750] INFO [LogLoader partition=__consumer_offsets-43, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,751] INFO Created log for partition __consumer_offsets-43 in /tmp/kafka-logs/__consumer_offsets-43 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,752] INFO [Partition __consumer_offsets-43 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-43 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,752] INFO [Partition __consumer_offsets-43 broker=1] Log loaded for partition __consumer_offsets-43 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,755] INFO [LogLoader partition=__consumer_offsets-10, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,756] INFO Created log for partition __consumer_offsets-10 in /tmp/kafka-logs/__consumer_offsets-10 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,756] INFO [Partition __consumer_offsets-10 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-10 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,756] INFO [Partition __consumer_offsets-10 broker=1] Log loaded for partition __consumer_offsets-10 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,760] INFO [LogLoader partition=__consumer_offsets-22, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,761] INFO Created log for partition __consumer_offsets-22 in /tmp/kafka-logs/__consumer_offsets-22 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,761] INFO [Partition __consumer_offsets-22 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-22 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,761] INFO [Partition __consumer_offsets-22 broker=1] Log loaded for partition __consumer_offsets-22 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,764] INFO [LogLoader partition=__consumer_offsets-18, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,765] INFO Created log for partition __consumer_offsets-18 in /tmp/kafka-logs/__consumer_offsets-18 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,765] INFO [Partition __consumer_offsets-18 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-18 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,765] INFO [Partition __consumer_offsets-18 broker=1] Log loaded for partition __consumer_offsets-18 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,768] INFO [LogLoader partition=__consumer_offsets-31, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,769] INFO Created log for partition __consumer_offsets-31 in /tmp/kafka-logs/__consumer_offsets-31 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,769] INFO [Partition __consumer_offsets-31 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-31 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,769] INFO [Partition __consumer_offsets-31 broker=1] Log loaded for partition __consumer_offsets-31 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,773] INFO [LogLoader partition=__consumer_offsets-27, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,773] INFO Created log for partition __consumer_offsets-27 in /tmp/kafka-logs/__consumer_offsets-27 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,774] INFO [Partition __consumer_offsets-27 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-27 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,774] INFO [Partition __consumer_offsets-27 broker=1] Log loaded for partition __consumer_offsets-27 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,777] INFO [LogLoader partition=__consumer_offsets-39, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,778] INFO Created log for partition __consumer_offsets-39 in /tmp/kafka-logs/__consumer_offsets-39 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,779] INFO [Partition __consumer_offsets-39 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-39 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,779] INFO [Partition __consumer_offsets-39 broker=1] Log loaded for partition __consumer_offsets-39 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,782] INFO [LogLoader partition=__consumer_offsets-6, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,782] INFO Created log for partition __consumer_offsets-6 in /tmp/kafka-logs/__consumer_offsets-6 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,782] INFO [Partition __consumer_offsets-6 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-6 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,782] INFO [Partition __consumer_offsets-6 broker=1] Log loaded for partition __consumer_offsets-6 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,786] INFO [LogLoader partition=__consumer_offsets-35, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,787] INFO Created log for partition __consumer_offsets-35 in /tmp/kafka-logs/__consumer_offsets-35 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,787] INFO [Partition __consumer_offsets-35 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-35 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,788] INFO [Partition __consumer_offsets-35 broker=1] Log loaded for partition __consumer_offsets-35 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,792] INFO [LogLoader partition=__consumer_offsets-2, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:27,793] INFO Created log for partition __consumer_offsets-2 in /tmp/kafka-logs/__consumer_offsets-2 with properties {cleanup.policy=compact, compression.type="producer", segment.bytes=104857600} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,793] INFO [Partition __consumer_offsets-2 broker=1] No checkpointed highwatermark is found for partition __consumer_offsets-2 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,793] INFO [Partition __consumer_offsets-2 broker=1] Log loaded for partition __consumer_offsets-2 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:27,797] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 13 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,798] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-13 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,799] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 46 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,802] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-46 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 9 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-9 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 42 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-42 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 21 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-21 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 17 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-17 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 30 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-30 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,803] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 26 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-26 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 5 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-5 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 38 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-38 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 1 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-1 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 34 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-34 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 16 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-16 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 45 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-45 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 12 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,804] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-12 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 41 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-41 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 24 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-24 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 20 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-20 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 49 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-49 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 0 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-0 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 29 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-29 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 25 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-25 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 8 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-8 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,805] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 37 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-37 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 4 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-4 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 33 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-33 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 15 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-15 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 48 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-48 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 11 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-11 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 44 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-44 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,806] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 23 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,807] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-23 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,807] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 19 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,807] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-19 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 32 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-32 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 28 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-28 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 7 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-7 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 40 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-40 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 3 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,808] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-3 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 36 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-36 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 47 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-47 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 14 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-14 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 43 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,809] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-43 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,810] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 10 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,810] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-10 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 22 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-22 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 18 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-18 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 31 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-31 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 27 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-27 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 39 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-39 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 6 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-6 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 35 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-35 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,811] INFO [GroupCoordinator 1]: Elected as the group coordinator for partition 2 in epoch 0 (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,812] INFO [GroupMetadataManager brokerId=1] Scheduling loading of offsets and group metadata from __consumer_offsets-2 for epoch 0 (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,815] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-13 in 12 milliseconds for epoch 0, of which 2 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,816] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-46 in 13 milliseconds for epoch 0, of which 13 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,816] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-9 in 13 milliseconds for epoch 0, of which 13 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,817] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-42 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,817] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-21 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,818] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-17 in 15 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,818] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-30 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,818] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-26 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,818] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-5 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,818] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-38 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,819] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-1 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,819] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-34 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,819] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-16 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,819] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-45 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-12 in 16 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-41 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-24 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-20 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-49 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-0 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-29 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,820] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-25 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-8 in 16 milliseconds for epoch 0, of which 16 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-37 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-4 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-33 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-15 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-48 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-11 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,821] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-44 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,822] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-23 in 15 milliseconds for epoch 0, of which 15 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,822] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-19 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,822] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-32 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,822] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-28 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,822] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-7 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,822] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-40 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,822] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-3 in 13 milliseconds for epoch 0, of which 13 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,823] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-36 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,823] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-47 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,823] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-14 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,823] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-43 in 13 milliseconds for epoch 0, of which 13 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,823] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-10 in 12 milliseconds for epoch 0, of which 12 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,823] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-22 in 12 milliseconds for epoch 0, of which 12 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,825] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-18 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,825] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-31 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,825] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-27 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,825] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-39 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,825] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-6 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,825] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-35 in 14 milliseconds for epoch 0, of which 14 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,825] INFO [GroupMetadataManager brokerId=1] Finished loading offsets and group metadata from __consumer_offsets-2 in 13 milliseconds for epoch 0, of which 13 milliseconds was spent in the scheduler. (kafka.coordinator.group.GroupMetadataManager)
+bancoxyz-kafka  | [2026-10-03 01:27:27,831] INFO [DynamicConfigPublisher broker id=1] Updating topic __consumer_offsets with new configuration : compression.type -> producer,cleanup.policy -> compact,segment.bytes -> 104857600 (kafka.server.metadata.DynamicConfigPublisher)
+bancoxyz-kafka  | [2026-10-03 01:27:27,866] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group notificaciones-service in Empty state. Created a new member id consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742 and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:27,893] INFO [GroupCoordinator 1]: Preparing to rebalance group notificaciones-service in state PreparingRebalance with old generation 0 (__consumer_offsets-8) (reason: Adding new member consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742 with group instance id None; client reason: need to re-join with the given member-id: consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:28,509] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group notificaciones-service in PreparingRebalance state. Created a new member id consumer-notificaciones-service-1-02160dfb-636d-4b25-bb28-ab509f409838 and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:29,636] INFO Sent auto-creation request for Set(bancoxyz.transferencias.debito-aplicado) to the active controller. (kafka.server.DefaultAutoTopicCreationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,637] INFO Sent auto-creation request for Set(bancoxyz.transferencias.solicitadas) to the active controller. (kafka.server.DefaultAutoTopicCreationManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,676] INFO [ReplicaFetcherManager on broker 1] Removed fetcher for partitions Set(bancoxyz.transferencias.debito-aplicado-3, bancoxyz.transferencias.debito-aplicado-0, bancoxyz.transferencias.debito-aplicado-2, bancoxyz.transferencias.debito-aplicado-1) (kafka.server.ReplicaFetcherManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,680] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group core-service in Empty state. Created a new member id consumer-core-service-1-8fba84b0-1c08-4c0b-851f-64d93874983e and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:29,680] INFO [LogLoader partition=bancoxyz.transferencias.debito-aplicado-3, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,680] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group core-service in Empty state. Created a new member id consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:29,681] INFO Created log for partition bancoxyz.transferencias.debito-aplicado-3 in /tmp/kafka-logs/bancoxyz.transferencias.debito-aplicado-3 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,683] INFO [Partition bancoxyz.transferencias.debito-aplicado-3 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.debito-aplicado-3 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,683] INFO [Partition bancoxyz.transferencias.debito-aplicado-3 broker=1] Log loaded for partition bancoxyz.transferencias.debito-aplicado-3 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,687] INFO [LogLoader partition=bancoxyz.transferencias.debito-aplicado-0, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,687] INFO [GroupCoordinator 1]: Preparing to rebalance group core-service in state PreparingRebalance with old generation 0 (__consumer_offsets-45) (reason: Adding new member consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d with group instance id None; client reason: need to re-join with the given member-id: consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:29,687] INFO Created log for partition bancoxyz.transferencias.debito-aplicado-0 in /tmp/kafka-logs/bancoxyz.transferencias.debito-aplicado-0 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,688] INFO [Partition bancoxyz.transferencias.debito-aplicado-0 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.debito-aplicado-0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,688] INFO [Partition bancoxyz.transferencias.debito-aplicado-0 broker=1] Log loaded for partition bancoxyz.transferencias.debito-aplicado-0 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,692] INFO [LogLoader partition=bancoxyz.transferencias.debito-aplicado-2, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,693] INFO Created log for partition bancoxyz.transferencias.debito-aplicado-2 in /tmp/kafka-logs/bancoxyz.transferencias.debito-aplicado-2 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,693] INFO [Partition bancoxyz.transferencias.debito-aplicado-2 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.debito-aplicado-2 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,693] INFO [Partition bancoxyz.transferencias.debito-aplicado-2 broker=1] Log loaded for partition bancoxyz.transferencias.debito-aplicado-2 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,698] INFO [LogLoader partition=bancoxyz.transferencias.debito-aplicado-1, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,699] INFO Created log for partition bancoxyz.transferencias.debito-aplicado-1 in /tmp/kafka-logs/bancoxyz.transferencias.debito-aplicado-1 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,699] INFO [Partition bancoxyz.transferencias.debito-aplicado-1 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.debito-aplicado-1 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,699] INFO [Partition bancoxyz.transferencias.debito-aplicado-1 broker=1] Log loaded for partition bancoxyz.transferencias.debito-aplicado-1 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,716] INFO [ReplicaFetcherManager on broker 1] Removed fetcher for partitions Set(bancoxyz.transferencias.solicitadas-1, bancoxyz.transferencias.solicitadas-0, bancoxyz.transferencias.solicitadas-3, bancoxyz.transferencias.solicitadas-2) (kafka.server.ReplicaFetcherManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,721] INFO [LogLoader partition=bancoxyz.transferencias.solicitadas-1, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,723] INFO Created log for partition bancoxyz.transferencias.solicitadas-1 in /tmp/kafka-logs/bancoxyz.transferencias.solicitadas-1 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,727] INFO [Partition bancoxyz.transferencias.solicitadas-1 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.solicitadas-1 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,727] INFO [Partition bancoxyz.transferencias.solicitadas-1 broker=1] Log loaded for partition bancoxyz.transferencias.solicitadas-1 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,733] INFO [LogLoader partition=bancoxyz.transferencias.solicitadas-0, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,737] INFO Created log for partition bancoxyz.transferencias.solicitadas-0 in /tmp/kafka-logs/bancoxyz.transferencias.solicitadas-0 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,738] INFO [Partition bancoxyz.transferencias.solicitadas-0 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.solicitadas-0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,738] INFO [Partition bancoxyz.transferencias.solicitadas-0 broker=1] Log loaded for partition bancoxyz.transferencias.solicitadas-0 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,756] INFO [LogLoader partition=bancoxyz.transferencias.solicitadas-3, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,757] INFO Created log for partition bancoxyz.transferencias.solicitadas-3 in /tmp/kafka-logs/bancoxyz.transferencias.solicitadas-3 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,758] INFO [Partition bancoxyz.transferencias.solicitadas-3 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.solicitadas-3 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,758] INFO [Partition bancoxyz.transferencias.solicitadas-3 broker=1] Log loaded for partition bancoxyz.transferencias.solicitadas-3 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,785] INFO [LogLoader partition=bancoxyz.transferencias.solicitadas-2, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+bancoxyz-kafka  | [2026-10-03 01:27:29,787] INFO Created log for partition bancoxyz.transferencias.solicitadas-2 in /tmp/kafka-logs/bancoxyz.transferencias.solicitadas-2 with properties {} (kafka.log.LogManager)
+bancoxyz-kafka  | [2026-10-03 01:27:29,787] INFO [Partition bancoxyz.transferencias.solicitadas-2 broker=1] No checkpointed highwatermark is found for partition bancoxyz.transferencias.solicitadas-2 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:29,788] INFO [Partition bancoxyz.transferencias.solicitadas-2 broker=1] Log loaded for partition bancoxyz.transferencias.solicitadas-2 with initial high watermark 0 (kafka.cluster.Partition)
+bancoxyz-kafka  | [2026-10-03 01:27:33,912] INFO [GroupCoordinator 1]: Stabilized group notificaciones-service generation 1 (__consumer_offsets-8) with 2 members (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:33,967] INFO [GroupCoordinator 1]: Assignment received from leader consumer-notificaciones-service-1-f5de1313-6f67-44c1-a8ad-e8a26c218742 for group notificaciones-service for generation 1. The group has 2 members, 0 of which are static. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:35,692] INFO [GroupCoordinator 1]: Stabilized group core-service generation 1 (__consumer_offsets-45) with 2 members (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:27:35,725] INFO [GroupCoordinator 1]: Assignment received from leader consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d for group core-service for generation 1. The group has 2 members, 0 of which are static. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:29:02,399] INFO [GroupCoordinator 1]: Preparing to rebalance group core-service in state PreparingRebalance with old generation 1 (__consumer_offsets-45) (reason: Removing member consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d on LeaveGroup; client reason: the consumer unsubscribed from all topics) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:29:02,400] INFO [GroupCoordinator 1]: Member MemberMetadata(memberId=consumer-core-service-2-147e88a9-b4d7-4787-8749-6cba607d520d, groupInstanceId=None, clientId=consumer-core-service-2, clientHost=/172.19.0.6, sessionTimeoutMs=45000, rebalanceTimeoutMs=300000, supportedProtocols=List(range, cooperative-sticky)) has left group core-service through explicit `LeaveGroup`; client reason: the consumer unsubscribed from all topics (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:29:02,401] INFO [GroupCoordinator 1]: Group core-service with generation 2 is now empty (__consumer_offsets-45) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:29:02,403] INFO [GroupCoordinator 1]: Member MemberMetadata(memberId=consumer-core-service-1-8fba84b0-1c08-4c0b-851f-64d93874983e, groupInstanceId=None, clientId=consumer-core-service-1, clientHost=/172.19.0.6, sessionTimeoutMs=45000, rebalanceTimeoutMs=300000, supportedProtocols=List(range, cooperative-sticky)) has left group core-service through explicit `LeaveGroup`; client reason: the consumer unsubscribed from all topics (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:14,456] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group core-service in Empty state. Created a new member id consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:14,459] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group core-service in Empty state. Created a new member id consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:14,462] INFO [GroupCoordinator 1]: Preparing to rebalance group core-service in state PreparingRebalance with old generation 2 (__consumer_offsets-45) (reason: Adding new member consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf with group instance id None; client reason: need to re-join with the given member-id: consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:17,463] INFO [GroupCoordinator 1]: Stabilized group core-service generation 3 (__consumer_offsets-45) with 2 members (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:17,484] INFO [GroupCoordinator 1]: Assignment received from leader consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf for group core-service for generation 3. The group has 2 members, 0 of which are static. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:34,649] INFO [GroupCoordinator 1]: Preparing to rebalance group core-service in state PreparingRebalance with old generation 3 (__consumer_offsets-45) (reason: Removing member consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb on LeaveGroup; client reason: the consumer unsubscribed from all topics) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:34,650] INFO [GroupCoordinator 1]: Member MemberMetadata(memberId=consumer-core-service-1-46ac68c1-7760-4119-9cae-97a30b95f0fb, groupInstanceId=None, clientId=consumer-core-service-1, clientHost=/172.19.0.6, sessionTimeoutMs=45000, rebalanceTimeoutMs=300000, supportedProtocols=List(range, cooperative-sticky)) has left group core-service through explicit `LeaveGroup`; client reason: the consumer unsubscribed from all topics (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:34,650] INFO [GroupCoordinator 1]: Group core-service with generation 4 is now empty (__consumer_offsets-45) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:34,652] INFO [GroupCoordinator 1]: Member MemberMetadata(memberId=consumer-core-service-2-907ceb3a-117b-4f06-955e-c363bcb7c7cf, groupInstanceId=None, clientId=consumer-core-service-2, clientHost=/172.19.0.6, sessionTimeoutMs=45000, rebalanceTimeoutMs=300000, supportedProtocols=List(range, cooperative-sticky)) has left group core-service through explicit `LeaveGroup`; client reason: the consumer unsubscribed from all topics (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:44,325] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group core-service in Empty state. Created a new member id consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4 and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:44,327] INFO [GroupCoordinator 1]: Dynamic member with unknown member id joins group core-service in Empty state. Created a new member id consumer-core-service-1-848d8e77-2f22-49d7-93c2-66206c399e6a and request the member to rejoin with this id. (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:44,329] INFO [GroupCoordinator 1]: Preparing to rebalance group core-service in state PreparingRebalance with old generation 4 (__consumer_offsets-45) (reason: Adding new member consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4 with group instance id None; client reason: need to re-join with the given member-id: consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4) (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:47,331] INFO [GroupCoordinator 1]: Stabilized group core-service generation 5 (__consumer_offsets-45) with 2 members (kafka.coordinator.group.GroupCoordinator)
+bancoxyz-kafka  | [2026-10-03 01:30:47,349] INFO [GroupCoordinator 1]: Assignment received from leader consumer-core-service-2-278f626b-88a4-442b-b912-b939278835a4 for group core-service for generation 5. The group has 2 members, 0 of which are static. (kafka.coordinator.group.GroupCoordinator)
