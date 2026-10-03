@@ -2,6 +2,8 @@
 
 **Curso:** Desarrollo Backend III (PBY2203) — Duoc UC
 
+> **Estado actual (Exp3, Semana 8):** el ecosistema tiene **9 módulos**: `config-server`, `eureka-server`, `auth-server` (nuevo, OAuth 2.0), `core-service`, `bff-web`, `bff-mobile`, `bff-atm` y `notificaciones-service`, además del agregador Maven. Todos están **dockerizados** y se orquestan con **`docker-compose.yaml`** junto a Kafka. La comunicación BFF → `core-service` usa **OAuth 2.0** (`client_credentials` + JWT RS256), que reemplaza la antigua clave `X-Internal-Api-Key`. Para levantar todo: `mvn -DskipTests package && docker compose up -d --build --wait`. Ver la **[sección 13](#13-microservicios-seguros-y-resilientes-en-la-nube-oauth-20-docker-y-docker-compose-exp3-semana-8)**. Las secciones 1–12 documentan cada entrega anterior tal como fue evaluada.
+
 ## 1. Objetivo del proyecto
 
 Implementar el patrón arquitectónico **Backend for Frontend (BFF)** para el sistema del Banco XYZ, creando un backend personalizado para cada tipo de cliente —**web**, **móvil** y **cajero automático**— que optimice la comunicación y adapte los datos a las necesidades reales de cada canal, en lugar de forzar a un único backend genérico a servir a los tres por igual. Esta actividad de la Semana 5 continúa el proyecto de la Semana 4 y agrega, como requisito nuevo, una configuración segura de cada BFF que incluye **HTTPS** con certificados.
@@ -190,6 +192,8 @@ Cada módulo repite deliberadamente el mismo esqueleto interno (`client/`, `secu
 Cada BFF define su propia copia de `CoreServiceProperties`, sus propios DTOs espejo (`CuentaCoreDTO`, `MovimientoCoreDTO`) y, en el caso de `bff-mobile`/`bff-atm`, su propia copia de `PinGenerator`. Esto es intencional: la estrategia de "backends independientes" busca que cada BFF pueda evolucionar, desplegarse y versionarse sin coordinar cambios con los demás. Introducir una librería compartida recrearía un acoplamiento oculto entre los tres canales — si un cambio en esa librería obligara a recompilar y redesplegar los tres BFF a la vez, ya no serían realmente independientes. El único acoplamiento real y deliberado del proyecto es el contrato HTTP/JSON de `core-service`, documentado y estable. Esta misma independencia se refleja ahora también en la configuración de HTTPS: cada BFF tiene su propio keystore, su propio alias y su propia contraseña, sin un almacén de certificados compartido entre los tres.
 
 ## 7. Cómo ejecutar el proyecto
+
+> Desde la Semana 8, la forma recomendada de ejecutar el proyecto completo es con Docker Compose (sección 13.4). Las instrucciones `java -jar` de esta sección siguen siendo válidas: ahora hay que levantar también `auth-server` (`:9000`) después de `eureka-server` (ver `scripts/generar_evidencia.sh`).
 
 ### 7.1 Requisitos
 
@@ -498,3 +502,220 @@ Los logs quedan en `evidencias/` con el mismo esquema de nombres ya usado en la 
 | Elabora un diagrama representativo de la arquitectura elegida de forma completa con los tópicos/mensajes/eventos de la solución, con una estructura visual organizada | Sección 12.3: diagrama completo (`docs/arquitectura-eventos-s7.png`) más la tabla de los 3 tópicos con su evento, productor y consumidor(es). |
 | Implementa tolerancia a fallos con Resilience4j demostrando resiliencia ante fallos | Sección 12.4: circuit breaker `kafkaProducer` nuevo (dominio de falla independiente de `coreService`) sobre el envío a Kafka, con pasos explícitos para reproducir la apertura del circuito y su respuesta 503 controlada. |
 | Integra componentes de mensajería asíncrona (Kafka o JMS) de manera funcional, con mensajes/eventos correctamente procesados y escalabilidad demostrada | Sección 12.5: Kafka real (Docker, KRaft) con 3 tópicos funcionando end-to-end (`scripts/probar_transferencias.sh`, `evidencia10-pruebas-transferencias.log`) y escalabilidad demostrada con 2 instancias de `notificaciones-service` en el mismo consumer group repartiéndose las particiones (`evidencia11-notificaciones-escalabilidad.log`). |
+
+## 13. Microservicios seguros y resilientes en la nube: OAuth 2.0, Docker y Docker Compose (Exp3, Semana 8)
+
+Esta sección documenta lo agregado sobre la base de las secciones 1–12 para la actividad sumativa "Desarrollando microservicios y resiliencia en la nube con Spring Cloud". Las instrucciones específicas piden tres cosas: (1) **implementar OAuth 2.0**, (2) **dockerizar los microservicios** y (3) **orquestar todos los componentes en un `docker-compose.yaml`** para poder lanzar la aplicación en un entorno cloud. Además, la pauta evalúa la tolerancia a fallos con Resilience4j, la mensajería asíncrona con Kafka y la entrega (código, README y evidencia). La trazabilidad completa está en la sección 13.8.
+
+> **Cambio respecto de las secciones anteriores:** la clave compartida `X-Internal-Api-Key` entre los BFF y `core-service` (secciones 3, 5.1 y 9) **ya no existe**. La reemplaza OAuth 2.0 (sección 13.2). Las secciones 1–12 se conservan sin cambios como registro de cada entrega anterior.
+
+### 13.1 Arquitectura de despliegue
+
+```mermaid
+flowchart LR
+    subgraph clientes["Clientes (Internet)"]
+        nav["Navegador"]
+        app["App móvil"]
+        atm["Cajero"]
+    end
+
+    subgraph host["docker-compose.yaml — red bancoxyz-net"]
+        direction LR
+        subgraph publicos["Únicos puertos públicos (HTTPS)"]
+            web["bff-web<br/>:8081"]
+            mob["bff-mobile<br/>:8082"]
+            caj["bff-atm<br/>:8083"]
+        end
+        auth["auth-server<br/>:9000<br/>(OAuth 2.0)"]
+        core["core-service<br/>:8080<br/>(Resource Server)"]
+        cfg["config-server<br/>:8888"]
+        eur["eureka-server<br/>:8761"]
+        kafka[("kafka<br/>:29092")]
+        notif["notificaciones-service<br/>× 2 réplicas"]
+    end
+
+    nav -- "JWT canal web" --> web
+    app -- "JWT canal móvil" --> mob
+    atm -- "sesión opaca" --> caj
+
+    web & mob & caj -- "1. client_credentials" --> auth
+    web & mob & caj -- "2. Bearer JWT (RS256)" --> core
+    core -. "3. JWKS (llave pública)" .-> auth
+    web -- "transferencias.solicitadas" --> kafka
+    kafka <--> core
+    kafka -- "transferencias.resultado" --> notif
+
+    web & mob & caj & core & notif -. "config" .-> cfg
+    web & mob & caj & core & notif -. "registro / discovery" .-> eur
+```
+
+(Versión en imagen, para visores sin soporte Mermaid: [`docs/arquitectura-s8-despliegue.png`](docs/arquitectura-s8-despliegue.png).)
+
+| Contenedor | Imagen | Puerto en el host | Depende de (`service_healthy`) |
+| --- | --- | --- | --- |
+| `kafka` | `apache/kafka:3.7.0` | `127.0.0.1:9092` | — |
+| `config-server` | `bancoxyz/config-server:1.0.0` | `127.0.0.1:8888` | — |
+| `eureka-server` | `bancoxyz/eureka-server:1.0.0` | `127.0.0.1:8761` | — |
+| `auth-server` | `bancoxyz/auth-server:1.0.0` | `127.0.0.1:9000` | — |
+| `core-service` | `bancoxyz/core-service:1.0.0` | `127.0.0.1:8080` | kafka, config-server, eureka-server, auth-server |
+| `bff-web` / `bff-mobile` / `bff-atm` | `bancoxyz/bff-*:1.0.0` | `8081` / `8082` / `8083` (públicos) | core-service |
+| `notificaciones-service` (×2) | `bancoxyz/notificaciones-service:1.0.0` | sin publicar | kafka, config-server, eureka-server |
+
+Solo los tres BFF se publican en todas las interfaces: son la única puerta de entrada de los clientes. El resto se publica únicamente en `127.0.0.1` (para administración y para los scripts de prueba desde la misma máquina). En un despliegue cloud real (por ejemplo, una VPC de AWS) estos servicios vivirían en una subred privada, sin publicarse, y los BFF quedarían detrás de un balanceador con un certificado de una CA reconocida.
+
+### 13.2 OAuth 2.0 con Spring Authorization Server (instrucción específica N.º 1)
+
+**Qué se protege y por qué este flujo.** Los usuarios finales ya tenían autenticación por canal desde la Semana 5 (JWT web de 30 min, JWT móvil de 5 min y sesión opaca de cajero de 2 min, sección 5). El punto débil que quedaba era la comunicación **servicio a servicio**: los tres BFF se autenticaban ante `core-service` con **la misma clave estática** (`X-Internal-Api-Key`). Esa clave no expiraba, no se podía revocar por BFF y daba a todos los BFF los mismos permisos (incluido debitar saldo). Ahora se reemplaza por el estándar OAuth 2.0 que propone la guía de la semana:
+
+| Rol OAuth 2.0 (guía, Figura 1) | Componente | Implementación |
+| --- | --- | --- |
+| **Authorization Server** | `auth-server` (módulo nuevo, `:9000`) | Spring Authorization Server 1.3.2 (gestionado por Spring Boot 3.3.4). Emite access tokens JWT firmados con **RS256**, con una vigencia de 5 minutos. |
+| **Client** (confidencial) | `bff-web`, `bff-mobile`, `bff-atm` | `spring-boot-starter-oauth2-client`, flujo **`client_credentials`** (RFC 6749 §4.4). Cada BFF es un cliente distinto, con su propio secreto. |
+| **Resource Server** | `core-service` | `spring-boot-starter-oauth2-resource-server`. Valida la firma contra `/oauth2/jwks`, además de `iss`, `exp`/`nbf` y `scope`. |
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Cliente (app móvil)
+    participant B as bff-mobile
+    participant A as auth-server
+    participant R as core-service
+    C->>B: POST /api/mobile/auth/login (cuenta + PIN)
+    Note over B: Autenticación del USUARIO (por canal, Semana 5)
+    B->>A: POST /oauth2/token<br/>grant_type=client_credentials, scope=core.read<br/>(Authorization: Basic bff-mobile:secreto)
+    A-->>B: access_token (JWT RS256, 5 min) — se cachea en el BFF
+    B->>R: GET /internal/cuentas/101<br/>Authorization: Bearer (JWT)
+    R->>A: GET /oauth2/jwks (solo la 1.ª vez, luego en caché)
+    Note over R: Verifica firma, iss, exp y SCOPE_core.read
+    R-->>B: 200 cuenta
+    B-->>C: Resumen reducido del canal móvil
+```
+
+(Versión en imagen: [`docs/arquitectura-s8-oauth2.png`](docs/arquitectura-s8-oauth2.png).)
+
+**Menor privilegio por cliente (scopes).** Cada BFF recibe solo lo que necesita. Si un BFF pide un scope que no tiene registrado, `auth-server` se niega a emitirlo, y si presenta un token sin el scope exigido, `core-service` lo rechaza:
+
+| Cliente | Scopes permitidos | Uso |
+| --- | --- | --- |
+| `bff-web` | `core.read` | Consulta de cuentas y del estado de transferencias (las transferencias se inician por Kafka, no por REST). |
+| `bff-mobile` | `core.read` | Resumen de cuenta. |
+| `bff-atm` | `core.read`, `core.write` | Saldo y **retiro** (único canal que debita). |
+| `evidencia-cli` | `core.read` | Solo para los scripts de prueba/evidencia. |
+
+| Ruta en `core-service` | Exige |
+| --- | --- |
+| `GET /internal/**` | `SCOPE_core.read` |
+| `POST /internal/**` (débito) | `SCOPE_core.write` |
+| `/actuator/health` | público (healthcheck de Docker) |
+| cualquier otra | denegada |
+
+**Archivos clave:**
+
+- `auth-server/src/main/resources/application.yml`: los 4 clientes registrados (secretos **hasheados con BCrypt**, scopes, TTL) y el issuer fijo.
+- `auth-server/.../config/SecurityConfig.java`: cadena del protocolo + `/actuator/health` público. Todo lo demás queda denegado.
+- `auth-server/.../config/TokenConfig.java`: deja una línea de auditoría por cada token emitido (cliente y scopes, nunca el token).
+- `core-service/.../config/SecurityConfig.java`: autorización por scope y log de cada rechazo 401/403. Reemplaza al antiguo `InternalApiKeyFilter`, que se eliminó.
+- `bff-*/.../config/OAuth2ClientConfig.java`: `AuthorizedClientServiceOAuth2AuthorizedClientManager`, que cachea el token y lo renueva 60 s antes de que expire, más un interceptor que agrega `Authorization: Bearer` en el `RestTemplate @LoadBalanced`.
+- `config-server/.../config-repo/bff-*.yml`: registro OAuth2 de cada BFF, centralizado en Config Server. El secreto llega por variable de entorno (`BFF_*_CLIENT_SECRET`).
+
+**Decisiones de seguridad (alineadas con OWASP):**
+
+- **Issuer fijo** (`AUTH_ISSUER`). En Docker los BFF piden tokens a `http://auth-server:9000`, y los scripts desde el host los piden a `http://localhost:9000`. Ambos tokens llevan el mismo `iss`, así que `core-service` los acepta indistintamente. `core-service` usa `jwk-set-uri` + `issuer-uri`, por lo que no necesita que `auth-server` esté arriba para arrancar: el JWKS se descarga bajo demanda.
+- **El servidor de autorización solo guarda hashes BCrypt** de los secretos. El texto plano lo conoce únicamente cada BFF.
+- **Los BFF ahora tienen una `SecurityFilterChain` explícita.** Agregar el cliente OAuth2 incorpora Spring Security, y sin esta cadena Boot activaría un login por formulario. La cadena es *stateless*, sin CSRF (no hay cookies) y endurece los headers: **HSTS de 1 año con `includeSubDomains`** y CSP `default-src 'none'`.
+- **¿Por qué no el flujo `authorization_code` para los usuarios finales?** El patrón BFF es justamente la recomendación de la IETF para aplicaciones de navegador (*OAuth 2.0 for Browser-Based Apps*, patrón "BFF"): el BFF actúa como **cliente confidencial** y el navegador nunca maneja access tokens de los servicios internos. La autenticación de usuarios por canal de la Semana 5 se mantiene, y OAuth 2.0 protege el tramo BFF → backend. Migrar el login de usuarios a `authorization_code` + PKCE contra este mismo `auth-server` queda como evolución natural (sección 13.7).
+
+### 13.3 Imágenes Docker de cada microservicio (instrucción específica N.º 2)
+
+Cada uno de los 8 microservicios tiene su propio `Dockerfile` en la raíz de su módulo (`config-server/`, `eureka-server/`, `auth-server/`, `core-service/`, `bff-web/`, `bff-mobile/`, `bff-atm/` y `notificaciones-service/`). Todos siguen el mismo patrón, basado en la lectura de la semana *Spring Boot with Docker*:
+
+1. **Build multi-stage con *layered jar*.** La etapa 1 separa el jar de Spring Boot en capas (`java -Djarmode=tools -jar app.jar extract --layers`), y la etapa 2 copia primero las dependencias (que cambian poco) y al final el código propio. Un cambio de código solo reconstruye la última capa (de pocos KB), no los ~100 MB de dependencias.
+2. **Imagen final solo con JRE 21** (`eclipse-temurin:21-jre`), sin JDK ni Maven.
+3. **Usuario no-root** (`spring`), por menor privilegio.
+4. **`-XX:MaxRAMPercentage=75`**: la JVM respeta el límite de memoria del contenedor (512 MB en el compose) en vez de dimensionarse según la RAM del host.
+5. **`HEALTHCHECK`** contra `/actuator/health`: es lo que usa `depends_on: condition: service_healthy` en el compose.
+6. **`.dockerignore`** que deja solo `target/<modulo>.jar` en el contexto de build.
+
+En los BFF, actuator escucha en un **puerto de gestión interno** (`18081`–`18083`, HTTP), separado del puerto HTTPS público. Ese puerto no se publica fuera de Docker y expone `health`, `circuitbreakers` y `retries`.
+
+Las imágenes se construyen a partir del jar que compila Maven, así que el orden es `mvn package` y luego `docker compose build`. El script `scripts/generar_evidencia_docker.sh` hace ambos pasos. Construir una imagen individual:
+
+```bash
+mvn -DskipTests package
+docker build -t bancoxyz/core-service:1.0.0 core-service/
+```
+
+### 13.4 Orquestación con `docker-compose.yaml` (instrucción específica N.º 3)
+
+El archivo `docker-compose.yaml` (renombrado desde el `docker-compose.yml` de la Semana 7, que solo levantaba Kafka) orquesta **los 10 contenedores** del ecosistema en una sola configuración:
+
+- **Orden de arranque real**, no solo de creación: `depends_on` con `condition: service_healthy` usa el `HEALTHCHECK` de cada imagen. Kafka, Config Server, Eureka y auth-server deben estar sanos antes de `core-service`, y `core-service` debe estar sano antes de los BFF.
+- **Configuración por entorno, no por imagen.** Las mismas imágenes funcionan en local o en la nube. Las URLs de infraestructura (`CONFIG_SERVER_URL`, `EUREKA_URL`, `KAFKA_BOOTSTRAP_SERVERS`, `AUTH_SERVER_URL`, `AUTH_ISSUER`) son variables con valor por defecto `localhost` en cada `application.yml`, y el compose las apunta a los nombres de servicio de la red `bancoxyz-net`. Por eso el modo `java -jar` de las semanas 6–7 sigue funcionando sin cambios.
+- **Resiliencia a nivel de plataforma.** `restart: unless-stopped` reinicia automáticamente un contenedor cuyo proceso cae (demostrado en la evidencia, sección 13.6). Además, hay límites de memoria por servicio y rotación de logs.
+- **Escalado horizontal.** `notificaciones-service` corre con `deploy.replicas: 2` (ambas en el mismo *consumer group* de Kafka, repartiéndose las particiones) y se puede escalar con `docker compose up -d --scale notificaciones-service=3`. El `instance-id` de Eureka incluye el hostname para que las réplicas no se pisen.
+- **Kafka con dos listeners:** `kafka:29092` para los contenedores y `localhost:9092` para los procesos del host.
+- **Eureka por IP** (`EUREKA_PREFER_IP=true`): dentro de Docker, cada instancia se registra con la IP de su contenedor.
+- **Secretos por variable de entorno** con valores por defecto de demostración, que se pueden sobreescribir con un archivo `.env` no versionado (`BFF_WEB_CLIENT_SECRET=...`).
+
+**Cómo levantarlo:**
+
+```bash
+mvn -DskipTests package                 # 1) compila los 8 jars
+docker compose up -d --build --wait     # 2) construye las 8 imágenes y espera a que los 10 contenedores estén "healthy"
+docker compose ps                       # estado de salud de cada contenedor
+bash scripts/probar_oauth2.sh           # 3) pruebas (las mismas que en modo java -jar)
+bash scripts/probar_apis.sh
+docker compose down                     # 4) detener y limpiar
+```
+
+O todo en un paso, guardando la evidencia en `evidencias/docker/`:
+
+```bash
+bash scripts/generar_evidencia_docker.sh                # compila, construye, levanta, prueba y baja todo
+bash scripts/generar_evidencia_docker.sh --keep-up      # igual, pero deja los contenedores corriendo
+```
+
+> Si antes se usó el `docker-compose.yml` de la Semana 7, puede quedar un contenedor `bancoxyz-kafka` creado bajo el nombre de proyecto anterior. En ese caso, eliminarlo una vez con `docker rm -f bancoxyz-kafka`.
+
+**Requisitos:** Docker Desktop (Windows/macOS) o Docker Engine + plugin `docker compose` v2 (Linux), JDK 21, Maven, `curl` y `jq`. En Windows los scripts se ejecutan con Git Bash. Puertos libres: 8080–8083, 8761, 8888, 9000 y 9092.
+
+### 13.5 Tolerancia a fallos con Resilience4j (ampliada)
+
+Sobre los circuit breakers `coreService` (Semana 6) y `kafkaProducer` (Semana 7), esta entrega agrega:
+
+- **Retry con backoff exponencial** (`coreServiceLectura`: 3 intentos, espera de 300 ms y luego 600 ms), **solo en lecturas GET idempotentes**: `obtenerCuenta` en los 3 BFF y `obtenerEstado` de transferencias en `bff-web`. Solo reintenta fallas transitorias (`ResourceAccessException`, `HttpServerErrorException`); un 404 de negocio no se reintenta. **El débito de `bff-atm` nunca se reintenta**, porque no es idempotente: reintentarlo tras un timeout podría cobrar el retiro dos veces.
+- **Orden de los aspectos `CircuitBreaker(Retry(llamada))`** (`circuit-breaker-aspect-order: 1`, `retry-aspect-order: 2`). Por defecto Resilience4j hace lo contrario. Con este orden, el circuito cuenta **una** falla por petición de negocio (después de agotar los reintentos) y no una por cada reintento, de modo que el umbral configurado (5 llamadas / 50 %) conserva su significado.
+- **El fallback distingue la dependencia que falló**: si el BFF no pudo obtener un access token, responde `503` "Servicio de autorización (auth-server) no disponible"; si cayó `core-service`, responde `503` "core-service no disponible".
+- **Observabilidad**: cada reintento y cada transición de estado del circuito (`CLOSED → OPEN → HALF_OPEN → CLOSED`) queda en el log (`ResilienciaConfig`). El estado en vivo se consulta en `/actuator/circuitbreakers` del puerto de gestión.
+- **Resiliencia de plataforma (Docker)**: restart policy, healthchecks y `depends_on` (sección 13.4).
+
+`scripts/probar_tolerancia_fallos.sh --docker` lo demuestra de punta a punta: detiene `core-service`, muestra los reintentos y la apertura del circuito (de ~19 s por petición a ~20 ms), vuelve a iniciarlo y muestra la recuperación automática hasta `CLOSED`. Por último, mata el proceso dentro del contenedor y muestra que Docker lo reinicia solo.
+
+### 13.6 Evidencia de ejecución
+
+Toda la evidencia de esta sección se generó con una corrida real de `scripts/generar_evidencia_docker.sh`, con los 10 contenedores en ejecución. Se guardó en `evidencias/docker/`:
+
+EVIDENCIA_DOCKER_PLACEHOLDER
+
+El workflow de GitHub Actions (`.github/workflows/evidencia-ejecucion.yml`) agrega el job **`evidencia-docker`**, que ejecuta exactamente el mismo script en un runner limpio y publica el artefacto `evidencias-ejecucion-docker`. Corre en cada push a `main` y en cada pull request. El job original (`evidencia`, modo `java -jar`) también se actualizó: ahora levanta `auth-server` y agrega `evidencia01d-auth-server.log` y `evidencia12-oauth2.log`.
+
+### 13.7 Decisiones y simplificaciones (transparencia académica)
+
+- **Llave de firma RSA generada al arrancar `auth-server`**, sin persistirla (comportamiento por defecto de Spring Boot). Si `auth-server` se reinicia, los tokens vigentes dejan de ser válidos y los BFF obtienen uno nuevo automáticamente en la siguiente llamada que falle. En producción, la llave viviría en un KMS/HSM (ej. AWS KMS) y se rotaría publicando ambas llaves en el JWKS durante la transición.
+- **Clientes y autorizaciones en memoria** (`InMemoryRegisteredClientRepository` / `InMemoryOAuth2AuthorizationService`). En producción se usarían las implementaciones JDBC de Spring Authorization Server.
+- **Secretos de demostración con valor por defecto** en `config-repo` y `docker-compose.yaml`, sobreescribibles por variable de entorno. En producción vendrían de un gestor de secretos (AWS Secrets Manager / Parameter Store) inyectado en el contenedor, y Config Server estaría protegido.
+- **Las imágenes se construyen desde el jar de Maven** y no compilan dentro de Docker. Es el enfoque de la lectura de la semana, evita descargar las dependencias Maven en cada build de imagen y deja la compilación en un solo lugar (`mvn package`, igual que en CI).
+- **Tráfico interno en HTTP** (BFF → `core-service`, BFF → `auth-server`) dentro de la red de Docker, igual que la decisión documentada en la sección 5.1. Un despliegue productivo agregaría mTLS o un *service mesh*.
+- **Estado en memoria de `core-service`**: al reiniciarse el contenedor, los saldos vuelven a los del CSV legacy, igual que en las semanas anteriores (sección 9).
+- **Evolución natural**: login de usuarios con `authorization_code` + PKCE contra el mismo `auth-server`, un API Gateway delante de los BFF y el despliegue de estas mismas imágenes en un orquestador administrado (ECS/EKS).
+
+### 13.8 Trazabilidad con la pauta de evaluación sumativa (Semana 8)
+
+| Criterio de la pauta | Puntaje | Dónde se evidencia |
+| --- | --- | --- |
+| Implementa OAuth 2.0 con flujo funcional que asegura la protección de datos y servicios | 20 pts | Sección 13.2: `auth-server` (Spring Authorization Server), `client_credentials` desde los 3 BFF, `core-service` como Resource Server con scopes de menor privilegio. Evidencia: `docker05-oauth2.log` (401 sin token y con firma adulterada, 200 con scope, 403 `insufficient_scope`, 400 `invalid_scope`, 401 `invalid_client`) y `docker11-auth-server-tokens.log`. |
+| Crea imágenes Docker funcionales para todos los microservicios, asegurando portabilidad y despliegue eficiente | 20 pts | Sección 13.3: 8 `Dockerfile` (multi-stage, layered jar, JRE, no-root, healthcheck). Evidencia: `docker01-build.log` y `docker02-imagenes.log`. |
+| Configura `docker-compose.yaml` correctamente, orquestando todos los componentes necesarios de manera funcional | 20 pts | Sección 13.4: 10 contenedores (Kafka + 8 servicios, notificaciones ×2), `depends_on` por salud, red propia, restart policy, límites y variables de entorno. Evidencia: `docker03-compose-up.log` (todos `healthy`), `docker04-eureka-apps.log`, `docker06`/`docker07`. |
+| Configura mecanismos de tolerancia a fallos con Resilience4j | 20 pts | Secciones 11.4, 12.4 y 13.5: Circuit Breaker (`coreService`, `kafkaProducer`) + Retry con backoff solo en lecturas, orden de aspectos y fallbacks diferenciados. Evidencia: `docker09-tolerancia-fallos.log` (apertura, recuperación a `CLOSED` y restart policy). |
+| Integra mensajería asíncrona con Kafka o JMS | 15 pts | Sección 12 (Saga por coreografía con 3 tópicos), ahora también en Docker. Evidencia: `docker07-pruebas-transferencias.log` (COMPLETADA / RECHAZADA / COMPENSADA) y `docker08-notificaciones-escalabilidad.log` (reparto entre 2 réplicas). |
+| Entrega los aspectos claves: código fuente, documentación y evidencia de ejecución | 5 pts | Código en este repositorio (9 módulos); este README (objetivo, estructura y ejecución, secciones 1–13); evidencia real en `evidencias/` y `evidencias/docker/` y en los artefactos de GitHub Actions. |
